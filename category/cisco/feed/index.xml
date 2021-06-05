@@ -1,0 +1,1684 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Cisco | vaheeD khoshnouD</title>
+	<atom:link href="/category/cisco/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>linux, mikrotik, macosx</description>
+	<lastBuildDate>Mon, 12 Oct 2015 16:20:40 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.7.2</generator>
+	<item>
+		<title>5 Steps of Password Recovery for Cisco 2960 Switch</title>
+		<link>/5-steps-of-password-recovery-for-cisco-2960-switch/</link>
+					<comments>/5-steps-of-password-recovery-for-cisco-2960-switch/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Wed, 06 Feb 2013 15:13:57 +0000</pubDate>
+				<category><![CDATA[Cisco]]></category>
+		<guid isPermaLink="false">/?p=633</guid>
+
+					<description><![CDATA[<p>Step 1: Power off the switch first, then press and hold the mode button while you power on the switch again. Hold it for about 15 seconds until the SYS led is solid green, and then release it. The switch should then give you this prompt: switch: Step 2: To initialize the flash file system,... </p>
+<p><a class="small button secondary" href="/5-steps-of-password-recovery-for-cisco-2960-switch/">Continue Reading</a></p>
+The post <a href="/5-steps-of-password-recovery-for-cisco-2960-switch/">5 Steps of Password Recovery for Cisco 2960 Switch</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-633"></span><br />
+<b>Step 1:</b></p>
+<p>Power off the switch first, then press and hold the mode button while you power on the switch again. Hold it for about 15 seconds until the SYS led is solid green, and then release it.</p>
+<p>The switch should then give you this prompt:</p>
+<pre>
+switch:
+</pre>
+<p><b>Step 2:</b></p>
+<p>To initialize the flash file system, run the command:</p>
+<pre>
+switch: flash_init
+Initializing Flash...
+flashfs[0]: 5 files, 1 directories
+flashfs[0]: 0 orphaned files, 0 orphaned directories
+flashfs[0]: Total bytes: 32514048
+flashfs[0]: Bytes used: 8059904
+flashfs[0]: Bytes available: 24454144
+flashfs[0]: flashfs fsck took 10 seconds.
+...done Initializing Flash.
+</pre>
+<p>The switch will now print a bunch of messages about the flash memory, hopefully one of them will be ‘done initializing flash’ as above shown</p>
+<p><b>Step 3:</b></p>
+<p>You can now list the contents of your flash by running</p>
+<pre>
+switch: dir flash:
+Directory of flash: /
+2 -rwx 12300 &lt;date&gt; config.text
+4 -rwx 1906 &lt;date&gt; private-config.text
+5 -rwx 676 &lt;date&gt; vlan.dat
+6 -rwx 8040418 &lt;date&gt; c2960-lanbasek9-mz.122-50.SE3.<wbr />bin
+7 -rwx 2072 &lt;date&gt; multiple-fs
+</pre>
+<p>There should be a file named ‘config.text’, as you can rename this file as follows:</p>
+<p>switch: rename flash:config.text flash: oldconfig.backup<br />
+<b><br />
+Step 4:</b></p>
+<p>To further boot the switch run the boot command as:</p>
+<pre>
+switch: boot
+</pre>
+<p>This will start the boot you are used to. When the switch is booted up, you will realize that the configuration is gone. But you are enabled on the switch now.</p>
+<p><b>Step 5:</b></p>
+<p>To recover the old configuration:</p>
+<pre>
+Switch#rename flash: oldconfig.backup flash:config.text
+</pre>
+<p>And now to replace the running configuration with the backup</p>
+<pre>
+Switch#copy flash: config.text running-config
+Destination filename [running-config]?
+</pre>
+<p>Press enter, and you will have your old switch configuration back and you are enabled.<br />
+Just remember to change your password now !</p>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/5-steps-of-password-recovery-for-cisco-2960-switch/">5 Steps of Password Recovery for Cisco 2960 Switch</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/5-steps-of-password-recovery-for-cisco-2960-switch/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Interface Bonding 802.3ad (LACP) with Cisco</title>
+		<link>/interface-bonding-802-3ad-lacp-with-cisco/</link>
+					<comments>/interface-bonding-802-3ad-lacp-with-cisco/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Fri, 11 Jan 2013 20:22:56 +0000</pubDate>
+				<category><![CDATA[Cisco]]></category>
+		<guid isPermaLink="false">/?p=490</guid>
+
+					<description><![CDATA[<p>Configuration Example: 802.3ad (LACP) with Cisco Catalyst GigabitEthernet Connection. /inteface bonding add slaves=ether1,ether2 \ mode=802.3ad lacp-rate=30secs \ link-monitoring=mii-type1 \ transmit-hash-policy=layer-2-and-3 Other part configuration (assuming the aggregation switch is a Cisco device, usable in EtherChannel / L3 environment): ! interface range GigabitEthernet 0/1-2 channel-protocol lacp channel-group 1 mode active ! interface PortChannel 1 no switchport ip... </p>
+<p><a class="small button secondary" href="/interface-bonding-802-3ad-lacp-with-cisco/">Continue Reading</a></p>
+The post <a href="/interface-bonding-802-3ad-lacp-with-cisco/">Interface Bonding 802.3ad (LACP) with Cisco</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-490"></span></p>
+<p><strong>Configuration Example: </strong></p>
+<p><strong>802.3ad (LACP) with Cisco Catalyst GigabitEthernet Connection.<br />
+</strong></p>
+<div>
+<pre>/inteface bonding add slaves=ether1,ether2 \
+   mode=802.3ad lacp-rate=30secs \
+   link-monitoring=mii-type1 \
+   transmit-hash-policy=layer-2-and-3</pre>
+</div>
+<p>Other part configuration (assuming the aggregation switch is a Cisco device, usable in EtherChannel / L3 environment):</p>
+<div>
+<pre>!
+interface range GigabitEthernet 0/1-2
+   channel-protocol lacp
+   channel-group 1 mode active
+!
+interface PortChannel 1
+   no switchport
+   ip address XXX.XXX.XXX.XXX XXX.XXX.XXX.XXX
+!</pre>
+</div>
+<p>Or for EtherChannel / L2 environment:</p>
+<div>
+<pre>!
+interface range GigabitEthernet 0/1-2
+   channel-protocol lacp
+   channel-group 1 mode active
+!
+interface PortChannel 1
+   switchport
+   switchport mode access
+   swichport access vlan XX
+!</pre>
+</div>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/interface-bonding-802-3ad-lacp-with-cisco/">Interface Bonding 802.3ad (LACP) with Cisco</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/interface-bonding-802-3ad-lacp-with-cisco/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Stub router</title>
+		<link>/stub-router/</link>
+					<comments>/stub-router/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Sat, 29 Dec 2012 18:35:32 +0000</pubDate>
+				<category><![CDATA[Cisco]]></category>
+		<guid isPermaLink="false">/?p=184</guid>
+
+					<description><![CDATA[<p>A Stub router, One-armed router or router on a stick is a router that routes traffic between virtual local area networks (VLANs). It has only a single Ethernet NIC that is part of two or more Virtual LANs, enabling them to be joined. &#160; &#160; SW0 Commands enable vlan database vlan 10 vlan 20 apply... </p>
+<p><a class="small button secondary" href="/stub-router/">Continue Reading</a></p>
+The post <a href="/stub-router/">Stub router</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-184"></span></p>
+<h1></h1>
+<p>A Stub router, One-armed router or router on a stick is a router that routes traffic between virtual local area networks (VLANs). It has only a single Ethernet NIC that is part of two or more Virtual LANs, enabling them to be joined.</p>
+<p>&nbsp;</p>
+<p><center><img loading="lazy" alt="" src="/wp-content/uploads/2012/12/stub-router-300x158.png" width="550" height="291" /></center><center></center>&nbsp;</p>
+<hr />
+<h3>SW0 Commands</h3>
+<pre>enable
+
+vlan database 
+vlan 10
+vlan 20
+apply 
+exit
+
+conf t
+hostname SW0
+
+int f0/0
+switchport mode trunk
+switchport trunk encapsulation dot1q
+
+int f0/1
+switchport mode access
+switchport access vlan 10
+
+int f0/2
+switchport mode access
+switchport access vlan 20
+
+exit
+exit
+write
+</pre>
+<hr />
+<h3>R0 Commands</h3>
+<pre>enable
+
+vlan database 
+vlan 10
+vlan 20
+apply 
+exit
+
+conf t
+hostname R0
+
+int f0/0
+no shutdown
+
+int f0/0.10
+encapsulation dot1Q 10
+ip ad 192.168.10.1 255.255.255.0
+
+int f0/0.20
+encapsulation dot1Q 20
+ip ad 192.168.20.1 255.255.255.0
+
+exit
+exit
+write
+</pre>
+<hr />
+<h3>PC1 Commands</h3>
+<pre>enable
+
+conf t
+hostname PC1
+
+int f0/0
+no shutdown
+ip ad 192.168.10.2 255.255.255.0
+exit
+
+ip route 0.0.0.0 0.0.0.0 192.168.10.1
+
+exit
+write
+</pre>
+<hr />
+<h3>PC2 Commands</h3>
+<pre>enable
+
+conf t
+hostname PC2
+
+int f0/0
+no shutdown
+ip ad 192.168.20.2 255.255.255.0
+exit
+
+ip route 0.0.0.0 0.0.0.0 192.168.20.1
+
+exit
+write
+</pre>
+<hr />
+<h3>PC1 Test</h3>
+<pre>PC1#ping 192.168.10.1
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 192.168.10.1, timeout is 2 seconds:
+.!!!!
+Success rate is 80 percent (4/5), round-trip min/avg/max = 4/9/16 ms
+PC1#ping 192.168.20.2
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 192.168.20.2, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 8/10/16 ms
+</pre>
+<hr />
+<h3>PC2 Test</h3>
+<pre>PC2#ping 192.168.20.1
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 192.168.20.1, timeout is 2 seconds:
+.!!!!
+Success rate is 80 percent (4/5), round-trip min/avg/max = 4/5/8 ms
+PC2#ping 192.168.10.2
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 192.168.10.2, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 8/9/12 ms
+</pre>
+<hr />
+<h3>SW0 Config</h3>
+<pre>!
+version 12.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname SW0
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no aaa new-model
+memory-size iomem 5
+!
+!
+ip cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ switchport mode trunk
+!
+interface FastEthernet0/1
+ switchport access vlan 10
+!
+interface FastEthernet0/2
+ switchport access vlan 20
+!
+interface FastEthernet0/3
+!
+interface FastEthernet0/4
+!
+interface FastEthernet0/5
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface FastEthernet0/13
+!
+interface FastEthernet0/14
+!
+interface FastEthernet0/15
+!
+interface Vlan1
+ no ip address
+!
+ip http server
+!
+ip forward-protocol nd
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+line aux 0
+line vty 0 4
+!
+!
+end
+</pre>
+<hr />
+<h3>R0 config</h3>
+<pre>!
+version 12.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R0
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no aaa new-model
+memory-size iomem 5
+!
+!
+ip cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/0.10
+ encapsulation dot1Q 10
+ ip address 192.168.10.1 255.255.255.0
+!
+interface FastEthernet0/0.20
+ encapsulation dot1Q 20
+ ip address 192.168.20.1 255.255.255.0
+!
+ip http server
+!
+ip forward-protocol nd
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+line aux 0
+line vty 0 4
+!
+!
+end
+</pre>
+<hr />
+<h3>PC1 config</h3>
+<pre>!
+version 12.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname PC1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no aaa new-model
+memory-size iomem 5
+!
+!
+ip cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ ip address 192.168.10.2 255.255.255.0
+ duplex auto
+ speed auto
+!
+ip http server
+!
+ip forward-protocol nd
+ip route 0.0.0.0 0.0.0.0 192.168.10.1
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+line aux 0
+line vty 0 4
+!
+!
+end
+</pre>
+<hr />
+<h3>PC2 Config</h3>
+<pre>!
+version 12.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname PC2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no aaa new-model
+memory-size iomem 5
+!
+!
+ip cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ ip address 192.168.20.2 255.255.255.0
+ duplex auto
+ speed auto
+!
+ip http server
+!
+ip forward-protocol nd
+ip route 0.0.0.0 0.0.0.0 192.168.20.1
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+line aux 0
+line vty 0 4
+!
+!
+end</pre>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/stub-router/">Stub router</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/stub-router/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>CDP: Cisco Discovery Protocol</title>
+		<link>/cdp-cisco-discovery-protocol/</link>
+					<comments>/cdp-cisco-discovery-protocol/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Sat, 29 Dec 2012 18:32:22 +0000</pubDate>
+				<category><![CDATA[Cisco]]></category>
+		<guid isPermaLink="false">/?p=182</guid>
+
+					<description><![CDATA[<p>CDP: Cisco Discovery Protocol is a Cisco proprietary protocol that allows you discover directly connected Cisco devices. It is a data link layer (layer 2) network protocol and it send announcements to the multicast destination address 01-00-0c-cc-cc-cc. Checking all neighbors show cdp neighbors show cdp neighbors detail show cdp entry * Checking specific neighbor show cdp... </p>
+<p><a class="small button secondary" href="/cdp-cisco-discovery-protocol/">Continue Reading</a></p>
+The post <a href="/cdp-cisco-discovery-protocol/">CDP: Cisco Discovery Protocol</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-182"></span></p>
+<p><strong>CDP:</strong> Cisco Discovery Protocol is a Cisco proprietary protocol that allows you discover directly connected Cisco devices. It is a data link layer (layer 2) network protocol and it send announcements to the multicast destination address 01-00-0c-cc-cc-cc.</p>
+<hr />
+<h3>Checking all neighbors</h3>
+<pre>show cdp neighbors
+show cdp neighbors detail
+show cdp entry *
+</pre>
+<hr />
+<h3>Checking specific neighbor</h3>
+<pre>show cdp entry &lt;Device ID&gt;
+</pre>
+<hr />
+<h3>Disabling CDP per interface</h3>
+<pre>configure terminal 
+interface gigabitEthernet 1/0/1
+no cdp enable 
+exit
+exit
+</pre>
+<hr />
+<h3>Disabling CDP globaly</h3>
+<pre>configure terminal 
+no cdp run
+exit
+</pre>
+<hr />
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/cdp-cisco-discovery-protocol/">CDP: Cisco Discovery Protocol</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/cdp-cisco-discovery-protocol/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Configuring VTP and VLANs on Cisco switches</title>
+		<link>/configuring-vtp-and-vlans-on-cisco-switches/</link>
+					<comments>/configuring-vtp-and-vlans-on-cisco-switches/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Sat, 29 Dec 2012 18:30:48 +0000</pubDate>
+				<category><![CDATA[Cisco]]></category>
+		<guid isPermaLink="false">/?p=180</guid>
+
+					<description><![CDATA[<p>Concepts VLAN: A virtual local area network, virtual LAN or VLAN, is a group of hosts with a common set of requirements that communicate as if they were attached to the same broadcast domain, regardless of their physical location. A VLAN has the same attributes as a physical local area network (LAN), but it allows for... </p>
+<p><a class="small button secondary" href="/configuring-vtp-and-vlans-on-cisco-switches/">Continue Reading</a></p>
+The post <a href="/configuring-vtp-and-vlans-on-cisco-switches/">Configuring VTP and VLANs on Cisco switches</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-180"></span></p>
+<h3>Concepts</h3>
+<p><strong>VLAN:</strong> A virtual local area network, virtual LAN or VLAN, is a group of hosts with a common set of requirements that communicate as if they were attached to the same broadcast domain, regardless of their physical location. A VLAN has the same attributes as a physical local area network (LAN), but it allows for end stations to be grouped together even if they are not located on the same network switch. VLAN membership can be configured through software instead of physically relocating devices or connections. (Wikipedia)</p>
+<p><strong>Trunk:</strong> A trunk link carries multiple VLANs through a single network link through the use of a &#8220;trunking protocol&#8221;. (Wikipedia)</p>
+<p><strong>802.1Q:</strong> To allow for multiple VLANs on one link, frames from individual VLANs must be identified by a &#8220;trunking protocol&#8221;. The most common and preferred method, IEEE 802.1Q adds a tag (4 bytes) to the Ethernet frame header, labeling it as belonging to a certain VLAN. (Wikipedia)</p>
+<p><strong>Native VLAN:</strong> If a switch receives untagged frames on a trunkport, they are assumed to be part of the vlan that are designated on the switchport as the native vlan.</p>
+<p><strong>VTP:</strong> VLAN Trunking Protocol (VTP) is a Layer 2 messaging protocol that propagates the definition of VLANs on the whole local area network. To do this, VTP carries VLAN information to all the switches in a VTP domain. VTP only works over trunk links. This includes Inter-Switch Link(ISL), IEEE 802.1q, and LAN emulation (LANE) trunks. (Wikipedia)</p>
+<p><strong>VTP Server:</strong> The VTP Server can add, delete or rename VLANS. It also advertises the domain name, The VLAN configuration and configuration revision number to all other switches in the VTP domain. It maintains a list of all VLANS in the domain in NVRAM and can retrieve this information even if switch reset occurs. The advertisements is sent to a special destination multicast MAC address 01-00-0C-CC-CC-CC.</p>
+<p><strong>VTP CLient:</strong> A VTP Client can not add, delete or rename VLANS. It maintains a list ot all VLANS in the domain, but does not store them.</p>
+<p><strong>VTP Transparent:</strong> A VTP Transparent switch must have its VLANS configured manually. Changes to VLAN configuration are not propagated to other switches. It will still relay VTP messages over its trunk links to other switches if it is in the same VTP domain or in a null VTP domain.</p>
+<p><strong>VTP Pruning:</strong> VTP pruning increases network available bandwidth by restricting flooded traffic to those trunk links that the traffic must use to reach the destination devices. Without VTP pruning, a switch floods broadcast, multicast, and unknown unicast traffic across all trunk links within a VTP domain even though receiving switches might discard them. (Cisco)</p>
+<hr />
+<h3>Monitoring VTP</h3>
+<pre>show vtp status
+show vtp counters
+</pre>
+<h3>Configuring VTP Server</h3>
+<pre>configure terminal
+vtp domain SW_DOMAIN1
+vtp password 123456
+vtp mode server
+vtp pruning
+end
+</pre>
+<h3>Resetting the VTP configuration revision number on clients</h3>
+<pre>show vtp status
+! Write down the domain name. 
+! Write down the configuration revision number. 
+configure terminal
+vtp domain TEMPNAME 
+end
+show vtp status
+configure terminal 
+! Restore original domain name.
+vtp domain domain-name
+end
+</pre>
+<h3>Configuring VTP Client</h3>
+<pre>configure terminal
+vtp domain SW_DOMAIN1 
+vtp password 123456
+vtp mode client
+end
+</pre>
+<h3>Checking defined VLANs</h3>
+<pre>show vlan
+show vlan brief
+</pre>
+<h3>Checking vlan database (vlan.dat)</h3>
+<pre>show flash
+</pre>
+<h3>Checking trunks</h3>
+<pre>show running-config interface gigabitEthernet 1/0/1
+show interfaces gigabitEthernet 1/0/1 switchport
+show interfaces gigabitEthernet 1/0/1 trunk
+show interfaces trunk
+</pre>
+<h3>Configuring trunk ports</h3>
+<pre>configure terminal
+interface range gigabitEthernet 1/0/1 - 4
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport nonegotiate
+no shutdown
+end
+</pre>
+<h3>Configuring access ports</h3>
+<pre>configure terminal
+interface range fastEthernet 1/0/1 - 48
+switchport mode access
+no cdp enable
+end
+</pre>
+<h3>Creating VLANs &#8211; old way</h3>
+<pre>enable
+vlan database
+vlan 100 name USERS 
+apply
+end
+</pre>
+<h3>Creating VLANs &#8211; new way</h3>
+<pre>configure terminal
+vlan 100
+name USERS
+end
+</pre>
+<h3>Assigning ports to VLANs</h3>
+<pre>configure terminal
+interface fastEthernet 1/0/1
+switchport mode access
+no cdp enable
+switchport access vlan 100
+end
+</pre>
+<h3>Configuring management VLAN</h3>
+<pre>configure terminal
+! Disable default VLAN 1
+interface vlan 1
+no ip address
+shutdown
+exit
+! Create new VLAN 2 for management
+vlan 2
+name MANAGEMENT
+exit
+! Assigin IP address to management VLAN 2
+interface vlan 2
+ip address 172.31.0.1 255.255.255.0
+no shutdown
+end
+</pre>
+<h3>Configuring native VLAN</h3>
+<pre>configure terminal
+! Create new VLAN 3 for native VLAN use
+vlan 3
+name NATIVE
+exit
+! Configuring VLAN 3 as native on trunk ports
+interface range gigabitEthernet 1/0/1 - 4
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport nonegotiate
+switchport trunk native vlan 3
+no shutdown
+end
+</pre>
+<h3>Control what VLANs can pass through trunk ports</h3>
+<pre>configure terminal
+interface range gigabitEthernet 1/0/1 - 4
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport nonegotiate
+switchport trunk native vlan 3
+switchport trunk allowed 10,20,30
+no shutdown
+end
+</pre>
+<h3>Clearing switch config</h3>
+<pre>write erase
+delete flash:vlan.dat</pre>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/configuring-vtp-and-vlans-on-cisco-switches/">Configuring VTP and VLANs on Cisco switches</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/configuring-vtp-and-vlans-on-cisco-switches/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>General Cisco Settings</title>
+		<link>/general-cisco-settings/</link>
+					<comments>/general-cisco-settings/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Sat, 29 Dec 2012 18:29:24 +0000</pubDate>
+				<category><![CDATA[Cisco]]></category>
+		<guid isPermaLink="false">/?p=178</guid>
+
+					<description><![CDATA[<p>Hostname configure terminal hostname SW1 end Enable secret password configure terminal enable secret 123456 end Telnet password configure terminal line vty 0 4 password 123456 login line vty 5 15 password 123456 login end Console password configure terminal line console 0 password 123456 login end Encrypt all passwords configure terminal service password-encryption end Disable console... </p>
+<p><a class="small button secondary" href="/general-cisco-settings/">Continue Reading</a></p>
+The post <a href="/general-cisco-settings/">General Cisco Settings</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-178"></span></p>
+<h3>Hostname</h3>
+<pre>configure terminal
+hostname SW1
+end
+</pre>
+<hr />
+<h3>Enable secret password</h3>
+<pre>configure terminal
+enable secret 123456
+end
+</pre>
+<hr />
+<h3>Telnet password</h3>
+<pre>configure terminal 
+line vty 0 4
+password 123456
+login
+line vty 5 15
+password 123456
+login
+end
+</pre>
+<hr />
+<h3>Console password</h3>
+<pre>configure terminal 
+line console 0
+password 123456
+login
+end
+</pre>
+<hr />
+<h3>Encrypt all passwords</h3>
+<pre>configure terminal 
+service password-encryption 
+end
+</pre>
+<hr />
+<h3>Disable console EXEC timeout</h3>
+<pre>configure terminal 
+line console 0
+exec-timeout 0 0
+end
+</pre>
+<hr />
+<h3>Disable console logging</h3>
+<pre>configure terminal 
+no logging console
+end
+</pre>
+<hr />
+<h3>&#8220;%Error opening tftp://255.255.255.255/network-confg (Timed out)&#8221; Error Message Prevention</h3>
+<pre>configure terminal
+no service config
+end
+</pre>
+<hr />
+<h3>Prevent &#8220;Translating&#8230;. domain server (255.255.255.255)&#8221; Messages after an Invalid Command</h3>
+<ul>
+<li>First method: Disabling automatic connection with a hostname in command line
+<pre>configure terminal 
+line  console 0
+transport preferred none
+line vty 0 4
+transport preferred none
+line vty 5 15
+transport preferred none
+end
+</pre>
+</li>
+<li>Second method: Disabling ip domian lookup
+<pre>configure terminal 
+no ip domain-lookup 
+end
+</pre>
+</li>
+</ul>
+<hr />
+<h3>Keyboard shotcuts</h3>
+<ul>
+<li>[Ctrl-A] : Moves to the start of a line</li>
+<li>[Ctrl-E] : Moves to the end of a line</li>
+<li>[Ctrl-D] : Deletes the character at the cursor</li>
+<li>[Ctrl-K] : Deletes all characters from the cursor to the end of the line</li>
+<li>[Ctrl-U] : Deletes all characters from the cursor to the beginning of the line</li>
+<li>[Ctrl-W] : Deletes the word to the left of the cursor</li>
+<li></li>
+</ul>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/general-cisco-settings/">General Cisco Settings</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/general-cisco-settings/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Linux &#8211; Squid 3 &#8211; Tproxy &#8211; WCCP &#8211; Cisco</title>
+		<link>/linux-squid-3-tproxy-wccp-cisco/</link>
+					<comments>/linux-squid-3-tproxy-wccp-cisco/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Mon, 24 Dec 2012 19:55:13 +0000</pubDate>
+				<category><![CDATA[Cisco]]></category>
+		<category><![CDATA[Linux]]></category>
+		<guid isPermaLink="false">/?p=44</guid>
+
+					<description><![CDATA[<p>Squid-3.1 cd /usr/src wget -c http://www.squid-cache.org/Versions/v3/3.1/squid-3.1.15.tar.gz tar xf squid-3.1.15.tar.gz cd squid-3.1.15 ulimit -HSn 16384 ulimit -HSd unlimited ./configure \ --prefix=/usr/local/squid \ --enable-forward-log \ --enable-follow-x-forwarded-for \ --enable-snmp \ --enable-linux-netfilter \ --enable-http-violations \ --enable-delay-pools \ --enable-storeio=diskd,aufs,ufs \ --with-large-files \ --enable-large-cache-files \ --with-filedescriptors=16384 \ --enable-async-io=128 \ --enable-removal-policies=lru,heap \ --enable-useragent-log \ --enable-referer-log \ --enable-err-languages=English \ --enable-default-err-language=English \ --enable-zph-qos \... </p>
+<p><a class="small button secondary" href="/linux-squid-3-tproxy-wccp-cisco/">Continue Reading</a></p>
+The post <a href="/linux-squid-3-tproxy-wccp-cisco/">Linux – Squid 3 – Tproxy – WCCP – Cisco</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-44"></span></p>
+<hr />
+<h3>Squid-3.1</h3>
+<pre>cd /usr/src
+wget -c http://www.squid-cache.org/Versions/v3/3.1/squid-3.1.15.tar.gz
+tar xf squid-3.1.15.tar.gz
+cd squid-3.1.15 
+ulimit -HSn 16384
+ulimit -HSd unlimited
+./configure \
+  --prefix=/usr/local/squid \
+  --enable-forward-log \
+  --enable-follow-x-forwarded-for \
+  --enable-snmp \
+  --enable-linux-netfilter \
+  --enable-http-violations \
+  --enable-delay-pools \
+  --enable-storeio=diskd,aufs,ufs \
+  --with-large-files \
+  --enable-large-cache-files \
+  --with-filedescriptors=16384 \
+  --enable-async-io=128 \
+  --enable-removal-policies=lru,heap \
+  --enable-useragent-log \
+  --enable-referer-log \
+  --enable-err-languages=English \
+  --enable-default-err-language=English \
+  --enable-zph-qos \
+   --enable-icap-client \
+&amp;&amp; make &amp;&amp; make install
+cp /usr/local/squid/etc/squid.conf{,.bak}
+</pre>
+<hr />
+<h3>/usr/local/squid/etc/squid.conf</h3>
+<pre># Minimum ACL configuration
+acl manager proto cache_object
+acl localhost src 127.0.0.1/32 ::1
+acl to_localhost dst 127.0.0.0/8 0.0.0.0/32 ::1
+acl SSL_ports port  443
+acl Safe_ports port 80          # http
+acl Safe_ports port 21          # ftp
+acl Safe_ports port 443         # https
+acl Safe_ports port 70          # gopher
+acl Safe_ports port 210         # wais
+acl Safe_ports port 1025-65535  # unregistered ports
+acl Safe_ports port 280         # http-mgmt
+acl Safe_ports port 488         # gss-http
+acl Safe_ports port 591         # filemaker
+acl Safe_ports port 777         # multiling http
+acl CONNECT method CONNECT
+
+# Only allow cachemgr access from localhost
+http_access allow manager localhost
+http_access deny manager
+
+# Deny requests to certain unsafe ports
+http_access deny !Safe_ports
+
+# Deny CONNECT to other than secure SSL ports
+http_access deny CONNECT !SSL_ports
+
+# Protect innocent web applications running on the
+# proxy server who think the only one who can access
+# services on "localhost" is a local user
+http_access deny to_localhost
+
+# Clients access rules
+acl localnet src 192.168.123.240/28 192.168.84.0/28
+http_access allow localnet
+http_access allow localhost
+
+# Finally deny all other access to this proxy
+http_access deny all
+
+# Deny all ICP requests to this proxy
+icp_access deny all
+
+# Deny all HTCP requests to this proxy
+htcp_access deny all
+
+# Squid normall listener
+#http_port 3128
+http_port 3128 tcpkeepalive=60,10,6
+
+# TPROXY spoof listener
+#http_port 3129 tproxy
+http_port 3129 tproxy tcpkeepalive=60,10,6 disable-pmtu-discovery=transparent
+
+# Override /etc/resolv.conf
+#dns_nameservers 8.8.8.8
+
+# Protect dynamic content
+hierarchy_stoplist cgi-bin ? dll aspx
+
+# Cache memory should be at most half of RAM size in MB
+cache_mem 11264 MB
+
+# These objects should be kept in memory
+maximum_object_size_in_memory 40 KB
+
+# Which objects are replaced when memory space is needed
+cache_replacement_policy heap LFUDA
+memory_replacement_policy heap LFUDA
+
+# Disk swap directories
+cache_dir aufs /cache/1 122880 512 2048
+cache_dir aufs /cache/2 122880 512 2048
+cache_dir aufs /cache/3 122880 512 2048
+cache_dir aufs /cache/4 122880 512 2048
+
+# These objects should be kept on hard disk
+maximum_object_size 65536 KB
+
+# Water marks for cache object replacement
+cache_swap_high 95
+cache_swap_low 93
+
+# Logfile format
+logformat squid %ts.%03tu %6tr %&gt;a %Ss/%03&gt;Hs %&lt;st %rm %ru %un %Sh/%&lt;A %mt
+
+# Access log address
+access_log /usr/local/squid/var/logs/access.log squid
+
+# Number of old logfiles
+logfile_rotate 0
+
+# Watchdog configs
+#acl watchdog src 192.168.0.17
+#log_access deny watchdog
+
+# Leave coredumps in the first cache dir
+coredump_dir /cache/1
+
+# Continues downloading abort
+quick_abort_min 16 KB
+quick_abort_max 16 KB
+quick_abort_pct 98
+
+# Time-to-Live for failed requests
+negative_ttl 3 minutes
+
+# How log shuold cache positive DNS responses
+positive_dns_ttl 1 hours
+
+# Maximum size for HTTP headers
+request_header_max_size 100 KB
+
+# Shutdown pending time
+shutdown_lifetime 15 seconds
+
+# Administrator
+cache_mgr khoshnud@gmail.com
+
+# Hostname
+visible_hostname CacheServer
+
+# Don't show version in error pages
+httpd_suppress_version_string on
+
+# Costume error pages
+#error_directory /usr/local/squid/share/errors/mine/
+
+# SNMP settings for MRTG access
+acl mrtg src 127.0.0.1 # 192.168.0.17
+acl snmppublic snmp_community public
+snmp_access allow snmppublic mrtg
+snmp_access deny all
+snmp_port 3401
+
+# Inter Cache Communication Protocol
+icp_port 0
+
+# Hyper Text Caching Protocol discovery
+htcp_port 0
+
+# Water marks for the IP cache
+ipcache_size 40960
+ipcache_high 95
+ipcache_low 90
+
+# Parallel requests from a pipeline.
+pipeline_prefetch on
+
+# Close immediately half-closed connections
+half_closed_clients off
+
+# Transparent Headers
+forwarded_for transparent
+via off
+
+# Mark HIT packets
+qos_flows local-hit=0x30
+
+# Purge: squidclient -m PURGE http://www.google.com/
+acl purge method PURGE
+http_access allow purge localhost
+http_access deny purge
+
+# Web Services workaround
+ignore_expect_100 on
+
+# Maximum connection limit of single client IP
+#client_ip_max_connections -1
+
+# eCAP Gzip (UNSTABLE)
+#ecap_enable on
+#ecap_service gzip_service respmod_precache 0 ecap://www.vigos.com/ecap_gzip
+#loadable_modules /usr/local/lib/ecap_adapter_gzip.so
+#acl GZIP_HTTP_STATUS http_status 200
+#adaptation_access gzip_service allow GZIP_HTTP_STATUS
+
+wccp2_router 172.16.106.233 
+wccp2_forwarding_method gre
+wccp2_return_method gre
+wccp2_service dynamic 80
+wccp2_service_info 80 protocol=tcp flags=src_ip_hash priority=240 ports=80
+wccp2_service dynamic 90
+wccp2_service_info 90 protocol=tcp flags=dst_ip_hash,ports_source priority=240 ports=80
+
+# Refresh patterns (refresh-ims)
+# Image files
+refresh_pattern -i \.png$                10080   90%     43200
+refresh_pattern -i \.gif$                10080   90%     43200
+refresh_pattern -i \.jpg$                10080   90%     43200
+refresh_pattern -i \.jpeg$               10080   90%     43200
+refresh_pattern -i \.bmp$                10080   90%     43200
+refresh_pattern -i \.tif$                10080   90%     43200
+refresh_pattern -i \.tiff$               10080   90%     43200
+
+# Compressed files
+refresh_pattern -i \.zip$                10080   90%     43200
+refresh_pattern -i \.rar$                10080   90%     43200
+refresh_pattern -i \.tar$                10080   90%     43200
+refresh_pattern -i \.gz$                 10080   90%     43200
+refresh_pattern -i \.tgz$                10080   90%     43200
+refresh_pattern -i \.z$                  10080   90%     43200
+refresh_pattern -i \.arj$                10080   90%     43200
+refresh_pattern -i \.lha$                10080   90%     43200
+refresh_pattern -i \.lzh$                10080   90%     43200
+
+# Binary files
+refresh_pattern -i \.exe$                10080   90%     43200
+refresh_pattern -i \.msi$                10080   90%     43200
+
+# Multimedia files
+refresh_pattern -i \.mp3$                10080   90%     43200
+refresh_pattern -i \.wav$                10080   90%     43200
+refresh_pattern -i \.mid$                10080   90%     43200
+refresh_pattern -i \.midi$               10080   90%     43200
+refresh_pattern -i \.ram$                10080   90%     43200
+refresh_pattern -i \.ra$                 10080   90%     43200
+refresh_pattern -i \.mov$                10080   90%     43200
+refresh_pattern -i \.avi$                10080   90%     43200
+refresh_pattern -i \.wmv$                10080   90%     43200
+refresh_pattern -i \.mpg$                10080   90%     43200
+refresh_pattern -i \.mpeg$               10080   90%     43200
+refresh_pattern -i \.swf$                10080   90%     43200
+
+# Document files
+refresh_pattern -i \.pdf$                10080   90%     43200
+refresh_pattern -i \.ps$                 10080   90%     43200
+refresh_pattern -i \.doc$                10080   90%     43200
+refresh_pattern -i \.ppt$                10080   90%     43200
+refresh_pattern -i \.pps$                10080   90%     43200
+
+# Default patterns
+refresh_pattern ^ftp:                    1440    20%     10080
+refresh_pattern ^gopher:                 1440    0%      1440
+refresh_pattern -i (/cgi-bin/|\?)        0       0%      0
+refresh_pattern .                        0       20%     4320
+</pre>
+<hr />
+<h3>/etc/rc.d/rc.squid</h3>
+<pre>#!/bin/bash
+#
+# /etc/rc.d/rc.squid
+#
+PIDFILE="/usr/local/squid/var/run/squid.pid"
+TIMEOUT=60
+
+start()
+{
+  echo -n 'Starting TPROXY Squid . . . '
+
+  PROCESS=$(ps -A | egrep ' squid$')
+  if [ "$PROCESS" == "" ]; then
+    if [ -f ${PIDFILE} ] ; then
+      rm ${PIDFILE}
+    fi
+  fi
+  ulimit -HSn 16384
+  ulimit -HSd unlimited
+  /usr/local/squid/sbin/squid
+
+  echo "Ok"
+}
+
+stop()
+{
+  echo 'Stoping TPROXY Squid'
+
+  /usr/local/squid/sbin/squid -k shutdown
+  TIME=0
+  while [ "$TIME" != "$TIMEOUT" ] ; do
+    TIME=$(( $TIME + 1 ))
+    echo -n $TIME
+    if [ "$(pgrep '^squid$')" == "" ]; then
+      if [ -f ${PIDFILE} ] ; then
+        rm ${PIDFILE}
+      fi
+      break
+    else
+      echo -n "."
+    fi
+    sleep 1
+  done
+  killall squid &amp;&gt; /dev/null
+  killall squid &amp;&gt; /dev/null
+  killall squid &amp;&gt; /dev/null
+  echo ".Ok"
+}
+
+case "$1" in
+  'start')
+    start
+    ;;
+
+  'stop')
+    stop
+    ;;
+
+  'restart')
+    stop
+    start
+    ;;
+
+  'rotate')
+    echo -n 'Rotating TPROXY Squid log files . . . '
+    /usr/local/squid/sbin/squid -k rotate
+    echo "Ok"
+    ;;
+
+  *)
+    echo "usage $0 start|stop|restart|rotate"
+    ;;
+
+esac
+</pre>
+<hr />
+<h3>/root/scripts/vlan.sh</h3>
+<pre>#!/bin/bash
+PATH="/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin"
+
+# vlan config
+ifconfig eth0 0.0.0.0 up
+vconfig add eth0 976
+ifconfig eth0.976 172.16.106.234 netmask 255.255.255.248
+route add default gw 172.16.106.233
+</pre>
+<hr />
+<h3>/root/scripts/gre-tunnel.sh</h3>
+<pre>#!/bin/bash
+PATH="/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin"
+
+# Load NAT and GRE  Modules
+#for MOD in $(/usr/bin/find /lib/modules/$(uname -r)/kernel/net -name "*nat*"); do
+#  /usr/bin/echo Loading $(/usr/bin/basename $MOD .ko)
+#  /sbin/modprobe $(/usr/bin/basename $MOD .ko)
+#done
+#for MOD in $(/usr/bin/find /lib/modules/$(uname -r)/kernel/net -name "*_gre.ko"); do
+#  /usr/bin/echo Loading $(/usr/bin/basename $MOD .ko)
+#  /sbin/modprobe $(/usr/bin/basename $MOD .ko)
+#done
+
+# Make GRE Tunnel between cache and router
+ROUTER=172.16.106.233
+CACHE=172.16.106.234
+modprobe ip_gre
+ip link set eth0.976 mtu 1476
+ip tunnel add wccp0 mode gre remote $ROUTER local $CACHE dev eth0.976
+ip addr add $CACHE dev wccp0
+ip link set wccp0 up
+</pre>
+<hr />
+<h3>/etc/rc.d/rc.local</h3>
+<pre>#!/bin/sh
+#
+# /etc/rc.d/rc.local:  Local system initialization script.
+#
+# Put any local startup commands in here.  Also, if you have
+# anything that needs to be run at shutdown time you can
+# make an /etc/rc.d/rc.local_shutdown script and put those
+# commands in there.
+
+/root/scripts/vlan.sh
+/root/scripts/gre-tunnel.sh
+
+# use less swap memory
+echo 50 &gt; /proc/sys/vm/swappiness
+
+# tcp keep alive tuning
+echo 60 &gt;  /proc/sys/net/ipv4/tcp_keepalive_time
+echo 10 &gt; /proc/sys/net/ipv4/tcp_keepalive_intvl
+echo 6 &gt;  /proc/sys/net/ipv4/tcp_keepalive_probes
+echo 65000 &gt; /proc/sys/net/ipv4/tcp_max_syn_backlog
+echo 1024 65000 &gt; /proc/sys/net/ipv4/ip_local_port_range
+echo 1 &gt; /proc/sys/net/ipv4/tcp_window_scaling
+echo 1 &gt; /proc/sys/net/ipv4/tcp_timestamps
+echo 33554432 &gt; /proc/sys/net/core/rmem_max
+echo 33554432 &gt; /proc/sys/net/core/wmem_max
+echo 4096 87380 33554432 &gt; /proc/sys/net/ipv4/tcp_rmem
+echo 4096 87380 33554432 &gt; /proc/sys/net/ipv4/tcp_wmem
+echo 1 &gt; /proc/sys/net/ipv4/tcp_no_metrics_save
+echo 3000 &gt; /proc/sys/net/core/netdev_max_backlog
+echo 30 &gt; /proc/sys/net/ipv4/tcp_fin_timeout
+echo 1800 &gt; /proc/sys/net/ipv4/tcp_keepalive_time
+echo 0 &gt; /proc/sys/net/ipv4/tcp_timestamps
+echo 256960 &gt; /proc/sys/net/core/rmem_default
+echo 256960 &gt; /proc/sys/net/core/wmem_default
+echo 524288 &gt; /proc/sys/net/ipv4/netfilter/ip_conntrack_max
+echo 1 &gt; /proc/sys/net/ipv4/tcp_tw_recycle
+
+# Start TPROXY Squid Cache Server:
+if [ -x /etc/rc.d/rc.squid ]; then
+  /etc/rc.d/rc.squid start
+fi
+
+# TPROXY Divert
+iptables -t mangle -N DIVERT
+iptables -t mangle -A DIVERT -j MARK --set-mark 1
+iptables -t mangle -A DIVERT -j ACCEPT
+iptables -t mangle -A PREROUTING -p tcp -m socket -j DIVERT
+iptables -t mangle -A PREROUTING -p tcp --dport 80 -j TPROXY --tproxy-mark 0x1/0x1 --on-port 3129
+
+# TPROXY Route
+ip rule add fwmark 1 lookup 100
+ip route add local 0.0.0.0/0 dev lo table 100
+</pre>
+<hr />
+<h3>/etc/rc.d/rc.local_shutdown</h3>
+<pre>#!/bin/bash
+# Stop TPROXY Squid Cache server:
+if [ -x /etc/rc.d/rc.squid ]; then
+  /etc/rc.d/rc.squid stop
+fi
+</pre>
+<hr />
+<h3>/etc/logrotate.d/squid</h3>
+<pre>/usr/local/squid/var/logs/access.log {
+  daily
+  rotate 186
+  start 1
+  copytruncate
+  compress
+  compresscmd /usr/bin/bzip2
+  compressext .bz2
+  compressoptions -sq9
+  dateext
+  notifempty
+  missingok
+}
+
+/usr/local/squid/var/logs/cache.log /usr/local/squid/var/logs/store.log {
+  daily
+  rotate 31
+  start 1
+  copytruncate
+  compress
+  compresscmd /usr/bin/bzip2
+  compressext .bz2
+  compressoptions -sq9
+  dateext
+  notifempty
+  missingok
+  sharedscripts
+  postrotate
+    /usr/local/squid/sbin/squid -k rotate
+  endscript
+}
+</pre>
+<hr />
+<h3>Partitions &amp; memory</h3>
+<pre># cat /etc/fstab
+
+/dev/cciss/c0d0p1 swap            swap        defaults         0   0
+/dev/cciss/c0d0p2 /               reiserfs    defaults         1   1
+/dev/cdrom       /mnt/cdrom       auto        noauto,owner,ro  0   0
+/dev/fd0         /mnt/floppy      auto        noauto,owner     0   0
+devpts           /dev/pts         devpts      gid=5,mode=620   0   0
+proc             /proc            proc        defaults         0   0
+tmpfs            /dev/shm         tmpfs       defaults         0   0
+
+/dev/cciss/c0d0p5 /cache/1        reiserfs    noatime,notail   1   2
+/dev/cciss/c0d0p6 /cache/2        reiserfs    noatime,notail   1   2
+/dev/cciss/c0d0p7 /cache/3        reiserfs    noatime,notail   1   2
+/dev/cciss/c0d0p8 /cache/4        reiserfs    noatime,notail   1   2
+
+# df -h
+
+Filesystem        Type        Size  Used Avail Use% Mounted on
+/dev/root         reiserfs    21G   4.9G   16G  25% /
+tmpfs             tmpfs       32G      0   32G   0% /dev/shm
+/dev/cciss/c0d0p5 reiserfs    182G  200M  182G   1% /cache/1
+/dev/cciss/c0d0p6 reiserfs    182G  200M  182G   1% /cache/2
+/dev/cciss/c0d0p7 reiserfs    182G  200M  182G   1% /cache/3
+/dev/cciss/c0d0p8 reiserfs    191G  200M  190G   1% /cache/4
+
+# free -m
+
+             total       used       free     shared    buffers     cached
+Mem:         64448        345      64102          0         20        122
+-/+ buffers/cache:        201      64246
+Swap:        65538          0      65538
+</pre>
+<hr />
+<h3>First time lunch</h3>
+<pre>mkdir /usr/local/squid/var/cache
+mkdir -p /cache/{1,2,3,4}
+chown -R nobody:nobody /cache
+chown -R nobody:nobody /usr/local/squid/var/logs
+chmod +x /etc/rc.d/rc.local_shutdown
+chmod  +x /root/scripts/vlan.sh
+chmod  +x /root/scripts/gre-tunnel.sh
+chmod +x /etc/rc.d/rc.squid
+/usr/local/squid/sbin/squid -z
+/etc/rc.d/rc.squid start
+</pre>
+<hr />
+<h3>Cico Router 3845</h3>
+<pre># telnet 172.16.106.233
+Trying 172.16.106.233...
+Connected to 172.16.106.233.
+Escape character is '^]'.
+
+User Access Verification
+
+Password: 
+router3845&gt;enable 
+Password: 
+router3845#show version 
+Cisco IOS Software, 3800 Software (C3845-SPSERVICESK9-M), Version 15.0(1)M4, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2010 by Cisco Systems, Inc.
+Compiled Thu 28-Oct-10 21:00 by prod_rel_team
+
+ROM: System Bootstrap, Version 12.4(13r)T15, RELEASE SOFTWARE (fc1)
+
+router3845 uptime is 19 hours, 17 minutes
+System returned to ROM by power-on
+System image file is "flash:c3845-spservicesk9-mz.150-1.M4.bin"
+Last reload type: Normal Reload
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+Cisco 3845 (revision 1.0) with 487423K/36864K bytes of memory.
+Processor board ID FHK1504F0MJ
+2 Gigabit Ethernet interfaces
+DRAM configuration is 64 bits wide with parity enabled.
+447K bytes of NVRAM.
+126976K bytes of ATA System CompactFlash (Read/Write)
+
+License Info:
+
+License UDI:
+
+-------------------------------------------------
+Device#   PID                   SN
+-------------------------------------------------
+*0        CISCO3845-MB          FOC14512NFP     
+
+Configuration register is 0x2142 (will be 0x2102 at next reload)
+
+router3845#dir flash:
+Directory of flash:/
+
+    1  -rw-    56307576  Jan 21 2011 09:39:36 +00:00  c3845-spservicesk9-mz.150-1.M4.bin
+    2  -rw-        2903  Jan 21 2011 09:49:14 +00:00  cpconfig-38xx.cfg
+    3  -rw-     2938880  Jan 21 2011 09:49:26 +00:00  cpexpress.tar
+    4  -rw-        1038  Jan 21 2011 09:49:32 +00:00  home.shtml
+    5  -rw-      122880  Jan 21 2011 09:49:40 +00:00  home.tar
+    6  -rw-      793739  Jan 21 2011 09:49:48 +00:00  256MB.sdf
+    7  -rw-     1697952  Jan 21 2011 09:50:02 +00:00  securedesktop-ios-3.1.1.45-k9.pkg
+    8  -rw-      415956  Jan 21 2011 09:50:14 +00:00  sslclient-win-1.1.4.176.pkg
+
+129748992 bytes total (67457024 bytes free)
+router3845#sh run
+Building configuration...
+
+Current configuration : 1975 bytes
+!
+! Last configuration change at 23:08:10 UTC Wed Sep 21 2011
+!
+version 15.0
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname router3845
+!
+boot-start-marker
+boot-end-marker
+!
+enable secret **********
+enable password ********** 
+!
+no aaa new-model
+!
+dot11 syslog
+ip source-route
+!
+!
+ip cef
+!
+!
+no ip domain lookup
+ip wccp web-cache
+ip wccp 80 redirect-list 100
+ip wccp 90 redirect-list 100
+no ipv6 cef
+multilink bundle-name authenticated
+!
+!
+!
+!
+voice-card 0
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CISCO3845-MB sn FOC14512NFP
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0
+ description to ne80(801)
+ no ip address
+ duplex full
+ speed auto
+ media-type sfp
+ no negotiation auto
+ no mop enabled
+!
+interface GigabitEthernet0/0.998
+ description to cisco
+ encapsulation dot1Q 998
+ ip address 172.16.106.226 255.255.255.252
+!
+interface GigabitEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/1.975
+ description Clients-Network
+ encapsulation dot1Q 975
+ ip address 10.92.107.6 255.255.255.252
+ ip wccp 80 redirect in
+ ip wccp 90 redirect out
+!
+interface GigabitEthernet0/1.976
+ description Squid-Tproxy-WCCP
+ encapsulation dot1Q 976
+ ip address 172.16.106.233 255.255.255.248
+ ip wccp redirect exclude in
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+ip route 0.0.0.0 0.0.0.0 172.16.106.225
+ip route 192.168.123.240 255.255.255.240 10.92.107.5
+ip route 192.168.84.0 255.255.255.240 10.92.107.5
+!
+access-list 100 permit ip 192.168.123.240 0.0.0.15 any
+access-list 100 permit ip any 192.168.123.240 0.0.0.15
+access-list 100 permit ip 192.168.84.0 0.0.0.15 any
+access-list 100 permit ip any 192.168.84.0 0.0.0.15
+access-list 100 deny   ip any any
+dialer-list 1 protocol ip permit
+!
+snmp-server community ******** RO
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+line con 0
+line aux 0
+line vty 0 4
+ password **********
+ login
+!
+scheduler allocate 20000 1000
+end
+
+router3845#exit
+Connection closed by foreign host.
+</pre>
+<hr />
+<h3>Transparency Test Script</h3>
+<p><a href="http://devel.squid-cache.org/cgi-bin/test">http://devel.squid-cache.org/cgi-bin/test</a></p>
+<hr />
+<h3>Bookmarks</h3>
+<p><a href="http://onlamp.com/pub/a/onlamp/2005/11/17/tcp_tuning.html?page=2">http://onlamp.com/pub/a/onlamp/2005/11/17/tcp_tuning.html?page=2</a><br />
+<a href="http://fasterdata.es.net/TCP-tuning//linux.html">http://fasterdata.es.net/TCP-tuning//linux.html</a><br />
+<a href="http://fasterdata.es.net/TCP-tuning//TCP-tuning.html">http://fasterdata.es.net/TCP-tuning//TCP-tuning.html</a><br />
+<a href="http://pmoghadam.com/">http://pmoghadam.com/</a></p>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/linux-squid-3-tproxy-wccp-cisco/">Linux – Squid 3 – Tproxy – WCCP – Cisco</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/linux-squid-3-tproxy-wccp-cisco/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

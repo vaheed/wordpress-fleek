@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments for vaheeD khoshnouD	</title>
+	<atom:link href="/comments/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>linux, mikrotik, macosx</description>
+	<lastBuildDate>Sat, 17 Oct 2020 06:25:29 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.7.2</generator>
+	<item>
+		<title>
+		Comment on How To Install Torrent Client on linux With Web Interface to access anywhere by Loreen Mehdi		</title>
+		<link>/how-to-install-torrent-client-on-linux-with-web-interface-to-access-anywhere/#comment-4737</link>
+
+		<dc:creator><![CDATA[Loreen Mehdi]]></dc:creator>
+		<pubDate>Sat, 17 Oct 2020 06:25:29 +0000</pubDate>
+		<guid isPermaLink="false">/?p=556#comment-4737</guid>
+
+					<description><![CDATA[You actually make it seem so easy with your presentation but I find this matter to be actually something which I think I would never understand. It seems too complex and very broad for me. I am looking forward for your next post, I will try to get the hang of it!&#124;]]></description>
+			<content:encoded><![CDATA[<p>You actually make it seem so easy with your presentation but I find this matter to be actually something which I think I would never understand. It seems too complex and very broad for me. I am looking forward for your next post, I will try to get the hang of it!|</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

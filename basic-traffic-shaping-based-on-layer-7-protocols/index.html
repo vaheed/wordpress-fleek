@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-US"
+	prefix="og: https://ogp.me/ns#" > <![endif]--><!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en-US"
+	prefix="og: https://ogp.me/ns#" > <![endif]--><!--[if IE 8]>    <html class="no-js lt-ie9" lang="en-US"
+	prefix="og: https://ogp.me/ns#" > <![endif]--><!--[if gt IE 8]><!--><html class="no-js" lang="en-US" prefix="og: https://ogp.me/ns#"> <!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="pingback" href="/xmlrpc.php">
+
+<meta name="viewport" content="width=device-width">
+
+<title>Basic traffic shaping based on layer-7 protocols | vaheeD khoshnouD</title>
+<meta name="description" content="If we want to ensure decent internet browsing for more users using the same internet connection, but we don’t want to disable any protocols (such as p2p), just to make the priority of http higher, we can use these rules. Packets are marked at the public side in /ip firewall mangle. Packets are marked based on layer-7 signatures... Continue Reading">
+<link rel="canonical" href="/basic-traffic-shaping-based-on-layer-7-protocols/">
+<meta property="og:site_name" content="vaheeD khoshnouD | linux, mikrotik, macosx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Basic traffic shaping based on layer-7 protocols | vaheeD khoshnouD">
+<meta property="og:description" content="If we want to ensure decent internet browsing for more users using the same internet connection, but we don’t want to disable any protocols (such as p2p), just to make the priority of http higher, we can use these rules. Packets are marked at the public side in /ip firewall mangle. Packets are marked based on layer-7 signatures... Continue Reading">
+<meta property="og:url" content="http://vaheed.net/basic-traffic-shaping-based-on-layer-7-protocols/">
+<meta property="article:published_time" content="2013-01-02T18:38:01Z">
+<meta property="article:modified_time" content="2013-01-18T19:28:12Z">
+<meta property="twitter:card" content="summary">
+<meta property="twitter:domain" content="vaheed.net">
+<meta property="twitter:title" content="Basic traffic shaping based on layer-7 protocols | vaheeD khoshnouD">
+<meta property="twitter:description" content="If we want to ensure decent internet browsing for more users using the same internet connection, but we don’t want to disable any protocols (such as p2p), just to make the priority of http higher, we can use these rules. Packets are marked at the public side in /ip firewall mangle. Packets are marked based on layer-7 signatures... Continue Reading">
+<script type="application/ld+json" class="aioseo-schema">
+			{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebSite","@id":"http:\/\/vaheed.net\/#website","url":"http:\/\/vaheed.net\/","name":"vaheeD khoshnouD","description":"linux, mikrotik, macosx","publisher":{"@id":"http:\/\/vaheed.net\/#organization"}},{"@type":"Organization","@id":"http:\/\/vaheed.net\/#organization","name":"vaheeD khoshnouD","url":"http:\/\/vaheed.net\/"},{"@type":"BreadcrumbList","@id":"http:\/\/vaheed.net\/basic-traffic-shaping-based-on-layer-7-protocols\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"http:\/\/vaheed.net\/#listItem","position":"1","item":{"@id":"http:\/\/vaheed.net\/#item","name":"Home","description":"vaheeD khoshnouD | linux, mikrotik, macosx","url":"http:\/\/vaheed.net\/"},"nextItem":"http:\/\/vaheed.net\/basic-traffic-shaping-based-on-layer-7-protocols\/#listItem"},{"@type":"ListItem","@id":"http:\/\/vaheed.net\/basic-traffic-shaping-based-on-layer-7-protocols\/#listItem","position":"2","item":{"@id":"http:\/\/vaheed.net\/basic-traffic-shaping-based-on-layer-7-protocols\/#item","name":"Basic traffic shaping based on layer-7 protocols","description":"If we want to ensure decent internet browsing for more users using the same internet connection, but we don’t want to disable any protocols (such as p2p), just to make the priority of http higher, we can use these rules. Packets are marked at the public side in \/ip firewall mangle. Packets are marked based on layer-7 signatures... Continue Reading","url":"http:\/\/vaheed.net\/basic-traffic-shaping-based-on-layer-7-protocols\/"},"previousItem":"http:\/\/vaheed.net\/#listItem"}]},{"@type":"Person","@id":"http:\/\/vaheed.net\/author\/vaheed\/#author","url":"http:\/\/vaheed.net\/author\/vaheed\/","name":"vaheeD khoshnouD","image":{"@type":"ImageObject","@id":"http:\/\/vaheed.net\/basic-traffic-shaping-based-on-layer-7-protocols\/#authorImage","url":"http:\/\/1.gravatar.com\/avatar\/4ef8c65e8d3633adf28103cadb4591c2?s=96&d=mm&r=g","width":"96","height":"96","caption":"vaheeD khoshnouD"}},{"@type":"WebPage","@id":"http:\/\/vaheed.net\/basic-traffic-shaping-based-on-layer-7-protocols\/#webpage","url":"http:\/\/vaheed.net\/basic-traffic-shaping-based-on-layer-7-protocols\/","name":"Basic traffic shaping based on layer-7 protocols | vaheeD khoshnouD","description":"If we want to ensure decent internet browsing for more users using the same internet connection, but we don’t want to disable any protocols (such as p2p), just to make the priority of http higher, we can use these rules. Packets are marked at the public side in \/ip firewall mangle. Packets are marked based on layer-7 signatures... Continue Reading","inLanguage":"en-US","isPartOf":{"@id":"http:\/\/vaheed.net\/#website"},"breadcrumb":{"@id":"http:\/\/vaheed.net\/basic-traffic-shaping-based-on-layer-7-protocols\/#breadcrumblist"},"author":"http:\/\/vaheed.net\/basic-traffic-shaping-based-on-layer-7-protocols\/#author","creator":"http:\/\/vaheed.net\/basic-traffic-shaping-based-on-layer-7-protocols\/#author","datePublished":"2013-01-02T18:38:01+03:30","dateModified":"2013-01-18T19:28:12+03:30"},{"@type":"Article","@id":"http:\/\/vaheed.net\/basic-traffic-shaping-based-on-layer-7-protocols\/#article","name":"Basic traffic shaping based on layer-7 protocols | vaheeD khoshnouD","description":"If we want to ensure decent internet browsing for more users using the same internet connection, but we don’t want to disable any protocols (such as p2p), just to make the priority of http higher, we can use these rules. Packets are marked at the public side in \/ip firewall mangle. Packets are marked based on layer-7 signatures... Continue Reading","headline":"Basic traffic shaping based on layer-7 protocols","author":{"@id":"http:\/\/vaheed.net\/author\/vaheed\/#author"},"publisher":{"@id":"http:\/\/vaheed.net\/#organization"},"datePublished":"2013-01-02T18:38:01+03:30","dateModified":"2013-01-18T19:28:12+03:30","articleSection":"Linux, MikroTik, Network, Security","mainEntityOfPage":{"@id":"http:\/\/vaheed.net\/basic-traffic-shaping-based-on-layer-7-protocols\/#webpage"},"isPartOf":{"@id":"http:\/\/vaheed.net\/basic-traffic-shaping-based-on-layer-7-protocols\/#webpage"}}]}
+		</script>
+<script type="015064254d1f9750b5051f29-text/javascript">
+			window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+			ga('create', "UA-3072201-3", 'auto');
+			ga('send', 'pageview');
+		</script>
+<script async src="https://www.google-analytics.com/analytics.js" type="015064254d1f9750b5051f29-text/javascript"></script>
+
+<link rel="dns-prefetch" href="//vjs.zencdn.net">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//s.w.org">
+<link rel="alternate" type="application/rss+xml" title="vaheeD khoshnouD &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="vaheeD khoshnouD &raquo; Comments Feed" href="/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="vaheeD khoshnouD &raquo; Basic traffic shaping based on layer-7 protocols Comments Feed" href="/basic-traffic-shaping-based-on-layer-7-protocols/feed/">
+<link rel="publisher" href="https://plus.google.com/103839803047317952696">
+<script type="015064254d1f9750b5051f29-text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/vaheed.net\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.7.2"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="videojs-css" href="//vjs.zencdn.net/5.9.2/video-js.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="videojs-style-css" href="/wp-content/plugins/videojs-hls-player/videojs-hls-player.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="videojs-airplay-css" href="/wp-content/plugins/videojs-hls-player/videojs-airplay/videojs.airplay.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="wp-search-suggest-css" href="/wp-content/plugins/wp-search-suggest/css/wpss-search-suggest.css?ver=5" type="text/css" media="all">
+<link rel="stylesheet" id="foundation-css" href="/wp-content/themes/drewsymo-Foundation-3b62be5/stylesheets/foundation.min.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="app-css" href="/wp-content/themes/drewsymo-Foundation-3b62be5/style.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C300&#038;ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="post-ratings-raty-css" href="/wp-content/plugins/post-ratings/assets/jquery.raty.css?ver=3.0" type="text/css" media="all">
+<link rel="stylesheet" id="wp-author-bio-css" href="/wp-content/plugins/wp-about-author/wp-about-author.css?ver=5.7.2" type="text/css" media="all">
+<script type="015064254d1f9750b5051f29-text/javascript" src="/wp-includes/js/jquery/jquery.min.js?ver=3.5.1" id="jquery-core-js"></script>
+<script type="015064254d1f9750b5051f29-text/javascript" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+<script type="015064254d1f9750b5051f29-text/javascript" src="//vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js?ver=1.0.2" id="videojs-ie8-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/307">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 5.7.2">
+<link rel="shortlink" href="/?p=307">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fbasic-traffic-shaping-based-on-layer-7-protocols%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fbasic-traffic-shaping-based-on-layer-7-protocols%2F&#038;format=xml">
+
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body class="post-template-default single single-post postid-307 single-format-standard">
+<header class="row">
+<hgroup class="site-title twelve columns">
+<h1><a href="/" title="vaheeD khoshnouD" rel="home">vaheeD khoshnouD</a></h1>
+<h3 class="subheader">linux, mikrotik, macosx</h3>
+</hgroup>
+<div class="twelve columns"><ul class="nav-bar"><li class="page_item page-item-7"><a href="/about-me/">About Me</a></li></ul></div>
+</header>
+
+<script type="015064254d1f9750b5051f29-text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//ns1.faratar.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//ns1.faratar.org/piwik/piwik.php?idsite=1" style="border:0;" alt=""></p></noscript>
+
+
+<div class="row">
+
+<div class="nine columns" role="content">
+<article>
+<header>
+<hgroup>
+<h2><a href="/basic-traffic-shaping-based-on-layer-7-protocols/" title="Permalink to Basic traffic shaping based on layer-7 protocols" rel="bookmark">Basic traffic shaping based on layer-7 protocols</a></h2>
+<h6>Written by <a href="https://plus.google.com/103839803047317952696" title="Visit vaheeD&#8217;s website" rel="author external">vaheeD</a> on January 2, 2013</h6>
+</hgroup>
+</header>
+<div class="post-ratings" data-post="307">
+<div class="rating" data-post="307" data-rating="3" data-readonly="0"></div>
+<div class="rating-meta">
+<strong>3.00</strong> avg. rating (<strong>74</strong>% score) - <strong class="votes">1</strong> vote	</div>
+</div>
+<p><span id="more-307"></span><br>
+If we want to ensure decent internet browsing for more users using the same internet connection, but we don&#8217;t want to disable any protocols (such as p2p), just to make the priority of http higher, we can use these rules.</p>
+<p>Packets are marked at the public side in <b>/ip firewall mangle</b>. Packets are marked based on <b>layer-7</b> signatures and then queued.</p>
+<p>&nbsp;</p>
+<pre>/ip firewall layer7-protocol
+add comment="" name=edonkey regexp="^[\C5\D4\E3-\E5].\?.\?.\?.\?([\01\02\05\14\
+   \15\16\18\19\1A\1B\1C <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="92b3a0a1a6a7a4aad2d3d0d1d4d5dadbd8d9dedfdcddc2c3c0c1c6c7c4c5ca">[email&#160;protected]</a>[`\81\82\90\91\93\96\
+   \97\98\99\9A\9B\9C\9E\A0\A1\A2\A3\A4]|Y................\?[ -~]|\96....\$)"
+add comment="" name=goboogy regexp="&lt;peerplat&gt;|^get /getfilebyhash\\.cgi\\\?|^\
+   get /queue_register\\.cgi\\\?|^get /getupdowninfo\\.cgi\\\?"
+add comment="" name=soribada regexp="^GETMP3\r\
+   \nFilename|^\01.\?.\?.\?(Q:\\+|Q2:)|^\10[\14-\16]\10[\15-\17].\?.\?.\?.\?\
+   \$"
+add comment="" name=rdp regexp=rdpdr.*cliprdr.*rdpsnd
+add comment="" name=gnutella regexp="^(gnd[\01\02]\?.\?.\?\01|gnutella connect\
+   /[012]\\.[0-9]\r\
+   \n|get /uri-res/n2r\\\?urn:sha1:|get /.*user-agent: (gtk-gnutella|bearshar\
+   e|mactella|gnucleus|gnotella|limewire|imesh)|get /.*content-type: applicat\
+   ion/x-gnutella-packets|giv [0-9]*:[0-9a-f]*/|queue [0-9a-f]* [1-9][0-9]\?[\
+   0-9]\?\\.[1-9][0-9]\?[0-9]\?\\.[1-9][0-9]\?[0-9]\?\\.[1-9][0-9]\?[0-9]\?:[\
+   1-9][0-9]\?[0-9]\?[0-9]\?|gnutella.*content-type: application/x-gnutella|.\
+   ..................\?lime)"
+add comment="" name=cvs regexp="^BEGIN (AUTH|VERIFICATION|GSSAPI) REQUEST\
+   \n"
+add comment="" name=nbns regexp="\01\10\01|\\)\10\01\01|0\10\01"
+add comment="" name=shoutcast regexp=\
+   "icy [1-5][0-9][0-9] [\t-\r -~]*(content-type:audio|icy-)"
+add comment="" name=dns regexp="^.\?.\?.\?.\?[\01\02].\?.\?.\?.\?.\?.\?[\01-\?\
+   ][a-z0-9][\01-\?a-z]*[\02-\06][a-z][a-z][fglmoprstuvz]\?[aeop]\?(um)\?[\01\
+   -\10\1C][\01\03\04\FF]"
+add comment="" name=quake-halflife regexp="^\FF\FF\FF\FFget(info|challenge)"
+add comment="" name=poco regexp="^\80\94\
+   \n\01....\1F\9E"
+add comment="" name=ciscovpn regexp="^\01\F4\01\F4"
+add comment="" name=x11 regexp="^[lb].\?\0B"
+add comment="" name=xboxlive regexp="^X\80........\F3|^\06XN"
+add comment="" name=applejuice regexp="^ajprot\r\
+   \n"
+add comment="" name=zmaap regexp="^\1B\D7;H[\01\02]\01\?\01"
+add comment="" name=live365 regexp=membername.*session.*player
+add comment="" name=rlogin regexp=\
+   "^[a-z][a-z0-9][a-z0-9]+/[1-9][0-9]\?[0-9]\?[0-9]\?00"
+add comment="" name=http regexp="http/(0\\.9|1\\.0|1\\.1) [1-5][0-9][0-9] [\t-\
+   \r -~]*(connection:|content-type:|content-length:|date:)|post [\t-\r -~]* \
+   http/[01]\\.[019]"
+add comment="" name=sip regexp=\
+   "^(invite|register|cancel) sip[\t-\r -~]*sip/[0-2]\\.[0-9]"
+add comment="" name=pop3 regexp="^(\\+ok |-err )"
+add comment="" name=smb regexp="\FFsmb[r%]"
+add comment="" name=quake1 regexp="^\80\0C\01quake\03"
+add comment="" name=lpd regexp="^(\01[!-~]+|\02[!-~]+\
+   \n.[\01\02\03][\01-\
+   \n -~]*|[\03\04][!-~]+[\t-\r]+[a-z][\t-\r -~]*|\05[!-~]+[\t-\r]+([a-z][!-~\
+   ]*[\t-\r]+[1-9][0-9]\?[0-9]\?|root[\t-\r]+[!-~]+).*)\
+   \n\$"
+add comment="" name=mute regexp=\
+   "^(Public|AES)Key: [0-9a-f]*\
+   \nEnd(Public|AES)Key\
+   \n\$"
+add comment="" name=ssh regexp="^ssh-[12]\\.[0-9]"
+add comment="" name=jabber regexp=\
+   "&lt;stream:stream[\t-\r ][ -~]*[\t-\r ]xmlns=['\"]jabber"
+add comment="" name=bittorrent regexp="^(\13bittorrent protocol|azver\01\$|get\
+    /scrape\\\?info_hash=)|d1:ad2:id20:|\08'7P\\)[RP]"
+add comment="" name=ncp regexp="^(dmdt.*\01.*(\"\"|\11\11|uu)|tncp.*33)"
+add comment="" name=tls regexp=\
+   "^(.\?.\?\16\03.*\16\03|.\?.\?\01\03\01\?.*\0B)"
+add comment="" name=directconnect regexp="^(\\\$mynick |\\\$lock |\\\$key )"
+add comment="" name=netbios regexp="\81.\?.\?.[A-P][A-P][A-P][A-P][A-P][A-P][A\
+   -P][A-P][A-P][A-P][A-P][A-P][A-P][A-P][A-P][A-P][A-P][A-P][A-P][A-P][A-P][\
+   A-P][A-P][A-P][A-P][A-P][A-P][A-P][A-P][A-P][A-P][A-P][A-P][A-P][A-P][A-P]\
+   [A-P][A-P][A-P][A-P]"
+add comment="" name=tftp regexp="^(\01|\02)[ -~]*(netascii|octet|mail)"
+add comment="" name=subspace regexp="^\01....\11\10........\01\$"
+add comment="" name=hotline regexp="^....................TRTPHOTL\01\02"
+add comment="" name=doom3 regexp="^\FF\FFchallenge"
+add comment="" name=ftp regexp="^220[\t-\r -~]*ftp"
+add comment="" name=kugoo regexp="^1..\8E"
+add comment="" name=tsp regexp=\
+   "^[\01-\13\16-\$]\01.\?.\?.\?.\?.\?.\?.\?.\?.\?.\?[ -~]+"
+add comment="" name=battlefield1942 regexp="^\01\11\10\\|\F8\02\<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="38090878">[email&#160;protected]</a>\06"
+add comment="" name=ssdp regexp="^notify[\t-\r ]\\*[\t-\r ]http/1\\.1[\t-\r -~\
+   ]*ssdp:(alive|byebye)|^m-search[\t-\r ]\\*[\t-\r ]http/1\\.1[\t-\r -~]*ssd\
+   p:discover"
+add comment="" name=imap regexp="^(\\* ok|a[0-9]+ noop)"
+add comment="" name=ares regexp="^\03[]Z].\?.\?\05\$"
+add comment="" name=fasttrack regexp="^get (/.download/[ -~]*|/.supernode[ -~]\
+   |/.status[ -~]|/.network[ -~]*|/.files|/.hash=[0-9a-f]*/[ -~]*) http/1.1|u\
+   ser-agent: kazaa|x-kazaa(-username|-network|-ip|-supernodeip|-xferid|-xfer\
+   uid|tag)|^give [0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]\?[0-9]\?[0-9]\?"
+add comment="" name=qq regexp="^.\?\02.+\03\$"
+add comment="" name=100bao regexp="^\01\01\05\
+   \n"
+add comment="" name=aim regexp=\
+   "^(\\*[\01\02].*\03\0B|\\*\01.\?.\?.\?.\?\01)|flapon|toc_signon.*0x"
+add comment="" name=unknown regexp=.
+add comment="" name=msn-filetransfer regexp=\
+   "^(ver [ -~]*msnftp\r\
+   \nver msnftp\r\
+   \nusr|method msnmsgr:)"
+add comment="" name=yahoo regexp=\
+   "^(ymsg|ypns|yhoo).\?.\?.\?.\?.\?.\?.\?[lwt].*\C0\80"
+add comment="" name=validcertssl regexp="^(.\?.\?\16\03.*\16\03|.\?.\?\01\03\
+   \01\?.*\0B).*(thawte|equifax secure|rsa data security, inc|verisign, inc|g\
+   te cybertrust root|entrust\\.net limited)"
+add comment="" name=ntp regexp="^([\13\1B#\D3\DB\E3]|[\14\1C\$].......\?.\?.\?\
+   .\?.\?.\?.\?.\?.\?[\C6-\FF])"
+add comment="" name=gnucleuslan regexp=\
+   "gnuclear connect/[\t-\r -~]*user-agent: gnucleus [\t-\r -~]*lan:"
+add comment="" name=vnc regexp="^rfb 00[1-9]\\.00[0-9]\
+   \n\$"
+add comment="" name=bgp regexp=\
+   "^\FF\FF\FF\FF\FF\FF\FF\FF\FF\FF\FF\FF\FF\FF\FF\FF..\?\01[\03\04]"
+add comment="" name=tesla regexp="\03\9A\89\"111\\.00 Beta |\E2&lt;i\1E\1C\E9"
+add comment="" name=openft regexp="x-openftalias: [-)(0-9a-z ~.]"
+add comment="" name=h323 regexp=\
+   "^\03..\?\08...\?.\?.\?.\?.\?.\?.\?.\?.\?.\?.\?.\?.\?.\?.\?\05"
+add comment="" name=finger regexp=\
+   "^[a-z][a-z0-9\\-_]+|login: [\t-\r -~]* name: [\t-\r -~]* Directory:"
+add comment="" name=ident regexp="^[1-9][0-9]\?[0-9]\?[0-9]\?[0-9]\?[\t-\r]*,[\
+   \t-\r]*[1-9][0-9]\?[0-9]\?[0-9]\?[0-9]\?(\r\
+   \n|[\r\
+   \n])\?\$"
+add comment="" name=gkrellm regexp="^gkrellm [23].[0-9].[0-9]\
+   \n\$"
+add comment="" name=hddtemp regexp=\
+   "^\\|/dev/[a-z][a-z][a-z]\\|[0-9a-z]*\\|[0-9][0-9]\\|[cfk]\\|"
+add comment="" name=socks regexp="\05[\01-\08]*\05[\01-\08]\?.*\05[\01-\03][\
+   \01\03].*\05[\01-\08]\?[\01\03]"
+add comment="" name=biff regexp="^[a-z][a-z0-9]<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="466d06">[email&#160;protected]</a>[1-9][0-9]+\$"
+add comment="" name=dhcp regexp="^[\01\02][\01- ]\06.*c\82sc"
+add comment="" name=smtp regexp="^220[\t-\r -~]* (e\?smtp|simple mail)"
+add comment="" name=ipp regexp=ipp://
+add comment="" name=msnmessenger regexp="ver [0-9]+ msnp[1-9][0-9]\? [\t-\r -~\
+   ]*cvr0\r\
+   \n\$|usr 1 [!-~]+ [0-9. ]+\r\
+   \n\$|ans 1 [!-~]+ [0-9. ]+\r\
+   \n\$"
+add comment="" name=irc regexp="^(nick[\t-\r -~]*user[\t-\r -~]*:|user[\t-\r -\
+   ~]*:[\02-\r -~]*nick[\t-\r -~]*\r\
+   \n)"
+add comment="" name=gopher regexp="^[\t-\r]*[1-9,+tgi][\t-\r -~]*\t[\t-\r -~]*\
+   \t[a-z0-9.]*\\.[a-z][a-z].\?.\?\t[1-9]"
+add comment="" name=telnet regexp="^\FF[\FB-\FE].\FF[\FB-\FE].\FF[\FB-\FE]"
+add comment="" name=snmp regexp="^\02\01\04.+([\A0-\A3]\02[\01-\04].\?.\?.\?.\
+   \?\02\01.\?\02\01.\?0|\A4\<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2b1b1d05006b">[email&#160;protected]</a>\04.\?.\?.\?.\?\02\01.\?\02\01.\?C)"
+add comment="" name=nntp regexp=\
+   "^(20[01][\t-\r -~]*AUTHINFO USER|20[01][\t-\r -~]*news)"
+add comment="" name=aimwebcontent regexp=user-agent:aim/
+add comment="" name=rtsp regexp="rtsp/1.0 200 ok"
+add comment="" name=skypeout regexp="^(\01.\?.\?.\?.\?.\?.\?.\?.\?\01|\02.\?.\
+   \?.\?.\?.\?.\?.\?.\?\02|\03.\?.\?.\?.\?.\?.\?.\?.\?\03|\04.\?.\?.\?.\?.\?.\
+   \?.\?.\?\04|\05.\?.\?.\?.\?.\?.\?.\?.\?\05|\06.\?.\?.\?.\?.\?.\?.\?.\?\06|\
+   \07.\?.\?.\?.\?.\?.\?.\?.\?\07|\08.\?.\?.\?.\?.\?.\?.\?.\?\08|\t.\?.\?.\?.\
+   \?.\?.\?.\?.\?\t|\
+   \n.\?.\?.\?.\?.\?.\?.\?.\?\
+   \n|\0B.\?.\?.\?.\?.\?.\?.\?.\?\0B|\0C.\?.\?.\?.\?.\?.\?.\?.\?\0C|\r.\?.\?.\
+   \?.\?.\?.\?.\?.\?\r|\0E.\?.\?.\?.\?.\?.\?.\?.\?\0E|\0F.\?.\?.\?.\?.\?.\?.\
+   \?.\?\0F|\10.\?.\?.\?.\?.\?.\?.\?.\?\10|\11.\?.\?.\?.\?.\?.\?.\?.\?\11|\12\
+   .\?.\?.\?.\?.\?.\?.\?.\?\12|\13.\?.\?.\?.\?.\?.\?.\?.\?\13|\14.\?.\?.\?.\?\
+   .\?.\?.\?.\?\14|\15.\?.\?.\?.\?.\?.\?.\?.\?\15|\16.\?.\?.\?.\?.\?.\?.\?.\?\
+   \16|\17.\?.\?.\?.\?.\?.\?.\?.\?\17|\18.\?.\?.\?.\?.\?.\?.\?.\?\18|\19.\?.\
+   \?.\?.\?.\?.\?.\?.\?\19|\1A.\?.\?.\?.\?.\?.\?.\?.\?\1A|\1B.\?.\?.\?.\?.\?.\
+   \?.\?.\?\1B|\1C.\?.\?.\?.\?.\?.\?.\?.\?\1C|\1D.\?.\?.\?.\?.\?.\?.\?.\?\1D|\
+   \1E.\?.\?.\?.\?.\?.\?.\?.\?\1E|\1F.\?.\?.\?.\?.\?.\?.\?.\?\1F| .\?.\?.\?.\
+   \?.\?.\?.\?.\? |!.\?.\?.\?.\?.\?.\?.\?.\?!|\".\?.\?.\?.\?.\?.\?.\?.\?\"|#.\
+   \?.\?.\?.\?.\?.\?.\?.\?#|\\\$.\?.\?.\?.\?.\?.\?.\?.\?\\\$|%.\?.\?.\?.\?.\?\
+   .\?.\?.\?%|&amp;.\?.\?.\?.\?.\?.\?.\?.\?&amp;|'.\?.\?.\?.\?.\?.\?.\?.\?'|\\(.\?.\?\
+   .\?.\?.\?.\?.\?.\?\\(|\\).\?.\?.\?.\?.\?.\?.\?.\?\\)|\\*.\?.\?.\?.\?.\?.\?\
+   .\?.\?\\*|\\+.\?.\?.\?.\?.\?.\?.\?.\?\\+|,.\?.\?.\?.\?.\?.\?.\?.\?,|-.\?.\
+   \?.\?.\?.\?.\?.\?.\?-|\\..\?.\?.\?.\?.\?.\?.\?.\?\\.|/.\?.\?.\?.\?.\?.\?.\
+   \?.\?/|0.\?.\?.\?.\?.\?.\?.\?.\?0|1.\?.\?.\?.\?.\?.\?.\?.\?1|2.\?.\?.\?.\?\
+   .\?.\?.\?.\?2|3.\?.\?.\?.\?.\?.\?.\?.\?3|4.\?.\?.\?.\?.\?.\?.\?.\?4|5.\?.\
+   \?.\?.\?.\?.\?.\?.\?5|6.\?.\?.\?.\?.\?.\?.\?.\?6|7.\?.\?.\?.\?.\?.\?.\?.\?\
+   7|8.\?.\?.\?.\?.\?.\?.\?.\?8|9.\?.\?.\?.\?.\?.\?.\?.\?9|:.\?.\?.\?.\?.\?.\
+   \?.\?.\?:|;.\?.\?.\?.\?.\?.\?.\?.\?;|&lt;.\?.\?.\?.\?.\?.\?.\?.\?&lt;|=.\?.\?.\?\
+   .\?.\?.\?.\?.\?=|&gt;.\?.\?.\?.\?.\?.\?.\?.\?&gt;|\\\?.\?.\?.\?.\?.\?.\?.\?.\?\\\
+   \?|@.\?.\?.\?.\?.\?.\?.\?.\<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e1dea1">[email&#160;protected]</a>|A.\?.\?.\?.\?.\?.\?.\?.\?A|B.\?.\?.\?.\?.\?.\
+   \?.\?.\?B|C.\?.\?.\?.\?.\?.\?.\?.\?C|D.\?.\?.\?.\?.\?.\?.\?.\?D|E.\?.\?.\?\
+   .\?.\?.\?.\?.\?E|F.\?.\?.\?.\?.\?.\?.\?.\?F|G.\?.\?.\?.\?.\?.\?.\?.\?G|H.\
+   \?.\?.\?.\?.\?.\?.\?.\?H|I.\?.\?.\?.\?.\?.\?.\?.\?I|J.\?.\?.\?.\?.\?.\?.\?\
+   .\?J|K.\?.\?.\?.\?.\?.\?.\?.\?K|L.\?.\?.\?.\?.\?.\?.\?.\?L|M.\?.\?.\?.\?.\
+   \?.\?.\?.\?M|N.\?.\?.\?.\?.\?.\?.\?.\?N|O.\?.\?.\?.\?.\?.\?.\?.\?O|P.\?.\?\
+   .\?.\?.\?.\?.\?.\?P|Q.\?.\?.\?.\?.\?.\?.\?.\?Q|R.\?.\?.\?.\?.\?.\?.\?.\?R|\
+   S.\?.\?.\?.\?.\?.\?.\?.\?S|T.\?.\?.\?.\?.\?.\?.\?.\?T|U.\?.\?.\?.\?.\?.\?.\
+   \?.\?U|V.\?.\?.\?.\?.\?.\?.\?.\?V|W.\?.\?.\?.\?.\?.\?.\?.\?W|X.\?.\?.\?.\?\
+   .\?.\?.\?.\?X|Y.\?.\?.\?.\?.\?.\?.\?.\?Y|Z.\?.\?.\?.\?.\?.\?.\?.\?Z|\\[.\?\
+   .\?.\?.\?.\?.\?.\?.\?\\[|\\].\?.\?.\?.\?.\?.\?.\?.\?\\]|\\].\?.\?.\?.\?.\?\
+   .\?.\?.\?\\]|\\^.\?.\?.\?.\?.\?.\?.\?.\?\\^|_.\?.\?.\?.\?.\?.\?.\?.\?_|`.\
+   \?.\?.\?.\?.\?.\?.\?.\?`|a.\?.\?.\?.\?.\?.\?.\?.\?a|b.\?.\?.\?.\?.\?.\?.\?\
+   .\?b|c.\?.\?.\?.\?.\?.\?.\?.\?c|d.\?.\?.\?.\?.\?.\?.\?.\?d|e.\?.\?.\?.\?.\
+   \?.\?.\?.\?e|f.\?.\?.\?.\?.\?.\?.\?.\?f|g.\?.\?.\?.\?.\?.\?.\?.\?g|h.\?.\?\
+   .\?.\?.\?.\?.\?.\?h|i.\?.\?.\?.\?.\?.\?.\?.\?i|j.\?.\?.\?.\?.\?.\?.\?.\?j|\
+   k.\?.\?.\?.\?.\?.\?.\?.\?k|l.\?.\?.\?.\?.\?.\?.\?.\?l|m.\?.\?.\?.\?.\?.\?.\
+   \?.\?m|n.\?.\?.\?.\?.\?.\?.\?.\?n|o.\?.\?.\?.\?.\?.\?.\?.\?o|p.\?.\?.\?.\?\
+   .\?.\?.\?.\?p|q.\?.\?.\?.\?.\?.\?.\?.\?q|r.\?.\?.\?.\?.\?.\?.\?.\?r|s.\?.\
+   \?.\?.\?.\?.\?.\?.\?s|t.\?.\?.\?.\?.\?.\?.\?.\?t|u.\?.\?.\?.\?.\?.\?.\?.\?\
+   u|v.\?.\?.\?.\?.\?.\?.\?.\?v|w.\?.\?.\?.\?.\?.\?.\?.\?w|x.\?.\?.\?.\?.\?.\
+   \?.\?.\?x|y.\?.\?.\?.\?.\?.\?.\?.\?y|z.\?.\?.\?.\?.\?.\?.\?.\?z|\\{.\?.\?.\
+   \?.\?.\?.\?.\?.\?\\{|\\|.\?.\?.\?.\?.\?.\?.\?.\?\\||\\}.\?.\?.\?.\?.\?.\?.\
+   \?.\?\\}|~.\?.\?.\?.\?.\?.\?.\?.\?~|\7F.\?.\?.\?.\?.\?.\?.\?.\?\7F|\80.\?.\
+   \?.\?.\?.\?.\?.\?.\?\80|\81.\?.\?.\?.\?.\?.\?.\?.\?\81|\82.\?.\?.\?.\?.\?.\
+   \?.\?.\?\82|\83.\?.\?.\?.\?.\?.\?.\?.\?\83|\84.\?.\?.\?.\?.\?.\?.\?.\?\84|\
+   \85.\?.\?.\?.\?.\?.\?.\?.\?\85|\86.\?.\?.\?.\?.\?.\?.\?.\?\86|\87.\?.\?.\?\
+   .\?.\?.\?.\?.\?\87|\88.\?.\?.\?.\?.\?.\?.\?.\?\88|\89.\?.\?.\?.\?.\?.\?.\?\
+   .\?\89|\8A.\?.\?.\?.\?.\?.\?.\?.\?\8A|\8B.\?.\?.\?.\?.\?.\?.\?.\?\8B|\8C.\
+   \?.\?.\?.\?.\?.\?.\?.\?\8C|\8D.\?.\?.\?.\?.\?.\?.\?.\?\8D|\8E.\?.\?.\?.\?.\
+   \?.\?.\?.\?\8E|\8F.\?.\?.\?.\?.\?.\?.\?.\?\8F|\90.\?.\?.\?.\?.\?.\?.\?.\?\
+   \90|\91.\?.\?.\?.\?.\?.\?.\?.\?\91|\92.\?.\?.\?.\?.\?.\?.\?.\?\92|\93.\?.\
+   \?.\?.\?.\?.\?.\?.\?\93|\94.\?.\?.\?.\?.\?.\?.\?.\?\94|\95.\?.\?.\?.\?.\?.\
+   \?.\?.\?\95|\96.\?.\?.\?.\?.\?.\?.\?.\?\96|\97.\?.\?.\?.\?.\?.\?.\?.\?\97|\
+   \98.\?.\?.\?.\?.\?.\?.\?.\?\98|\99.\?.\?.\?.\?.\?.\?.\?.\?\99|\9A.\?.\?.\?\
+   .\?.\?.\?.\?.\?\9A|\9B.\?.\?.\?.\?.\?.\?.\?.\?\9B|\9C.\?.\?.\?.\?.\?.\?.\?\
+   .\?\9C|\9D.\?.\?.\?.\?.\?.\?.\?.\?\9D|\9E.\?.\?.\?.\?.\?.\?.\?.\?\9E|\9F.\
+   \?.\?.\?.\?.\?.\?.\?.\?\9F|\A0.\?.\?.\?.\?.\?.\?.\?.\?\A0|\A1.\?.\?.\?.\?.\
+   \?.\?.\?.\?\A1|\A2.\?.\?.\?.\?.\?.\?.\?.\?\A2|\A3.\?.\?.\?.\?.\?.\?.\?.\?\
+   \A3|\A4.\?.\?.\?.\?.\?.\?.\?.\?\A4|\A5.\?.\?.\?.\?.\?.\?.\?.\?\A5|\A6.\?.\
+   \?.\?.\?.\?.\?.\?.\?\A6|\A7.\?.\?.\?.\?.\?.\?.\?.\?\A7|\A8.\?.\?.\?.\?.\?.\
+   \?.\?.\?\A8|\A9.\?.\?.\?.\?.\?.\?.\?.\?\A9|\AA.\?.\?.\?.\?.\?.\?.\?.\?\AA|\
+   \AB.\?.\?.\?.\?.\?.\?.\?.\?\AB|\AC.\?.\?.\?.\?.\?.\?.\?.\?\AC|\AD.\?.\?.\?\
+   .\?.\?.\?.\?.\?\AD|\AE.\?.\?.\?.\?.\?.\?.\?.\?\AE|\AF.\?.\?.\?.\?.\?.\?.\?\
+   .\?\AF|\B0.\?.\?.\?.\?.\?.\?.\?.\?\B0|\B1.\?.\?.\?.\?.\?.\?.\?.\?\B1|\B2.\
+   \?.\?.\?.\?.\?.\?.\?.\?\B2|\B3.\?.\?.\?.\?.\?.\?.\?.\?\B3|\B4.\?.\?.\?.\?.\
+   \?.\?.\?.\?\B4|\B5.\?.\?.\?.\?.\?.\?.\?.\?\B5|\B6.\?.\?.\?.\?.\?.\?.\?.\?\
+   \B6|\B7.\?.\?.\?.\?.\?.\?.\?.\?\B7|\B8.\?.\?.\?.\?.\?.\?.\?.\?\B8|\B9.\?.\
+   \?.\?.\?.\?.\?.\?.\?\B9|\BA.\?.\?.\?.\?.\?.\?.\?.\?\BA|\BB.\?.\?.\?.\?.\?.\
+   \?.\?.\?\BB|\BC.\?.\?.\?.\?.\?.\?.\?.\?\BC|\BD.\?.\?.\?.\?.\?.\?.\?.\?\BD|\
+   \BE.\?.\?.\?.\?.\?.\?.\?.\?\BE|\BF.\?.\?.\?.\?.\?.\?.\?.\?\BF|\C0.\?.\?.\?\
+   .\?.\?.\?.\?.\?\C0|\C1.\?.\?.\?.\?.\?.\?.\?.\?\C1|\C2.\?.\?.\?.\?.\?.\?.\?\
+   .\?\C2|\C3.\?.\?.\?.\?.\?.\?.\?.\?\C3|\C4.\?.\?.\?.\?.\?.\?.\?.\?\C4|\C5.\
+   \?.\?.\?.\?.\?.\?.\?.\?\C5|\C6.\?.\?.\?.\?.\?.\?.\?.\?\C6|\C7.\?.\?.\?.\?.\
+   \?.\?.\?.\?\C7|\C8.\?.\?.\?.\?.\?.\?.\?.\?\C8|\C9.\?.\?.\?.\?.\?.\?.\?.\?\
+   \C9|\CA.\?.\?.\?.\?.\?.\?.\?.\?\CA|\CB.\?.\?.\?.\?.\?.\?.\?.\?\CB|\CC.\?.\
+   \?.\?.\?.\?.\?.\?.\?\CC|\CD.\?.\?.\?.\?.\?.\?.\?.\?\CD|\CE.\?.\?.\?.\?.\?.\
+   \?.\?.\?\CE|\CF.\?.\?.\?.\?.\?.\?.\?.\?\CF|\D0.\?.\?.\?.\?.\?.\?.\?.\?\D0|\
+   \D1.\?.\?.\?.\?.\?.\?.\?.\?\D1|\D2.\?.\?.\?.\?.\?.\?.\?.\?\D2|\D3.\?.\?.\?\
+   .\?.\?.\?.\?.\?\D3|\D4.\?.\?.\?.\?.\?.\?.\?.\?\D4|\D5.\?.\?.\?.\?.\?.\?.\?\
+   .\?\D5|\D6.\?.\?.\?.\?.\?.\?.\?.\?\D6|\D7.\?.\?.\?.\?.\?.\?.\?.\?\D7|\D8.\
+   \?.\?.\?.\?.\?.\?.\?.\?\D8|\D9.\?.\?.\?.\?.\?.\?.\?.\?\D9|\DA.\?.\?.\?.\?.\
+   \?.\?.\?.\?\DA|\DB.\?.\?.\?.\?.\?.\?.\?.\?\DB|\DC.\?.\?.\?.\?.\?.\?.\?.\?\
+   \DC|\DD.\?.\?.\?.\?.\?.\?.\?.\?\DD|\DE.\?.\?.\?.\?.\?.\?.\?.\?\DE|\DF.\?.\
+   \?.\?.\?.\?.\?.\?.\?\DF|\E0.\?.\?.\?.\?.\?.\?.\?.\?\E0|\E1.\?.\?.\?.\?.\?.\
+   \?.\?.\?\E1|\E2.\?.\?.\?.\?.\?.\?.\?.\?\E2|\E3.\?.\?.\?.\?.\?.\?.\?.\?\E3|\
+   \E4.\?.\?.\?.\?.\?.\?.\?.\?\E4|\E5.\?.\?.\?.\?.\?.\?.\?.\?\E5|\E6.\?.\?.\?\
+   .\?.\?.\?.\?.\?\E6|\E7.\?.\?.\?.\?.\?.\?.\?.\?\E7|\E8.\?.\?.\?.\?.\?.\?.\?\
+   .\?\E8|\E9.\?.\?.\?.\?.\?.\?.\?.\?\E9|\EA.\?.\?.\?.\?.\?.\?.\?.\?\EA|\EB.\
+   \?.\?.\?.\?.\?.\?.\?.\?\EB|\EC.\?.\?.\?.\?.\?.\?.\?.\?\EC|\ED.\?.\?.\?.\?.\
+   \?.\?.\?.\?\ED|\EE.\?.\?.\?.\?.\?.\?.\?.\?\EE|\EF.\?.\?.\?.\?.\?.\?.\?.\?\
+   \EF|\F0.\?.\?.\?.\?.\?.\?.\?.\?\F0|\F1.\?.\?.\?.\?.\?.\?.\?.\?\F1|\F2.\?.\
+   \?.\?.\?.\?.\?.\?.\?\F2|\F3.\?.\?.\?.\?.\?.\?.\?.\?\F3|\F4.\?.\?.\?.\?.\?.\
+   \?.\?.\?\F4|\F5.\?.\?.\?.\?.\?.\?.\?.\?\F5|\F6.\?.\?.\?.\?.\?.\?.\?.\?\F6|\
+   \F7.\?.\?.\?.\?.\?.\?.\?.\?\F7|\F8.\?.\?.\?.\?.\?.\?.\?.\?\F8|\F9.\?.\?.\?\
+   .\?.\?.\?.\?.\?\F9|\FA.\?.\?.\?.\?.\?.\?.\?.\?\FA|\FB.\?.\?.\?.\?.\?.\?.\?\
+   .\?\FB|\FC.\?.\?.\?.\?.\?.\?.\?.\?\FC|\FD.\?.\?.\?.\?.\?.\?.\?.\?\FD|\FE.\
+   \?.\?.\?.\?.\?.\?.\?.\?\FE|\FF.\?.\?.\?.\?.\?.\?.\?.\?\FF)"
+add comment="" name=skypetoskype regexp="^..\02............."
+add comment="" name=counterstrike-source regexp=\
+   "^\FF\FF\FF\FF.*cstrikeCounter-Strike"
+add comment="" name=halflife2-deathmatch regexp=\
+   "^\FF\FF\FF\FF.*hl2mpDeathmatch"
+add comment="" name=freenet regexp="^\01[\08\t][\03\04]"
+add comment="" name=battlefield2 regexp="^(\11 \01...\?\11|\FE\FD.\?.\?.\?.\?.\
+   \?.\?(\14\01\06|\FF\FF\FF))|[]\01].\?battlefield2"
+add comment="" name=napster regexp="^(.[\02\06][!-~]+ [!-~]+ [0-9][0-9]\?[0-9]\
+   \?[0-9]\?[0-9]\? \"[\t-\r -~]+\" ([0-9]|10)|1(send|get)[!-~]+ \"[\t-\r -~]\
+   +\")"
+add comment="" name=soulseek regexp=\
+   "^(\05..\?|.\01.[ -~]+\01F..\?.\?.\?.\?.\?.\?.\?)\$"
+add comment="" name=xunlei regexp="^[()]...\?.\?.\?(reg|get|query)"
+add comment="" name=ssl regexp=\
+   "^(.\?.\?\16\03.*\16\03|.\?.\?\01\03\01\?.*\0B)"
+add comment="" name=citrix regexp="2&amp;\85\92X"
+add comment="" name=whois regexp="^[ !-~]+\r\
+   \n\$"
+add comment="" name=dayofdefeat-source regexp=\
+   "^\FF\FF\FF\FF.*dodDay of Defeat"
+add comment="" name=teamspeak regexp="^\F4\BE\03.*teamspeak"
+add comment="" name=worldofwarcraft regexp="^\06\EC\01"
+add comment="" name=ventrilo regexp="^..\?v\\\$\CF"
+add comment="" name=http-rtsp regexp="^(get[\t-\r -~]* Accept: application/x-r\
+   tsp-tunnelled|http/(0\\.9|1\\.0|1\\.1) [1-5][0-9][0-9] [\t-\r -~]*a=contro\
+   l:rtsp://)"
+add comment="" name=thecircle regexp=\
+   "^t\03ni.\?[\01-\06]\?t[\01-\05]s[\
+   \n\0B](glob|who are you\$|query data)"
+add comment="" name=uucp regexp="^\10here="
+add comment="" name=pcanywhere regexp="^(nq|st)\$"
+add comment="" name=subversion regexp="^\\( success \\( 1 2 \\("
+add comment="" name=imesh regexp="^(post[\t-\r -~]*&lt;PasswordHash&gt;.............\
+   ...................&lt;/PasswordHash&gt;&lt;ClientVer&gt;|4\80\?\r\?\FC\FF\04|get[\t-\
+   \r -~]*Host: imsh\\.download-prod\\.musicnet\\.com|\02(\01|\02)\83.\?.\?.\
+   \?.\?.\?.\?.\?.\?.\?.\?.\?.\?.\?.\?.\?.\?.\?.\?.\?.\?.\?.\?.\?.\?.\?.\?.\?\
+   .\?\02(\01|\02)\83)"
+add comment="" name=cimd regexp="\02[0-4][0-9]:[0-9]+.*\03\$"
+add comment="" name=mohaa regexp="^\FF\FF\FF\FFgetstatus\
+   \n"
+add comment="" name=stun regexp="^[\01\02]................\?\$"
+add comment="" name=tor regexp=TOR1.*&lt;identity&gt;
+add comment="" name=radmin regexp="^\01\01(\08\08|\1B\1B)\$"
+add comment="" name=unset regexp=.
+add comment="" name=chikka regexp="^CTPv1.[123] Kamusta.*\r\
+   \n\$"
+add comment="" name=replaytv-ivs regexp="^(get /ivs-IVSGetFileChunk|http/(0\\.\
+   9|1\\.0|1\\.1) [1-5][0-9][0-9] [\t-\r -~]*#####REPLAY_CHUNK_START#####)"
+add comment="" name=armagetron regexp=YCLC_E|CYEL</pre>
+<p>&nbsp;</p>
+<p>Then we create mangle rules &#8211; substitute <b>dsl interface</b> in this example to suit your needs (wan, ether1 etc.)</p>
+<pre>/ip firewall mangle
+add action=mark-packet chain=prerouting comment=100bao_p2p disabled=no \
+   in-interface=dsl layer7-protocol=100bao new-packet-mark=100bao_p2p_in \
+   passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=100bao new-packet-mark=100bao_p2p_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment="aim mesenger" disabled=no \
+   in-interface=dsl layer7-protocol=aim new-packet-mark=aim_mesanger_in \
+   passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=aim new-packet-mark=aim_mesanger_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment=aim_messenger_web disabled=no \
+   in-interface=dsl layer7-protocol=aimwebcontent new-packet-mark=\
+   aim_mesenger_web_in passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=aimwebcontent new-packet-mark=aim_mesenger_web_out \
+   out-interface=dsl passthrough=yes
+add action=mark-packet chain=prerouting comment=applejuice_p2p disabled=no \
+   in-interface=dsl layer7-protocol=applejuice new-packet-mark=applejuice_in \
+   passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=applejuice new-packet-mark=applejuice_out out-interface=\
+   dsl passthrough=yes
+add action=mark-packet chain=prerouting comment=ares_p2p disabled=no \
+   in-interface=dsl layer7-protocol=ares new-packet-mark=ares_p2p_in \
+   passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=ares new-packet-mark=ares_p2p_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment=bgp_routing disabled=no \
+   in-interface=dsl layer7-protocol=bgp new-packet-mark=bgp_routing_in \
+   passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=bgp new-packet-mark=bgp_routing_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment=bittorent_p2p disabled=no \
+   in-interface=dsl layer7-protocol=bittorrent new-packet-mark=bittorent_in \
+   passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=bittorrent new-packet-mark=bittorent_out out-interface=\
+   dsl passthrough=yes
+add action=mark-packet chain=prerouting comment=dhcp disabled=no \
+   in-interface=dsl layer7-protocol=dhcp new-packet-mark=dhcp_in \
+   passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=dhcp new-packet-mark=dhcp_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment=\
+   "Direct Connect - P2P filesharing " disabled=no in-interface=dsl \
+   layer7-protocol=directconnect new-packet-mark=DC_p2p_in passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=directconnect new-packet-mark=DC_p2p_out out-interface=\
+   dsl passthrough=yes
+add action=mark-packet chain=prerouting comment="DNS - Domain Name System " \
+   disabled=no in-interface=dsl layer7-protocol=dns new-packet-mark=DNS_in \
+   passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=dns new-packet-mark=DNS_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment=\
+   "eDonkey2000 - P2P filesharing " disabled=no in-interface=dsl \
+   layer7-protocol=edonkey new-packet-mark=edonkey_p2p_in passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=edonkey new-packet-mark=edonkey_p2p_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment=\
+   "FastTrack - P2P filesharing (Kazaa, Morpheus, iMesh, Grokster, etc)" \
+   disabled=no in-interface=dsl layer7-protocol=fasttrack new-packet-mark=\
+   fasttrack_p2p_in passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=fasttrack new-packet-mark=fasttrack_p2p_out \
+   out-interface=dsl passthrough=yes
+add action=mark-packet chain=prerouting comment=\
+   "FTP - File Transfer Protocol " disabled=no in-interface=dsl \
+   layer7-protocol=ftp new-packet-mark=ftp_in passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=ftp new-packet-mark=ftp_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment="GnucleusLAN - LAN-only P2P " \
+   disabled=no in-interface=dsl layer7-protocol=gnucleuslan new-packet-mark=\
+   gnu_p2p_in passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=gnucleuslan new-packet-mark=gnu_p2p_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment="Gnutella - P2P filesharing" \
+   disabled=no in-interface=dsl layer7-protocol=gnutella new-packet-mark=\
+   gnutella_p2p_in passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=gnutella new-packet-mark=gnutella_p2p_out out-interface=\
+   dsl passthrough=yes
+add action=mark-packet chain=prerouting comment=\
+   "GoBoogy - a Korean P2P protocol" disabled=no in-interface=dsl \
+   layer7-protocol=goboogy new-packet-mark=gobogy_p2p_in passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=goboogy new-packet-mark=gobogy_p2p_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment="H.323 - Voice over IP" \
+   disabled=no in-interface=dsl layer7-protocol=h323 new-packet-mark=\
+   h323_voiceoverip_in passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=h323 new-packet-mark=h323_voiceoverip_out out-interface=\
+   dsl passthrough=yes
+add action=mark-packet chain=prerouting comment="RTSP tunneled within HTTP" \
+   disabled=no in-interface=dsl layer7-protocol=http-rtsp new-packet-mark=\
+   httprtsp_in passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=http-rtsp new-packet-mark=httprtsp_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment=\
+   "www HyperText Transfer Protocol " disabled=no in-interface=dsl \
+   layer7-protocol=http new-packet-mark=http_in passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=http new-packet-mark=http_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment=\
+   "Ident - Identification Protocol - <a href="https://tools.ietf.org/html/rfc1413">RFC 1413</a>" disabled=no in-interface=dsl \
+   layer7-protocol=ident new-packet-mark=ident_in passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=ident new-packet-mark=ident_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment=\
+   "IMAP - Internet Message Access Protocol (A common e-mail protocol)" \
+   disabled=no in-interface=dsl layer7-protocol=imap new-packet-mark=imap_in \
+   passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=imap new-packet-mark=imap_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment=\
+   "iMesh - the native protocol of iMesh, a P2P application " disabled=no \
+   in-interface=dsl layer7-protocol=imesh new-packet-mark=imesh_p2p_in \
+   passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=imesh new-packet-mark=imesh_p2p_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment="IRC - Internet Relay Chat" \
+   disabled=no in-interface=dsl layer7-protocol=irc new-packet-mark=irc_in \
+   passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=irc new-packet-mark=irc_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment=\
+   "KuGoo - a Chinese P2P program " disabled=no in-interface=dsl \
+   layer7-protocol=kugoo new-packet-mark=koogo_in passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=kugoo new-packet-mark=koogo_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment=\
+   "MSN (Micosoft Network) Messenger file transfers " disabled=no \
+   in-interface=dsl layer7-protocol=msn-filetransfer new-packet-mark=\
+   msnfile_in passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=msn-filetransfer new-packet-mark=msnfile_out \
+   out-interface=dsl passthrough=yes
+add action=mark-packet chain=prerouting comment="MSN Messenger " disabled=no \
+   in-interface=dsl layer7-protocol=msnmessenger new-packet-mark=msn_in \
+   passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=msnmessenger new-packet-mark=msn_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment="MUTE - P2P filesharing " \
+   disabled=no in-interface=dsl layer7-protocol=mute new-packet-mark=\
+   mute_p2p_in passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=mute new-packet-mark=mute_p2p_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment="Napster - P2P filesharing" \
+   disabled=no in-interface=dsl layer7-protocol=napster new-packet-mark=\
+   napster_in passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=napster new-packet-mark=napster_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment=\
+   "NetBIOS - Network Basic Input Output System" disabled=no in-interface=\
+   dsl layer7-protocol=netbios new-packet-mark=netbios_in passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=netbios new-packet-mark=netbios_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment=\
+   "NNTP - Network News Transfer Protocol " disabled=no in-interface=dsl \
+   layer7-protocol=nntp new-packet-mark=nntp_in passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=nntp new-packet-mark=nntp_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment=\
+   "SNTP - (Simple) Network Time Protocol " disabled=no in-interface=dsl \
+   layer7-protocol=ntp new-packet-mark=ntp_in passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=ntp new-packet-mark=ntp_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment=\
+   "Remote Administrator - remote desktop for MS Windows" disabled=no \
+   in-interface=dsl layer7-protocol=radmin new-packet-mark=radmin_in \
+   passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=radmin new-packet-mark=radmin_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment=\
+   "Remote Desktop Protocol (used in Windows Terminal Services)" disabled=no \
+   in-interface=dsl layer7-protocol=rdp new-packet-mark=rdp_in passthrough=\
+   yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=rdp new-packet-mark=rdp_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment=\
+   "RTSP - Real Time Streaming Protocol " disabled=no in-interface=dsl \
+   layer7-protocol=rtsp new-packet-mark=rtsp_in passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=rtsp new-packet-mark=rtsp_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment=\
+   "SIP - Session Initiation Protocol - Internet telephony " disabled=no \
+   in-interface=dsl layer7-protocol=sip new-packet-mark=sip_in passthrough=\
+   yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=sip new-packet-mark=sip_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment=\
+   "Skype to phone - UDP voice call " disabled=no in-interface=dsl \
+   layer7-protocol=skypeout new-packet-mark=skypeout_in passthrough=yes  protocol=udp
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=skypeout new-packet-mark=skypeout_out out-interface=dsl \
+   passthrough=yes protocol=udp
+add action=mark-packet chain=prerouting comment=\
+   "Skype to Skype - UDP voice call " disabled=no in-interface=dsl \
+   layer7-protocol=skypetoskype new-packet-mark=skype2skype_in passthrough=\
+   yes  protocol=udp
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=skypetoskype new-packet-mark=skype2skype_out \
+   out-interface=dsl passthrough=yes  protocol=udp
+add action=mark-packet chain=prerouting comment=\
+   "POP3 - Post Office Protocol version 3" disabled=no in-interface=dsl \
+   layer7-protocol=pop3 new-packet-mark=pop3_in passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=pop3 new-packet-mark=pop3_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment=\
+   "SMTP - Simple Mail Transfer Protocol " disabled=no in-interface=dsl \
+   layer7-protocol=smtp new-packet-mark=smtp_in passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=smtp new-packet-mark=smtp_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment=\
+   "SNMP - Simple Network Management Protocol " disabled=no in-interface=dsl \
+   layer7-protocol=snmp new-packet-mark=snmp_in passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=snmp new-packet-mark=snmp_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment="Soulseek - P2P filesharing " \
+   disabled=no in-interface=dsl layer7-protocol=soulseek new-packet-mark=\
+   soulsek_in passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=soulseek new-packet-mark=soulsek_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment="SSH - Secure SHell" \
+   disabled=no in-interface=dsl layer7-protocol=ssh new-packet-mark=ssh_in \
+   passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=ssh new-packet-mark=ssh_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment=\
+   "SSL and TLS - Secure Socket Layer / Transport Layer Security " disabled=\
+   no in-interface=dsl layer7-protocol=ssl new-packet-mark=ssl_in \
+   passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=ssl new-packet-mark=ssl_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment=vnc disabled=no in-interface=\
+   dsl layer7-protocol=vnc new-packet-mark=vnc_in passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=vnc new-packet-mark=vnc_out out-interface=dsl \
+   passthrough=yes
+add action=mark-packet chain=prerouting comment=\
+   "TeamSpeak - VoIP application " disabled=no in-interface=dsl \
+   layer7-protocol=teamspeak new-packet-mark=teamspeak_in passthrough=yes
+add action=mark-packet chain=postrouting comment="" disabled=no \
+   layer7-protocol=teamspeak new-packet-mark=teamspeak_out out-interface=dsl \
+   passthrough=yes</pre>
+<p>&nbsp;</p>
+<p>Then we create quueue tree, and change <b>Max upload</b> and <b>download</b> speed under DSL_IN and DSL_OUT (global-in gloabal-out) and chanege priority rules to suit your needs:</p>
+<div></div>
+<pre>/queue tree
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=\
+   10000000 max-limit=11000000 name=DSL_IN packet-mark="" parent=global-in \
+   priority=1 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=100bao_p2p_in packet-mark=100bao_p2p_in parent=DSL_IN \
+   priority=8 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=aim_mesanger_in packet-mark=aim_mesanger_in parent=\
+   DSL_IN priority=6 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=aim_mesenger_web_in packet-mark=aim_mesenger_web_in \
+   parent=DSL_IN priority=6 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=applejuice_in packet-mark=applejuice_in parent=DSL_IN \
+   priority=7 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=ares_p2p_in packet-mark=ares_p2p_in parent=DSL_IN \
+   priority=7 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=http_in packet-mark=http_in parent=DSL_IN priority=2 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=bittorent_in packet-mark=bittorent_in parent=DSL_IN \
+   priority=7 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=dhcp_in packet-mark=dhcp_in parent=DSL_IN priority=2 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=DC_p2p_in packet-mark=DC_p2p_in parent=DSL_IN priority=7 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=DNS_in packet-mark=DNS_in parent=DSL_IN priority=1 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=edonkey_p2p_in packet-mark=edonkey_p2p_in parent=DSL_IN \
+   priority=7 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=fasttrack_p2p_in packet-mark=fasttrack_p2p_in parent=\
+   DSL_IN priority=7 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=ftp_in packet-mark=ftp_in parent=DSL_IN priority=5 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=gnu_p2p_in packet-mark=gnu_p2p_in parent=DSL_IN \
+   priority=7 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=gnutella_p2p_in packet-mark=gnutella_p2p_in parent=\
+   DSL_IN priority=7 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=gobogy_p2p_in packet-mark=gobogy_p2p_in parent=DSL_IN \
+   priority=7 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=h323_voiceoverip_in packet-mark=h323_voiceoverip_in \
+   parent=DSL_IN priority=4 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=httprtsp_in packet-mark=httprtsp_in parent=DSL_IN \
+   priority=5 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=ident_in packet-mark=ident_in parent=DSL_IN priority=2 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=imap_in packet-mark=imap_in parent=DSL_IN priority=2 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=imesh_p2p_in packet-mark=imesh_p2p_in parent=DSL_IN \
+   priority=7 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=irc_in packet-mark=irc_in parent=DSL_IN priority=5 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=msnfile_in packet-mark=msnfile_in parent=DSL_IN \
+   priority=6 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=mute_p2p_in packet-mark=mute_p2p_in parent=DSL_IN \
+   priority=7 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=napster_in packet-mark=napster_in parent=DSL_IN \
+   priority=7 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=netbios_in packet-mark=netbios_in parent=DSL_IN \
+   priority=2 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=nntp_in packet-mark=nntp_in parent=DSL_IN priority=2 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=radmin_in packet-mark=radmin_in parent=DSL_IN priority=4 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=ntp_in packet-mark=ntp_in parent=DSL_IN priority=2 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=rdp_in packet-mark=rdp_in parent=DSL_IN priority=4 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=rtsp_in packet-mark=rtsp_in parent=DSL_IN priority=6 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=sip_in packet-mark=sip_in parent=DSL_IN priority=4 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=skypeout_in packet-mark=skypeout_in parent=DSL_IN \
+   priority=5 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=skype2skype_in packet-mark=skype2skype_in parent=DSL_IN \
+   priority=5 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=pop3_in packet-mark=pop3_in parent=DSL_IN priority=5 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=smtp_in packet-mark=smtp_in parent=DSL_IN priority=2 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=snmp_in packet-mark=snmp_in parent=DSL_IN priority=2 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=soulsek_in packet-mark=soulsek_in parent=DSL_IN \
+   priority=7 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=ssh_in packet-mark=ssh_in parent=DSL_IN priority=3 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=ssl_in packet-mark=ssl_in parent=DSL_IN priority=2 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=vnc_in packet-mark=vnc_in parent=DSL_IN priority=4 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=teamspeak_in packet-mark=teamspeak_in parent=DSL_IN \
+   priority=4 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=500000 \
+   max-limit=600000 name=DSL_OUT packet-mark="" parent=global-out priority=1 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=100bao_p2p_out packet-mark=100bao_p2p_out parent=DSL_OUT \
+   priority=7 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=aim_mesanger_out packet-mark=aim_mesanger_out parent=\
+   DSL_OUT priority=6 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=aim_mesenger_web_out packet-mark=aim_mesenger_web_out \
+   parent=DSL_OUT priority=7 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=ares_p2p_out packet-mark=ares_p2p_out parent=DSL_OUT \
+   priority=7 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=bgp_routing_out packet-mark=bgp_routing_out parent=\
+   DSL_OUT priority=2 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=bittorent_out packet-mark=bittorent_out parent=DSL_OUT \
+   priority=7 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=dhcp_out packet-mark=dhcp_out parent=DSL_OUT priority=2 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=DC_p2p_out packet-mark=DC_p2p_out parent=DSL_OUT \
+   priority=7 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=DNS_out packet-mark=DNS_out parent=DSL_OUT priority=1 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=edonkey_p2p_out packet-mark=edonkey_p2p_out parent=\
+   DSL_OUT priority=7 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=fasttrack_p2p_out packet-mark=fasttrack_p2p_out parent=\
+   DSL_OUT priority=7 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=ftp_out packet-mark=ftp_out parent=DSL_OUT priority=5 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=gnu_p2p_out packet-mark=gnu_p2p_out parent=DSL_OUT \
+   priority=7 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=gnutella_p2p_out packet-mark=gnutella_p2p_out parent=\
+   DSL_OUT priority=7 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=gobogy_p2p_out packet-mark=gobogy_p2p_out parent=DSL_OUT \
+   priority=7 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=h323_voiceoverip_out packet-mark=h323_voiceoverip_out \
+   parent=DSL_OUT priority=4 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=httprtsp_out packet-mark=httprtsp_out parent=DSL_OUT \
+   priority=5 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=http_out packet-mark=http_out parent=DSL_OUT priority=3 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=ident_out packet-mark=ident_out parent=DSL_OUT priority=\
+   2 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=imap_out packet-mark=imap_out parent=DSL_OUT priority=2 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=imesh_p2p_out packet-mark=imesh_p2p_out parent=DSL_OUT \
+   priority=7 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=irc_out packet-mark=irc_out parent=DSL_OUT priority=4 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=koogo_out packet-mark=koogo_out parent=DSL_OUT priority=\
+   7 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=msnfile_out packet-mark=msnfile_out parent=DSL_OUT \
+   priority=6 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=msn_out packet-mark=msn_out parent=DSL_OUT priority=5 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=mute_p2p_out packet-mark=mute_p2p_out parent=DSL_OUT \
+   priority=7 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=napster_out packet-mark=napster_out parent=DSL_OUT \
+   priority=7 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=netbios_out packet-mark=netbios_out parent=DSL_OUT \
+   priority=2 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=nntp_out packet-mark=nntp_out parent=DSL_OUT priority=2 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=ntp_out packet-mark=ntp_out parent=DSL_OUT priority=2 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=radmin_out packet-mark=radmin_out parent=DSL_OUT \
+   priority=4 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=rdp_out packet-mark=rdp_out parent=DSL_OUT priority=4 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=rtsp_out packet-mark=rtsp_out parent=DSL_OUT priority=5 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=sip_out packet-mark=sip_out parent=DSL_OUT priority=4 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=skypeout_out packet-mark=skypeout_out parent=DSL_OUT \
+   priority=5 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=skype2skype_out packet-mark=skype2skype_out parent=\
+   DSL_OUT priority=5 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=pop3_out packet-mark=pop3_out parent=DSL_OUT priority=4 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=smtp_out packet-mark=smtp_out parent=DSL_OUT priority=2 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=snmp_out packet-mark=snmp_out parent=DSL_OUT priority=2 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=soulsek_out packet-mark=soulsek_out parent=DSL_OUT \
+   priority=7 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=ssh_out packet-mark=ssh_out parent=DSL_OUT priority=3 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=ssl_out packet-mark=ssl_out parent=DSL_OUT priority=2 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=vnc_out packet-mark=vnc_out parent=DSL_OUT priority=5 \
+   queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=teamspeak_out packet-mark=teamspeak_out parent=DSL_OUT \
+   priority=5 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=applejuice_out packet-mark=applejuice_out parent=DSL_OUT \
+   priority=7 queue=default
+add burst-limit=0 burst-threshold=0 burst-time=0s disabled=no limit-at=0 \
+   max-limit=0 name=msn_in packet-mark=msn_in parent=DSL_IN priority=5 \
+   queue=default</pre>
+<p>&nbsp;</p>
+<p>OPTIONAL: In this example we do not catch the &#8220;all remaining&#8221; packets so packets that are not caught here will get higher priority. If we want to catch them and put them in our queue rules we need to add these lines:</p>
+<pre>/ip firewall mangle
+add action=mark-packet chain=prerouting comment="Everything else that remains" in-interface=dsl new-packet-mark=remaining_in passthrough=no
+add action=mark-packet chain=postrouting new-packet-mark=remaining_out out-interface=dsl passthrough=no</pre>
+<p>As you can imagine, this will invalidate (overwrite, over-mark) all previous marks with passthrough=yes so you might as well change all those to =no.</p>
+<p>Then we need to add the queues:</p>
+<pre>/queue tree
+add name=remaining_in packet-mark=remaining_in parent=DSL_IN priority=6
+add name=remaining_out packet-mark=remaining_out parent=DSL_OUT priority=6</pre>
+<p>&nbsp;</p>
+<p>REFERENCE : MikroTik-Wiki<br>
+&nbsp;</p>
+<div class="post-ratings" data-post="307">
+<div class="rating" data-post="307" data-rating="3" data-readonly="0"></div>
+<div class="rating-meta">
+<strong>3.00</strong> avg. rating (<strong>74</strong>% score) - <strong class="votes">1</strong> vote	</div>
+</div>
+<footer>
+<p></p>
+<p>Posted Under: <a href="/category/linux/" rel="category tag">Linux</a>, <a href="/category/mikrotik/" rel="category tag">MikroTik</a>, <a href="/category/network/" rel="category tag">Network</a>, <a href="/category/security/" rel="category tag">Security</a></p>
+<section class="row">
+<div class="twelve columns">
+<div class="panel author-box">
+<a class="th"><img alt="" src="https://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=55&#038;d=mm&#038;r=g" srcset="http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=110&#038;d=mm&#038;r=g 2x" class="author_gravatar left  avatar-55 photo" height="55" width="55" loading="lazy"></a>
+<h5>About <a href="https://plus.google.com/103839803047317952696" title="Visit vaheeD&#8217;s website" rel="author external">vaheeD</a>
+</h5>
+<p>
+</p>
+</div>
+</div>
+</section>
+
+
+<div id="respond" class="comment-respond">
+<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/basic-traffic-shaping-based-on-layer-7-protocols/#respond" style="display:none;">Cancel reply</a></small>
+</h3>
+<form action="/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p>
+<p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p>
+<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200"></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="307" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>
+<div style="text-align:center; font-style:italic; font-size:12px;">Protected by <a href="http://boliquan.com/wp-anti-spam/" target="_blank">WP Anti Spam</a>
+</div>
+</form> </div>
+</footer>
+</article>
+<hr>
+</div>
+
+
+<aside class="three columns">
+<div>
+<form method="get" id="searchform" action="/">
+<div class="row">
+<div class="twelve columns">
+<div class="row collapse">
+<div class="eight mobile-three columns">
+<input type="text" name="s" id="s" placeholder="Search">
+</div>
+<div class="four mobile-one columns">
+<input type="submit" class="postfix button expand" name="submit" id="searchsubmit" value="Search">
+</div>
+</div>
+</div>
+</div>
+</form>
+</div>
+<div>
+<h5>Categories</h5>
+<ul>
+<li class="cat-item cat-item-17">
+<a href="/category/cisco/">Cisco</a>
+</li>
+<li class="cat-item cat-item-6">
+<a href="/category/linux/">Linux</a>
+</li>
+<li class="cat-item cat-item-8">
+<a href="/category/macosx/">Macosx</a>
+</li>
+<li class="cat-item cat-item-7">
+<a href="/category/mikrotik/">MikroTik</a>
+</li>
+<li class="cat-item cat-item-10">
+<a href="/category/network/">Network</a>
+</li>
+<li class="cat-item cat-item-20">
+<a href="/category/openstack/">openstack</a>
+</li>
+<li class="cat-item cat-item-11">
+<a href="/category/security/">Security</a>
+</li>
+<li class="cat-item cat-item-1">
+<a href="/category/uncategorized/">Uncategorized</a>
+</li>
+</ul>
+</div>
+</aside>
+
+</div>
+
+
+<footer class="row">
+<div class="twelve columns">
+<ul class="link-list">
+</ul>
+</div>
+</footer>
+
+<div id="foot">
+<strong>vaheeD.NET</strong> | linux, mikrotik, macosx | 2012, 2013</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="015064254d1f9750b5051f29-text/javascript" src="//vjs.zencdn.net/5.9.2/video.js?ver=1.0.2" id="videojs-js"></script>
+<script type="015064254d1f9750b5051f29-text/javascript" src="/wp-content/plugins/videojs-hls-player/videojs-contrib-hls/videojs-contrib-hls.min.js?ver=1.0.2" id="videojs-hls-js"></script>
+<script type="015064254d1f9750b5051f29-text/javascript" src="/wp-content/plugins/videojs-hls-player/videojs-airplay/videojs.airplay.js?ver=1.0.2" id="videojs-airplay-js"></script>
+<script type="015064254d1f9750b5051f29-text/javascript" src="/wp-content/plugins/videojs-hls-player/videojs-hls-player.js?ver=1.0.2" id="videojs-custom-js"></script>
+<script type="015064254d1f9750b5051f29-text/javascript" src="/wp-includes/js/jquery/suggest.min.js?ver=1.1-20110113" id="suggest-js"></script>
+<script type="015064254d1f9750b5051f29-text/javascript" id="wp-search-suggest-js-extra">
+/* <![CDATA[ */
+var wpss_options = {"url":"http:\/\/vaheed.net\/wp-admin\/admin-ajax.php","nonce":"ffc31e8139","ajaxurl":"http:\/\/vaheed.net\/wp-admin\/admin-ajax.php?action=wp-search-suggest&_wpnonce=9c0d5b0c5c"};
+/* ]]> */
+</script>
+<script type="015064254d1f9750b5051f29-text/javascript" src="/wp-content/plugins/wp-search-suggest/js/wpss-search-suggest.js?ver=5" id="wp-search-suggest-js"></script>
+<script type="015064254d1f9750b5051f29-text/javascript" src="/wp-content/themes/drewsymo-Foundation-3b62be5/javascripts/foundation.min.js?ver=1.0" id="foundation-js"></script>
+<script type="015064254d1f9750b5051f29-text/javascript" src="/wp-content/themes/drewsymo-Foundation-3b62be5/javascripts/app.js?ver=1.0" id="app-js"></script>
+<script type="015064254d1f9750b5051f29-text/javascript" id="post-ratings-js-extra">
+/* <![CDATA[ */
+var post_ratings = {"ajaxURL":"http:\/\/vaheed.net\/wp-admin\/admin-ajax.php","nonce":"a8b298b24a","path":"http:\/\/vaheed.net\/wp-content\/plugins\/post-ratings\/assets\/images\/","number":"5"};
+/* ]]> */
+</script>
+<script type="015064254d1f9750b5051f29-text/javascript" src="/wp-content/plugins/post-ratings/js/post-ratings.js?ver=3.0" id="post-ratings-js"></script>
+<script type="015064254d1f9750b5051f29-text/javascript" src="/wp-content/plugins/post-ratings/assets/jquery.raty.js?ver=3.0" id="post-ratings-raty-js"></script>
+<script type="015064254d1f9750b5051f29-text/javascript" src="/wp-includes/js/wp-embed.min.js?ver=5.7.2" id="wp-embed-js"></script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="015064254d1f9750b5051f29-|49" defer></script>
+</body>
+</html>

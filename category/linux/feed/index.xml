@@ -1,0 +1,1168 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Linux | vaheeD khoshnouD</title>
+	<atom:link href="/category/linux/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>linux, mikrotik, macosx</description>
+	<lastBuildDate>Mon, 12 Apr 2021 19:17:37 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.7.2</generator>
+	<item>
+		<title>How to safer in Linux for newbie</title>
+		<link>/how-to-safer-in-linux-for-newbie/</link>
+					<comments>/how-to-safer-in-linux-for-newbie/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Mon, 12 Apr 2021 19:04:47 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<guid isPermaLink="false">/?p=815</guid>
+
+					<description><![CDATA[<p>1. Run updates any time you can 2. Enable firewall protection 3. Disable nonessential services that are prone to exploitation Recognize which services could cause potential vulnerabilities to your system. For each service: 4. Check for listening ports 5. Scan for malware vaheeDMore Posts - Website Follow Me:</p>
+The post <a href="/how-to-safer-in-linux-for-newbie/">How to safer in Linux for newbie</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<span id="more-815"></span>
+
+
+
+<p></p>
+
+
+
+<p></p>
+
+
+
+<p>1. Run updates any time you can</p>
+
+
+
+<pre class="wp-block-code"><code>sudo apt-get update &amp;&amp; apt-get upgrade
+</code></pre>
+
+
+
+<p></p>
+
+
+
+<p></p>
+
+
+
+<p>2. Enable firewall protection</p>
+
+
+
+<pre class="wp-block-code"><code>sudo apt-get install ufw
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+ufw allow ssh
+sudo ufw enable
+</code></pre>
+
+
+
+<p></p>
+
+
+
+<p></p>
+
+
+
+<p>3. Disable nonessential services that are prone to exploitation</p>
+
+
+
+<pre class="wp-block-code"><code>sudo apt-get install systemd
+systemctl list-units
+</code></pre>
+
+
+
+<p>Recognize which services could cause potential vulnerabilities to your system. For each service:</p>
+
+
+
+<pre class="wp-block-code"><code>systemctl stop &lt;service&gt;
+systemctl disable &lt;service&gt;
+systemctl status &lt;service&gt;
+</code></pre>
+
+
+
+<p></p>
+
+
+
+<p></p>
+
+
+
+<p>4. Check for listening ports</p>
+
+
+
+<pre class="wp-block-code"><code>netstat -tulpn
+</code></pre>
+
+
+
+<p></p>
+
+
+
+<p></p>
+
+
+
+<p>5. Scan for malware</p>
+
+
+
+<pre class="wp-block-code"><code>sudo apt-get install clamav
+sudo freshclam
+sudo clamscan -r --bell -i /
+</code></pre>
+
+
+
+<p></p>
+
+
+
+<p></p>
+
+
+
+<p></p>
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/how-to-safer-in-linux-for-newbie/">How to safer in Linux for newbie</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/how-to-safer-in-linux-for-newbie/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>How to install ACME2 SSL Certificate On ViciDial</title>
+		<link>/how-to-install-acme2-ssl-certificate-on-vicidial/</link>
+					<comments>/how-to-install-acme2-ssl-certificate-on-vicidial/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Tue, 20 Oct 2020 06:08:22 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<guid isPermaLink="false">/?p=809</guid>
+
+					<description><![CDATA[<p>Just realized that client isnt ACME2 compatible. I recommend you do the following: Then create this script and run it. Syntax is -e some@testdomain.com -d vicidial.testdomain.com Now chmode your script and run &#8230; vaheeD More Posts - Website Follow Me:</p>
+The post <a href="/how-to-install-acme2-ssl-certificate-on-vicidial/">How to install ACME2 SSL Certificate On ViciDial</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<span id="more-809"></span>
+
+
+
+<p>Just realized that client isnt ACME2 compatible. I recommend you do the following:
+</p>
+
+
+<p></p>
+
+
+<pre class="wp-block-code"><code>
+zypper in socat
+wget -O -  https://get.acme.sh/ | sh
+</code></pre>
+
+
+<p></p>
+
+
+<p>Then create this script and run it. Syntax is -e some@testdomain.com -d vicidial.testdomain.com
+</p>
+
+
+
+<pre class="wp-block-code"><code>
+#!/bin/bash
+
+while getopts ":e:d:" options; do
+    case "${options}" in
+        e)
+           EMAIL=${OPTARG} ;;
+        d)
+      DOMAIN=${OPTARG} ;;
+        :) echo "Error: -${OPTARG} requires an argument."; exit 1;;
+        *) echo "Internal error!" ; exit 1 ;;
+    esac
+done
+
+if &#91; -z "$EMAIL" ]
+then
+   echo "Missing -e Email option!"
+   exit 1
+fi
+if &#91; -z "$DOMAIN" ]
+then
+   echo "Missing -d Domain option!"
+   exit 1
+fi
+
+mkdir /etc/certbot/live/$DOMAIN
+/root/.acme.sh/acme.sh --issue -d $DOMAIN -w /srv/www/htdocs/ --cert-file /etc/certbot/live/$DOMAIN/cert.pem --key-file /etc/certbot/live/$DOMAIN/privkey.pem --fullchain-file /etc/certbot/live/$DOMAIN/fullchain.pem --accountemail $EMAIL
+
+sed -i "/SSLCertificateFile/c\\\tSSLCertificateFile /etc/certbot/live/$DOMAIN/cert.pem" /etc/apache2/vhosts.d/1111-default-ssl.conf
+sed -i "/SSLCertificateKeyFile/c\\\tSSLCertificateKeyFile /etc/certbot/live/$DOMAIN/privkey.pem" /etc/apache2/vhosts.d/1111-default-ssl.conf
+sed -i "/SSLCACertificateFile/c\\\tSSLCACertificateFile /etc/certbot/live/$DOMAIN/fullchain.pem" /etc/apache2/vhosts.d/1111-default-ssl.conf
+sed -i "/tlscertfile=/c\\tlscertfile=/etc/certbot/live/$DOMAIN/cert.pem" /etc/asterisk/http.conf
+sed -i "/tlsprivatekey=/c\\tlsprivatekey=/etc/certbot/live/$DOMAIN/privkey.pem" /etc/asterisk/http.conf
+/usr/sbin/rasterisk -x 'module reload http'
+/sbin/service apache2 restart
+
+echo "  If this is a telephony server you will need to modify the 'Web Socket URL'"
+echo "  field for this server under the Admin --> Servers section. It will need to be"
+echo "  changed to :"
+echo "    wss://$DOMAIN:8089/ws"
+echo
+echo "  You will also need to modify the 'webRTC' template under the Admin --> Templates"
+echo "  section. You want to change the following options under the "
+echo "  'Template Contents' :"
+echo "    dtlscertfile=/etc/certbot/live/$DOMAIN/cert.pem"
+echo "    dtlsprivatekey=/etc/certbot/live/$DOMAIN/privkey.pem"
+
+</code></pre>
+
+
+
+<p>Now chmode your script and run &#8230; 
+</p>
+
+
+<p></p><div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/how-to-install-acme2-ssl-certificate-on-vicidial/">How to install ACME2 SSL Certificate On ViciDial</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/how-to-install-acme2-ssl-certificate-on-vicidial/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>How to install PHPMyAdmin on Ubuntu 18.04 in Nginx webserver</title>
+		<link>/how-to-install-phpmyadmin-on-ubuntu-18-04-in-nginx-webserver/</link>
+					<comments>/how-to-install-phpmyadmin-on-ubuntu-18-04-in-nginx-webserver/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Sun, 18 Oct 2020 13:51:43 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<guid isPermaLink="false">/?p=807</guid>
+
+					<description><![CDATA[<p>This is done by updating your server’s package index and then using the apt packaging system to pull down the files and install them on your system: For the server selection, choose NONE. Then paste this code into this file and if you want to change example.com to your domain vaheeD More Posts - Website... </p>
+<p><a class="small button secondary" href="/how-to-install-phpmyadmin-on-ubuntu-18-04-in-nginx-webserver/">Continue Reading</a></p>
+The post <a href="/how-to-install-phpmyadmin-on-ubuntu-18-04-in-nginx-webserver/">How to install PHPMyAdmin on Ubuntu 18.04 in Nginx webserver</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<span id="more-807"></span>
+
+
+
+<p>This is done by updating your server’s package index and then using the apt packaging system to pull down the files and install them on your system:  </p>
+
+
+
+<pre class="wp-block-code"><code>
+sudo apt update
+sudo apt install phpmyadmin php-mbstring php-gettext
+</code></pre>
+
+
+
+<p>
+For the server selection, choose NONE.
+</p>
+
+
+
+<pre class="wp-block-code"><code>
+sudo phpenmod mbstring
+</code></pre>
+
+
+
+<pre class="wp-block-code"><code>
+sudo vi /etc/nginx/conf.d/phpmyadmin.conf</code></pre>
+
+
+
+<p>
+Then paste this code into this file and if you want to change example.com to your domain
+</p>
+
+
+
+<pre class="wp-block-code"><code>
+server {
+  listen 81;
+  listen &#91;::]:81;
+  server_name example.com;
+  root /usr/share/phpmyadmin/;
+  index index.php index.html index.htm index.nginx-debian.html;
+
+  access_log /var/log/nginx/phpmyadmin_access.log;
+  error_log /var/log/nginx/phpmyadmin_error.log;
+
+  location / {
+    try_files $uri $uri/ /index.php;
+  }
+
+  location ~ ^/(doc|sql|setup)/ {
+    deny all;
+  }
+
+  location ~ \.php$ {
+    fastcgi_pass unix:/run/php/php7.2-fpm.sock;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    include fastcgi_params;
+    include snippets/fastcgi-php.conf;
+  }
+
+  location ~ /\.ht {
+    deny all;
+  }
+}
+</code></pre>
+
+
+
+<pre class="wp-block-code"><code>
+sudo systemctl reload nginx
+</code></pre>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/how-to-install-phpmyadmin-on-ubuntu-18-04-in-nginx-webserver/">How to install PHPMyAdmin on Ubuntu 18.04 in Nginx webserver</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/how-to-install-phpmyadmin-on-ubuntu-18-04-in-nginx-webserver/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>How to upgrade Ubuntu 16.04 PHP version</title>
+		<link>/how-to-upgrade-ubuntu-16-04-php-version/</link>
+					<comments>/how-to-upgrade-ubuntu-16-04-php-version/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Tue, 06 Oct 2020 06:42:18 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<guid isPermaLink="false">/?p=788</guid>
+
+					<description><![CDATA[<p>As you know the default PHP version for Ubuntu 16.04 is 7.0. If you want to install a new version of PHP on 16.04 you need to use an additional PPA (as it is shown below) or you must compile it on your own. Now you can see PHP version vaheeD More Posts - Website... </p>
+<p><a class="small button secondary" href="/how-to-upgrade-ubuntu-16-04-php-version/">Continue Reading</a></p>
+The post <a href="/how-to-upgrade-ubuntu-16-04-php-version/">How to upgrade Ubuntu 16.04 PHP version</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<span id="more-788"></span>
+
+
+
+<p>As you know the default PHP version for Ubuntu 16.04 is 7.0. If you want to install a new version of PHP on 16.04 you need to use an additional PPA (as it is shown below) or you must compile it on your own.  </p>
+
+
+
+<pre class="wp-block-code"><code># Add the repository 'ppa:ondrej/php'
+</code></pre>
+
+
+
+<pre class="wp-block-code"><code>sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:ondrej/php
+sudo apt update</code></pre>
+
+
+
+<pre class="wp-block-code"><code># Install PHP 7.2
+</code></pre>
+
+
+
+<pre class="wp-block-code"><code>sudo apt install -y php7.2 php7.2-cli libapache2-mod-php7.2
+sudo apt install -y php-imagick php-gettext php-memcache php-apcu php-pear php-xml php-xmlrpc
+sudo apt install -y php-memcached php-mysql php-intl php-mbstring php-curl php-gd php-imagick
+sudo apt install -y php7.2-common php7.2-mysql php7.2-cgi 
+sudo apt install -y php7.2-curl php7.2-zip php7.2-mbstring php7.2-xmlrpc php7.2-gd php7.2-xml php7.2-xsl
+sudo apt install -y php7.2-dev php7.2-bz2 php7.2-intl php7.2-json php7.2-opcache php7.2-readline 
+sudo apt install -y php7.2-imap php7.2-pspell php7.2-recode php7.2-sqlite3 php7.2-tidy php7.2-bcmath #php7.2-mcrypt
+</code></pre>
+
+
+
+<pre class="wp-block-code"><code># Update the Apache's PHP version
+</code></pre>
+
+
+
+<pre class="wp-block-code"><code>sudo a2dismod php7.0
+sudo a2enmod php7.2
+sudo systemctl restart apache2.service</code></pre>
+
+
+
+<pre class="wp-block-code"><code># Update the CLI PHP version
+</code></pre>
+
+
+
+<pre class="wp-block-code"><code>sudo update-alternatives --set php /usr/bin/php7.2
+</code></pre>
+
+
+
+<p>Now you can see PHP version</p>
+
+
+
+<pre class="wp-block-code"><code>php -v
+PHP 7.2.33-1+ubuntu16.04.1+deb.sury.org+1 (cli) (built: Aug  7 2020 14:43:59) ( NTS )
+Copyright (c) 1997-2018 The PHP Group
+Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
+    with Zend OPcache v7.2.33-1+ubuntu16.04.1+deb.sury.org+1, Copyright (c) 1999-2018, by Zend Technologies
+</code></pre>
+
+
+
+<!--more-->
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/how-to-upgrade-ubuntu-16-04-php-version/">How to upgrade Ubuntu 16.04 PHP version</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/how-to-upgrade-ubuntu-16-04-php-version/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Step by step Ubuntu LXD</title>
+		<link>/step-by-step-ubuntu-lxd/</link>
+					<comments>/step-by-step-ubuntu-lxd/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Wed, 06 Jan 2016 10:11:44 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[openstack]]></category>
+		<category><![CDATA[Security]]></category>
+		<guid isPermaLink="false">/?p=734</guid>
+
+					<description><![CDATA[<p>sudo add-apt-repository ppa:ubuntu-lxc/lxd-stable sudo apt-get update sudo apt-get install lxd ======================== lxd-images import ubuntu --alias ubuntu =======================Your first container================ lxc image list lxc launch ubuntu first lxc list lxc info first lxc config show first =======================Limiting resources================= free -m lxc exec first -- free -m lxc config set first limits.memory 64MB lxc exec first --... </p>
+<p><a class="small button secondary" href="/step-by-step-ubuntu-lxd/">Continue Reading</a></p>
+The post <a href="/step-by-step-ubuntu-lxd/">Step by step Ubuntu LXD</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-734"></span></p>
+<p><code><br />
+sudo add-apt-repository ppa:ubuntu-lxc/lxd-stable<br />
+sudo apt-get update<br />
+sudo apt-get install lxd<br />
+========================</p>
+<p>lxd-images import ubuntu --alias ubuntu</p>
+<p>=======================Your first container================<br />
+lxc image list<br />
+lxc launch ubuntu first<br />
+lxc list<br />
+lxc info first<br />
+lxc config show first<br />
+=======================Limiting resources=================<br />
+free -m<br />
+lxc exec first -- free -m<br />
+lxc config set first limits.memory 64MB<br />
+lxc exec first -- free -m<br />
+=======================Snapshots==========================<br />
+lxc exec first -- apt-get update<br />
+lxc exec first -- apt-get dist-upgrade -y<br />
+lxc exec first -- apt-get autoremove --purge -y</p>
+<p>lxc snapshot first clean</p>
+<p>lxc exec first -- rm -Rf /etc /usr</p>
+<p>lxc exec first -- bash</p>
+<p>lxc restore first clean</p>
+<p>lxc exec first -- bash<br />
+========================Creating images===================<br />
+lxc publish first/clean --alias clean-ubuntu<br />
+lxc delete first<br />
+lxc launch clean-ubuntu second<br />
+=======================Accessing files from the container=<br />
+lxc file pull second/etc/hosts .<br />
+echo "1.2.3.4 my-example" >> hosts<br />
+lxc file push hosts second/etc/hosts<br />
+lxc file pull second/var/log/syslog - | less<br />
+lxc delete second<br />
+=======================Use a remote image server=========<br />
+lxc remote add images images.linuxcontainers.org<br />
+lxc image list images: | less<br />
+lxc launch images:centos/7/amd64 third<br />
+lxc exec third -- cat /etc/redhat-release<br />
+lxc delete third<br />
+lxc remote list<br />
+=======================Interact with remote LXD servers=<br />
+lxc list tryit:<br />
+lxc image list tryit:<br />
+lxc launch clean-ubuntu tryit:fourth<br />
+lxc exec tryit:fourth bash<br />
+lxc copy tryit:fourth tryit:fifth<br />
+lxc move tryit:fifth sixth<br />
+lxc start sixth<br />
+lxc exec sixth -- bash<br />
+lxc delete sixth<br />
+lxc delete tryit:fourth<br />
+lxc image delete clean-ubuntu<br />
+======================</p>
+<p>iptables -t nat -A PREROUTING -p tcp --dport 9000 -j DNAT --to 10.0.3.204:9000<br />
+</code></p>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;">
+<div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div>
+<div class="wp-about-author-text" style="margin-left:140px">
+<h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3>
+</p>
+<p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p>
+<p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p>
+</div>
+</div>The post <a href="/step-by-step-ubuntu-lxd/">Step by step Ubuntu LXD</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/step-by-step-ubuntu-lxd/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Step by Step install Openstack all in one Virtual machines</title>
+		<link>/step_by_step_install_openstack_all_in_one_virtual_machines/</link>
+					<comments>/step_by_step_install_openstack_all_in_one_virtual_machines/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Wed, 30 Dec 2015 08:16:37 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[openstack]]></category>
+		<guid isPermaLink="false">/?p=731</guid>
+
+					<description><![CDATA[<p>Requirements: OS Type : Ubuntu 14.04 CPU : 2 Core RAM : 8G Disk: 60G First Step we need add user for configure and running devstack sudo bash useradd -m stack echo "stack ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers su stack sudo aptitude update sudo aptitude upgrade -y reboot now install dependency package sudo aptitude install... </p>
+<p><a class="small button secondary" href="/step_by_step_install_openstack_all_in_one_virtual_machines/">Continue Reading</a></p>
+The post <a href="/step_by_step_install_openstack_all_in_one_virtual_machines/">Step by Step install Openstack all in one Virtual machines</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-731"></span></p>
+<p></p>
+<p>Requirements:<br />
+OS Type : Ubuntu 14.04<br />
+CPU : 2 Core<br />
+RAM : 8G<br />
+Disk: 60G<br />
+<br />
+First Step we need add user for configure and running devstack<br />
+<code><br />
+sudo bash<br />
+useradd -m stack<br />
+echo "stack ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers<br />
+su stack<br />
+sudo aptitude update<br />
+sudo aptitude upgrade -y<br />
+reboot<br />
+</code><br />
+<br />
+now install dependency package<br />
+<code><br />
+sudo aptitude install build-essential htop atop vim-nox nload git -y<br />
+sudo bash<br />
+su stack<br />
+cd<br />
+git clone https://github.com/openstack-dev/devstack.git<br />
+cd devstack<br />
+</code><br />
+<br />
+now we need local configuration<br />
+<code><br />
+vi /home/stack/devstack/local.conf<br />
+</code><br />
+<br />
+and paste configuration<br />
+<code><br />
+[[local|localrc]]<br />
+#=================<br />
+#khoshnud@gmail.com<br />
+#=================<br />
+#Password list configuration<br />
+ADMIN_PASSWORD=nova<br />
+MYSQL_PASSWORD=nova<br />
+RABBIT_PASSWORD=nova<br />
+SERVICE_PASSWORD=$ADMIN_PASSWORD<br />
+SERVICE_TOKEN=nova<br />
+#=================<br />
+#seet UUID as keystone token which is much shorter and easier to work with.<br />
+KEYSTONE_TOKEN_FORMAT=UUID<br />
+#=================<br />
+#Swift-Object_Storage<br />
+ENABLED_SERVICES+=,s-proxy,s-object,s-container,s-account<br />
+SWIFT_HASH=66a3d6b56c1f479c8b4e70ab5c2000f5<br />
+SWIFT_REPLICAS=1<br />
+SWIFT_DATA_DIR=$DEST/data<br />
+#=================<br />
+#Ceilometer-Metering_Service<br />
+ENABLED_SERVICES+=,ceilometer-acompute,ceilometer-acentral,ceilometer-collector,ceilometer-api<br />
+ENABLED_SERVICES+=,ceilometer-alarm-notify,ceilometer-alarm-eval<br />
+#=================<br />
+#Heat-Orchestration_Service<br />
+ENABLED_SERVICES+=,heat,h-api,h-api-cfn,h-api-cw,h-eng<br />
+#=================<br />
+#Apache_fronted_for_WSGI<br />
+APACHE_ENABLED_SERVICES+=keystone,swift<br />
+#=================<br />
+#Murano<br />
+enable_plugin murano git://git.openstack.org/openstack/murano<br />
+enable_service murano-cfapi<br />
+#MURANO_APPS=io.murano.apps.apache.Tomcat,io.murano.apps.Guacamole<br />
+#MURANO_APPS=io.murano.apps.apache.Tomcat,io.murano.apps.Guacamole,io.murano.apps.HDPSandbox,io.murano.apps.RabbitMQ,io.murano.apps.TestCluster,io.murano.apps.WordPress,io.murano.apps.ZabbixAgent,io.murano.apps.ZabbixServer,io.murano.apps.linux.Git,io.murano.apps.linux.Telnet,io.murano.databases.MySql,io.murano.apps.apache.ApacheHttpServer,io.murano.apps.apache.TomcatCluster,io.murano.apps.apache.TomcatServletContainer,io.murano.apps.apache.TomcatSingle,io.murano.apps.java.HelloWorld,io.murano.apps.java.HelloWorldCluster,io.murano.apps.mongodb.MongoReplicationSet,io.murano.apps.openstack.Murano,io.murano.apps.openstack.MuranoDashboard,io.murano.apps.paas.CloudFoundry.DEAng,io.murano.apps.paas.CloudFoundry,io.murano.apps.paas.CloudFoundryUI,io.murano.apps.test.SimpleVMcluster,io.murano.databases.PostgreSql,io.murano.databases.SqlDatabase,io.murano.windows.ActiveDirectory,io.murano.windows.FailoverCluster,io.murano.windows.SqlServer,io.murano.windows.SqlServerCluster,io.murano.apps.docker.DockerStandaloneHost,io.murano.apps.SugarCRM<br />
+#=================<br />
+#Enable_Logging<br />
+LOGFILE=/opt/stack/logs/stack.sh.log<br />
+VERBOSE=True<br />
+LOG_COLOR=True<br />
+SCREEN_LOGDIR=/opt/stack/logs<br />
+#=================<br />
+#Network_Configuration<br />
+FLOATING_RANGE=192.168.25.0/27<br />
+FLAT_INTERFACE=eth0<br />
+LOGFILE=/home/stack/stack.sh.log<br />
+Q_FLOATING_ALLOCATION_POOL=start=192.168.25.10,end=192.168.25.20<br />
+PUBLIC_NETWORK_GATEWAY=192.168.25.1<br />
+#=================<br />
+#install_devstack_single_node<br />
+disable_service n-net<br />
+enable_service q-svc<br />
+enable_service q-agt<br />
+enable_service q-dhcp<br />
+enable_service q-l3<br />
+enable_service q-meta<br />
+enable_service neutron<br />
+enable_service tempest<br />
+#=================<br />
+#install_devstack_multi_node<br />
+#disable_service n-net<br />
+#enable_service q-svc<br />
+#enable_service q-agt<br />
+#enable_service q-dhcp<br />
+#enable_service q-l3<br />
+#enable_service q-meta<br />
+#enable_service neutron<br />
+#================<br />
+#Runnig_this_section_for_all_node_connected_to_controler<br />
+#ENABLED_SERVICES=n-cpu,rabbit,neutron,q-agt<br />
+#SERVICE_HOST=[IP of controller node]<br />
+#MYSQL_HOST=$SERVICE_HOST<br />
+#RABBIT_HOST=$SERVICE_HOST<br />
+#Q_HOST=$SERVICE_HOST<br />
+</code><br />
+now go to devstack directory and run ./stack.sh<br />
+<br />
+virtual machine in openstack need internet and other network activity<br />
+<code><br />
+sudo bash<br />
+echo 1 > /proc/sys/net/ipv4/ip_forward<br />
+echo 1 > /proc/sys/net/ipv4/conf/eth0/proxy_arp<br />
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE<br />
+</code><br />
+<br />
+Attention: never poweroff or reboot openstack server, just pause and play (Snapshot ):D</p>
+<p>have a good day dude!</p>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;">
+<div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div>
+<div class="wp-about-author-text" style="margin-left:140px">
+<h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3>
+</p>
+<p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p>
+<p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p>
+</div>
+</div>The post <a href="/step_by_step_install_openstack_all_in_one_virtual_machines/">Step by Step install Openstack all in one Virtual machines</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/step_by_step_install_openstack_all_in_one_virtual_machines/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Install Qemu on Mac OS With Homebrew</title>
+		<link>/install-qemu-on-mac-os-with-homebrew/</link>
+					<comments>/install-qemu-on-mac-os-with-homebrew/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Mon, 12 Oct 2015 20:16:11 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Macosx]]></category>
+		<guid isPermaLink="false">/?p=727</guid>
+
+					<description><![CDATA[<p>First Step we need package manager on MAC OS ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" Second Step Instal Qemu brew install qemu vaheeD More Posts - Website Follow Me:</p>
+The post <a href="/install-qemu-on-mac-os-with-homebrew/">Install Qemu on Mac OS With Homebrew</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-727"></span></p>
+<p></p>
+<p>First Step we need package manager on MAC OS</p>
+<p><code>ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</code></p>
+<p>Second Step Instal Qemu</p>
+<p><code>brew install qemu</code></p>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;">
+<div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div>
+<div class="wp-about-author-text" style="margin-left:140px">
+<h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3>
+</p>
+<p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p>
+<p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p>
+</div>
+</div>The post <a href="/install-qemu-on-mac-os-with-homebrew/">Install Qemu on Mac OS With Homebrew</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/install-qemu-on-mac-os-with-homebrew/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>PPTP Client on XBMCbuntu</title>
+		<link>/pptp-client-xbmcbuntu/</link>
+					<comments>/pptp-client-xbmcbuntu/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Wed, 04 Jun 2014 06:42:33 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<guid isPermaLink="false">/?p=700</guid>
+
+					<description><![CDATA[<p>&#160; Installing the Client Program &#160;   apt-get install pptp-linux &#160; cat /etc/ppp/chap-secrets USERNAME PPTP PASSWORD * __EOF__ cat /etc/ppp/peers/pptp pty "pptp SERVER-IP-ADDRESS --nolaunchpppd" name USERNAME usepeerdns noauth file /etc/ppp/options.pptp ipparam pptp __EOF__ &#160; Connect pon pptp &#160; Disconnect poff pptp &#160; route add -net 0.0.0.0 dev ppp0 &#160; &#160; vaheeD More Posts - Website... </p>
+<p><a class="small button secondary" href="/pptp-client-xbmcbuntu/">Continue Reading</a></p>
+The post <a href="/pptp-client-xbmcbuntu/">PPTP Client on XBMCbuntu</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-700"></span></p>
+<p>&nbsp;</p>
+<p><b style="color: #000000;">Installing the Client Program</b></p>
+<p>&nbsp;</p>
+<p><b style="color: #000000; font-family: verdana, arial, helvetica, sans-serif; font-size: medium; line-height: normal;"> </b></p>
+<pre>
+apt-get install pptp-linux
+</pre>
+<p>&nbsp;<br />
+</p>
+<pre>
+cat <<'__EOF__' >> /etc/ppp/chap-secrets
+USERNAME  PPTP  PASSWORD  *
+__EOF__
+</pre>
+<pre>
+cat <<'__EOF__' >> /etc/ppp/peers/pptp
+pty "pptp SERVER-IP-ADDRESS --nolaunchpppd"
+name USERNAME
+usepeerdns
+noauth
+file /etc/ppp/options.pptp
+ipparam pptp
+__EOF__
+</pre>
+<p>&nbsp;<br />
+<br />
+Connect</p>
+<pre>
+pon pptp
+</pre>
+<p>
+&nbsp;</p>
+<p>Disconnect</p>
+<pre>
+poff pptp
+</pre>
+<p>&nbsp;<br />
+</p>
+<pre>
+route add -net 0.0.0.0 dev ppp0
+</pre>
+<p>&nbsp;<br />
+&nbsp;</p>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;">
+<div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div>
+<div class="wp-about-author-text" style="margin-left:140px">
+<h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3>
+</p>
+<p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p>
+<p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p>
+</div>
+</div>The post <a href="/pptp-client-xbmcbuntu/">PPTP Client on XBMCbuntu</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/pptp-client-xbmcbuntu/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>How Remove Older Kernel on Ubuntu and Clear /boot Partition</title>
+		<link>/remove-older-kernel-ubuntu-clear-boot-partition/</link>
+					<comments>/remove-older-kernel-ubuntu-clear-boot-partition/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Tue, 03 Jun 2014 21:24:49 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<guid isPermaLink="false">/?p=695</guid>
+
+					<description><![CDATA[<p>&#160; How Remove Older Kernel on Ubuntu and Clear /boot Partition &#160; Just login as root user or using sudo command like &#8230; &#160; sudo apt-get remove --purge $(dpkg -l 'linux-*' &#124; sed '/^ii/!d;/'"$(uname -r &#124; sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d') vaheeD More Posts - Website Follow Me:</p>
+The post <a href="/remove-older-kernel-ubuntu-clear-boot-partition/">How Remove Older Kernel on Ubuntu and Clear /boot Partition</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-695"></span></p>
+<p>&nbsp;</p>
+<p>How Remove Older Kernel on Ubuntu and Clear /boot Partition</p>
+<p>&nbsp;</p>
+<p>Just login as root user or using sudo command like &#8230;</p>
+<p>&nbsp;</p>
+<pre>
+sudo apt-get remove --purge $(dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d')
+</pre>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;">
+<div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div>
+<div class="wp-about-author-text" style="margin-left:140px">
+<h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3>
+</p>
+<p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p>
+<p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p>
+</div>
+</div>The post <a href="/remove-older-kernel-ubuntu-clear-boot-partition/">How Remove Older Kernel on Ubuntu and Clear /boot Partition</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/remove-older-kernel-ubuntu-clear-boot-partition/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Completely HTPC with XBMCbuntu + TVHeadend + Tevii S660 + DVB T + PS3 Remote</title>
+		<link>/completely-htpc-xbmcbuntu-tvheadend-tevii-s660-dvb-t-ps3-remote/</link>
+					<comments>/completely-htpc-xbmcbuntu-tvheadend-tevii-s660-dvb-t-ps3-remote/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Tue, 03 Jun 2014 20:48:16 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<guid isPermaLink="false">/?p=686</guid>
+
+					<description><![CDATA[<p>First Step Install XBMCbuntu 12 From this LINK Next Step OS tweaks &#8230; # Fix SSH keys. All XBMCbuntu installs are shipped with same key. # Which is bad m&#8217;kay? /bin/rm /etc/ssh/ssh_host_* dpkg-reconfigure openssh-server # Set root password. passwd root # Allow sudo without password. echo "%adm ALL=(ALL) NOPASSWD: ALL" &#62;/etc/sudoers.d/nopassword chmod 0440 /etc/sudoers.d/nopassword #... </p>
+<p><a class="small button secondary" href="/completely-htpc-xbmcbuntu-tvheadend-tevii-s660-dvb-t-ps3-remote/">Continue Reading</a></p>
+The post <a href="/completely-htpc-xbmcbuntu-tvheadend-tevii-s660-dvb-t-ps3-remote/">Completely HTPC with XBMCbuntu + TVHeadend + Tevii S660 + DVB T + PS3 Remote</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-686"></span></p>
+<h3 class="post-title entry-title">First Step</h3>
+<p>Install XBMCbuntu 12 From this <a href="http://mirrors.xbmc.org/releases/XBMCbuntu/" target="_blank">LINK</a></p>
+<h3 class="post-title entry-title">Next Step</h3>
+<h4 class="post-title entry-title">OS tweaks &#8230;</h4>
+<p># Fix SSH keys. All XBMCbuntu installs are shipped with same key.<br />
+# Which is bad m&#8217;kay?</p>
+<pre>/bin/rm /etc/ssh/ssh_host_*
+dpkg-reconfigure openssh-server
+</pre>
+<p># Set root password.</p>
+<pre>passwd root</pre>
+<p># Allow sudo without password.</p>
+<pre>echo "%adm ALL=(ALL) NOPASSWD: ALL" &gt;/etc/sudoers.d/nopassword
+chmod 0440 /etc/sudoers.d/nopassword
+</pre>
+<p># Clean files older than two # weeks from /tmp and<br />
+# autofix filesystem on boot after crash.</p>
+<pre>sed -i /etc/default/rcS -e's/^TMPTIME=.*/TMPTIME=14/g' \
+-e's/^FSCKFIX=.*/FSCKFIX=yes/g'
+</pre>
+<p># Enable TRIM for rootfs and swap</p>
+<pre>sed -i.bak /etc/fstab \
+-e's/remount-ro/remount-ro,discard,commit=15/g' \
+-e's/sw /sw,discard/g'
+</pre>
+<p># Next we make sure existing packages are up-to-date and<br />
+# add few packages that aren&#8217;t included in stock install.<br />
+# Some of these are for making command line use easier<br />
+# while some are essential for later steps.</p>
+<pre>apt-get update
+apt-get -y dist-upgrade
+apt-get -y install joe screen lftp smartmontools samba \
+locate telnet mtr python-dbus python-gobject traceroute \
+aptitude htop vim-nox build-essential subversion cmake   \
+libusb-1.0-0-dev libpcsclite-dev
+</pre>
+<p># Disable IPv6 support</p>
+<pre>echo "net.ipv6.conf.all.disable_ipv6=1" &gt;&gt;/etc/sysctl.conf</pre>
+<p># Disable bunch of unwanted services started by default</p>
+<pre>rm -f /etc/rc2.d/S19lirc
+rm -f /etc/rc2.d/S50rsync
+rm -f /etc/rc2.d/S70pppd-dns
+echo manual &gt;/etc/init/console-font.override
+echo manual &gt;/etc/init/cryptdisks-enable.override
+echo manual &gt;/etc/init/cryptdisks-udev.override
+echo manual &gt;/etc/init/tvheadend.override
+echo manual &gt;/etc/init/setvtrgb.override
+echo manual &gt;/etc/init/hybrid-gfx.override
+echo manual &gt;/etc/init/gssd.override
+echo manual &gt;/etc/init/gssd-mounting.override
+echo manual &gt;/etc/init/idmapd.override
+echo manual &gt;/etc/init/idmapd-mounting.override
+echo manual &gt;/etc/init/mountall-net.override
+echo manual &gt;/etc/init/portmap.override
+echo manual &gt;/etc/init/portmap-wait.override
+echo manual &gt;/etc/init/statd.override
+echo manual &gt;/etc/init/statd-mounting.override
+</pre>
+<p># Allow wakeup from suspend using USB devices</p>
+<pre>cat &lt;&lt;'__EOF__' &gt;/etc/rc.local
+#!/bin/bash
+# /etc/rc.local
+#
+# Enable USB wakeup, part 1
+grep -e "USB.*disabled" /proc/acpi/wakeup |\
+while read line; do
+echo $line &gt;/proc/acpi/wakeup
+done
+#
+# Enable USB wakeup, part 2
+for i in /sys/bus/usb/devices/*/power/wakeup; do echo "enabled" &gt; $i; done
+#
+# Exit with success
+exit 0
+__EOF__
+</pre>
+<p># More USB wakeup changes</p>
+<pre>cat &lt;&lt;'__EOF__' &gt;/etc/usbwakeup-fixup.sh
+#!/bin/bash
+# /etc/usbwakeup-fixup.sh
+(sleep 3; for i in /sys/bus/usb/devices/*/power/wakeup; do echo "enabled" &gt; $i; done) &amp;
+__EOF__
+</pre>
+<p># One more USB wakeup related change left</p>
+<pre>cat &lt;&lt;'__EOF__' &gt;/etc/udev/rules.d/10-usb-wakeup.rules
+# /etc/udev/rules.d/10-usb-wakeup.rules
+ACTION=="add", SUBSYSTEM=="usb", IMPORT{program}="/bin/bash -c /etc/usbwake-fixup.sh"
+__EOF__
+</pre>
+<p># Ha! Fooled you! Still more USB wakeup. Promise this is last.</p>
+<pre>chmod a+x /etc/rc.local /etc/usbwakeup-fixup.sh
+</pre>
+<p># Reload ath9k wlan drivers after suspend. This is needed as<br />
+# otherwise WLAN gets stuck at around 10Mbit/s instead of<br />
+# proper 300Mbit/s.</p>
+<pre>echo 'SUSPEND_MODULES="ath9k ath9k_hw ath9k_common"' &gt;&gt;/etc/pm/config.d/modules
+</pre>
+<p>&nbsp;</p>
+<h3 class="post-title entry-title">Next Step</h3>
+<h4 class="post-title entry-title">Install TVHeadend</h4>
+<p>&nbsp;</p>
+<p>If you had previously added the launchpad PPA, please be sure to remove it (as it no longer exists)</p>
+<pre>sudo apt-add-repository -r http://ppa.launchpad.net/adamsutton/tvheadend
+sudo apt-get remove tvheadend
+</pre>
+<p>Before you can use the repositories you probably want to import the GPG signing key:</p>
+<pre>curl http://apt.tvheadend.org/repo.gpg.key | sudo apt-key add -
+</pre>
+<p>You will then need to add which ever repository you feel is most appropriate, for example if you want to be cautious and have a reliable system:</p>
+<pre>sudo apt-add-repository http://apt.tvheadend.org/stable
+sudo apt-get update
+sudo apt-get install tvheadend
+</pre>
+<p>now open http://youripaddress:9981/</p>
+<p>for enable time shift on tvheadend with xbmc go 1&gt;Configuration 2&gt;Recording 3&gt;Timeshift<br />
+then all Checkbox in this page &#8230;</p>
+<h3 class="post-title entry-title">Next Step</h3>
+<h4 class="post-title entry-title">Install Tevii S660</h4>
+<p>Download Drive from Tevii Site <a href="http://www.tevii.com/Tevii_Product_20140130_media_build_b51.tar.bz2.rar" target="_blank">LINK</a></p>
+<p>Extract Drive and Just copy two file 1&gt;dvb-fe-ds3000.fw 2&gt;dvb-fe-ds3103.fw 3&gt;dvb-usb-s660.fw</p>
+<pre>wget http://www.tevii.com/Tevii_Product_20140130_media_build_b51.tar.bz2.rar
+mv Tevii_Product_20140130_media_build_b51.tar.bz2.rar Tevii_Product_20140130_media_build_b51.tar.bz2
+tar xjfv Tevii_Product_20140130_media_build_b51.tar.bz2.rar
+sudo cp -rfv media_build/*.fw /lib/firmware/
+</pre>
+<p>now reboot the system and test with command</p>
+<pre>dmesg | grep -i dvb
+[   10.719165] DVB: registering new adapter (Afatech AF9015 DVB-T USB2.0 stick)
+[   10.904830] dvb-usb: downloading firmware from file 'dvb-usb-s660.fw'
+[   11.036039] dvb-usb: found a 'TeVii S660 USB' in warm state.
+[   11.036122] dvb-usb: will pass the complete MPEG2 transport stream to the software demuxer.
+[   11.036288] DVB: registering new adapter (TeVii S660 USB)
+[   11.130885] DVB: registering adapter 0 frontend 0 (Afatech AF9013)...
+[   11.154384] dvb-usb: MAC address: 00:18:bd:5c:47:ad
+[   11.359287] DVB: registering adapter 1 frontend 0 (Montage Technology DS3000/TS2020)...
+[   11.361022] input: IR-receiver inside an USB DVB receiver as /devices/pci0000:00/0000:00:10.4/usb1/1-4/input/input6
+[   11.361218] dvb-usb: schedule remote query interval to 150 msecs.
+[   11.361223] dvb-usb: TeVii S660 USB successfully initialized and connected.
+[   11.411357] input: IR-receiver inside an USB DVB receiver as /devices/pci0000:00/0000:00:10.4/usb1/1-2/rc/rc0/input7
+[   11.411470] rc0: IR-receiver inside an USB DVB receiver as /devices/pci0000:00/0000:00:10.4/usb1/1-2/rc/rc0
+[   11.411472] dvb-usb: schedule remote query interval to 500 msecs.
+[   11.411476] dvb-usb: Afatech AF9015 DVB-T USB2.0 stick successfully initialized and connected.
+[   11.418592] usbcore: registered new interface driver dvb_usb_af9015
+</pre>
+<h3 class="post-title entry-title">Next Step</h3>
+<h4 class="post-title entry-title">Install PS3 Remote for Controlling XBMC</h4>
+<p># For PS3 BD remote we need to force older, patched Bluetooth stack.<br />
+# First make really sure no existing bluetooth package exist</p>
+<pre>apt-get -y purge bluez 
+</pre>
+<p># Add new repository and force use of Ubuntu 12.04 packages</p>
+<p># on XBMCbuntu 12 (Ubuntu 12.10)</p>
+<pre>add-apt-repository -y ppa:kitlaan/ppa
+sed -i /etc/apt/sources.list.d/kitlaan-ppa-quantal.list -e's/quantal/precise/g'
+cat &lt;&lt;'__EOF__' &gt;/etc/apt/preferences.d/bluez
+Package: bluez*
+Pin: release o=LP-PPA-kitlaan
+Pin-Priority: 1000
+__EOF__
+</pre>
+<p># Install bluetooth stack</p>
+<pre>apt-get update
+apt-get -y install bluez
+</pre>
+<p># Pairing PS3 remote on Linux<br />
+# Grab required software</p>
+<pre>mkdir -p /opt/ps3pair
+cd /opt/ps3pair
+wget http://dump.asiantuntijakaveri.fi/le_bueno_dumpo/ps3pair.tar.gz
+</pre>
+<p># or<br />
+# wget http://kitlaan.twinaxis.com/projects/bluez-ps3remote/ps3pair.tar.gz</p>
+<pre>tar xvzf ps3pair.tar.gz
+mv ps3pair/* .
+rmdir ps3pair
+</pre>
+<p># Start pairing. Press and hold Start+Enter on<br />
+# PS3 BD remote for at least 5 seconds to enter pairing mode.</p>
+<pre>python ps3_pair.py
+</pre>
+<p># You should see something like this:<br />
+# Please HOLD the START and ENTER buttons on the PS3 remote.<br />
+# Searching for devices, please wait&#8230;<br />
+# Found:<br />
+# 1: 00:06:BF:55:BD:12 [Unknown]<br />
+# Select the device you wish to add [1]:<br />
+# Registering device&#8230; Done</p>
+<p># Linux bluetooth pairing with PS3 remote is broken&#8230;<br />
+# Pairing does results in proper Linux side configuration, but PS3<br />
+# remote side never completes pairing.<br />
+#<br />
+# To workaround this problem you need to pair same USB bluetooth<br />
+# dongle with same PS3 remote on Windows 7. Only then remote is<br />
+# properly paired with dongle and also Linux side configuration<br />
+# is ok.</p>
+<p># For AR3011 in Windows use driver version 8.0.0.214 from<br />
+# http://www.station-drivers.com/page/atheros.htm or from mirror<br />
+# http://dump.asiantuntijakaveri.fi/le_bueno_dumpo/atheros_bluetooth_8.0.0.214-w7-8(www.station-drivers.com).exe<br />
+#<br />
+# Do pairing as with any other bluetooth device on Windows 7 using<br />
+# built-in add new device feature. Press and hold Start+Enter on<br />
+# PS3 BD remote for at least 5 seconds to enter pairing mode.</p>
+<p># Remove and re-insert batteries on PS3 BD remote to reset it<br />
+# after partial pairing attempt with Linux bluetooth stack.</p>
+<p># After pairing is complete both on Linux and Windows side we need<br />
+# to create custom input configuration file. This is just one example,<br />
+# you probably want different keymap.</p>
+<p># Fix configuration file</p>
+<pre>cat &lt;&lt;'__EOF__' &gt;/etc/bluetooth/input.conf
+[General]
+IdleTimeout=180 # 3 minute timeout, shorten to improve battery life
+[PS3 Remote Map]
+OverlayBuiltin = FALSE
+0x16 = KEY_ESC # EJECT
+0x64 = KEY_A # AUDIO
+0x65 = KEY_Z # ANGLE
+0x63 = KEY_T # SUBTITLE
+0x0f = KEY_O # CLEAR
+0x28 = KEY_I # TIME
+0x00 = KEY_1 # NUM-1
+0x01 = KEY_2 # NUM-2
+0x02 = KEY_3 # NUM-3
+0x03 = KEY_4 # NUM-4
+0x04 = KEY_5 # NUM-5
+0x05 = KEY_6 # NUM-6
+0x06 = KEY_7 # NUM-7
+0x07 = KEY_8 # NUM-8
+0x08 = KEY_9 # NUM-9
+0x09 = KEY_0 # NUM-0
+0x81 = KEY_S # RED
+0x82 = KEY_MUTE # GREEN
+0x80 = KEY_VOLUMEUP # BLUE
+0x83 = KEY_VOLUMEDOWN # YELLOW
+0x70 = KEY_I # DISPLAY
+0x1a = KEY_M # TOP MENU
+0x40 = KEY_M # POP UP/MENU
+0x0e = KEY_ESC # RETURN
+0x5c = KEY_C # TRIANGLE/OPTIONS
+0x5d = KEY_BACKSPACE # CIRCLE/BACK
+0x5f = KEY_TAB # SQUARE/VIEW
+0x5e = KEY_SPACE # CROSS
+0x54 = KEY_UP # UP
+0x56 = KEY_DOWN # DOWN
+0x57 = KEY_LEFT # LEFT
+0x55 = KEY_RIGHT # RIGHT
+0x0b = KEY_ENTER # ENTER
+0x5a = KEY_VOLUMEUP # L1
+0x58 = KEY_VOLUMEDOWN # L2
+0x51 = KEY_MUTE # L3
+0x5b = KEY_VOLUMEUP # R1
+0x59 = KEY_VOLUMEDOWN # R2
+0x52 = KEY_MUTE # R3
+0x43 = KEY_HOMEPAGE # PS button
+0x50 = KEY_ENTER # SELECT
+0x53 = KEY_PLAY # START
+0x33 = KEY_R # SCAN BACK
+0x32 = KEY_PLAY # PLAY
+0x34 = KEY_F # SCAN FORWARD
+0x30 = KEY_DOWN # PREVIOUS
+0x38 = KEY_X # STOP
+0x31 = KEY_UP # NEXT
+0x60 = KEY_LEFT # SLOW/STEP BACK
+0x39 = KEY_PLAY # PAUSE
+0x61 = KEY_RIGHT # SLOW/STEP FORWARD
+__EOF__
+</pre>
+<p># Restart bluetooth service</p>
+<pre>service bluetooth restart
+</pre>
+<p># Now press some button on PS3 BD remote. Blue led on USB bluetooth<br />
+# dongle has been solid blue so far and should start flashing.</p>
+<p># To save battery life we need to disconnect PS3 BD remote on<br />
+# shutdown and suspend</p>
+<pre>mkdir -p /opt/bt-disconnect
+cd /opt/bt-disconnect
+wget http://dump.asiantuntijakaveri.fi/le_bueno_dumpo/bt-disconnect-all.py
+</pre>
+<p># or<br />
+# wget http://kitlaan.twinaxis.com/projects/bluez-ps3remote/bt-disconnect-all.py</p>
+<pre>chmod a+x bt-disconnect-all.py
+</pre>
+<p># Disconnect on shutdown</p>
+<pre>cat &lt;&lt;'__EOF__' &gt;/etc/rc6.d/K99btdisconnect
+#!/bin/sh
+date &gt;&gt;/opt/bt-disconnect/log
+exec /opt/bt-disconnect/bt-disconnect-all.py &gt;&gt;/opt/bt-disconnect/log 2&gt;&amp;1
+__EOF__
+</pre>
+<p># exec bit needed as usual</p>
+<pre>chmod a+x /etc/rc6.d/K99btdisconnect
+</pre>
+<p># Disconnect on suspend</p>
+<pre>cat &lt;&lt;'__EOF__' &gt;/etc/pm/sleep.d/bt-disconnect.sh
+#!/bin/bash
+case $1 in
+suspend)
+date &gt;&gt;/opt/bt-disconnect/log
+/opt/bt-disconnect/bt-disconnect-all.py &gt;&gt;/opt/bt-disconnect/log
+;;
+resume)
+# do nothing
+;;
+esac
+__EOF__
+</pre>
+<p># And finally make it executable</p>
+<pre>chmod a+x /etc/pm/sleep.d/bt-disconnect.sh
+</pre>
+<p># If you managed to follow instructions your PS3 BD remote can now<br />
+# control XBMC.</p>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;">
+<div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div>
+<div class="wp-about-author-text" style="margin-left:140px">
+<h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3>
+</p>
+<p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p>
+<p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p>
+</div>
+</div>The post <a href="/completely-htpc-xbmcbuntu-tvheadend-tevii-s660-dvb-t-ps3-remote/">Completely HTPC with XBMCbuntu + TVHeadend + Tevii S660 + DVB T + PS3 Remote</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/completely-htpc-xbmcbuntu-tvheadend-tevii-s660-dvb-t-ps3-remote/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

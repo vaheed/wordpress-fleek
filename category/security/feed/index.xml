@@ -1,0 +1,2007 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Security | vaheeD khoshnouD</title>
+	<atom:link href="/category/security/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>linux, mikrotik, macosx</description>
+	<lastBuildDate>Wed, 10 Jan 2018 17:38:39 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.7.2</generator>
+	<item>
+		<title>Step by step Ubuntu LXD</title>
+		<link>/step-by-step-ubuntu-lxd/</link>
+					<comments>/step-by-step-ubuntu-lxd/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Wed, 06 Jan 2016 10:11:44 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[openstack]]></category>
+		<category><![CDATA[Security]]></category>
+		<guid isPermaLink="false">/?p=734</guid>
+
+					<description><![CDATA[<p>sudo add-apt-repository ppa:ubuntu-lxc/lxd-stable sudo apt-get update sudo apt-get install lxd ======================== lxd-images import ubuntu --alias ubuntu =======================Your first container================ lxc image list lxc launch ubuntu first lxc list lxc info first lxc config show first =======================Limiting resources================= free -m lxc exec first -- free -m lxc config set first limits.memory 64MB lxc exec first --... </p>
+<p><a class="small button secondary" href="/step-by-step-ubuntu-lxd/">Continue Reading</a></p>
+The post <a href="/step-by-step-ubuntu-lxd/">Step by step Ubuntu LXD</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-734"></span></p>
+<p><code><br />
+sudo add-apt-repository ppa:ubuntu-lxc/lxd-stable<br />
+sudo apt-get update<br />
+sudo apt-get install lxd<br />
+========================</p>
+<p>lxd-images import ubuntu --alias ubuntu</p>
+<p>=======================Your first container================<br />
+lxc image list<br />
+lxc launch ubuntu first<br />
+lxc list<br />
+lxc info first<br />
+lxc config show first<br />
+=======================Limiting resources=================<br />
+free -m<br />
+lxc exec first -- free -m<br />
+lxc config set first limits.memory 64MB<br />
+lxc exec first -- free -m<br />
+=======================Snapshots==========================<br />
+lxc exec first -- apt-get update<br />
+lxc exec first -- apt-get dist-upgrade -y<br />
+lxc exec first -- apt-get autoremove --purge -y</p>
+<p>lxc snapshot first clean</p>
+<p>lxc exec first -- rm -Rf /etc /usr</p>
+<p>lxc exec first -- bash</p>
+<p>lxc restore first clean</p>
+<p>lxc exec first -- bash<br />
+========================Creating images===================<br />
+lxc publish first/clean --alias clean-ubuntu<br />
+lxc delete first<br />
+lxc launch clean-ubuntu second<br />
+=======================Accessing files from the container=<br />
+lxc file pull second/etc/hosts .<br />
+echo "1.2.3.4 my-example" >> hosts<br />
+lxc file push hosts second/etc/hosts<br />
+lxc file pull second/var/log/syslog - | less<br />
+lxc delete second<br />
+=======================Use a remote image server=========<br />
+lxc remote add images images.linuxcontainers.org<br />
+lxc image list images: | less<br />
+lxc launch images:centos/7/amd64 third<br />
+lxc exec third -- cat /etc/redhat-release<br />
+lxc delete third<br />
+lxc remote list<br />
+=======================Interact with remote LXD servers=<br />
+lxc list tryit:<br />
+lxc image list tryit:<br />
+lxc launch clean-ubuntu tryit:fourth<br />
+lxc exec tryit:fourth bash<br />
+lxc copy tryit:fourth tryit:fifth<br />
+lxc move tryit:fifth sixth<br />
+lxc start sixth<br />
+lxc exec sixth -- bash<br />
+lxc delete sixth<br />
+lxc delete tryit:fourth<br />
+lxc image delete clean-ubuntu<br />
+======================</p>
+<p>iptables -t nat -A PREROUTING -p tcp --dport 9000 -j DNAT --to 10.0.3.204:9000<br />
+</code></p>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/step-by-step-ubuntu-lxd/">Step by step Ubuntu LXD</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/step-by-step-ubuntu-lxd/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Step by Step Install ZoneMinder ( any CAM support )</title>
+		<link>/step-by-step-install-zoneminder-any-cam-support/</link>
+					<comments>/step-by-step-install-zoneminder-any-cam-support/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Thu, 10 Jan 2013 20:32:04 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Security]]></category>
+		<guid isPermaLink="false">/?p=480</guid>
+
+					<description><![CDATA[<p>Ubuntu Server 10.10 64-bit with ZoneMinder 1.24.2 from source, FFmpeg, libjpeg-turbo, Webmin, Cambozola My apoligies for the lack of proper wiki formatting in this guide. I put this together as a text file which would simplify copying and pasting into a terminal as my typing skills are horrendous. This guide is not intended to assist... </p>
+<p><a class="small button secondary" href="/step-by-step-install-zoneminder-any-cam-support/">Continue Reading</a></p>
+The post <a href="/step-by-step-install-zoneminder-any-cam-support/">Step by Step Install ZoneMinder ( any CAM support )</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-480"></span></p>
+<h2 id="firstHeading">Ubuntu Server 10.10 64-bit with ZoneMinder 1.24.2 from source, FFmpeg, libjpeg-turbo, Webmin, Cambozola</h2>
+<div id="bodyContent">
+<div id="contentSub"></div>
+<div dir="ltr" id="mw-content-text" lang="en">
+<p><b>My apoligies for the lack of proper wiki formatting in this guide. I put this together as a text file which would simplify copying and pasting into a terminal as my typing skills are horrendous.</b></p>
+<ul>
+<li>This guide is not intended to assist in installing Ubuntu or using ZoneMinder, only to obtain a simplified installation of ZoneMinder that is fast and just works.</li>
+</ul>
+<pre>#Install Ubuntu Server Edition 10.10 64-bit. (http://www.ubuntu.com/business/get-ubuntu/download)
+#At software selection, select LAMP and OpenSSH server.
+#After install completes, log in and set a static IP address in /etc/network/interfaces. Edit the addresses to suit YOUR network:
+
+sudo nano /etc/network/interfaces
+
+####################################
+####################################
+
+# The primary network interface
+auto eth0
+iface eth0 inet static
+address 192.168.1.10
+netmask 255.255.255.0
+gateway 192.168.1.1
+
+####################################
+####################################
+
+# ctrl-o to save ctrl-x to exit nano
+
+sudo ifdown -a
+
+sudo ifup -a
+
+#Once networking is in order and you can reach the internet, ssh into your zoneminder system from another linux computer on your LAN.
+#Now you can copy/paste the following commands into a terminal unless you prefer to type. Multiple commands without an empty line in between 
+#can be copied and pasted together. Do not paste lines that start with #
+
+########################
+#Update system software#
+########################
+
+sudo apt-get update
+
+sudo apt-get dist-upgrade
+
+sudo reboot
+
+#############
+#Become root#
+#############
+
+sudo su
+
+#######################
+#Optimize GCC compiler#
+#######################
+
+export CFLAGS="-march=native -O2 -pipe" &amp;&amp; \
+export CXXFLAGS="${CFLAGS}" &amp;&amp; \
+export CPPFLAGS="${CFLAGS}"
+
+#########################################
+#Install prerequisites from repositories#
+#########################################
+
+aptitude install build-essential linux-headers-`uname -r` automake perl libauthen-pam-perl \
+libpam-runtime libio-pty-perl libmysqlclient-dev \
+libarchive-zip-perl libdate-manip-perl libdevice-serialport-perl libjpeg62 libmime-perl libstdc++6 libwww-perl \
+zlib1g zip unzip patch ntp openssl libpcre3-dev libssl-dev libjpeg-progs libcurl4-gnutls-dev munin munin-node libmime-lite-perl \
+netpbm libbz2-dev subversion yasm libnet-ssleay-perl libauthen-pam-perl libio-pty-perl apt-show-versions git-core mysql-server mysql-client
+
+################
+#Install Webmin#
+################
+
+wget http://downloads.sourceforge.net/project/webadmin/webmin/1.540/webmin_1.540_all.deb?use_mirror=voxel
+
+mv webmin_1.540_all.deb\?use_mirror\=voxel webmin_1.540_all.deb &amp;&amp; \
+dpkg -i webmin_1.540_all.deb
+
+#######################
+#Install libjpeg-turbo# (AMD64)
+#######################
+
+wget http://downloads.sourceforge.net/project/libjpeg-turbo/1.1.0/libjpeg-turbo_1.1.0_amd64.deb?use_mirror=voxel
+
+mv libjpeg-turbo_1.1.0_amd64.deb?use_mirror=voxel libjpeg-turbo_1.1.0_amd64.deb &amp;&amp; \
+dpkg -i libjpeg-turbo_1.1.0_amd64.deb
+
+ln -s /opt/libjpeg-turbo/lib/libjpeg.a /usr/lib/libjpeg.a &amp;&amp; \
+ln -s /opt/libjpeg-turbo/include/jconfig.h /usr/include/jconfig.h &amp;&amp; \
+ln -s /opt/libjpeg-turbo/include/jerror.h /usr/include/jerror.h &amp;&amp; \
+ln -s /opt/libjpeg-turbo/include/jmorecfg.h /usr/include/jmorecfg.h &amp;&amp; \
+ln -s /opt/libjpeg-turbo/include/jpeglib.h /usr/include/jpeglib.h
+
+#######################
+#Configure Lib Paths#
+#######################
+echo "/opt/libjpeg-turbo/lib" &gt; /etc/ld.so.conf.d/libjpeg-turbo.conf &amp;&amp; \
+echo "/usr/local/lib" &gt; /etc/ld.so.conf.d/ffmpeg.conf &amp;&amp; \
+echo "LD_LIBRARY_PATH=/usr/local/lib:/opt/libjpeg-turbo/lib:$LD_LIBRARY_PATH" &gt;&gt; /etc/bash.bashrc &amp;&amp; \
+echo "export LD_LIBRARY_PATH" &gt;&gt; /etc/bash.bashrc
+
+ldconfig
+
+######################
+#Install Perl Modules#
+######################
+
+perl -MCPAN -e shell
+
+install CPAN
+
+exit
+
+perl -MCPAN -e shell
+
+install YAML PHP::Serialization Module::Load X10::ActiveHome
+
+install Sys::Mmap
+
+install DBI
+
+install DBD::mysql
+
+exit
+
+################
+#Install FFmpeg#
+################
+
+# subversion no longer maintained
+#cd /usr/src &amp;&amp; svn checkout svn://svn.mplayerhq.hu/ffmpeg/trunk ffmpeg
+
+# use git resource: http://www.ffmpeg.org/download.html
+cd /usr/src &amp;&amp; git clone git://git.videolan.org/ffmpeg.git
+
+cd /usr/src/ffmpeg/ &amp;&amp; ./configure --enable-gpl --enable-shared --enable-pthreads
+
+make
+
+make install
+
+make install-libs
+
+cd /lib &amp;&amp; ln -s /usr/local/lib/libswscale.so.0 &amp;&amp; \
+ln -s /usr/local/lib/libavformat.so.52 &amp;&amp; \
+ln -s /usr/local/lib/libavcodec.so.52 &amp;&amp; \
+ln -s /usr/local/lib/libavutil.so.50 &amp;&amp; \
+ln -s /usr/local/lib/libavdevice.so.52
+
+ldconfig
+
+#####################
+##Install Zoneminder#
+#####################
+
+cd /usr/src &amp;&amp; wget http://www2.zoneminder.com/downloads/ZoneMinder-1.24.2.tar.gz
+
+tar -xvzf ZoneMinder-1.24.2.tar.gz
+
+cd /usr/src/ZoneMinder-1.24.2/src &amp;&amp; nano zm_utils.cpp
+
+#Insert the following line after other includes,then Ctrl-o to save, Ctrl-x to exit nano
+#include &lt;cstdio&gt;
+
+cd /usr/src/ZoneMinder-1.24.2 &amp;&amp; \ 
+./configure --with-webdir=/var/www/zm --with-cgidir=/usr/lib/cgi-bin \
+ZM_DB_HOST=localhost ZM_DB_NAME=zm ZM_DB_USER=zmuser \
+ZM_DB_PASS=zmpass ZM_SSL_LIB=openssl --enable-debug=no \
+--with-webgroup=www-data --with-webuser=www-data --enable-mmap CPPFLAGS="-D__STDC_CONSTANT_MACROS ${CPPFLAGS}"
+
+autoconf
+
+aclocal
+
+automake
+
+make
+
+mysql -u root -p &lt; db/zm_create.sql
+#Password that is requested is Mysql root password that was entered during install, not your ubuntu password.
+
+mysql -u root -p
+
+grant select,insert,update,delete on zm.* to 'zmuser'@localhost identified by 'zmpass';
+
+quit
+
+mysqladmin -p reload
+
+make install
+
+####################
+##Install Cambozola#
+####################
+
+cd /usr/src &amp;&amp; wget http://www.charliemouse.com:8080/code/cambozola/cambozola-latest.tar.gz
+
+tar -xzvf cambozola-latest.tar.gz
+
+#replace xx with cambozola version downloaded
+cp cambozola-0.xx/dist/cambozola.jar /var/www/zm
+
+###################################
+##Create Zoneminder startup script#
+###################################
+
+nano -w /etc/init.d/zm
+
+#Paste everything BETWEEN the lines below.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#!/bin/sh
+# description: Control ZoneMinder as a Service
+# chkconfig: 2345 99 99
+
+# Source function library.
+#. /etc/rc.d/init.d/functions
+
+prog=ZoneMinder
+ZM_PATH_BIN="/usr/local/bin"
+command="$ZM_PATH_BIN/zmpkg.pl"
+
+start() {
+        echo -n "Starting $prog: "
+        $command start
+        RETVAL=$?
+        [ $RETVAL = 0 ] &amp;&amp; echo success
+        [ $RETVAL != 0 ] &amp;&amp; echo failure
+        return $RETVAL
+}
+stop() {
+        echo -n "Stopping $prog: "
+        $command stop
+        RETVAL=$?
+        [ $RETVAL = 0 ] &amp;&amp; echo success
+        [ $RETVAL != 0 ] &amp;&amp; echo failure
+}
+status() {
+        result=`$command status`
+        if [ "$result" = "running" ]; then
+                echo "ZoneMinder is running"
+                RETVAL=0
+        else
+                echo "ZoneMinder is stopped"
+                RETVAL=1
+        fi
+}
+
+case "$1" in
+'start')
+        start
+        ;;
+'stop')
+        stop
+        ;;
+'restart')
+        stop
+        start
+        ;;
+'status')
+        status
+        ;;
+*)
+        echo "Usage: $0 { start | stop | restart | status }"
+        RETVAL=1
+        ;;
+esac
+exit $RETVAL
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#ctrl-o to save, ctrl-x to exit nano
+
+chmod 755 /etc/init.d/zm
+
+####################
+#Zoneminder Startup#
+####################
+
+#In firefox, go to https://YOUR_ZoneMinder.IP.ADDRESS.HERE:10000/ to reach the Webmin interface.(Login with Ubuntu username and password)
+#In left menu, select System&gt;Bootup and Shutdown. Tick the box next to zm and click StartNow and On Boot.
+#In left menu, select Servers&gt;Apache Webserver. Click virtual server under Existing virtual hosts tab. Under Virtual Server Details, change Document Root to /var/www/zm and then save.
+#Click apply changes at top left of page.
+
+#Go to http://YOUR_ZoneMinder.IP.ADDRESS.HERE/ to reach the Zoneminder interface.
+
+</pre>
+</div>
+</div>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/step-by-step-install-zoneminder-any-cam-support/">Step by Step Install ZoneMinder ( any CAM support )</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/step-by-step-install-zoneminder-any-cam-support/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Top 20 OpenSSH Server Best Security Practices</title>
+		<link>/top-20-openssh-server-best-security-practices/</link>
+					<comments>/top-20-openssh-server-best-security-practices/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Wed, 09 Jan 2013 08:23:44 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Macosx]]></category>
+		<category><![CDATA[Security]]></category>
+		<guid isPermaLink="false">/?p=445</guid>
+
+					<description><![CDATA[<p>Default Config Files and SSH Port /etc/ssh/sshd_config &#8211; OpenSSH server configuration file. /etc/ssh/ssh_config &#8211; OpenSSH client configuration file. ~/.ssh/ &#8211; Users ssh configuration directory. ~/.ssh/authorized_keys or ~/.ssh/authorized_keys &#8211; Lists the public keys (RSA or DSA) that can be used to log into the user’s account /etc/nologin &#8211; If this file exists, sshd refuses to let anyone except root log in. /etc/hosts.allow and /etc/hosts.deny : Access... </p>
+<p><a class="small button secondary" href="/top-20-openssh-server-best-security-practices/">Continue Reading</a></p>
+The post <a href="/top-20-openssh-server-best-security-practices/">Top 20 OpenSSH Server Best Security Practices</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-445"></span></p>
+<h2>Default Config Files and SSH Port</h2>
+<ul>
+<li><strong>/etc/ssh/sshd_config </strong>&#8211; OpenSSH server configuration file.</li>
+<li><strong>/etc/ssh/ssh_config</strong> &#8211; OpenSSH client configuration file.</li>
+<li><strong>~/.ssh/</strong> &#8211; Users ssh configuration directory.</li>
+<li><strong>~/.ssh/authorized_keys</strong> or <strong>~/.ssh/authorized_keys</strong> &#8211; Lists the public keys (RSA or DSA) that can be used to log into the user’s account</li>
+<li><strong>/etc/nologin</strong> &#8211; If this file exists, sshd refuses to let anyone except root log in.</li>
+<li><strong>/etc/hosts.allow</strong> and <strong>/etc/hosts.deny</strong> : Access controls lists that should be enforced by tcp-wrappers are defined here.</li>
+<li><strong>SSH default port </strong>: TCP 22</li>
+</ul>
+<p>&nbsp;</p>
+<h2>#1: Disable OpenSSH Server</h2>
+<p>Workstations and laptop can work without OpenSSH server. If you need not to provide the remote login and file transfer capabilities of SSH, disable and remove the SSHD server. CentOS / RHEL / Fedora Linux user can disable and remove openssh-server with yum command:<br />
+<code># chkconfig sshd off<br />
+# yum erase openssh-server</code><br />
+Debian / Ubuntu Linux user can disable and remove the same with apt-get command:<br />
+<code># apt-get remove openssh-server</code><br />
+You may need to update your iptables script to remove ssh exception rule. Under CentOS / RHEL / Fedora edit the files /etc/sysconfig/iptables and /etc/sysconfig/ip6tables. Once done <a href="/redhat-centos-fedora-linux-open-port/">restart iptables</a> service:<br />
+<code># service iptables restart<br />
+# service ip6tables restart</code></p>
+<h2>#2: Only Use SSH Protocol 2</h2>
+<p>SSH protocol version 1 (SSH-1) has man-in-the-middle attacks problems and security vulnerabilities. SSH-1 is obsolete and should be avoided at all cost. Open sshd_config file and make sure the following line exists:</p>
+<pre>Protocol 2</pre>
+<h2>#3: Limit Users&#8217; SSH Access</h2>
+<p>By default all systems user can login via SSH using their password or public key. Sometime you create UNIX / Linux user account for ftp or email purpose. However, those user can login to system using ssh. They will have full access to system tools including compilers and scripting languages such as Perl, Python which can open network ports and do many other fancy things. One of my client has really outdated php script and an attacker was able to create a new account on the system via a php script. However, attacker failed to get into box via ssh because it wasn&#8217;t in AllowUsers.</p>
+<p>Only allow root, vivek and jerry user to use the system via SSH, add the following to sshd_config:</p>
+<pre>AllowUsers root vivek jerry</pre>
+<p>Alternatively, you can allow all users to login via SSH but deny only a few users, with the following line:</p>
+<pre>DenyUsers saroj anjali foo</pre>
+<p>You can also configure Linux PAM allows or deny login via the sshd server. You can allow list of group name to access or deny access to the ssh.</p>
+<h2>#4: Configure Idle Log Out Timeout Interval</h2>
+<p>User can login to server via ssh and you can set an idel timeout interval to avoid unattended ssh session. Open sshd_config and make sure following values are configured:</p>
+<pre>ClientAliveInterval 300
+ClientAliveCountMax 0</pre>
+<p>You are setting an idle timeout interval in seconds (300 secs = 5 minutes). After this interval has passed, the idle user will be automatically kicked out (read as logged out).</p>
+<h2>#5: Disable .rhosts Files</h2>
+<p>Don&#8217;t read the user&#8217;s ~/.rhosts and ~/.shosts files. Update sshd_config with the following settings:</p>
+<pre>IgnoreRhosts yes</pre>
+<p>SSH can emulate the behavior of the obsolete rsh command, just disable insecure access via RSH.</p>
+<h2>#6: Disable Host-Based Authentication</h2>
+<p>To disable host-based authentication, update sshd_config with the following option:</p>
+<pre>HostbasedAuthentication no</pre>
+<h2>#7: Disable root Login via SSH</h2>
+<p>There is no need to login as root via ssh over a network. Normal users can use su or sudo (recommended) to gain root level access. This also make sure you get full auditing information about who ran privileged commands on the system via sudo. To disable root login via SSH, update sshd_config with the following line:</p>
+<pre>PermitRootLogin no</pre>
+<p>However, bob made <a href="http://archives.neohapsis.com/archives/openbsd/2005-03/2878.html" target="_blank">excellent</a> point:</p>
+<blockquote><p>Saying &#8220;don&#8217;t login as root&#8221; is h******t. It stems from the days when people sniffed the first packets of sessions so logging in as yourself and su-ing decreased the chance an attacker would see the root pw, and decreast the chance you got spoofed as to your telnet host target, You&#8217;d get your password spoofed but not root&#8217;s pw. Gimme a break. this is 2005 &#8211; We have ssh, used properly it&#8217;s secure. used improperly none of this 1989 will make a damn bit of difference. -Bob</p></blockquote>
+<h2>#8: Enable a Warning Banner</h2>
+<p>Set a warning banner by updating sshd_config with the following line:</p>
+<pre>Banner /etc/issue</pre>
+<p>Sample /etc/issue file:</p>
+<pre>----------------------------------------------------------------------------------------------
+You are accessing a XYZ Government (XYZG) Information System (IS) that is provided for authorized use only.
+By using this IS (which includes any device attached to this IS), you consent to the following conditions:
++ The XYZG routinely intercepts and monitors communications on this IS for purposes including, but not limited to,
+penetration testing, COMSEC monitoring, network operations and defense, personnel misconduct (PM),
+law enforcement (LE), and counterintelligence (CI) investigations.
++ At any time, the XYZG may inspect and seize data stored on this IS.
++ Communications using, or data stored on, this IS are not private, are subject to routine monitoring,
+interception, and search, and may be disclosed or used for any XYZG authorized purpose.
++ This IS includes security measures (e.g., authentication and access controls) to protect XYZG interests--not
+for your personal benefit or privacy.
++ Notwithstanding the above, using this IS does not constitute consent to PM, LE or CI investigative searching
+or monitoring of the content of privileged communications, or work product, related to personal representation
+or services by attorneys, psychotherapists, or clergy, and their assistants. Such communications and work
+product are private and confidential. See User Agreement for details.
+----------------------------------------------------------------------------------------------</pre>
+<p>Above is standard sample, consult your legal team for exact user agreement and legal notice details.</p>
+<h2>#8: Firewall SSH Port # 22</h2>
+<p>You need to firewall ssh port # 22 by updating iptables or pf firewall configurations. Usually, OpenSSH server must only accept connections from your LAN or other remote WAN sites only.</p>
+<h3>Netfilter (Iptables) Configuration</h3>
+<p>Update /etc/sysconfig/iptables (Redhat and friends specific file) to accept connection only from 192.168.1.0/24 and 202.54.1.5/29, enter:</p>
+<pre>-A RH-Firewall-1-INPUT -s 192.168.1.0/24 -m state --state NEW -p tcp --dport 22 -j ACCEPT
+-A RH-Firewall-1-INPUT -s 202.54.1.5/29 -m state --state NEW -p tcp --dport 22 -j ACCEPT</pre>
+<p>If you&#8217;ve dual stacked sshd with IPv6, edit /etc/sysconfig/ip6tables (Redhat and friends specific file), enter:</p>
+<pre> -A RH-Firewall-1-INPUT -s ipv6network::/ipv6mask -m tcp -p tcp --dport 22 -j ACCEPT</pre>
+<p>Replace ipv6network::/ipv6mask with actual IPv6 ranges.</p>
+<h3>*BSD PF Firewall Configuration</h3>
+<p>If you are using PF firewall update /etc/pf.conf as follows:</p>
+<pre>pass in on $ext_if inet proto tcp from {192.168.1.0/24, 202.54.1.5/29} to $ssh_server_ip port ssh flags S/SA synproxy state</pre>
+<h2>Sample /etc/pf.conf</h2>
+<ol>
+<li>
+<div>#### First declare a couple of variables ####</div>
+</li>
+<li>
+<div>### Outgoing tcp / udp port ####</div>
+</li>
+<li>
+<div>### 43 &#8211; whois, 22 &#8211; ssh ###</div>
+</li>
+<li>
+<div>tcp_services = &#8220;{ ssh, smtp, domain, www, https, 22, ntp, 43,ftp, ftp-data}&#8221;</div>
+</li>
+<li>
+<div>udp_services = &#8220;{ domain, ntp }&#8221;</div>
+</li>
+<li>
+<div>### allow ping / pong ####</div>
+</li>
+<li>
+<div>icmp_types = &#8220;{ echoreq, unreach }&#8221;</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div>#### define tables. add all subnets and ips to block</div>
+</li>
+<li>
+<div>table &lt;blockedip&gt; persist file &#8220;/etc/pf.block.ip.conf&#8221;</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div>martians = &#8220;{ 127.0.0.0/8, 192.168.0.0/16, 172.16.0.0/12, 10.0.0.0/8, 169.254.0.0/16, 192.0.2.0/24, 0.0.0.0/8, 240.0.0.0/4 }&#8221;</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div>### admin server ranges ###</div>
+</li>
+<li>
+<div>adminrange = &#8220;112.220.11.0/23&#8221;</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># connected to internet</div>
+</li>
+<li>
+<div>ext_if = &#8220;em1&#8221;</div>
+</li>
+<li>
+<div># connected to vpn / lan</div>
+</li>
+<li>
+<div>int_if = &#8220;em0&#8221;</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div>##### ftp proxy</div>
+</li>
+<li>
+<div>#proxy=&#8221;127.0.0.1&#8243;</div>
+</li>
+<li>
+<div>#proxyport=&#8221;8021&#8243;</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div>#### Normalization</div>
+</li>
+<li>
+<div>#scrub provides a measure of protection against certain kinds of attacks based on incorrect handling of packet fragments</div>
+</li>
+<li>
+<div>scrub in all</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div>#### NAT and RDR start</div>
+</li>
+<li>
+<div>#nat-anchor &#8220;ftp-proxy/*&#8221;</div>
+</li>
+<li>
+<div>#rdr-anchor &#8220;ftp-proxy/*&#8221;</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># redirect ftp traffic</div>
+</li>
+<li>
+<div>#rdr pass proto tcp from any to any port ftp -&gt; $proxy port $proxyport</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># Drop incoming everything</div>
+</li>
+<li>
+<div>block in all</div>
+</li>
+<li>
+<div>block return</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># keep stats of outgoing connections</div>
+</li>
+<li>
+<div>pass out keep state</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># We need to have an anchor for ftp-proxy</div>
+</li>
+<li>
+<div>#anchor &#8220;ftp-proxy/*&#8221;</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># unlimited traffic for loopback and lan / vpn</div>
+</li>
+<li>
+<div>set skip on {lo0, $int_if}</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># activate spoofing protection for all interfaces</div>
+</li>
+<li>
+<div>block in quick from urpf-failed</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div>#antispoof is a common special case of filtering and blocking. This mechanism protects against activity from spoofed or forged IP addresses</div>
+</li>
+<li>
+<div>antispoof log for $ext_if</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div>#Block RFC 1918 addresses</div>
+</li>
+<li>
+<div>block drop in log (all) quick on $ext_if from $martians to any</div>
+</li>
+<li>
+<div>block drop out log (all) quick on $ext_if from any to $martians</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># Block all ips</div>
+</li>
+<li>
+<div># pfctl -t blockedip -T show</div>
+</li>
+<li>
+<div>block drop in log (all) quick on $ext_if from &lt;blockedip&gt; to any</div>
+</li>
+<li>
+<div>block drop out log (all) quick on $ext_if from any to &lt;blockedip&gt;</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># allow outgoing</div>
+</li>
+<li>
+<div>pass out on $ext_if proto tcp to any port $tcp_services</div>
+</li>
+<li>
+<div>pass out on $ext_if proto udp to any port $udp_services</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># Allow trace route</div>
+</li>
+<li>
+<div>pass out on $ext_if inet proto udp from any to any port 33433 &gt;&lt; 33626 keep state</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># Allow admin to get into box</div>
+</li>
+<li>
+<div>pass in on $int_if from $adminrange to any</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># Allow incoming ssh, http, bind traffic</div>
+</li>
+<li>
+<div># pass in on $ext_if proto tcp from any to any port 25</div>
+</li>
+<li>
+<div>pass in on $ext_if proto tcp from any to any port ssh flags S/SA synproxy state</div>
+</li>
+<li>
+<div>pass in on $ext_if proto udp from any to any port domain</div>
+</li>
+<li>
+<div>pass in on $ext_if proto tcp from any to any port domain flags S/SA synproxy state</div>
+</li>
+<li>
+<div>pass in on $ext_if proto tcp from any to any port http flags S/SA synproxy modulate state</div>
+</li>
+<li>
+<div>pass inet proto icmp all icmp-type $icmp_types keep state</div>
+</li>
+<li>
+<div>## add your rule below ##</div>
+</li>
+</ol>
+<h2>#9: Change SSH Port and Limit IP Binding</h2>
+<p>By default SSH listen to all available interfaces and IP address on the system. Limit ssh port binding and change ssh port (by default brute forcing scripts only try to connects to port # 22). To bind to 192.168.1.5 and 202.54.1.5 IPs and to port 300, add or correct the following line:</p>
+<pre>Port 300
+ListenAddress 192.168.1.5
+ListenAddress 202.54.1.5</pre>
+<p>A better approach to use proactive approaches scripts such as fail2ban or denyhosts (see below).</p>
+<h2>#10: Use Strong SSH Passwords and Passphrase</h2>
+<p>It cannot be stressed enough how important it is to use strong user passwords and passphrase for your keys. Brute force attack works because you use dictionary based passwords. You can force users to avoid passwords against a dictionary attack and use john the ripper tool to find out existing weak passwords. Here is a sample random password generator (put in your ~/.bashrc):</p>
+<pre>genpasswd() {
+	local l=$1
+       	[ "$l" == "" ] &amp;&amp; l=20
+      	tr -dc A-Za-z0-9_ &lt; /dev/urandom | head -c ${l} | xargs
+}</pre>
+<p>Run it:<br />
+<code>genpasswd 16</code><br />
+Output:</p>
+<pre>uw8CnDVMwC6vOKgW</pre>
+<h2>#11: Use Public Key Based Authentication</h2>
+<p>Use public/private key pair with password protection for the private key. See how to use RSA and DSA key based authentication. Never ever use passphrase free key (passphrase key less) login.</p>
+<p>Create the cryptographic Key on FreeBSD / Linux / UNIX workstation, enter:<br />
+<code>ssh-keygen -t rsa</code><br />
+Assign the pass phrase (press [enter] key twice if you don&#8217;t want a passphrase). It will create 2 files in ~/.ssh directory as follows:</p>
+<ul>
+<li>~/.ssh/id_rsa : identification (private) key</li>
+<li>~/.ssh/id_rsa.pub : public key</li>
+</ul>
+<p>Use scp to copy the id_rsa.pub (public key) to <em>rh9linux.nixcraft.org</em> server as authorized_keys2 file, this is know as Installing the public key to server.<br />
+<code>scp .ssh/id_rsa.pub vivek@rh9linux.nixcraft.org:.ssh/authorized_keys2</code><br />
+From FreeBSD workstation login to server:<br />
+<code>ssh rh9linux.nixcraft.org</code><br />
+Changing the pass-phrase on workstation (if needed):<br />
+<code>ssh-keygen -p</code><br />
+Use of ssh-agent to avoid continues pass-phrase typing<br />
+At freebsd workstation type:<br />
+<code>ssh-agent $BASH<br />
+ssh-add</code><br />
+Type your pass-phrase</p>
+<p>Now ssh server will not use prompt for the password. Above two commands can be added to your ~/.bash_profile file so that as soon as you login into workstation you can set the agent.</p>
+<h2>Deleting the keys hold by ssh-agent</h2>
+<p>To list keys, enter:<br />
+<code>ssh-add -l</code><br />
+To delete all keys, enter:<br />
+<code>ssh-add -D</code><br />
+To delete specific key, enter:<br />
+<code>ssh-add -d key</code></p>
+<h2>#12: Use Keychain Based Authentication</h2>
+<p>keychain is a special bash script designed to make key-based authentication incredibly convenient and flexible. It offers various security benefits over passphrase-free keys. See how to setup and use keychain software.</p>
+<h2>Install keychain on CentOS / RHEL / Fedora Linux</h2>
+<p>You need RPMForge repo enabled to install keychain package.<br />
+<code># yum install keychain</code></p>
+<h2>Install keychain on Debian / Ubuntu Linux</h2>
+<p><code># apt-get update &amp;&amp; apt-get install keychain</code></p>
+<h2>Install keychain on FreeBSD</h2>
+<p><code># portsnap fetch update<br />
+# cd /usr/ports/security/keychain<br />
+# make install clean</code></p>
+<h3>How Do I Setup SSH Keys With passphrase?</h3>
+<p>Simply type the following commands:<br />
+<code>$ ssh-keygen -t rsa</code><br />
+OR<br />
+<code>$ ssh-keygen -t dsa</code><br />
+Assign the pass phrase when prompted. See the following step-by-step guide for detailed information:</p>
+<p>&nbsp;</p>
+<h2>#13: Chroot SSHD (Lock Down Users To Their Home Directories)</h2>
+<p>By default users are allowed to browse the server directories such as /etc/, /bin and so on. You can protect ssh, using os based chroot or use special tools such as rssh. With the release of OpenSSH 4.8p1 or 4.9p1, you no longer have to rely on third-party hacks such as rssh or complicated chroot(1) setups to lock users to their home directories. See <a href="http://www.debian-administration.org/articles/590" target="_blank">this blog post</a> about new ChrootDirectory directive to lock down users to their home directories.</p>
+<h2>Install rssh</h2>
+<h3>CentOS / Fedora / RHEL Linux rssh installation</h3>
+<p>Visit Dag&#8217;s repo to grab <a href="http://dag.wieers.com/rpm/packages/rssh/">rssh package</a><br />
+<code># cd /tmp<br />
+# wget http://dag.wieers.com/rpm/packages/rssh/rssh-2.3.2-1.2.el5.rf.i386.rpm<br />
+# rpm -ivh rssh-2.3.2-1.2.el5.rf.i386.rpm</code></p>
+<h3>Debian / Ubuntu Linux rssh installation</h3>
+<p>Use apt-get command:<br />
+<code>$ sudo apt-get install rssh</code></p>
+<h3>FreeBSD installation</h3>
+<p><code># cd /usr/ports/shells/rssh<br />
+# make install clean</code></p>
+<p>&nbsp;</p>
+<h2>#14: Use TCP Wrappers</h2>
+<p>TCP Wrapper is a host-based Networking ACL system, used to filter network access to Internet. OpenSSH does supports TCP wrappers. Just update your /etc/hosts.allow file as follows to allow SSH only from 192.168.1.2 172.16.23.12 :</p>
+<pre>sshd : 192.168.1.2 172.16.23.12</pre>
+<p>&nbsp;</p>
+<h2>#15: Disable Empty Passwords</h2>
+<p>You need to explicitly disallow remote login from accounts with empty passwords, update sshd_config with the following line:</p>
+<pre>PermitEmptyPasswords no</pre>
+<h2>#16: Thwart SSH Crackers (Brute Force Attack)</h2>
+<p>Brute force is a method of defeating a cryptographic scheme by trying a large number of possibilities using a single or distributed computer network. To prevents brute force attacks against SSH, use the following softwares:</p>
+<ul>
+<li>DenyHosts is a Python based security tool for SSH servers. It is intended to prevent brute force attacks on SSH servers by monitoring invalid login attempts in the authentication log and blocking the originating IP addresses.</li>
+<li>Explains how to setup DenyHosts under RHEL / Fedora and CentOS Linux.</li>
+<li><a href="http://www.fail2ban.org/" target="_blank">Fail2ban</a> is a similar program that prevents brute force attacks against SSH.</li>
+<li><a href="http://sshguard.sourceforge.net/" target="_blank">security/sshguard-pf</a> protect hosts from brute force attacks against ssh and other services using pf.</li>
+<li><a href="http://sshguard.sourceforge.net/" target="_blank">security/sshguard-ipfw</a> protect hosts from brute force attacks against ssh and other services using ipfw.</li>
+<li><a href="http://sshguard.sourceforge.net/" target="_blank">security/sshguard-ipfilter</a> protect hosts from brute force attacks against ssh and other services using ipfilter.</li>
+<li><a href="http://www.bsdconsulting.no/tools/" target="_blank">security/sshblock</a> block abusive SSH login attempts.</li>
+<li><a href="http://anp.ath.cx/sshit/" target="_blank">security/sshit</a> checks for SSH/FTP bruteforce and blocks given IPs.</li>
+<li><a href="http://www.aczoom.com/cms/blockhosts/" target="_blank">BlockHosts</a> Automatic blocking of abusive IP hosts.</li>
+<li><a href="http://blinkeye.ch/dokuwiki/doku.php/projects/blacklist" target="_blank">Blacklist</a> Get rid of those bruteforce attempts.</li>
+<li><a href="http://www.rfxn.com/projects/brute-force-detection/" target="_blank">Brute Force Detection</a> A modular shell script for parsing application logs and checking for authentication failures. It does this using a rules system where application specific options are stored including regular expressions for each unique auth format.</li>
+<li><a href="https://savannah.nongnu.org/projects/ipqbdb/" target="_blank">IPQ BDB filter</a> May be considered as a fail2ban lite.</li>
+</ul>
+<h2>#17: Rate-limit Incoming Port # 22 Connections</h2>
+<p>Both netfilter and pf provides rate-limit option to perform simple throttling on incoming connections on port # 22.</p>
+<h3>Iptables Example</h3>
+<p>The following example will drop incoming connections which make more than 5 connection attempts upon port 22 within 60 seconds:</p>
+<pre>#!/bin/bash
+inet_if=eth1
+ssh_port=22
+$IPT -I INPUT -p tcp --dport ${ssh_port} -i ${inet_if} -m state --state NEW -m recent  --set
+$IPT -I INPUT -p tcp --dport ${ssh_port} -i ${inet_if} -m state --state NEW -m recent  --update --seconds 60 --hitcount 5 -j DROP</pre>
+<p>Call above script from your iptables scripts. Another config option:</p>
+<pre>$IPT -A INPUT  -i ${inet_if} -p tcp --dport ${ssh_port} -m state --state NEW -m limit --limit 3/min --limit-burst 3 -j ACCEPT
+$IPT -A INPUT  -i ${inet_if} -p tcp --dport ${ssh_port} -m state --state ESTABLISHED -j ACCEPT
+$IPT -A OUTPUT -o ${inet_if} -p tcp --sport ${ssh_port} -m state --state ESTABLISHED -j ACCEPT
+# another one line example
+# $IPT -A INPUT -i ${inet_if} -m state --state NEW,ESTABLISHED,RELATED -p tcp --dport 22 -m limit --limit 5/minute --limit-burst 5-j ACCEPT</pre>
+<p>See iptables man page for more details.</p>
+<h3>*BSD PF Example</h3>
+<p>The following will limits the maximum number of connections per source to 20 and rate limit the number of connections to 15 in a 5 second span. If anyone breaks our rules add them to our abusive_ips table and block them for making any further connections. Finally, flush keyword kills all states created by the matching rule which originate from the host which exceeds these limits.</p>
+<pre>sshd_server_ip="202.54.1.5"
+table &lt;abusive_ips&gt; persist
+block in quick from &lt;abusive_ips&gt;
+pass in on $ext_if proto tcp to $sshd_server_ip port ssh flags S/SA keep state (max-src-conn 20, max-src-conn-rate 15/5, overload &lt;abusive_ips&gt; flush)</pre>
+<h2>#18: Use Port Knocking</h2>
+<p><a href="http://en.wikipedia.org/wiki/Port_knocking" target="_blank">Port knocking</a> is a method of externally opening ports on a firewall by generating a connection attempt on a set of prespecified closed ports. Once a correct sequence of connection attempts is received, the firewall rules are dynamically modified to allow the host which sent the connection attempts to connect over specific port(s). A sample port Knocking example for ssh using iptables:</p>
+<pre>$IPT -N stage1
+$IPT -A stage1 -m recent --remove --name knock
+$IPT -A stage1 -p tcp --dport 3456 -m recent --set --name knock2
+
+$IPT -N stage2
+$IPT -A stage2 -m recent --remove --name knock2
+$IPT -A stage2 -p tcp --dport 2345 -m recent --set --name heaven
+
+$IPT -N door
+$IPT -A door -m recent --rcheck --seconds 5 --name knock2 -j stage2
+$IPT -A door -m recent --rcheck --seconds 5 --name knock -j stage1
+$IPT -A door -p tcp --dport 1234 -m recent --set --name knock
+
+$IPT -A INPUT -m --state ESTABLISHED,RELATED -j ACCEPT
+$IPT -A INPUT -p tcp --dport 22 -m recent --rcheck --seconds 5 --name heaven -j ACCEPT
+$IPT -A INPUT -p tcp --syn -j doo</pre>
+<ul>
+<li><a href="http://www.cipherdyne.org/fwknop/" target="_blank">fwknop</a> is an implementation that combines port knocking and passive OS fingerprinting.</li>
+<li><a href="http://www.debian-administration.org/articles/268" target="_blank">Multiple-port knocking</a> Netfilter/IPtables only implementation.</li>
+</ul>
+<h2>#19: Use Log Analyzer</h2>
+<p>Read your logs using logwatch or <a href="http://logcheck.org/" target="_blank">logcheck</a>. These tools make your log reading life easier. It will go through your logs for a given period of time and make a report in the areas that you wish with the detail that you wish. Make sure LogLevel is set to INFO or DEBUG in sshd_config:</p>
+<pre>LogLevel INFO</pre>
+<p>
+.<br />
+<br />
+Installation<br />
+Debian Linux type the following command::</p>
+<div>
+<div></div>
+<pre>apt-get install logwatch</pre>
+</div>
+<p>
+Fedora Linux type the following command::</p>
+<div>
+<div></div>
+<pre>yum install logwatch</pre>
+</div>
+<p>
+RedHat Enterprise Linux type the following command::</p>
+<div>
+<div></div>
+<pre>up2date logwatch</pre>
+</div>
+<p></p>
+<pre>To customize logwatch go to /usr/share/doc/logwatch-*/ directory and read the file HOWTO-Customize-LogWatch
+
+Or Open logwatch.conf file:</pre>
+<div>
+<div></div>
+<pre>vi /etc/logwatch/conf/logwatch.conf</pre>
+</div>
+<pre>OR</pre>
+<div>
+<div></div>
+<pre>vi /usr/share/logwatch/default.conf/logwatch.conf</pre>
+</div>
+<p>Read man page of logwatch for more information.</p>
+<h2>#20: Patch OpenSSH and Operating Systems</h2>
+<p>It is recommended that you use tools such as yum, apt-get, freebsd-update and others to keep systems up to date with the latest security patches.</p>
+<h2>Other Options</h2>
+<p>To hide openssh version, you need to update source code and compile openssh again. Make sure following options are enabled in sshd_config:</p>
+<pre>#  Turn on privilege separation
+UsePrivilegeSeparation yes
+# Prevent the use of insecure home directory and key file permissions
+StrictModes yes
+# Turn on  reverse name checking
+VerifyReverseMapping yes
+# Do you need port forwarding?
+AllowTcpForwarding no
+X11Forwarding no
+#  Specifies whether password authentication is allowed.  The default is yes.
+PasswordAuthentication no</pre>
+<p>Verify your sshd_config file before restarting / reloading changes:<br />
+<code># /usr/sbin/sshd -t</code></p>
+<p>Tighter SSH security with <a href="http://www.linuxjournal.com/article/8957" target="_blank">two-factor</a> or <a href="https://calomel.org/openssh.html" target="_blank">three-factor (or more)</a> authentication.</p>
+<h4>References:</h4>
+<ol>
+<li>The <a href="http://www.openssh.com/">official OpenSSH</a> project.</li>
+<li>Forum thread: <a href="http://nixcraft.com/networking-firewalls-security/726-failed-ssh-login-attempts-how-avoid-brute-ssh-attacks.html">Failed SSH login attempts</a> and how to avoid brute ssh attacks</li>
+<li>man pages sshd_config, ssh_config, tcpd, yum, and apt-get.</li>
+</ol>
+<p>If you have a technique or handy software not mentioned here, please share in the comments below to help your fellow readers keep their openssh based server secure.</p>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/top-20-openssh-server-best-security-practices/">Top 20 OpenSSH Server Best Security Practices</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/top-20-openssh-server-best-security-practices/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Authentication VS Authorization</title>
+		<link>/authentication-vs-authorization/</link>
+					<comments>/authentication-vs-authorization/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Mon, 07 Jan 2013 20:45:26 +0000</pubDate>
+				<category><![CDATA[Security]]></category>
+		<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">/?p=438</guid>
+
+					<description><![CDATA[<p>what is the difference between authentication and authorization? Why it is important to understand difference between the two? Authentication vs. Authorization &#8212; what are they and how do they differ? Authentication Authentication verifies who you are. For example, you can login into your Unix server using the ssh client, or access your email server using the... </p>
+<p><a class="small button secondary" href="/authentication-vs-authorization/">Continue Reading</a></p>
+The post <a href="/authentication-vs-authorization/">Authentication VS Authorization</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-438"></span></p>
+<p>what is the difference between authentication and authorization? Why it is important to understand difference between the two? Authentication vs. Authorization &#8212; what are they and how do they differ?</p>
+<h2>Authentication</h2>
+<div></div>
+<p>Authentication verifies <strong>who you are</strong>. For example, you can login into your Unix server using the ssh client, or access your email server using the POP3 and SMTP client. Usually, PAM (Pluggable Authentication Modules) are used as low-level authentication schemes into a high-level application programming interface (API), which allows programs that rely on authentication to be written independently of the underlying authentication scheme.</p>
+<h2>Authorization</h2>
+<p>Authorization verifies <strong>what you are authorized to do</strong>. For example, you are allowed to login into your Unix server via ssh client, but you are not authorized to browser /data2 or any other file system. Authorization occurs after successful authentication. Authorization can be controlled at file system level or using various application level configuration options such as chroot(2).</p>
+<p>Usually, the connection attempt must be both authenticated and authorized by the system. You can easily find out why connection attempts are either accepted or denied with the help of these two factors.</p>
+<h2>Example: Authentication And Authorization</h2>
+<p>A user called vivek is allowed to login to www.yahoo.com server securely using the OpenSSH ssh client/server module. In this example authentication is the mechanism whereby system running at www.yahoo.com may securely identify user vivek. The authentication systems provide an answers to the questions:</p>
+<ul>
+<li>Who is the user vivek?</li>
+<li>Is the user vivek really who he represents himself to be?</li>
+</ul>
+<p>The server running at www.yahoo.com depend on some unique bit of information known only to the vivek user. It may be as simple as a password, public key authentication, or as complicated as Kerberos based system. In all cases user vivek needs some sort of secret to login into www.yahoo.com server via the ssh client. In order to verify the identity of a user called vivek, the authenticating system running at www.yahoo.com will challenges the vivek to provide his unique information (his password, or fingerprint, etc.) &#8212; if the authenticating system can verify that the shared secret was presented correctly, the user vivek is considered authenticated.</p>
+<h3>vivek is Authenticated? What Next?</h3>
+<p>Authorization.</p>
+<p>The Unix server running at www.yahoo.com determines what level of access a particular authenticated user called vivek should have. For example, vivek can compile programs using GNU gcc compilers but not allowed to upload or download files. So</p>
+<ol>
+<li>Is user vivek authorized to access resource called ABC?</li>
+<li>Is user vivek authorized to perform operation XYZ?</li>
+<li>Is user vivek authorized to perform operation P on resource R?</li>
+<li>Is user vivek authorized to download or upload files?</li>
+<li>Is user vivek authorized to apply patches to the Unix systems?</li>
+<li>Is user vivek authorized to make backups?</li>
+</ol>
+<p>In this example Unix server used the combination of authentication and authorization to secure the system. The system ensures that user claiming to be vivek is the really user vivek and thus prevent unauthorized users from gaining access to secured resources running on the Unix server at www.yahoo.com.</p>
+<h2>Dealing With Large Linux / Unix Setups</h2>
+<p>Large Linux / UNIX installation equipped with central LDAP directory servers to authenticate users. A user must provide username and password against all services such as Squid proxy, Wi-Fi, SMTP, POP3 email server etc. LDAP directory allows you to obtain required information such as employee number, email address, department code, and much more. The directory provides additional data lookup and search capabilities. <a href="http://www.openldap.org/" target="_blank">OpenLDAP</a> and the <a href="http://directory.fedoraproject.org/" target="_blank">Fedora Directory Server</a> (FDS) is an LDAP (Lightweight Directory Access Protocol) servers for Linux and Unix like operating systems. Kerberos is a network authentication protocol. It is designed to provide strong authentication for client/server applications by using secret-key cryptography. A free implementation of this protocol is available from the <a href="http://web.mit.edu/kerberos/" target="_blank">Massachusetts Institute of Technology</a>.</p>
+<p>Red Hat Directory Server is an LDAP-compliant server that centralizes user identity and application information. It provides an operating system-independent, network-based registry for storing application settings, user profiles, group data, policies, and access control information.</p>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/authentication-vs-authorization/">Authentication VS Authorization</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/authentication-vs-authorization/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>SSH Port Knocking installation on Ubuntu</title>
+		<link>/ssh-port-knocking-installation-on-ubuntu/</link>
+					<comments>/ssh-port-knocking-installation-on-ubuntu/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Mon, 07 Jan 2013 17:35:50 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Security]]></category>
+		<guid isPermaLink="false">/?p=431</guid>
+
+					<description><![CDATA[<p>I had a nice discussion with a friend about securing SSH servers. The only options he thought was changing the port, disabling password interactive login, and enabling public/private key pair to authenticate.This should be enough in most cases. But, there’s more. One of them is version cloaking.This can be done with a patch applied to... </p>
+<p><a class="small button secondary" href="/ssh-port-knocking-installation-on-ubuntu/">Continue Reading</a></p>
+The post <a href="/ssh-port-knocking-installation-on-ubuntu/">SSH Port Knocking installation on Ubuntu</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-431"></span><br />
+I had a nice discussion with a friend about securing SSH servers.<br />
+The only options he thought was changing the port, disabling password interactive login, and enabling public/private key pair to authenticate.This should be enough in most cases. But, there’s more.<br />
+One of them is version cloaking.This can be done with a patch applied to the source of OpenSSH and recompile it.<br />
+Another way to secure remote access is port knocking.<br />
+Its main principle is this:<br />
+Port 22 is locked and you have to knock in a custom manner in order to get the port opened only for the incoming IP that knocked. The server side, includes a daemon called knockd looking for specific sequence of knocking on the server door. You can configure a specific order of ports to knock, a specific flag those packets should have, a sequence timeout, commands, and few more options. The command, in this case, will be to open port 22 for the incoming IP that knocked exactly in the same order the server is setup to listen. You can also use another sequence of knocking to close the same port, that actually deletes the firewall rule added earlier.<br />
+Installation on Ubuntu is a very easy</p>
+<pre>apt-get install knockd.</pre>
+<p>You’ll be able to start the daemon by enabling it in /etc/default/knockd.<br />
+Configuration file is /etc/knockd.conf:</p>
+<pre>vi /etc/knockd.conf</pre>
+<pre>[options]
+logfile = /var/log/knockd.log
+
+[openSSH]
+sequence = 7000,8000,9000
+seq_timeout = 10
+tcpflags = syn
+command = /usr/sbin/iptables -A INPUT -s %IP% -p tcp --dport 22 -j ACCEPT
+
+[closeSSH]
+sequence = 9000,8000,7000
+seq_timeout = 10
+tcpflags = syn
+command = /usr/sbin/iptables -D INPUT -s %IP% -p tcp --dport 22 -j ACCEPT</pre>
+<p>Ok…so, this configuration, listens for TCP packets, with the flag syn, in a sequence of 7000, 8000, 9000, with a timeout of 10 seconds. After it detects that, it automatically grants port 22 access to the incoming IP. If the daemon gets the reverse order of knocking, it will automatically delete the rule, so, closing the port again for all IPs. Unfortunately, those knockings can be easily read on a packet sniffer between you and the secured server, but, it’s how you can secure more a SSH server.<br />
+But because I won’t post my personal config here, this will have to do for the blog’s purpose.<br />
+Note: Oh, and, in case you don’t want to be left outside on the server, in case of daemon failure, you should get a script running that automatically checks if the daemon is running, and automatically restart it in case it’s stopped.</p>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/ssh-port-knocking-installation-on-ubuntu/">SSH Port Knocking installation on Ubuntu</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/ssh-port-knocking-installation-on-ubuntu/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Care and Feeding of iptables</title>
+		<link>/care-and-feeding-of-iptables/</link>
+					<comments>/care-and-feeding-of-iptables/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Mon, 07 Jan 2013 17:07:27 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Security]]></category>
+		<guid isPermaLink="false">/?p=428</guid>
+
+					<description><![CDATA[<p>#!/bin/sh # ############################################################################# # # File: iptables.sh # # Purpose: To build a basic iptables policy with default log and drop rules. # This script was written for the book "Linux Firewalls: Attack # Detection and Response" published by No Starch Press. # # Copyright (C) 2006-2012 Michael Rash (mbr@cipherdyne.org) # # License (GNU Public... </p>
+<p><a class="small button secondary" href="/care-and-feeding-of-iptables/">Continue Reading</a></p>
+The post <a href="/care-and-feeding-of-iptables/">Care and Feeding of iptables</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-428"></span></p>
+<p><a href="/?attachment_id=429"><img loading="lazy" class="aligncenter" title="Default network diagram for the Linux Firewalls book" alt="Default network diagram for the Linux Firewalls book" src="http://cipherdyne.org/images/LF_default_network.png" width="733" height="283" /></a></p>
+<pre title="Default iptables policy for the Linux Firewalls book">#!/bin/sh
+#
+#############################################################################
+#
+# File: iptables.sh
+#
+# Purpose: To build a basic iptables policy with default log and drop rules.
+#          This script was written for the book "Linux Firewalls: Attack
+#          Detection and Response" published by No Starch Press.
+#
+# Copyright (C) 2006-2012 Michael Rash (mbr@cipherdyne.org)
+#
+# License (GNU Public License):
+#
+#   This program is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#   along with this program; if not, write to the Free Software
+#   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307
+#   USA
+#
+#
+#############################################################################
+#
+
+IPTABLES=/sbin/iptables
+IP6TABLES=/sbin/ip6tables
+MODPROBE=/sbin/modprobe
+INT_NET=192.168.10.0/24
+INT_INTF=eth1
+EXT_INTF=eth0
+
+### flush existing rules and set chain policy setting to DROP
+echo "[+] Flushing existing iptables rules..."
+$IPTABLES -F
+$IPTABLES -F -t nat
+$IPTABLES -X
+$IPTABLES -P INPUT DROP
+$IPTABLES -P OUTPUT DROP
+$IPTABLES -P FORWARD DROP
+
+### this policy does not handle IPv6 traffic except to drop it.
+#
+echo "[+] Disabling IPv6 traffic..."
+$IP6TABLES -P INPUT DROP
+$IP6TABLES -P OUTPUT DROP
+$IP6TABLES -P FORWARD DROP
+
+### load connection-tracking modules
+#
+$MODPROBE ip_conntrack
+$MODPROBE iptable_nat
+$MODPROBE ip_conntrack_ftp
+$MODPROBE ip_nat_ftp
+
+###### INPUT chain ######
+#
+echo "[+] Setting up INPUT chain..."
+
+### state tracking rules
+$IPTABLES -A INPUT -m conntrack --ctstate INVALID -j LOG --log-prefix "DROP INVALID " --log-ip-options --log-tcp-options
+$IPTABLES -A INPUT -m conntrack --ctstate INVALID -j DROP
+$IPTABLES -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+
+### anti-spoofing rules
+$IPTABLES -A INPUT -i $INT_INTF ! -s $INT_NET -j LOG --log-prefix "SPOOFED PKT "
+$IPTABLES -A INPUT -i $INT_INTF ! -s $INT_NET -j DROP
+
+### ACCEPT rules
+$IPTABLES -A INPUT -i $INT_INTF -p tcp -s $INT_NET --dport 22 -m conntrack --ctstate NEW -j ACCEPT
+$IPTABLES -A INPUT -p icmp --icmp-type echo-request -j ACCEPT
+
+### default INPUT LOG rule
+$IPTABLES -A INPUT ! -i lo -j LOG --log-prefix "DROP " --log-ip-options --log-tcp-options
+
+### make sure that loopback traffic is accepted
+$IPTABLES -A INPUT -i lo -j ACCEPT
+
+###### OUTPUT chain ######
+#
+echo "[+] Setting up OUTPUT chain..."
+
+### state tracking rules
+$IPTABLES -A OUTPUT -m conntrack --ctstate INVALID -j LOG --log-prefix "DROP INVALID " --log-ip-options --log-tcp-options
+$IPTABLES -A OUTPUT -m conntrack --ctstate INVALID -j DROP
+$IPTABLES -A OUTPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+
+### ACCEPT rules for allowing connections out
+$IPTABLES -A OUTPUT -p tcp --dport 21 -m conntrack --ctstate NEW -j ACCEPT
+$IPTABLES -A OUTPUT -p tcp --dport 22 -m conntrack --ctstate NEW -j ACCEPT
+$IPTABLES -A OUTPUT -p tcp --dport 25 -m conntrack --ctstate NEW -j ACCEPT
+$IPTABLES -A OUTPUT -p tcp --dport 43 -m conntrack --ctstate NEW -j ACCEPT
+$IPTABLES -A OUTPUT -p tcp --dport 80 -m conntrack --ctstate NEW -j ACCEPT
+$IPTABLES -A OUTPUT -p tcp --dport 443 -m conntrack --ctstate NEW -j ACCEPT
+$IPTABLES -A OUTPUT -p tcp --dport 4321 -m conntrack --ctstate NEW -j ACCEPT
+$IPTABLES -A OUTPUT -p tcp --dport 53 -m conntrack --ctstate NEW -j ACCEPT
+$IPTABLES -A OUTPUT -p udp --dport 53 -m conntrack --ctstate NEW -j ACCEPT
+$IPTABLES -A OUTPUT -p icmp --icmp-type echo-request -j ACCEPT
+
+### default OUTPUT LOG rule
+$IPTABLES -A OUTPUT ! -o lo -j LOG --log-prefix "DROP " --log-ip-options --log-tcp-options
+
+### make sure that loopback traffic is accepted
+$IPTABLES -A OUTPUT -o lo -j ACCEPT
+
+###### FORWARD chain ######
+#
+echo "[+] Setting up FORWARD chain..."
+
+### state tracking rules
+$IPTABLES -A FORWARD -m conntrack --ctstate INVALID -j LOG --log-prefix "DROP INVALID " --log-ip-options --log-tcp-options
+$IPTABLES -A FORWARD -m conntrack --ctstate INVALID -j DROP
+$IPTABLES -A FORWARD -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+
+### anti-spoofing rules
+$IPTABLES -A FORWARD -i $INT_INTF ! -s $INT_NET -j LOG --log-prefix "SPOOFED PKT "
+$IPTABLES -A FORWARD -i $INT_INTF ! -s $INT_NET -j DROP
+
+### ACCEPT rules
+$IPTABLES -A FORWARD -p tcp -i $INT_INTF -s $INT_NET --dport 21 -m conntrack --ctstate NEW -j ACCEPT
+$IPTABLES -A FORWARD -p tcp -i $INT_INTF -s $INT_NET --dport 22 -m conntrack --ctstate NEW -j ACCEPT
+$IPTABLES -A FORWARD -p tcp -i $INT_INTF -s $INT_NET --dport 25 -m conntrack --ctstate NEW -j ACCEPT
+$IPTABLES -A FORWARD -p tcp -i $INT_INTF -s $INT_NET --dport 43 -m conntrack --ctstate NEW -j ACCEPT
+$IPTABLES -A FORWARD -p tcp --dport 80 -m conntrack --ctstate NEW -j ACCEPT
+$IPTABLES -A FORWARD -p tcp --dport 443 -m conntrack --ctstate NEW -j ACCEPT
+$IPTABLES -A FORWARD -p tcp -i $INT_INTF -s $INT_NET --dport 4321 -m conntrack --ctstate NEW -j ACCEPT
+$IPTABLES -A FORWARD -p tcp --dport 53 -m conntrack --ctstate NEW -j ACCEPT
+$IPTABLES -A FORWARD -p udp --dport 53 -m conntrack --ctstate NEW -j ACCEPT
+$IPTABLES -A FORWARD -p icmp --icmp-type echo-request -j ACCEPT
+
+### default LOG rule
+$IPTABLES -A FORWARD ! -i lo -j LOG --log-prefix "DROP " --log-ip-options --log-tcp-options
+
+###### NAT rules ######
+#
+echo "[+] Setting up NAT rules..."
+$IPTABLES -t nat -A PREROUTING -p tcp --dport 80 -i $EXT_INTF -j DNAT --to 192.168.10.3:80
+$IPTABLES -t nat -A PREROUTING -p tcp --dport 443 -i $EXT_INTF -j DNAT --to 192.168.10.3:443
+$IPTABLES -t nat -A PREROUTING -p udp --dport 53 -i $EXT_INTF -j DNAT --to 192.168.10.4:53
+$IPTABLES -t nat -A POSTROUTING -s $INT_NET -o $EXT_INTF -j MASQUERADE
+
+###### forwarding ######
+#
+echo "[+] Enabling IP forwarding..."
+echo 1 &gt; /proc/sys/net/ipv4/ip_forward
+
+exit
+### EOF ###</pre>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/care-and-feeding-of-iptables/">Care and Feeding of iptables</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/care-and-feeding-of-iptables/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>psad: Linux Detect And Block Port Scan Attacks In Real Time</title>
+		<link>/psad-linux-detect-and-block-port-scan-attacks-in-real-time/</link>
+					<comments>/psad-linux-detect-and-block-port-scan-attacks-in-real-time/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Sun, 06 Jan 2013 18:08:55 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Security]]></category>
+		<guid isPermaLink="false">/?p=423</guid>
+
+					<description><![CDATA[<p>A port scanner (such as nmap) is a piece of software designed to search a network host for open ports. Cracker can use nmap to scan your network before starting attack. You can always see scan patterns by visiting /var/log/messages. But, I recommend the automated tool called psad &#8211; the port scan attack detector under... </p>
+<p><a class="small button secondary" href="/psad-linux-detect-and-block-port-scan-attacks-in-real-time/">Continue Reading</a></p>
+The post <a href="/psad-linux-detect-and-block-port-scan-attacks-in-real-time/">psad: Linux Detect And Block Port Scan Attacks In Real Time</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-423"></span></p>
+<p>A port scanner (such as nmap) is a piece of software designed to search a network host for open ports. Cracker can use nmap to scan your network before starting attack. You can always see scan patterns by visiting /var/log/messages. But, I recommend the automated tool called psad &#8211; the port scan attack detector under Linux which is a collection of lightweight system daemons that run on Linux machines and analyze iptables log messages to detect port scans and other suspicious traffic.</p>
+<p>psad makes use of Netfilter log messages to detect, alert, and (optionally) block port scans and other suspect traffic. For tcp scans psad analyzes tcp flags to determine the scan type (syn, fin, xmas, etc.) and corresponding command line options that could be supplied to nmap to generate such a scan. In addition, psad makes use of many tcp, udp, and icmp signatures contained within the Snort intrusion detection system.</p>
+<h2>Install psad under Debian / Ubuntu Linux</h2>
+<p>Type the following command to install psad, enter:<br />
+<code>$ sudo apt-get update<br />
+$ sudo apt-get install psad</code></p>
+<h2>Configure psad</h2>
+<p>Open /etc/syslog.conf file, enter:<br />
+<code># vi /etc/syslog.conf</code><br />
+Append following code</p>
+<pre>kern.info       |/var/lib/psad/psadfifo</pre>
+<p>Alternatively, you can type the following command to update syslog.conf:<br />
+<code>echo -e ’kern.info\t|/var/lib/psad/psadfifo’ &gt;&gt; /etc/syslog.conf</code><br />
+psad Syslog needs to be configured to write all kern.info messages to a named pipe /var/lib/psad/psadfifo. Close and save the file. Restart syslog:<br />
+<code># /etc/init.d/sysklogd restart<br />
+# /etc/init.d/klogd</code><br />
+The default psad file is located at /etc/psad/psad.conf:<br />
+<code># vi /etc/psad/psad.conf</code><br />
+You need to setup correct email ID to get port scan detections messages and other settings as follows:</p>
+<pre>EMAIL_ADDRESSES             vivek@nixcraft.in;</pre>
+<p>Set machine hostname (FQDN):</p>
+<pre>HOSTNAME                    server.nixcraft.in;</pre>
+<p>If you have only one interface on box (such as colo web server or mail server), sent HOME_NET to none:</p>
+<pre>HOME_NET                NOT_USED;  ### only one interface on box</pre>
+<p>You may also need to adjust danger levels as per your setup. You can also define a set of ports to ignore, for example to have psad ignore udp ports 53 and 5000, use:</p>
+<pre>IGNORE_PORTS                udp/53, udp/5000;</pre>
+<p>You can also enable real time iptables blocking, by setting following two variables:</p>
+<pre>ENABLE_AUTO_IDS             Y;
+IPTABLES_BLOCK_METHOD       Y;</pre>
+<p>psad has many more options, please read man pages for further information. Save and close the file. Restart psad:<br />
+<code># /etc/init.d/psad restart</code></p>
+<h3>Update iptables rules</h3>
+<p>psad need following two rules with logging enabled:</p>
+<pre>iptables -A INPUT -j LOG
+iptables -A FORWARD -j LOG</pre>
+<p>Here is my sample Debian Linux desktop firewall script with logging enabled at the end:</p>
+<pre>#!/bin/bash
+IPT="/sbin/iptables"
+
+echo "Starting IPv4 Wall..."
+$IPT -F
+$IPT -X
+$IPT -t nat -F
+$IPT -t nat -X
+$IPT -t mangle -F
+$IPT -t mangle -X
+modprobe ip_conntrack
+
+BADIPS=$(egrep -v -E "^#|^$" /root/scripts/blocked.fw)
+PUB_IF="eth0"
+
+#unlimited 
+$IPT -A INPUT -i lo -j ACCEPT
+$IPT -A OUTPUT -o lo -j ACCEPT
+
+# DROP all incomming traffic
+$IPT -P INPUT DROP
+$IPT -P OUTPUT DROP
+$IPT -P FORWARD DROP
+
+# block all bad ips
+for ip in $BADIPS
+do
+    $IPT -A INPUT -s $ip -j DROP
+    $IPT -A OUTPUT -d $ip -j DROP
+done
+
+# sync
+$IPT -A INPUT -i ${PUB_IF} -p tcp ! --syn -m state --state NEW  -m limit --limit 5/m --limit-burst 7 -j LOG --log-level 4 --log-prefix "Drop Syn"
+
+$IPT -A INPUT -i ${PUB_IF} -p tcp ! --syn -m state --state NEW -j DROP
+
+# Fragments
+$IPT -A INPUT -i ${PUB_IF} -f  -m limit --limit 5/m --limit-burst 7 -j LOG --log-level 4 --log-prefix "Fragments Packets"
+$IPT -A INPUT -i ${PUB_IF} -f -j DROP
+
+# block bad stuff
+$IPT  -A INPUT -i ${PUB_IF} -p tcp --tcp-flags ALL FIN,URG,PSH -j DROP
+$IPT  -A INPUT -i ${PUB_IF} -p tcp --tcp-flags ALL ALL -j DROP
+
+$IPT  -A INPUT -i ${PUB_IF} -p tcp --tcp-flags ALL NONE -m limit --limit 5/m --limit-burst 7 -j LOG --log-level 4 --log-prefix "NULL Packets"
+$IPT  -A INPUT -i ${PUB_IF} -p tcp --tcp-flags ALL NONE -j DROP # NULL packets
+
+$IPT  -A INPUT -i ${PUB_IF} -p tcp --tcp-flags SYN,RST SYN,RST -j DROP
+
+$IPT  -A INPUT -i ${PUB_IF} -p tcp --tcp-flags SYN,FIN SYN,FIN -m limit --limit 5/m --limit-burst 7 -j LOG --log-level 4 --log-prefix "XMAS Packets"
+$IPT  -A INPUT -i ${PUB_IF} -p tcp --tcp-flags SYN,FIN SYN,FIN -j DROP #XMAS
+
+$IPT  -A INPUT -i ${PUB_IF} -p tcp --tcp-flags FIN,ACK FIN -m limit --limit 5/m --limit-burst 7 -j LOG --log-level 4 --log-prefix "Fin Packets Scan"
+$IPT  -A INPUT -i ${PUB_IF} -p tcp --tcp-flags FIN,ACK FIN -j DROP # FIN packet scans
+
+$IPT  -A INPUT -i ${PUB_IF} -p tcp --tcp-flags ALL SYN,RST,ACK,FIN,URG -j DROP
+
+# Allow full outgoing connection but no incomming stuff
+$IPT -A INPUT -i eth0 -m state --state ESTABLISHED,RELATED -j ACCEPT
+$IPT -A OUTPUT -o eth0 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+
+# allow ssh only
+$IPT -A INPUT -p tcp --destination-port 22 -j ACCEPT
+$IPT -A OUTPUT -p tcp --sport 22 -j ACCEPT
+
+# allow incoming ICMP ping pong stuff
+$IPT -A INPUT -p icmp --icmp-type 8 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+$IPT -A OUTPUT -p icmp --icmp-type 0 -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+# No smb/windows sharing packets - too much logging
+$IPT -A INPUT -p tcp -i eth0 --dport 137:139 -j REJECT
+$IPT -A INPUT -p udp -i eth0 --dport 137:139 -j REJECT
+
+# Log everything else
+# *** Required for psad ****
+$IPT -A INPUT -j LOG
+$IPT -A FORWARD -j LOG
+$IPT -A INPUT -j DROP
+
+# Start ipv6 firewall
+# echo "Starting IPv6 Wall..."
+/root/scripts/start6.fw
+
+exit 0</pre>
+<h3>How do I view port scan report?</h3>
+<p>Simply type the following command:<br />
+<code># psad -S</code><br />
+Sample output (some of the sensitive / personally identified parts have been removed):</p>
+<pre>[+] psadwatchd (pid: 2540)  %CPU: 0.0  %MEM: 0.0
+    Running since: Sun Jul 27 07:14:56 2008
+[+] kmsgsd (pid: 2528)  %CPU: 0.0  %MEM: 0.0
+    Running since: Sun Jul 27 07:14:55 2008
+[+] psad (pid: 2524)  %CPU: 0.0  %MEM: 0.8
+    Running since: Sun Jul 27 07:14:55 2008
+    Command line arguments: -c /etc/psad/psad.conf
+    Alert email address(es): radhika.xyz@xxxxxxxx.co.in
+    src:            dst:            chain:  intf:  tcp:  udp:  icmp:  dl:  alerts:  os_guess:
+    117.32.xxx.149  xx.22.zz.121    INPUT   eth0   1     0     0      2    2        -
+    118.167.xxx.219 xx.22.zz.121    INPUT   eth0   1     0     0      2    2        -
+    118.167.xxx.250 xx.22.zz.121    INPUT   eth0   1     0     0      2    2        -
+    118.167.xxx.5   xx.22.zz.121    INPUT   eth0   1     0     0      2    2        -
+    122.167.xx.11   xx.22.zz.121    INPUT   eth0   4642  0     0      4    50       -
+    122.167.xx.80   xx.22.zz.121    INPUT   eth0   0     11    0      1    2        -
+    123.134.xx.34   xx.22.zz.121    INPUT   eth0   20    0     0      2    9        -
+    125.161.xx.3    xx.22.zz.121    INPUT   eth0   0     9     0      1    4        -
+    125.67.xx.7     xx.22.zz.121    INPUT   eth0   1     0     0      2    2        -
+    190.159.xxx.220 xx.22.zz.121    INPUT   eth0   0     9     0      1    3        -
+    193.140.xxx.210 xx.22.zz.121    INPUT   eth0   0     10    0      1    2        -
+    202.xx.23x.196  xx.22.zz.121    INPUT   eth0   0     13    0      1    10       -
+    202.xx.2x8.197  xx.22.zz.121    INPUT   eth0   0     20    0      2    17       -
+    202.97.xxx.198  xx.22.zz.121    INPUT   eth0   0     17    0      2    12       -
+    202.97.xxx.199  xx.22.zz.121    INPUT   eth0   0     18    0      2    15       -
+    202.97.xxx.200  xx.22.zz.121    INPUT   eth0   0     17    0      2    14       -
+    202.97.xxx.201  xx.22.zz.121    INPUT   eth0   0     15    0      2    12       -
+    202.97.xxx.202  xx.22.zz.121    INPUT   eth0   0     21    0      2    16       -
+    203.xxx.128.65  xx.22.zz.121    INPUT   eth0   12    0     0      2    6        Windows XP/2000
+    211.90.xx.14    xx.22.zz.121    INPUT   eth0   1     0     0      2    2        -
+    213.163.xxx.9   xx.22.zz.121    INPUT   eth0   0     0     1      2    2        -
+    221.130.xxx.124 xx.22.zz.121    INPUT   eth0   0     35    0      2    31       -
+    221.206.xxx.10  xx.22.zz.121    INPUT   eth0   0     33    0      2    21       -
+    221.206.xxx.53  xx.22.zz.121    INPUT   eth0   0     33    0      2    27       -
+    221.206.xxx.54  xx.22.zz.121    INPUT   eth0   0     39    0      2    26       -
+    221.206.xxx.57  xx.22.zz.121    INPUT   eth0   0     33    0      2    19       -
+    60.222.xxx.146  xx.22.zz.121    INPUT   eth0   0     40    0      2    33       -
+    60.222.xxx.153  xx.22.zz.121    INPUT   eth0   0     14    0      1    11       -
+    60.222.xxx.154  xx.22.zz.121    INPUT   eth0   0     18    0      2    15       -
+    Netfilter prefix counters:
+        "SPAM DROP Block": 161519
+        "Drop Syn Attacks": 136
+    Total scan sources: 95
+    Total scan destinations: 1
+    Total packet counters:
+        tcp:  5868
+        udp:  164012
+        icmp: 2</pre>
+<h3>How do I remove automatically blocked ips?</h3>
+<p>Simply type the following command to remove any auto-generated firewall block<br />
+<code># psad -F</code></p>
+<h3>How do I view detailed log for each IP address?</h3>
+<p>Go to /var/log/psad/ip.address/ directory. For example, view log for IP address 11.22.22.33, enter:<br />
+<code># cd /var/log/psad/11.22.22.33<br />
+# ls -l</code><br />
+Sample output:</p>
+<pre>-rw------- 1 root root 2623 2008-07-30 13:02 xx.22.zz.121_email_alert
+-rw------- 1 root root   32 2008-07-30 13:02 xx.22.zz.121_packet_ctr
+-rw------- 1 root root    0 2008-07-29 00:27 xx.22.zz.121_signatures
+-rw------- 1 root root   11 2008-07-30 13:02 xx.22.zz.121_start_time
+-rw------- 1 root root    2 2008-07-30 13:02 danger_level
+-rw------- 1 root root    2 2008-07-30 13:02 email_count
+-rw------- 1 root root 1798 2008-07-29 00:27 whois</pre>
+<p>Use cat / more or less command to view rest of the information.</p>
+<h2>Further readings:</h2>
+<ul>
+<li>man pages &#8211; psad, syslog.conf</li>
+<li><a href="http://cipherdyne.org/psad/">psad project home page</a></li>
+<li>I highly recommend &#8211; <a href="http://www.amazon.com/gp/redirect.html?ie=UTF8&amp;location=http%3A%2F%2Fwww.amazon.com%2FLinux-Firewalls-Detection-Response-iptables%2Fdp%2F1593271417%3Fie%3DUTF8%26s%3Dbooks%26qid%3D1218020190%26sr%3D8-1&amp;tag=cyberciti-20&amp;linkCode=ur2&amp;camp=1789&amp;creative=9325">Linux Firewalls: Attack Detection and Response with iptables, psad, and fwsnort</a> for further information.</li>
+</ul>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/psad-linux-detect-and-block-port-scan-attacks-in-real-time/">psad: Linux Detect And Block Port Scan Attacks In Real Time</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/psad-linux-detect-and-block-port-scan-attacks-in-real-time/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Top 30 Nmap Command Examples</title>
+		<link>/top-30-nmap-command-examples/</link>
+					<comments>/top-30-nmap-command-examples/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Sun, 06 Jan 2013 17:48:54 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Macosx]]></category>
+		<category><![CDATA[Network]]></category>
+		<category><![CDATA[Security]]></category>
+		<guid isPermaLink="false">/?p=400</guid>
+
+					<description><![CDATA[<p>Nmap is short for Network Mapper. It is an open source security tool for network exploration, security scanning and auditing. However, nmap command comes with lots of options that can make the utility more robust and difficult to follow for new users. The purpose of this post is to introduce a user to the nmap... </p>
+<p><a class="small button secondary" href="/top-30-nmap-command-examples/">Continue Reading</a></p>
+The post <a href="/top-30-nmap-command-examples/">Top 30 Nmap Command Examples</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-400"></span><br />
+Nmap is short for Network Mapper. It is an open source security tool for network exploration, security scanning and auditing. However, nmap command comes with lots of options that can make the utility more robust and difficult to follow for new users.</p>
+<p>The purpose of this post is to introduce a user to the nmap command line tool to scan a host and/or network, so to find out the possible vulnerable points in the hosts. You will also learn how to use Nmap for offensive and defensive purposes.</p>
+<h2>More about nmap</h2>
+<p>From the man page:</p>
+<blockquote><p>Nmap (&#8220;Network Mapper&#8221;) is an open source tool for network exploration and security auditing. It was designed to rapidly scan large networks, although it works fine against single hosts. Nmap uses raw IP packets in novel ways to determine what hosts are available on the network, what services (application name and version) those hosts are offering, what operating systems (and OS versions) they are running, what type of packet filters/firewalls are in use, and dozens of other characteristics. While Nmap is commonly used for security audits, many systems and network administrators find it useful for routine tasks such as network inventory, managing service upgrade schedules, and monitoring host or service uptime.</p></blockquote>
+<p>It was originally written by Gordon Lyon and it can answer the following questions easily:</p>
+<ol>
+<li>What computers did you find running on the local network?</li>
+<li>What IP addresses did you find running on the local network?</li>
+<li>What is the operating system of your target machine?</li>
+<li>Find out what ports are open on the machine that you just scanned?</li>
+<li>Find out if the system is infected with malware or virus.</li>
+<li>Search for unauthorized servers or network service on your network.</li>
+<li>Find and remove computers which don&#8217;t meet the organization&#8217;s minimum level of security.</li>
+</ol>
+<h2>Sample setup (LAB)</h2>
+<p>Port scanning may be illegal in some jurisdictions. So setup a lab as follows:</p>
+<pre>                              +---------+
+        +---------+           | Network |         +--------+
+        | server1 |-----------+ swtich  +---------|server2 |
+        +---------+           | (sw0)   |         +--------+
+                              +----+----+
+                                   |
+                                   |
+                         +---------+----------+
+                         | wks01 Linux/OSX    |
+                         +--------------------+</pre>
+<p>Where,</p>
+<ul>
+<li>wks01 is your computer either running Linux/OS X or Unix like operating system. It is used for scanning your local network. The nmap command must be installed on this computer.</li>
+<li>server1 can be powered by Linux / Unix / MS-Windows operating systems. This is an unpatched server. Feel free to install a few services such as a web-server, file server and so on.</li>
+<li>server2 can be powered by Linux / Unix / MS-Windows operating systems. This is a <a title="See how to setup Linux firewall" href="/20-iptables-examples-for-new-administrator/">fully patched server with firewall</a>. Again, feel free to install few services such as a web-server, file server and so on.</li>
+<li>All three systems are connected via switch.</li>
+</ul>
+<h2>How do I install nmap?</h2>
+<p>See:</p>
+<p><a href="/install-nmap-software-for-scanning-network/">Install nmap Network Security Scanner</a></p>
+<h2>#1: Scan a single host or an IP address (IPv4)</h2>
+<pre>### Scan a single ip address ###
+nmap 192.168.1.1
+
+## Scan a host name ###
+nmap server1.vaheed.net
+
+## Scan a host name with more info###
+nmap -v server1.vaheed.net</pre>
+<p>Sample outputs:</p>
+<pre>Starting Nmap 6.25 ( http://nmap.org/ ) at 2013-01-06 20:44 IRST
+Initiating Ping Scan at 20:44
+Scanning 192.168.1.1 [2 ports]
+Completed Ping Scan at 20:44, 0.00s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 20:44
+Completed Parallel DNS resolution of 1 host. at 20:44, 0.25s elapsed
+Initiating Connect Scan at 20:44
+Scanning 192.168.1.1 [1000 ports]
+Discovered open port 53/tcp on 192.168.1.1
+Discovered open port 80/tcp on 192.168.1.1
+Discovered open port 1723/tcp on 192.168.1.1</pre>
+<p>&nbsp;</p>
+<h2>#2: Scan multiple IP address or subnet (IPv4)</h2>
+<pre>nmap 192.168.1.1 192.168.1.2 192.168.1.3
+## works with same subnet i.e. 192.168.1.0/24
+nmap 192.168.1.1,2,3</pre>
+<p>You can scan a range of IP address too:</p>
+<pre>nmap 192.168.1.1-20</pre>
+<p>You can scan a range of IP address using a wildcard:</p>
+<pre>nmap 192.168.1.*</pre>
+<p>Finally, you scan an entire subnet:</p>
+<pre>nmap 192.168.1.0/24</pre>
+<h2>#3: Read list of hosts/networks from a file (IPv4)</h2>
+<p>The -iL option allows you to read the list of target systems using a text file. This is useful to scan a large number of hosts/networks. Create a text file as follows:<br />
+<code>cat &gt; /tmp/test.txt</code><br />
+Sample outputs:</p>
+<pre>server1.vaheed.net
+192.168.1.0/24
+192.168.1.1/24
+10.1.2.3
+localhost</pre>
+<p>The syntax is:</p>
+<pre>nmap -iL /tmp/test.txt</pre>
+<h2>#4: Excluding hosts/networks (IPv4)</h2>
+<p>When scanning a large number of hosts/networks you can exclude hosts from a scan:</p>
+<pre>nmap 192.168.1.0/24 --exclude 192.168.1.5
+nmap 192.168.1.0/24 --exclude 192.168.1.5,192.168.1.254</pre>
+<p>OR exclude list from a file called /tmp/exclude.txt</p>
+<pre>nmap -iL /tmp/scanlist.txt --excludefile /tmp/exclude.txt</pre>
+<h2>#5: Turn on OS and version detection scanning script (IPv4)</h2>
+<pre>nmap -A 192.168.1.254
+nmap -v -A 192.168.1.1
+nmap -A -iL /tmp/scanlist.txt</pre>
+<h2>#6: Find out if a host/network is protected by a firewall</h2>
+<pre>nmap -sA 192.168.1.254
+nmap -sA server1.vaheed.net</pre>
+<h2>#7: Scan a host when protected by the firewall</h2>
+<pre>nmap -PN 192.168.1.1
+nmap -PN server1.vaheed.net</pre>
+<h2>#8: Scan an IPv6 host/address</h2>
+<p>The <kbd>-6</kbd> option enable IPv6 scanning. The syntax is:</p>
+<pre>nmap -6 IPv6-Address-Here
+nmap -6 server1.vaheed.net
+nmap -6 2607:f0d0:1002:51::4
+nmap -v A -6 2607:f0d0:1002:51::4</pre>
+<h2>#9: Scan a network and find out which servers and devices are up and running</h2>
+<p>This is known as host discovery or ping scan:</p>
+<pre>nmap -sP 192.168.1.0/24</pre>
+<p>Sample outputs:</p>
+<pre>Host 192.168.1.1 is up (0.00035s latency).
+MAC Address: BC:AE:C5:C3:16:93 (Unknown)
+Host 192.168.1.2 is up (0.0038s latency).
+MAC Address: 74:44:01:40:57:FB (Unknown)
+Host 192.168.1.5 is up.
+Host nas03 (192.168.1.12) is up (0.0091s latency).
+MAC Address: 00:11:32:11:15:FC (Synology Incorporated)
+Nmap done: 256 IP addresses (4 hosts up) scanned in 2.80 second</pre>
+<h2>#10: How do I perform a fast scan?</h2>
+<pre>nmap -F 192.168.1.1</pre>
+<h2>#11: Display the reason a port is in a particular state</h2>
+<pre>nmap --reason 192.168.1.1
+nmap --reason server1.vaheed.net</pre>
+<h2>#12: Only show open (or possibly open) ports</h2>
+<pre>nmap --open 192.168.1.1
+nmap --open server1.vaheed.net</pre>
+<h2>#13: Show all packets sent and received</h2>
+<pre>nmap --packet-trace 192.168.1.1
+nmap --packet-trace server1.vaheed.net</pre>
+<h2>14#: Show host interfaces and routes</h2>
+<p>This is useful for debugging (<a href="/configure-static-routes-in-debian-or-red-hat-enterprise-linux/">ip command</a> or <a href="/configure-static-routes-in-debian-or-red-hat-enterprise-linux/">route command</a> or netstat command like output using nmap)</p>
+<pre>nmap --iflist</pre>
+<p>Sample outputs:</p>
+<pre>Starting Nmap 5.00 ( http://nmap.org/ ) at 2012-11-27 02:01 IST
+************************INTERFACES************************
+DEV    (SHORT)  IP/MASK          TYPE        UP MAC
+lo     (lo)     127.0.0.1/8      loopback    up
+eth0   (eth0)   192.168.1.5/24   ethernet    up B8:AC:6F:65:31:E5
+vmnet1 (vmnet1) 192.168.121.1/24 ethernet    up 00:50:56:C0:00:01
+vmnet8 (vmnet8) 192.168.179.1/24 ethernet    up 00:50:56:C0:00:08
+ppp0   (ppp0)   10.1.19.69/32    point2point up
+
+**************************ROUTES**************************
+DST/MASK         DEV    GATEWAY
+10.0.31.178/32   ppp0
+209.133.67.35/32 eth0   192.168.1.2
+192.168.1.0/0    eth0
+192.168.121.0/0  vmnet1
+192.168.179.0/0  vmnet8
+169.254.0.0/0    eth0
+10.0.0.0/0       ppp0
+0.0.0.0/0        eth0   192.168.1.2</pre>
+<h2>#15: How do I scan specific ports?</h2>
+<pre>map -p [port] hostName
+## Scan port 80
+nmap -p 80 192.168.1.1
+
+## Scan TCP port 80
+nmap -p T:80 192.168.1.1
+
+## Scan UDP port 53
+nmap -p U:53 192.168.1.1
+
+## Scan two ports ##
+nmap -p 80,443 192.168.1.1
+
+## Scan port ranges ##
+nmap -p 80-200 192.168.1.1
+
+## Combine all options ##
+nmap -p U:53,111,137,T:21-25,80,139,8080 192.168.1.1
+nmap -p U:53,111,137,T:21-25,80,139,8080 server1.vaheed.net
+nmap -v -sU -sT -p U:53,111,137,T:21-25,80,139,8080 192.168.1.254
+
+## Scan all ports with * wildcard ##
+nmap -p "*" 192.168.1.1
+
+## Scan top ports i.e. scan $number most common ports ##
+nmap --top-ports 5 192.168.1.1
+nmap --top-ports 10 192.168.1.1</pre>
+<p>Sample outputs:</p>
+<pre>Starting Nmap 5.00 ( http://nmap.org/ ) at 2012-11-27 01:23 IST
+Interesting ports on 192.168.1.1:
+PORT     STATE  SERVICE
+21/tcp   closed ftp
+22/tcp   open   ssh
+23/tcp   closed telnet
+25/tcp   closed smtp
+80/tcp   open   http
+110/tcp  closed pop3
+139/tcp  closed netbios-ssn
+443/tcp  closed https
+445/tcp  closed microsoft-ds
+3389/tcp closed ms-term-serv
+MAC Address: BC:AE:C5:C3:16:93 (Unknown)
+
+Nmap done: 1 IP address (1 host up) scanned in 0.51 seconds</pre>
+<h2>#16: The fastest way to scan all your devices/computers for open ports ever</h2>
+<pre>nmap -T5 192.168.1.0/24</pre>
+<h2>#17: How do I detect remote operating system?</h2>
+<p>You can identify a remote host apps and OS using the -O option:</p>
+<pre> 
+nmap -O 192.168.1.1
+nmap -O  --osscan-guess 192.168.1.1
+nmap -v -O --osscan-guess 192.168.1.1</pre>
+<p>Sample outputs:</p>
+<pre>Starting Nmap 5.00 ( http://nmap.org/ ) at 2012-11-27 01:29 IST
+NSE: Loaded 0 scripts for scanning.
+Initiating ARP Ping Scan at 01:29
+Scanning 192.168.1.1 [1 port]
+Completed ARP Ping Scan at 01:29, 0.01s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 01:29
+Completed Parallel DNS resolution of 1 host. at 01:29, 0.22s elapsed
+Initiating SYN Stealth Scan at 01:29
+Scanning 192.168.1.1 [1000 ports]
+Discovered open port 80/tcp on 192.168.1.1
+Discovered open port 22/tcp on 192.168.1.1
+Completed SYN Stealth Scan at 01:29, 0.16s elapsed (1000 total ports)
+Initiating OS detection (try #1) against 192.168.1.1
+Retrying OS detection (try #2) against 192.168.1.1
+Retrying OS detection (try #3) against 192.168.1.1
+Retrying OS detection (try #4) against 192.168.1.1
+Retrying OS detection (try #5) against 192.168.1.1
+Host 192.168.1.1 is up (0.00049s latency).
+Interesting ports on 192.168.1.1:
+Not shown: 998 closed ports
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+MAC Address: BC:AE:C5:C3:16:93 (Unknown)
+Device type: WAP|general purpose|router|printer|broadband router
+Running (JUST GUESSING) : Linksys Linux 2.4.X (95%), Linux 2.4.X|2.6.X (94%), MikroTik RouterOS 3.X (92%), Lexmark embedded (90%), Enterasys embedded (89%), D-Link Linux 2.4.X (89%), Netgear Linux 2.4.X (89%)
+Aggressive OS guesses: OpenWrt White Russian 0.9 (Linux 2.4.30) (95%), OpenWrt 0.9 - 7.09 (Linux 2.4.30 - 2.4.34) (94%), OpenWrt Kamikaze 7.09 (Linux 2.6.22) (94%), Linux 2.4.21 - 2.4.31 (likely embedded) (92%), Linux 2.6.15 - 2.6.23 (embedded) (92%), Linux 2.6.15 - 2.6.24 (92%), MikroTik RouterOS 3.0beta5 (92%), MikroTik RouterOS 3.17 (92%), Linux 2.6.24 (91%), Linux 2.6.22 (90%)
+No exact OS matches for host (If you know what OS is running on it, see http://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=5.00%D=11/27%OT=22%CT=1%CU=30609%PV=Y%DS=1%G=Y%M=BCAEC5%TM=50B3CA
+OS:4B%P=x86_64-unknown-linux-gnu)SEQ(SP=C8%GCD=1%ISR=CB%TI=Z%CI=Z%II=I%TS=7
+OS:)OPS(O1=M2300ST11NW2%O2=M2300ST11NW2%O3=M2300NNT11NW2%O4=M2300ST11NW2%O5
+OS:=M2300ST11NW2%O6=M2300ST11)WIN(W1=45E8%W2=45E8%W3=45E8%W4=45E8%W5=45E8%W
+OS:6=45E8)ECN(R=Y%DF=Y%T=40%W=4600%O=M2300NNSNW2%CC=N%Q=)T1(R=Y%DF=Y%T=40%S
+OS:=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%R
+OS:D=0%Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=
+OS:0%S=A%A=Z%F=R%O=%RD=0%Q=)T7(R=N)U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID
+OS:=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S)
+Uptime guess: 12.990 days (since Wed Nov 14 01:44:40 2012)
+Network Distance: 1 hop
+TCP Sequence Prediction: Difficulty=200 (Good luck!)
+IP ID Sequence Generation: All zeros
+Read data files from: /usr/share/nmap
+OS detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 12.38 seconds
+           Raw packets sent: 1126 (53.832KB) | Rcvd: 1066 (46.100KB)</pre>
+<p>See also: <a href="/find-out-dns-server-version-with-dns-server-fingeprinting-tool/">dns server</a> command line tools for more information.</p>
+<h2>#18: How do I detect remote services (server / daemon) version numbers?</h2>
+<pre>nmap -sV 192.168.1.1</pre>
+<p>Sample outputs:</p>
+<pre>Starting Nmap 5.00 ( http://nmap.org/ ) at 2012-11-27 01:34 IST
+Interesting ports on 192.168.1.1:
+Not shown: 998 closed ports
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     <strong>Dropbear sshd 0.52 (protocol 2.0)</strong>
+80/tcp open  http?
+1 service unrecognized despite returning data.</pre>
+<h2>#19: Scan a host using TCP ACK (PA) and TCP Syn (PS) ping</h2>
+<p>If firewall is blocking standard ICMP pings, try the following host discovery methods:</p>
+<pre>nmap -PS 192.168.1.1
+nmap -PS 80,21,443 192.168.1.1
+nmap -PA 192.168.1.1
+nmap -PA 80,21,200-512 192.168.1.1</pre>
+<h2>#20: Scan a host using IP protocol ping</h2>
+<pre>nmap -PO 192.168.1.1</pre>
+<h2>#21: Scan a host using UDP ping</h2>
+<p>This scan bypasses firewalls and filters that only screen TCP:</p>
+<pre>nmap -PU 192.168.1.1
+nmap -PU 2000.2001 192.168.1.1</pre>
+<h2>#22: Find out the most commonly used TCP ports using TCP SYN Scan</h2>
+<pre> 
+### Stealthy scan ###
+nmap -sS 192.168.1.1
+
+### Find out the most commonly used TCP ports using  TCP connect scan (warning: no stealth scan)
+###  OS Fingerprinting ###
+nmap -sT 192.168.1.1
+
+### Find out the most commonly used TCP ports using TCP ACK scan
+nmap -sA 192.168.1.1
+
+### Find out the most commonly used TCP ports using TCP Window scan
+nmap -sW 192.168.1.1
+
+### Find out the most commonly used TCP ports using TCP Maimon scan
+nmap -sM 192.168.1.1</pre>
+<h2>#23: Scan a host for UDP services (UDP scan)</h2>
+<p>Most popular services on the Internet run over the TCP protocol. DNS, SNMP, and DHCP are three of the most common UDP services. Use the following syntax to find out UDP services:</p>
+<pre>nmap -sU nas03
+nmap -sU 192.168.1.1</pre>
+<p>Sample outputs:</p>
+<pre> 
+Starting Nmap 5.00 ( http://nmap.org/ ) at 2012-11-27 00:52 IST
+Stats: 0:05:29 elapsed; 0 hosts completed (1 up), 1 undergoing UDP Scan
+UDP Scan Timing: About 32.49% done; ETC: 01:09 (0:11:26 remaining)
+Interesting ports on nas03 (192.168.1.12):
+Not shown: 995 closed ports
+PORT     STATE         SERVICE
+111/udp  open|filtered rpcbind
+123/udp  open|filtered ntp
+161/udp  open|filtered snmp
+2049/udp open|filtered nfs
+5353/udp open|filtered zeroconf
+MAC Address: 00:11:32:11:15:FC (Synology Incorporated)
+
+Nmap done: 1 IP address (1 host up) scanned in 1099.55 seconds</pre>
+<h2>#24: Scan for IP protocol</h2>
+<p>This type of scan allows you to determine which IP protocols (TCP, ICMP, IGMP, etc.) are supported by target machines:</p>
+<pre>nmap -sO 192.168.1.1</pre>
+<h2>#25: Scan a firewall for security weakness</h2>
+<p>The following scan types exploit a subtle loophole in the TCP and good for testing security of common attacks:</p>
+<pre> 
+## TCP Null Scan to fool a firewall to generate a response ##
+## Does not set any bits (TCP flag header is 0) ##
+nmap -sN 192.168.1.254
+
+## TCP Fin scan to check firewall ##
+## Sets just the TCP FIN bit ##
+nmap -sF 192.168.1.254
+
+## TCP Xmas scan to check firewall ##
+## Sets the FIN, PSH, and URG flags, lighting the packet up like a Christmas tree ##
+nmap -sX 192.168.1.254</pre>
+<p>See <a href="/how-to-block-xmas-packkets-syn-floods-and-other-conman-attacks/">how to block Xmas packkets, syn-floods and other conman attacks</a> with iptables.</p>
+<h2>#26: Scan a firewall for packets fragments</h2>
+<p>The -f option causes the requested scan (including ping scans) to use tiny fragmented IP packets. The idea is to split up the TCP header over<br />
+several packets to make it harder for packet filters, intrusion detection systems, and other annoyances to detect what you are doing.</p>
+<pre lang="bash">nmap -f 192.168.1.1
+nmap -f fw2.nixcraft.net.in
+nmap -f 15 fw2.nixcraft.net.in
+## Set your own offset size with the --mtu option ##
+nmap --mtu 32 192.168.1.1</pre>
+<h2>#27: Cloak a scan with decoys</h2>
+<p>The <kbd>-D</kbd> option it appear to the remote host that the host(s) you specify as decoys are scanning the target network too. Thus their IDS might report 5-10 port scans from unique IP addresses, but they won&#8217;t know which IP was scanning them and which were innocent decoys:</p>
+<pre>nmap -n -Ddecoy-ip1,decoy-ip2,your-own-ip,decoy-ip3,decoy-ip4 remote-host-ip
+nmap -n -D192.168.1.5,10.5.1.2,172.1.2.4,3.4.2.1 192.168.1.5</pre>
+<h2>#28: Scan a firewall for MAC address spoofing</h2>
+<pre> 
+### Spoof your MAC address ##
+nmap --spoof-mac MAC-ADDRESS-HERE 192.168.1.1
+
+### Add other options ###
+nmap -v -sT -PN --spoof-mac MAC-ADDRESS-HERE 192.168.1.1
+
+<b>sudo nmap -sS -sU -p 1-65535 -T4 -A -v 192.168.1.1 </b>
+
+### Use a random MAC address ###
+### The number 0, means nmap chooses a completely random MAC address ###
+nmap -v -sT -PN --spoof-mac 0 192.168.1.1</pre>
+<h2>#29: How do I save output to a text file?</h2>
+<p>The syntax is:</p>
+<pre>nmap 192.168.1.1 &gt; output.txt
+nmap -oN /path/to/filename 192.168.1.1
+nmap -oN output.txt 192.168.1.1</pre>
+<h2>#30: Not a fan of command line tools?</h2>
+<p>Try <a href="http://nmap.org/zenmap/" target="_blank">zenmap the official network mapper</a> front end:</p>
+<blockquote><p>Zenmap is the official Nmap Security Scanner GUI. It is a multi-platform (Linux, Windows, Mac OS X, BSD, etc.) free and open source application which aims to make Nmap easy for beginners to use while providing advanced features for experienced Nmap users. Frequently used scans can be saved as profiles to make them easy to run repeatedly. A command creator allows interactive creation of Nmap command lines. Scan results can be saved and viewed later. Saved scan results can be compared with one another to see how they differ. The results of recent scans are stored in a searchable database.</p></blockquote>
+<p>You can install zenmap using the following apt-get command:<br />
+<code>$ sudo apt-get install zenmap</code><br />
+Sample outputs:</p>
+<pre>[sudo] password for vivek:
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following NEW packages will be installed:
+  zenmap
+0 upgraded, 1 newly installed, 0 to remove and 11 not upgraded.
+Need to get 616 kB of archives.
+After this operation, 1,827 kB of additional disk space will be used.
+Get:1 http://debian.osuosl.org/debian/ squeeze/main zenmap amd64 5.00-3 [616 kB]
+Fetched 616 kB in 3s (199 kB/s)
+Selecting previously deselected package zenmap.
+(Reading database ... 281105 files and directories currently installed.)
+Unpacking zenmap (from .../zenmap_5.00-3_amd64.deb) ...
+Processing triggers for desktop-file-utils ...
+Processing triggers for gnome-menus ...
+Processing triggers for man-db ...
+Setting up zenmap (5.00-3) ...
+Processing triggers for python-central ...</pre>
+<p>Type the following command to start zenmap:<br />
+<code>$ sudo zenmap</code><br />
+Sample outputs</p>
+<p><a href="/?attachment_id=416" rel="attachment wp-att-275"><img loading="lazy" title="Nmap Command GUI Usage Examples Output From zenmap" alt="Fig.02: zenmap in action" src="http://s0.cyberciti.org/uploads/cms/2012/11/nmap-usage-examples-output.png" width="592" height="640" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Fig.02: zenmap in action</p>
+<p>&nbsp;</p>
+<h2>How do I detect and block port scanning?</h2>
+<p>Try the following resources:</p>
+<ol>
+<li><a href="/psad-linux-detect-and-block-port-scan-attacks-in-real-time/">How to use psad tool to detect and block port scan attacks in real time.</a></li>
+<li><a href="/centos-redhat-iptables-firewall-configuration-tutorial/">CentOS / Redhat Iptables Firewall Configuration Tutorial.</a></li>
+<li><a href="/20-iptables-examples-for-new-administrator/">Linux: 20 Iptables Examples For Administrator</a>.</li>
+</ol>
+<h5>REFERENCES:</h5>
+<ul>
+<li><a href="http://nmap.org/book/toc.html" target="_blank">The official Nmap project guide to network discovery and security Scanning</a>.</li>
+<li><a href="http://nmap.org/" target="_blank">The official Nmap project</a> home page.</li>
+</ul>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/top-30-nmap-command-examples/">Top 30 Nmap Command Examples</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/top-30-nmap-command-examples/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>how to block Xmas packkets, syn-floods and other conman attacks</title>
+		<link>/how-to-block-xmas-packkets-syn-floods-and-other-conman-attacks/</link>
+					<comments>/how-to-block-xmas-packkets-syn-floods-and-other-conman-attacks/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Sun, 06 Jan 2013 17:44:56 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Macosx]]></category>
+		<category><![CDATA[Network]]></category>
+		<category><![CDATA[Security]]></category>
+		<guid isPermaLink="false">/?p=408</guid>
+
+					<description><![CDATA[<p>Following list summaries the common attack on any type of Linux computer: Syn-flood protection In this attack system is floods with a series of SYN packets. Each packets causes system to issue a SYN-ACK responses. Then system waits for ACK that follows the SYN+ACK (3 way handshake). Since attack never sends back ACK again entire... </p>
+<p><a class="small button secondary" href="/how-to-block-xmas-packkets-syn-floods-and-other-conman-attacks/">Continue Reading</a></p>
+The post <a href="/how-to-block-xmas-packkets-syn-floods-and-other-conman-attacks/">how to block Xmas packkets, syn-floods and other conman attacks</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-408"></span></p>
+<p>Following list summaries the common attack on any type of Linux computer:</p>
+<h2>Syn-flood protection</h2>
+<p>In this attack system is floods with a series of SYN packets. Each packets causes system to issue a SYN-ACK responses. Then system waits for ACK that follows the SYN+ACK (3 way handshake). Since attack never sends back ACK again entire system resources get fulled aka backlog queue. Once the queue is full system will ignored incoming request from legitimate users for services (http/mail etc). Hence it is necessary to stop this attack with iptables.</p>
+<h2>Force SYN packets check</h2>
+<p>Make sure NEW incoming tcp connections are SYN packets; otherwise we need to drop them:</p>
+<pre>iptables -A INPUT -p tcp ! --syn -m state --state NEW -j DROP</pre>
+<h2>Force Fragments packets check</h2>
+<p>Packets with incoming fragments drop them. This attack result into Linux server panic such data loss.</p>
+<pre>iptables -A INPUT -f -j DROP</pre>
+<h2>XMAS packets</h2>
+<p>Incoming malformed XMAS packets drop them:</p>
+<pre>iptables -A INPUT -p tcp --tcp-flags ALL ALL -j DROP</pre>
+<h2>Drop all NULL packets</h2>
+<p>Incoming malformed NULL packets:</p>
+<pre>iptables -A INPIT -p tcp --tcp-flags ALL NONE -j DROP</pre>
+<h2>Block Spoofing and bad addresses</h2>
+<p>Using iptables you can filter to drop suspicious source address. Network server should not accept packets claiming from the Internet that claim to originate from inside your network. Spoofing can be classified as:<br />
+a) IP spoofing – Disable the source address of authentication, for example rhosts based authentication. Filter RPC based services such as portmap and NFS,<br />
+b) DNS spoofing<br />
+Please see <a href="/linux-iptables-avoid-ip-spoofing-and-bad-addresses-attacks/">Iptables: How to avoid Spoofing and bad addresses</a> attack tip for more information.</p>
+<p>Also use NAT for your internal network. This makes difficult for attacker to spoof IP address from outside.</p>
+<h2>Filter incoming ICMP, PING traffic</h2>
+<p>It includes the ping of death attack and ICMP floods. You should block all ICMP and PING traffic for outside except for your own internal network (so that you can ping to see status of your own server) . See <a href="/linux-iptables-allow-or-block-icmp-ping-request/">Linux : Iptables Allow or block ICMP ping request</a> article.</p>
+<p>Once system is secured, test your firewall with nmap or hping2 command:<br />
+<code># nmap -v -f FIREWALL-IP<br />
+# nmap -v -sX FIREWALL-IP<br />
+# nmap -v -sN FIREWALL-IP<br />
+# hping2 -X FIREWALL-IP</code></p>
+<h2>Block Access To Outgoing IP Address</h2>
+<p>The following rule will block ip address 202.54.1.22 from making any outgoing connection:<br />
+<code>iptables -A OUTPUT -d 202.54.1.22 -j DROP</code></p>
+<p>The above will block chat server ip address or site having dangerous contains such as viruses or malware.</p>
+<h2>Block Access To Outgoing IP TCP / UDP Port Number</h2>
+<p>It is also possible to block specific port numbers. For example, you can block tcp port # 5050 as follows:<br />
+<code>iptables -A OUTPUT -p tcp –dport 5050 -j DROP</code></p>
+<p>To block tcp port # 5050 for an IP address 192.168.1.2 only, enter:<br />
+<code>iptables -A OUTPUT -p tcp -d 192.168.1.2 –dport 5050 -j DROP</code></p>
+<p>Finally, you need to <a href="/how-do-i-save-iptables-rules-or-settings/">save your firewall rules</a>. Under CentOS / RHEL / Fedora Linux, enter:<br />
+<code># /sbin/service iptables save</code><br />
+OR<br />
+<code># /etc/init.d/iptables save</code></p>
+<h2>Further readings</h2>
+<ul>
+<li>Man page : hping2(8), nmap(1), iptables(8)</li>
+</ul>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/how-to-block-xmas-packkets-syn-floods-and-other-conman-attacks/">how to block Xmas packkets, syn-floods and other conman attacks</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/how-to-block-xmas-packkets-syn-floods-and-other-conman-attacks/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>How Do I Save Iptables Rules or Settings</title>
+		<link>/how-do-i-save-iptables-rules-or-settings/</link>
+					<comments>/how-do-i-save-iptables-rules-or-settings/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Sun, 06 Jan 2013 17:42:54 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Macosx]]></category>
+		<category><![CDATA[Security]]></category>
+		<guid isPermaLink="false">/?p=413</guid>
+
+					<description><![CDATA[<p>Examples: Saving and Restoring Iptables Rules In this example, save current iptables firewall rules to a file called /root/dsl.fw, enter: # iptables-save &#62; /root/dsl.fw To restore iptables rules, enter: # iptables-restore &#60; /root/dsl.fw To restore rules automatically upon Linux system reboot add following command to your /etc/rc.local file, enter: # vi /etc/rc.local Append the line:... </p>
+<p><a class="small button secondary" href="/how-do-i-save-iptables-rules-or-settings/">Continue Reading</a></p>
+The post <a href="/how-do-i-save-iptables-rules-or-settings/">How Do I Save Iptables Rules or Settings</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-413"></span></p>
+<h2>Examples: Saving and Restoring Iptables Rules</h2>
+<p>In this example, save current iptables firewall rules to a file called /root/dsl.fw, enter:<br />
+<code># iptables-save &gt; /root/dsl.fw</code><br />
+To restore iptables rules, enter:<br />
+<code># iptables-restore &lt; /root/dsl.fw</code></p>
+<p>To restore rules automatically upon Linux system reboot add following command to your /etc/rc.local file, enter:<br />
+<code># vi /etc/rc.local</code><br />
+Append the line:<br />
+<code>/sbin/iptables-restore &lt; /root/dsl.fw</code><br />
+Save and close the file. Please note that under Red Hat enterprise Linux (RHEL) / CentOS / Fedora Linux you can use following commands to save and restore firewall rules. To Save the rules to /etc/sysconfig/iptables file:<br />
+<code># /etc/init.d/iptables save</code><br />
+To restore the rules from /etc/sysconfig/iptables file:<br />
+<code># /etc/init.d/iptables start</code><br />
+If you are using Debian / Ubuntu Linux open /etc/network/interfaces:<br />
+<code># vi /etc/network/interfaces</code><br />
+Append the line to eth0 section:<br />
+<code>post-up iptables-restore<br />
+Close and save the file. Reboot the system.</code></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/how-do-i-save-iptables-rules-or-settings/">How Do I Save Iptables Rules or Settings</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/how-do-i-save-iptables-rules-or-settings/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

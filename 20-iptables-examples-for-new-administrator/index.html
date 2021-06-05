@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-US"
+	prefix="og: https://ogp.me/ns#" > <![endif]--><!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en-US"
+	prefix="og: https://ogp.me/ns#" > <![endif]--><!--[if IE 8]>    <html class="no-js lt-ie9" lang="en-US"
+	prefix="og: https://ogp.me/ns#" > <![endif]--><!--[if gt IE 8]><!--><html class="no-js" lang="en-US" prefix="og: https://ogp.me/ns#"> <!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="pingback" href="/xmlrpc.php">
+
+<meta name="viewport" content="width=device-width">
+
+<title>20 Iptables Examples For New Administrator | vaheeD khoshnouD</title>
+<meta name="description" content="IPTABLES Rules Example Most of the actions listed in this post are written with the assumption that they will be executed by the root user running the bash or any other modern shell. Do not type commands on remote system as it will disconnect your access. For demonstration purpose I’ve used RHEL 6.x, but the... Continue Reading">
+<link rel="canonical" href="/20-iptables-examples-for-new-administrator/">
+<meta property="og:site_name" content="vaheeD khoshnouD | linux, mikrotik, macosx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20 Iptables Examples For New Administrator | vaheeD khoshnouD">
+<meta property="og:description" content="IPTABLES Rules Example Most of the actions listed in this post are written with the assumption that they will be executed by the root user running the bash or any other modern shell. Do not type commands on remote system as it will disconnect your access. For demonstration purpose I’ve used RHEL 6.x, but the... Continue Reading">
+<meta property="og:url" content="http://vaheed.net/20-iptables-examples-for-new-administrator/">
+<meta property="article:published_time" content="2013-01-04T16:34:59Z">
+<meta property="article:modified_time" content="2013-01-04T16:42:59Z">
+<meta property="twitter:card" content="summary">
+<meta property="twitter:domain" content="vaheed.net">
+<meta property="twitter:title" content="20 Iptables Examples For New Administrator | vaheeD khoshnouD">
+<meta property="twitter:description" content="IPTABLES Rules Example Most of the actions listed in this post are written with the assumption that they will be executed by the root user running the bash or any other modern shell. Do not type commands on remote system as it will disconnect your access. For demonstration purpose I’ve used RHEL 6.x, but the... Continue Reading">
+<script type="application/ld+json" class="aioseo-schema">
+			{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebSite","@id":"http:\/\/vaheed.net\/#website","url":"http:\/\/vaheed.net\/","name":"vaheeD khoshnouD","description":"linux, mikrotik, macosx","publisher":{"@id":"http:\/\/vaheed.net\/#organization"}},{"@type":"Organization","@id":"http:\/\/vaheed.net\/#organization","name":"vaheeD khoshnouD","url":"http:\/\/vaheed.net\/"},{"@type":"BreadcrumbList","@id":"http:\/\/vaheed.net\/20-iptables-examples-for-new-administrator\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"http:\/\/vaheed.net\/#listItem","position":"1","item":{"@id":"http:\/\/vaheed.net\/#item","name":"Home","description":"vaheeD khoshnouD | linux, mikrotik, macosx","url":"http:\/\/vaheed.net\/"},"nextItem":"http:\/\/vaheed.net\/20-iptables-examples-for-new-administrator\/#listItem"},{"@type":"ListItem","@id":"http:\/\/vaheed.net\/20-iptables-examples-for-new-administrator\/#listItem","position":"2","item":{"@id":"http:\/\/vaheed.net\/20-iptables-examples-for-new-administrator\/#item","name":"20 Iptables Examples For New Administrator","description":"IPTABLES Rules Example Most of the actions listed in this post are written with the assumption that they will be executed by the root user running the bash or any other modern shell. Do not type commands on remote system as it will disconnect your access. For demonstration purpose I’ve used RHEL 6.x, but the... Continue Reading","url":"http:\/\/vaheed.net\/20-iptables-examples-for-new-administrator\/"},"previousItem":"http:\/\/vaheed.net\/#listItem"}]},{"@type":"Person","@id":"http:\/\/vaheed.net\/author\/vaheed\/#author","url":"http:\/\/vaheed.net\/author\/vaheed\/","name":"vaheeD khoshnouD","image":{"@type":"ImageObject","@id":"http:\/\/vaheed.net\/20-iptables-examples-for-new-administrator\/#authorImage","url":"http:\/\/1.gravatar.com\/avatar\/4ef8c65e8d3633adf28103cadb4591c2?s=96&d=mm&r=g","width":"96","height":"96","caption":"vaheeD khoshnouD"}},{"@type":"WebPage","@id":"http:\/\/vaheed.net\/20-iptables-examples-for-new-administrator\/#webpage","url":"http:\/\/vaheed.net\/20-iptables-examples-for-new-administrator\/","name":"20 Iptables Examples For New Administrator | vaheeD khoshnouD","description":"IPTABLES Rules Example Most of the actions listed in this post are written with the assumption that they will be executed by the root user running the bash or any other modern shell. Do not type commands on remote system as it will disconnect your access. For demonstration purpose I’ve used RHEL 6.x, but the... Continue Reading","inLanguage":"en-US","isPartOf":{"@id":"http:\/\/vaheed.net\/#website"},"breadcrumb":{"@id":"http:\/\/vaheed.net\/20-iptables-examples-for-new-administrator\/#breadcrumblist"},"author":"http:\/\/vaheed.net\/20-iptables-examples-for-new-administrator\/#author","creator":"http:\/\/vaheed.net\/20-iptables-examples-for-new-administrator\/#author","datePublished":"2013-01-04T16:34:59+03:30","dateModified":"2013-01-04T16:42:59+03:30"},{"@type":"Article","@id":"http:\/\/vaheed.net\/20-iptables-examples-for-new-administrator\/#article","name":"20 Iptables Examples For New Administrator | vaheeD khoshnouD","description":"IPTABLES Rules Example Most of the actions listed in this post are written with the assumption that they will be executed by the root user running the bash or any other modern shell. Do not type commands on remote system as it will disconnect your access. For demonstration purpose I’ve used RHEL 6.x, but the... Continue Reading","headline":"20 Iptables Examples For New Administrator","author":{"@id":"http:\/\/vaheed.net\/author\/vaheed\/#author"},"publisher":{"@id":"http:\/\/vaheed.net\/#organization"},"datePublished":"2013-01-04T16:34:59+03:30","dateModified":"2013-01-04T16:42:59+03:30","articleSection":"Linux, Network, Security","mainEntityOfPage":{"@id":"http:\/\/vaheed.net\/20-iptables-examples-for-new-administrator\/#webpage"},"isPartOf":{"@id":"http:\/\/vaheed.net\/20-iptables-examples-for-new-administrator\/#webpage"}}]}
+		</script>
+<script type="b7b70f33baf5d072a4f9b7b6-text/javascript">
+			window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+			ga('create', "UA-3072201-3", 'auto');
+			ga('send', 'pageview');
+		</script>
+<script async src="https://www.google-analytics.com/analytics.js" type="b7b70f33baf5d072a4f9b7b6-text/javascript"></script>
+
+<link rel="dns-prefetch" href="//vjs.zencdn.net">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//s.w.org">
+<link rel="alternate" type="application/rss+xml" title="vaheeD khoshnouD &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="vaheeD khoshnouD &raquo; Comments Feed" href="/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="vaheeD khoshnouD &raquo; 20 Iptables Examples For New Administrator Comments Feed" href="/20-iptables-examples-for-new-administrator/feed/">
+<link rel="publisher" href="https://plus.google.com/103839803047317952696">
+<script type="b7b70f33baf5d072a4f9b7b6-text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/vaheed.net\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.7.2"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="videojs-css" href="//vjs.zencdn.net/5.9.2/video-js.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="videojs-style-css" href="/wp-content/plugins/videojs-hls-player/videojs-hls-player.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="videojs-airplay-css" href="/wp-content/plugins/videojs-hls-player/videojs-airplay/videojs.airplay.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="wp-search-suggest-css" href="/wp-content/plugins/wp-search-suggest/css/wpss-search-suggest.css?ver=5" type="text/css" media="all">
+<link rel="stylesheet" id="foundation-css" href="/wp-content/themes/drewsymo-Foundation-3b62be5/stylesheets/foundation.min.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="app-css" href="/wp-content/themes/drewsymo-Foundation-3b62be5/style.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C300&#038;ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="post-ratings-raty-css" href="/wp-content/plugins/post-ratings/assets/jquery.raty.css?ver=3.0" type="text/css" media="all">
+<link rel="stylesheet" id="wp-author-bio-css" href="/wp-content/plugins/wp-about-author/wp-about-author.css?ver=5.7.2" type="text/css" media="all">
+<script type="b7b70f33baf5d072a4f9b7b6-text/javascript" src="/wp-includes/js/jquery/jquery.min.js?ver=3.5.1" id="jquery-core-js"></script>
+<script type="b7b70f33baf5d072a4f9b7b6-text/javascript" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+<script type="b7b70f33baf5d072a4f9b7b6-text/javascript" src="//vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js?ver=1.0.2" id="videojs-ie8-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/351">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 5.7.2">
+<link rel="shortlink" href="/?p=351">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2F20-iptables-examples-for-new-administrator%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2F20-iptables-examples-for-new-administrator%2F&#038;format=xml">
+
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body class="post-template-default single single-post postid-351 single-format-standard">
+<header class="row">
+<hgroup class="site-title twelve columns">
+<h1><a href="/" title="vaheeD khoshnouD" rel="home">vaheeD khoshnouD</a></h1>
+<h3 class="subheader">linux, mikrotik, macosx</h3>
+</hgroup>
+<div class="twelve columns"><ul class="nav-bar"><li class="page_item page-item-7"><a href="/about-me/">About Me</a></li></ul></div>
+</header>
+
+<script type="b7b70f33baf5d072a4f9b7b6-text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//ns1.faratar.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//ns1.faratar.org/piwik/piwik.php?idsite=1" style="border:0;" alt=""></p></noscript>
+
+
+<div class="row">
+
+<div class="nine columns" role="content">
+<article>
+<header>
+<hgroup>
+<h2><a href="/20-iptables-examples-for-new-administrator/" title="Permalink to 20 Iptables Examples For New Administrator" rel="bookmark">20 Iptables Examples For New Administrator</a></h2>
+<h6>Written by <a href="https://plus.google.com/103839803047317952696" title="Visit vaheeD&#8217;s website" rel="author external">vaheeD</a> on January 4, 2013</h6>
+</hgroup>
+</header>
+<div class="post-ratings" data-post="351">
+<div class="rating" data-post="351" data-rating="5" data-readonly="0"></div>
+<div class="rating-meta">
+<strong>5.00</strong> avg. rating (<strong>94</strong>% score) - <strong class="votes">1</strong> vote	</div>
+</div>
+<p><span id="more-351"></span></p>
+<h2>IPTABLES Rules Example</h2>
+<ul>
+<li>Most of the actions listed in this post are written with the assumption that they will be executed by the root user running the bash or any other modern shell. Do not type commands on remote system as it will disconnect your access.</li>
+<li>For demonstration purpose I&#8217;ve used RHEL 6.x, but the following command should work with any modern Linux distro.</li>
+<li>This is NOT a tutorial on how to set iptables. See <a href="/centos-redhat-iptables-firewall-configuration-tutorial/">tutorial here</a>. It is a quick cheat sheet to common iptables commands.</li>
+</ul>
+<h2>#1: Displaying the Status of Your Firewall</h2>
+<p>Type the following command as root:<br>
+<code># iptables -L -n -v</code><br>
+Sample outputs:</p>
+<pre>Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination
+Chain FORWARD (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination
+Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination</pre>
+<p>Above output indicates that the firewall is not active. The following sample shows an active firewall:<br>
+<code># iptables -L -n -v</code><br>
+Sample outputs:</p>
+<pre>Chain INPUT (policy DROP 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination
+    0     0 DROP       all  --  *      *       0.0.0.0/0            0.0.0.0/0           state INVALID
+  394 43586 ACCEPT     all  --  *      *       0.0.0.0/0            0.0.0.0/0           state RELATED,ESTABLISHED
+   93 17292 ACCEPT     all  --  br0    *       0.0.0.0/0            0.0.0.0/0
+    1   142 ACCEPT     all  --  lo     *       0.0.0.0/0            0.0.0.0/0
+Chain FORWARD (policy DROP 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination
+    0     0 ACCEPT     all  --  br0    br0     0.0.0.0/0            0.0.0.0/0
+    0     0 DROP       all  --  *      *       0.0.0.0/0            0.0.0.0/0           state INVALID
+    0     0 TCPMSS     tcp  --  *      *       0.0.0.0/0            0.0.0.0/0           tcp flags:0x06/0x02 TCPMSS clamp to PMTU
+    0     0 ACCEPT     all  --  *      *       0.0.0.0/0            0.0.0.0/0           state RELATED,ESTABLISHED
+    0     0 wanin      all  --  vlan2  *       0.0.0.0/0            0.0.0.0/0
+    0     0 wanout     all  --  *      vlan2   0.0.0.0/0            0.0.0.0/0
+    0     0 ACCEPT     all  --  br0    *       0.0.0.0/0            0.0.0.0/0
+Chain OUTPUT (policy ACCEPT 425 packets, 113K bytes)
+ pkts bytes target     prot opt in     out     source               destination
+Chain wanin (1 references)
+ pkts bytes target     prot opt in     out     source               destination
+Chain wanout (1 references)
+ pkts bytes target     prot opt in     out     source               destination</pre>
+<p>Where,</p>
+<ul>
+<li>
+<strong>-L</strong> : List rules.</li>
+<li>
+<strong>-v</strong> : Display detailed information. This option makes the list command show the interface name, the rule options, and the TOS masks. The packet and byte counters are also listed, with the suffix &#8216;K&#8217;, &#8216;M&#8217; or &#8216;G&#8217; for 1000, 1,000,000 and 1,000,000,000 multipliers respectively.</li>
+<li>
+<strong>-n</strong> : Display IP address and port in numeric format. Do not use DNS to resolve names. This will speed up listing.</li>
+</ul>
+<h3>#1.1: To inspect firewall with line numbers, enter:</h3>
+<p><code># iptables -n -L -v --line-numbers</code><br>
+Sample outputs:</p>
+<pre>Chain INPUT (policy DROP)
+num  target     prot opt source               destination
+1    DROP       all  --  0.0.0.0/0            0.0.0.0/0           state INVALID
+2    ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0           state RELATED,ESTABLISHED
+3    ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0
+4    ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0
+Chain FORWARD (policy DROP)
+num  target     prot opt source               destination
+1    ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0
+2    DROP       all  --  0.0.0.0/0            0.0.0.0/0           state INVALID
+3    TCPMSS     tcp  --  0.0.0.0/0            0.0.0.0/0           tcp flags:0x06/0x02 TCPMSS clamp to PMTU
+4    ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0           state RELATED,ESTABLISHED
+5    wanin      all  --  0.0.0.0/0            0.0.0.0/0
+6    wanout     all  --  0.0.0.0/0            0.0.0.0/0
+7    ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0
+Chain OUTPUT (policy ACCEPT)
+num  target     prot opt source               destination
+Chain wanin (1 references)
+num  target     prot opt source               destination
+Chain wanout (1 references)
+num  target     prot opt source               destination</pre>
+<p>You can use line numbers to delete or insert new rules into the firewall.</p>
+<h3>#1.2: To display INPUT or OUTPUT chain rules, enter:</h3>
+<p><code># iptables -L INPUT -n -v<br>
+# iptables -L OUTPUT -n -v --line-numbers</code></p>
+<h2>#2: Stop / Start / Restart the Firewall</h2>
+<p>If you are using CentOS / RHEL / Fedora Linux, enter:<br>
+<code># service iptables stop<br>
+# service iptables start<br>
+# service iptables restart</code><br>
+You can use the iptables command itself to stop the firewall and delete all rules:<br>
+<code># iptables -F<br>
+# iptables -X<br>
+# iptables -t nat -F<br>
+# iptables -t nat -X<br>
+# iptables -t mangle -F<br>
+# iptables -t mangle -X<br>
+# iptables -P INPUT ACCEPT<br>
+# iptables -P OUTPUT ACCEPT<br>
+# iptables -P FORWARD ACCEPT</code><br>
+Where,</p>
+<ul>
+<li>
+<strong>-F</strong> : Deleting (flushing) all the rules.</li>
+<li>
+<strong>-X</strong> : Delete chain.</li>
+<li>
+<strong>-t table_name</strong> : Select table (called nat or mangle) and delete/flush rules.</li>
+<li>
+<strong>-P</strong> : Set the default policy (such as DROP, REJECT, or ACCEPT).</li>
+</ul>
+<h2>#3: Delete Firewall Rules</h2>
+<p>To display line number along with other information for existing rules, enter:<br>
+<code># iptables -L INPUT -n --line-numbers<br>
+# iptables -L OUTPUT -n --line-numbers<br>
+# iptables -L OUTPUT -n --line-numbers | less<br>
+# iptables -L OUTPUT -n --line-numbers | grep 202.54.1.1</code><br>
+You will get the list of IP. Look at the number on the left, then use number to delete it. For example delete line number 4, enter:<br>
+<code># iptables -D INPUT 4</code><br>
+OR find source IP 202.54.1.1 and delete from rule:<br>
+<code># iptables -D INPUT -s 202.54.1.1 -j DROP</code><br>
+Where,</p>
+<ul>
+<li>
+<strong>-D </strong>: Delete one or more rules from the selected chain</li>
+</ul>
+<h2>#4: Insert Firewall Rules</h2>
+<p>To insert one or more rules in the selected chain as the given rule number use the following syntax. First find out line numbers, enter:<br>
+# iptables -L INPUT -n &#8211;line-numbers<br>
+Sample outputs:</p>
+<pre>Chain INPUT (policy DROP)
+num  target     prot opt source               destination
+1    DROP       all  --  202.54.1.1           0.0.0.0/0
+2    ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0           state NEW,ESTABLISHED</pre>
+<p>To insert rule between 1 and 2, enter:<br>
+<code># iptables -I INPUT 2 -s 202.54.1.2 -j DROP</code><br>
+To view updated rules, enter:<br>
+<code># iptables -L INPUT -n --line-numbers</code><br>
+Sample outputs:</p>
+<pre>Chain INPUT (policy DROP)
+num  target     prot opt source               destination
+1    DROP       all  --  202.54.1.1           0.0.0.0/0
+2    DROP       all  --  202.54.1.2           0.0.0.0/0
+3    ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0           state NEW,ESTABLISHED</pre>
+<h2>#5: Save Firewall Rules</h2>
+<p>To save firewall rules under CentOS / RHEL / Fedora Linux, enter:<br>
+<code># service iptables save</code><br>
+In this example, drop an IP and save firewall rules:<br>
+<code># iptables -A INPUT -s 202.5.4.1 -j DROP<br>
+# service iptables save</code><br>
+For all other distros use the iptables-save command:<br>
+<code># iptables-save &gt; /root/my.active.firewall.rules<br>
+# cat /root/my.active.firewall.rules</code></p>
+<h2>#6: Restore Firewall Rules</h2>
+<p>To restore firewall rules form a file called /root/my.active.firewall.rules, enter:<br>
+<code># iptables-restore &lt; /root/my.active.firewall.rules</code><br>
+To restore firewall rules under CentOS / RHEL / Fedora Linux, enter:<br>
+<code># service iptables restart</code></p>
+<h2>#7: Set the Default Firewall Policies</h2>
+<p>To drop all traffic:<br>
+<code># iptables -P INPUT DROP<br>
+# iptables -P OUTPUT DROP<br>
+# iptables -P FORWARD DROP<br>
+# iptables -L -v -n<br>
+#### you will not able to connect anywhere as all traffic is dropped ###<br>
+# ping cyberciti.biz<br>
+# wget http://www.kernel.org/pub/linux/kernel/v3.0/testing/linux-3.2-rc5.tar.bz2</code></p>
+<h3>#7.1: Only Block Incoming Traffic</h3>
+<p>To drop all incoming / forwarded packets, but allow outgoing traffic, enter:<br>
+<code># iptables -P INPUT DROP<br>
+# iptables -P FORWARD DROP<br>
+# iptables -P OUTPUT ACCEPT<br>
+# iptables -A INPUT -m state --state NEW,ESTABLISHED -j ACCEPT<br>
+# iptables -L -v -n<br>
+### *** now ping and wget should work *** ###<br>
+# ping cyberciti.biz<br>
+# wget http://www.kernel.org/pub/linux/kernel/v3.0/testing/linux-3.2-rc5.tar.bz2</code></p>
+<h2>#8:Drop Private Network Address On Public Interface</h2>
+<p>IP spoofing is nothing but to stop the following IPv4 address ranges for private networks on your public interfaces. Packets with non-routable source addresses should be rejected using the following syntax:<br>
+<code># iptables -A INPUT -i eth1 -s 192.168.0.0/24 -j DROP<br>
+# iptables -A INPUT -i eth1 -s 10.0.0.0/8 -j DROP</code></p>
+<h3>#8.1: IPv4 Address Ranges For Private Networks (make sure you block them on public interface)</h3>
+<ul>
+<li>10.0.0.0/8 -j (A)</li>
+<li>172.16.0.0/12 (B)</li>
+<li>192.168.0.0/16 (C)</li>
+<li>224.0.0.0/4 (MULTICAST D)</li>
+<li>240.0.0.0/5 (E)</li>
+<li>127.0.0.0/8 (LOOPBACK)</li>
+</ul>
+<h2>#9: Blocking an IP Address (BLOCK IP)</h2>
+<p>To block an attackers ip address called 1.2.3.4, enter:<br>
+<code># iptables -A INPUT -s 1.2.3.4 -j DROP<br>
+# iptables -A INPUT -s 192.168.0.0/24 -j DROP</code></p>
+<h2>#10: Block Incoming Port Requests (BLOCK PORT)</h2>
+<p>To block all service requests on port 80, enter:<br>
+<code># iptables -A INPUT -p tcp --dport 80 -j DROP<br>
+# iptables -A INPUT -i eth1 -p tcp --dport 80 -j DROP</code></p>
+<p>To block port 80 only for an ip address 1.2.3.4, enter:<br>
+<code># iptables -A INPUT -p tcp -s 1.2.3.4 --dport 80 -j DROP<br>
+# iptables -A INPUT -i eth1 -p tcp -s 192.168.1.0/24 --dport 80 -j DROP</code></p>
+<h2>#11: Block Outgoing IP Address</h2>
+<p>To block outgoing traffic to a particular host or domain such as cyberciti.biz, enter:<br>
+<code># host -t a cyberciti.biz</code><br>
+Sample outputs:</p>
+<pre>cyberciti.biz has address 75.126.153.206</pre>
+<p>Note down its ip address and type the following to block all outgoing traffic to 75.126.153.206:<br>
+<code># iptables -A OUTPUT -d 75.126.153.206 -j DROP</code><br>
+You can use a subnet as follows:<br>
+<code># iptables -A OUTPUT -d 192.168.1.0/24 -j DROP<br>
+# iptables -A OUTPUT -o eth1 -d 192.168.1.0/24 -j DROP</code></p>
+<h3>#11.1: Example &#8211; Block Facebook.com Domain</h3>
+<p>First, find out all ip address of facebook.com, enter:<br>
+<code># host -t a www.facebook.com</code><br>
+Sample outputs:</p>
+<pre>www.facebook.com has address 69.171.228.40</pre>
+<p>Find CIDR for 69.171.228.40, enter:<br>
+<code># whois 69.171.228.40 | grep CIDR</code><br>
+Sample outputs:</p>
+<pre>CIDR:           69.171.224.0/19</pre>
+<p>To prevent outgoing access to www.facebook.com, enter:<br>
+<code># iptables -A OUTPUT -p tcp -d 69.171.224.0/19 -j DROP</code><br>
+You can also use domain name, enter:<br>
+<code># iptables -A OUTPUT -p tcp -d www.facebook.com -j DROP<br>
+# iptables -A OUTPUT -p tcp -d facebook.com -j DROP</code></p>
+<p>From the iptables man page:</p>
+<blockquote><p>&#8230; specifying any name to be resolved with a remote query such as DNS (e.g., facebook.com is a really bad idea), a network IP address (with /mask), or a plain IP address &#8230;</p></blockquote>
+<h2>#12: Log and Drop Packets</h2>
+<p>Type the following to log and block IP spoofing on public interface called eth1<br>
+<code># iptables -A INPUT -i eth1 -s 10.0.0.0/8 -j LOG --log-prefix "IP_SPOOF A: "<br>
+# iptables -A INPUT -i eth1 -s 10.0.0.0/8 -j DROP</code><br>
+By default everything is logged to /var/log/messages file.<br>
+<code># tail -f /var/log/messages<br>
+# grep --color 'IP SPOOF' /var/log/messages</code></p>
+<h2>#13: Log and Drop Packets with Limited Number of Log Entries</h2>
+<p>The -m limit module can limit the number of log entries created per time. This is used to prevent flooding your log file. To log and drop spoofing per 5 minutes, in bursts of at most 7 entries .<br>
+<code># iptables -A INPUT -i eth1 -s 10.0.0.0/8 -m limit --limit 5/m --limit-burst 7 -j LOG --log-prefix "IP_SPOOF A: "<br>
+# iptables -A INPUT -i eth1 -s 10.0.0.0/8 -j DROP</code></p>
+<h2>#14: Drop or Accept Traffic From Mac Address</h2>
+<p>Use the following syntax:<br>
+<code># iptables -A INPUT -m mac --mac-source 00:0F:EA:91:04:08 -j DROP<br>
+## *only accept traffic for TCP port # 8080 from mac 00:0F:EA:91:04:07 * ##<br>
+# iptables -A INPUT -p tcp --destination-port 22 -m mac --mac-source 00:0F:EA:91:04:07 -j ACCEPT</code></p>
+<h2>#15: Block or Allow ICMP Ping Request</h2>
+<p>Type the following command to block ICMP ping requests:<br>
+<code># iptables -A INPUT -p icmp --icmp-type echo-request -j DROP<br>
+# iptables -A INPUT -i eth1 -p icmp --icmp-type echo-request -j DROP</code><br>
+Ping responses can also be limited to certain networks or hosts:<br>
+<code># iptables -A INPUT -s 192.168.1.0/24 -p icmp --icmp-type echo-request -j ACCEPT</code><br>
+The following only accepts limited type of ICMP requests:<br>
+<code>### ** assumed that default INPUT policy set to DROP ** #############<br>
+iptables -A INPUT -p icmp --icmp-type echo-reply -j ACCEPT<br>
+iptables -A INPUT -p icmp --icmp-type destination-unreachable -j ACCEPT<br>
+iptables -A INPUT -p icmp --icmp-type time-exceeded -j ACCEPT<br>
+## ** all our server to respond to pings ** ##<br>
+iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT</code></p>
+<h2>#16: Open Range of Ports</h2>
+<p>Use the following syntax to open a range of ports:<br>
+<code>iptables -A INPUT -m state --state NEW -m tcp -p tcp --dport 7000:7010 -j ACCEPT</code></p>
+<h2>#17: Open Range of IP Addresses</h2>
+<p>Use the following syntax to open a range of IP address:<br>
+<code>## only accept connection to tcp port 80 (Apache) if ip is between 192.168.1.100 and 192.168.1.200 ##<br>
+iptables -A INPUT -p tcp --destination-port 80 -m iprange --src-range 192.168.1.100-192.168.1.200 -j ACCEPT</code></p>
+<p><code>## nat example ##<br>
+iptables -t nat -A POSTROUTING -j SNAT --to-source 192.168.1.20-192.168.1.25<br>
+</code></p>
+<h2>#18: Established Connections and Restaring The Firewall</h2>
+<p>When you restart the iptables service it will drop established connections as it unload modules from the system under RHEL / Fedora / CentOS Linux. Edit, /etc/sysconfig/iptables-config and set IPTABLES_MODULES_UNLOAD as follows:</p>
+<pre>IPTABLES_MODULES_UNLOAD = no</pre>
+<h2>#19: Help Iptables Flooding My Server Screen</h2>
+<p>Use the crit log level to send messages to a log file instead of console:<br>
+<code>iptables -A INPUT -s 1.2.3.4 -p tcp --destination-port 80 -j LOG --log-level crit</code></p>
+<h2>#20: Block or Open Common Ports</h2>
+<p>The following shows syntax for opening and closing common TCP and UDP ports:</p>
+<pre> 
+Replace ACCEPT with DROP to block port:
+## open port ssh tcp port 22 ##
+iptables -A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
+iptables -A INPUT -s 192.168.1.0/24 -m state --state NEW -p tcp --dport 22 -j ACCEPT
+
+## open cups (printing service) udp/tcp port 631 for LAN users ##
+iptables -A INPUT -s 192.168.1.0/24 -p udp -m udp --dport 631 -j ACCEPT
+iptables -A INPUT -s 192.168.1.0/24 -p tcp -m tcp --dport 631 -j ACCEPT
+
+## allow time sync via NTP for lan users (open udp port 123) ##
+iptables -A INPUT -s 192.168.1.0/24 -m state --state NEW -p udp --dport 123 -j ACCEPT
+
+## open tcp port 25 (smtp) for all ##
+iptables -A INPUT -m state --state NEW -p tcp --dport 25 -j ACCEPT
+
+# open dns server ports for all ##
+iptables -A INPUT -m state --state NEW -p udp --dport 53 -j ACCEPT
+iptables -A INPUT -m state --state NEW -p tcp --dport 53 -j ACCEPT
+
+## open http/https (Apache) server port to all ##
+iptables -A INPUT -m state --state NEW -p tcp --dport 80 -j ACCEPT
+iptables -A INPUT -m state --state NEW -p tcp --dport 443 -j ACCEPT
+
+## open tcp port 110 (pop3) for all ##
+iptables -A INPUT -m state --state NEW -p tcp --dport 110 -j ACCEPT
+
+## open tcp port 143 (imap) for all ##
+iptables -A INPUT -m state --state NEW -p tcp --dport 143 -j ACCEPT
+
+## open access to Samba file server for lan users only ##
+iptables -A INPUT -s 192.168.1.0/24 -m state --state NEW -p tcp --dport 137 -j ACCEPT
+iptables -A INPUT -s 192.168.1.0/24 -m state --state NEW -p tcp --dport 138 -j ACCEPT
+iptables -A INPUT -s 192.168.1.0/24 -m state --state NEW -p tcp --dport 139 -j ACCEPT
+iptables -A INPUT -s 192.168.1.0/24 -m state --state NEW -p tcp --dport 445 -j ACCEPT
+
+## open access to proxy server for lan users only ##
+iptables -A INPUT -s 192.168.1.0/24 -m state --state NEW -p tcp --dport 3128 -j ACCEPT
+
+## open access to mysql server for lan users only ##
+iptables -I INPUT -p tcp --dport 3306 -j ACCEPT</pre>
+<h2>#21: Restrict the Number of Parallel Connections To a Server Per Client IP</h2>
+<p>You can use connlimit module to put such restrictions. To allow 3 ssh connections per client host, enter:<br>
+<code># iptables -A INPUT -p tcp --syn --dport 22 -m connlimit --connlimit-above 3 -j REJECT</code></p>
+<p>Set HTTP requests to 20:<br>
+<code># iptables -p tcp --syn --dport 80 -m connlimit --connlimit-above 20 --connlimit-mask 24 -j DROP</code><br>
+Where,</p>
+<ol>
+<li>
+<strong>&#8211;connlimit-above 3</strong> : Match if the number of existing connections is above 3.</li>
+<li>
+<strong>&#8211;connlimit-mask 24</strong> : Group hosts using the prefix length. For IPv4, this must be a number between (including) 0 and 32.</li>
+</ol>
+<h2>#22: HowTO: Use iptables Like a Pro</h2>
+<p>For more information about iptables, please see the manual page by typing man iptables from the command line:<br>
+<code>$ man iptables</code><br>
+You can see the help using the following syntax too:<br>
+<code># iptables -h</code><br>
+To see help with specific commands and targets, enter:<br>
+<code># iptables -j DROP -h</code></p>
+<h3>#22.1: Testing Your Firewall</h3>
+<p>Find out if ports are open or not, enter:<br>
+<code># netstat -tulpn</code><br>
+Find out if tcp port 80 open or not, enter:<br>
+<code># netstat -tulpn | grep :80</code><br>
+If port 80 is not open, start the Apache, enter:<br>
+<code># service httpd start</code><br>
+Make sure iptables allowing access to the port 80:<br>
+<code># iptables -L INPUT -v -n | grep 80</code><br>
+Otherwise open port 80 using the iptables for all users:<br>
+<code># iptables -A INPUT -m state --state NEW -p tcp --dport 80 -j ACCEPT<br>
+# service iptables save</code><br>
+Use the telnet command to see if firewall allows to connect to port 80:<br>
+<code>$ telnet vaheed.net 80</code><br>
+Sample outputs:</p>
+<pre>Trying xx.xx.xx.xx...
+Connected to vaheed.net.
+Escape character is '^]'.
+^]
+telnet&gt; quit
+Connection closed.</pre>
+<p>You can use nmap to probe your own server using the following syntax:<br>
+<code>$ nmap -sS -p 80 vaheed.net</code><br>
+Sample outputs:</p>
+<pre>Starting Nmap 5.00 ( http://nmap.org ) at 2012-12-13 13:19 IST
+Interesting ports on vaheed.net (xx.xx.xx.xx):
+PORT   STATE SERVICE
+80/tcp open  http
+Nmap done: 1 IP address (1 host up) scanned in 1.00 seconds</pre>
+<p>I also recommend you install and use sniffer such as tcpdupm and ngrep to test your firewall settings.</p>
+<h4>Conclusion:</h4>
+<p>This post only list basic rules for new Linux users. You can create and build more complex rules. This requires good understanding of TCP/IP, Linux kernel tuning via sysctl.conf, and good knowledge of your own setup. Stay tuned for next topics:</p>
+<p>&nbsp;</p>
+<div class="post-ratings" data-post="351">
+<div class="rating" data-post="351" data-rating="5" data-readonly="0"></div>
+<div class="rating-meta">
+<strong>5.00</strong> avg. rating (<strong>94</strong>% score) - <strong class="votes">1</strong> vote	</div>
+</div>
+<footer>
+<p></p>
+<p>Posted Under: <a href="/category/linux/" rel="category tag">Linux</a>, <a href="/category/network/" rel="category tag">Network</a>, <a href="/category/security/" rel="category tag">Security</a></p>
+<section class="row">
+<div class="twelve columns">
+<div class="panel author-box">
+<a class="th"><img alt="" src="https://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=55&#038;d=mm&#038;r=g" srcset="http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=110&#038;d=mm&#038;r=g 2x" class="author_gravatar left  avatar-55 photo" height="55" width="55" loading="lazy"></a>
+<h5>About <a href="https://plus.google.com/103839803047317952696" title="Visit vaheeD&#8217;s website" rel="author external">vaheeD</a>
+</h5>
+<p>
+</p>
+</div>
+</div>
+</section>
+
+
+<div id="respond" class="comment-respond">
+<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/20-iptables-examples-for-new-administrator/#respond" style="display:none;">Cancel reply</a></small>
+</h3>
+<form action="/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p>
+<p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p>
+<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200"></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="351" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>
+<div style="text-align:center; font-style:italic; font-size:12px;">Protected by <a href="http://boliquan.com/wp-anti-spam/" target="_blank">WP Anti Spam</a>
+</div>
+</form> </div>
+</footer>
+</article>
+<hr>
+</div>
+
+
+<aside class="three columns">
+<div>
+<form method="get" id="searchform" action="/">
+<div class="row">
+<div class="twelve columns">
+<div class="row collapse">
+<div class="eight mobile-three columns">
+<input type="text" name="s" id="s" placeholder="Search">
+</div>
+<div class="four mobile-one columns">
+<input type="submit" class="postfix button expand" name="submit" id="searchsubmit" value="Search">
+</div>
+</div>
+</div>
+</div>
+</form>
+</div>
+<div>
+<h5>Categories</h5>
+<ul>
+<li class="cat-item cat-item-17">
+<a href="/category/cisco/">Cisco</a>
+</li>
+<li class="cat-item cat-item-6">
+<a href="/category/linux/">Linux</a>
+</li>
+<li class="cat-item cat-item-8">
+<a href="/category/macosx/">Macosx</a>
+</li>
+<li class="cat-item cat-item-7">
+<a href="/category/mikrotik/">MikroTik</a>
+</li>
+<li class="cat-item cat-item-10">
+<a href="/category/network/">Network</a>
+</li>
+<li class="cat-item cat-item-20">
+<a href="/category/openstack/">openstack</a>
+</li>
+<li class="cat-item cat-item-11">
+<a href="/category/security/">Security</a>
+</li>
+<li class="cat-item cat-item-1">
+<a href="/category/uncategorized/">Uncategorized</a>
+</li>
+</ul>
+</div>
+</aside>
+
+</div>
+
+
+<footer class="row">
+<div class="twelve columns">
+<ul class="link-list">
+</ul>
+</div>
+</footer>
+
+<div id="foot">
+<strong>vaheeD.NET</strong> | linux, mikrotik, macosx | 2012, 2013</div>
+<script type="b7b70f33baf5d072a4f9b7b6-text/javascript" src="//vjs.zencdn.net/5.9.2/video.js?ver=1.0.2" id="videojs-js"></script>
+<script type="b7b70f33baf5d072a4f9b7b6-text/javascript" src="/wp-content/plugins/videojs-hls-player/videojs-contrib-hls/videojs-contrib-hls.min.js?ver=1.0.2" id="videojs-hls-js"></script>
+<script type="b7b70f33baf5d072a4f9b7b6-text/javascript" src="/wp-content/plugins/videojs-hls-player/videojs-airplay/videojs.airplay.js?ver=1.0.2" id="videojs-airplay-js"></script>
+<script type="b7b70f33baf5d072a4f9b7b6-text/javascript" src="/wp-content/plugins/videojs-hls-player/videojs-hls-player.js?ver=1.0.2" id="videojs-custom-js"></script>
+<script type="b7b70f33baf5d072a4f9b7b6-text/javascript" src="/wp-includes/js/jquery/suggest.min.js?ver=1.1-20110113" id="suggest-js"></script>
+<script type="b7b70f33baf5d072a4f9b7b6-text/javascript" id="wp-search-suggest-js-extra">
+/* <![CDATA[ */
+var wpss_options = {"url":"http:\/\/vaheed.net\/wp-admin\/admin-ajax.php","nonce":"ffc31e8139","ajaxurl":"http:\/\/vaheed.net\/wp-admin\/admin-ajax.php?action=wp-search-suggest&_wpnonce=9c0d5b0c5c"};
+/* ]]> */
+</script>
+<script type="b7b70f33baf5d072a4f9b7b6-text/javascript" src="/wp-content/plugins/wp-search-suggest/js/wpss-search-suggest.js?ver=5" id="wp-search-suggest-js"></script>
+<script type="b7b70f33baf5d072a4f9b7b6-text/javascript" src="/wp-content/themes/drewsymo-Foundation-3b62be5/javascripts/foundation.min.js?ver=1.0" id="foundation-js"></script>
+<script type="b7b70f33baf5d072a4f9b7b6-text/javascript" src="/wp-content/themes/drewsymo-Foundation-3b62be5/javascripts/app.js?ver=1.0" id="app-js"></script>
+<script type="b7b70f33baf5d072a4f9b7b6-text/javascript" id="post-ratings-js-extra">
+/* <![CDATA[ */
+var post_ratings = {"ajaxURL":"http:\/\/vaheed.net\/wp-admin\/admin-ajax.php","nonce":"a8b298b24a","path":"http:\/\/vaheed.net\/wp-content\/plugins\/post-ratings\/assets\/images\/","number":"5"};
+/* ]]> */
+</script>
+<script type="b7b70f33baf5d072a4f9b7b6-text/javascript" src="/wp-content/plugins/post-ratings/js/post-ratings.js?ver=3.0" id="post-ratings-js"></script>
+<script type="b7b70f33baf5d072a4f9b7b6-text/javascript" src="/wp-content/plugins/post-ratings/assets/jquery.raty.js?ver=3.0" id="post-ratings-raty-js"></script>
+<script type="b7b70f33baf5d072a4f9b7b6-text/javascript" src="/wp-includes/js/wp-embed.min.js?ver=5.7.2" id="wp-embed-js"></script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="b7b70f33baf5d072a4f9b7b6-|49" defer></script>
+</body>
+</html>

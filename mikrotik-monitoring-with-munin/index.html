@@ -1,0 +1,1786 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-US"
+	prefix="og: https://ogp.me/ns#" > <![endif]--><!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en-US"
+	prefix="og: https://ogp.me/ns#" > <![endif]--><!--[if IE 8]>    <html class="no-js lt-ie9" lang="en-US"
+	prefix="og: https://ogp.me/ns#" > <![endif]--><!--[if gt IE 8]><!--><html class="no-js" lang="en-US" prefix="og: https://ogp.me/ns#"> <!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="pingback" href="/xmlrpc.php">
+
+<meta name="viewport" content="width=device-width">
+
+<title>MikroTik Monitoring With Munin | vaheeD khoshnouD</title>
+<meta name="description" content="Introduction Munin is a very powerful, feature rich monitoring server based on Tobias Oetiker’s RRDTool. The monitoring server runs every 5 minutes via cron and connect to various configured nodes. Each node runs a daemon listening for connections from the server, and executes a wide range of completely customisable scripts to return data to the munin server... Continue Reading">
+<link rel="canonical" href="/mikrotik-monitoring-with-munin/">
+<meta property="og:site_name" content="vaheeD khoshnouD | linux, mikrotik, macosx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MikroTik Monitoring With Munin | vaheeD khoshnouD">
+<meta property="og:description" content="Introduction Munin is a very powerful, feature rich monitoring server based on Tobias Oetiker’s RRDTool. The monitoring server runs every 5 minutes via cron and connect to various configured nodes. Each node runs a daemon listening for connections from the server, and executes a wide range of completely customisable scripts to return data to the munin server... Continue Reading">
+<meta property="og:url" content="http://vaheed.net/mikrotik-monitoring-with-munin/">
+<meta property="article:published_time" content="2013-01-21T13:46:53Z">
+<meta property="article:modified_time" content="2013-01-21T14:18:36Z">
+<meta property="twitter:card" content="summary">
+<meta property="twitter:domain" content="vaheed.net">
+<meta property="twitter:title" content="MikroTik Monitoring With Munin | vaheeD khoshnouD">
+<meta property="twitter:description" content="Introduction Munin is a very powerful, feature rich monitoring server based on Tobias Oetiker’s RRDTool. The monitoring server runs every 5 minutes via cron and connect to various configured nodes. Each node runs a daemon listening for connections from the server, and executes a wide range of completely customisable scripts to return data to the munin server... Continue Reading">
+<script type="application/ld+json" class="aioseo-schema">
+			{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebSite","@id":"http:\/\/vaheed.net\/#website","url":"http:\/\/vaheed.net\/","name":"vaheeD khoshnouD","description":"linux, mikrotik, macosx","publisher":{"@id":"http:\/\/vaheed.net\/#organization"}},{"@type":"Organization","@id":"http:\/\/vaheed.net\/#organization","name":"vaheeD khoshnouD","url":"http:\/\/vaheed.net\/"},{"@type":"BreadcrumbList","@id":"http:\/\/vaheed.net\/mikrotik-monitoring-with-munin\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"http:\/\/vaheed.net\/#listItem","position":"1","item":{"@id":"http:\/\/vaheed.net\/#item","name":"Home","description":"vaheeD khoshnouD | linux, mikrotik, macosx","url":"http:\/\/vaheed.net\/"},"nextItem":"http:\/\/vaheed.net\/mikrotik-monitoring-with-munin\/#listItem"},{"@type":"ListItem","@id":"http:\/\/vaheed.net\/mikrotik-monitoring-with-munin\/#listItem","position":"2","item":{"@id":"http:\/\/vaheed.net\/mikrotik-monitoring-with-munin\/#item","name":"MikroTik Monitoring With Munin","description":"Introduction Munin is a very powerful, feature rich monitoring server based on Tobias Oetiker’s RRDTool. The monitoring server runs every 5 minutes via cron and connect to various configured nodes. Each node runs a daemon listening for connections from the server, and executes a wide range of completely customisable scripts to return data to the munin server... Continue Reading","url":"http:\/\/vaheed.net\/mikrotik-monitoring-with-munin\/"},"previousItem":"http:\/\/vaheed.net\/#listItem"}]},{"@type":"Person","@id":"http:\/\/vaheed.net\/author\/vaheed\/#author","url":"http:\/\/vaheed.net\/author\/vaheed\/","name":"vaheeD khoshnouD","image":{"@type":"ImageObject","@id":"http:\/\/vaheed.net\/mikrotik-monitoring-with-munin\/#authorImage","url":"http:\/\/1.gravatar.com\/avatar\/4ef8c65e8d3633adf28103cadb4591c2?s=96&d=mm&r=g","width":"96","height":"96","caption":"vaheeD khoshnouD"}},{"@type":"WebPage","@id":"http:\/\/vaheed.net\/mikrotik-monitoring-with-munin\/#webpage","url":"http:\/\/vaheed.net\/mikrotik-monitoring-with-munin\/","name":"MikroTik Monitoring With Munin | vaheeD khoshnouD","description":"Introduction Munin is a very powerful, feature rich monitoring server based on Tobias Oetiker’s RRDTool. The monitoring server runs every 5 minutes via cron and connect to various configured nodes. Each node runs a daemon listening for connections from the server, and executes a wide range of completely customisable scripts to return data to the munin server... Continue Reading","inLanguage":"en-US","isPartOf":{"@id":"http:\/\/vaheed.net\/#website"},"breadcrumb":{"@id":"http:\/\/vaheed.net\/mikrotik-monitoring-with-munin\/#breadcrumblist"},"author":"http:\/\/vaheed.net\/mikrotik-monitoring-with-munin\/#author","creator":"http:\/\/vaheed.net\/mikrotik-monitoring-with-munin\/#author","datePublished":"2013-01-21T13:46:53+03:30","dateModified":"2013-01-21T14:18:36+03:30"},{"@type":"Article","@id":"http:\/\/vaheed.net\/mikrotik-monitoring-with-munin\/#article","name":"MikroTik Monitoring With Munin | vaheeD khoshnouD","description":"Introduction Munin is a very powerful, feature rich monitoring server based on Tobias Oetiker’s RRDTool. The monitoring server runs every 5 minutes via cron and connect to various configured nodes. Each node runs a daemon listening for connections from the server, and executes a wide range of completely customisable scripts to return data to the munin server... Continue Reading","headline":"MikroTik Monitoring With Munin","author":{"@id":"http:\/\/vaheed.net\/author\/vaheed\/#author"},"publisher":{"@id":"http:\/\/vaheed.net\/#organization"},"datePublished":"2013-01-21T13:46:53+03:30","dateModified":"2013-01-21T14:18:36+03:30","articleSection":"Linux, MikroTik","mainEntityOfPage":{"@id":"http:\/\/vaheed.net\/mikrotik-monitoring-with-munin\/#webpage"},"isPartOf":{"@id":"http:\/\/vaheed.net\/mikrotik-monitoring-with-munin\/#webpage"},"image":{"@type":"ImageObject","@id":"http:\/\/vaheed.net\/#articleImage","url":"http:\/\/wiki.mikrotik.com\/images\/a\/af\/Mikrotikcpu_.png"}}]}
+		</script>
+<script type="a2e5b76ff00706a75d4b46bf-text/javascript">
+			window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+			ga('create', "UA-3072201-3", 'auto');
+			ga('send', 'pageview');
+		</script>
+<script async src="https://www.google-analytics.com/analytics.js" type="a2e5b76ff00706a75d4b46bf-text/javascript"></script>
+
+<link rel="dns-prefetch" href="//vjs.zencdn.net">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//s.w.org">
+<link rel="alternate" type="application/rss+xml" title="vaheeD khoshnouD &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="vaheeD khoshnouD &raquo; Comments Feed" href="/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="vaheeD khoshnouD &raquo; MikroTik Monitoring With Munin Comments Feed" href="/mikrotik-monitoring-with-munin/feed/">
+<link rel="publisher" href="https://plus.google.com/103839803047317952696">
+<script type="a2e5b76ff00706a75d4b46bf-text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/vaheed.net\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.7.2"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="videojs-css" href="//vjs.zencdn.net/5.9.2/video-js.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="videojs-style-css" href="/wp-content/plugins/videojs-hls-player/videojs-hls-player.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="videojs-airplay-css" href="/wp-content/plugins/videojs-hls-player/videojs-airplay/videojs.airplay.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="wp-search-suggest-css" href="/wp-content/plugins/wp-search-suggest/css/wpss-search-suggest.css?ver=5" type="text/css" media="all">
+<link rel="stylesheet" id="foundation-css" href="/wp-content/themes/drewsymo-Foundation-3b62be5/stylesheets/foundation.min.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="app-css" href="/wp-content/themes/drewsymo-Foundation-3b62be5/style.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C300&#038;ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="post-ratings-raty-css" href="/wp-content/plugins/post-ratings/assets/jquery.raty.css?ver=3.0" type="text/css" media="all">
+<link rel="stylesheet" id="wp-author-bio-css" href="/wp-content/plugins/wp-about-author/wp-about-author.css?ver=5.7.2" type="text/css" media="all">
+<script type="a2e5b76ff00706a75d4b46bf-text/javascript" src="/wp-includes/js/jquery/jquery.min.js?ver=3.5.1" id="jquery-core-js"></script>
+<script type="a2e5b76ff00706a75d4b46bf-text/javascript" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+<script type="a2e5b76ff00706a75d4b46bf-text/javascript" src="//vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js?ver=1.0.2" id="videojs-ie8-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/344">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 5.7.2">
+<link rel="shortlink" href="/?p=344">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fmikrotik-monitoring-with-munin%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fmikrotik-monitoring-with-munin%2F&#038;format=xml">
+
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body class="post-template-default single single-post postid-344 single-format-standard">
+<header class="row">
+<hgroup class="site-title twelve columns">
+<h1><a href="/" title="vaheeD khoshnouD" rel="home">vaheeD khoshnouD</a></h1>
+<h3 class="subheader">linux, mikrotik, macosx</h3>
+</hgroup>
+<div class="twelve columns"><ul class="nav-bar"><li class="page_item page-item-7"><a href="/about-me/">About Me</a></li></ul></div>
+</header>
+
+<script type="a2e5b76ff00706a75d4b46bf-text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//ns1.faratar.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//ns1.faratar.org/piwik/piwik.php?idsite=1" style="border:0;" alt=""></p></noscript>
+
+
+<div class="row">
+
+<div class="nine columns" role="content">
+<article>
+<header>
+<hgroup>
+<h2><a href="/mikrotik-monitoring-with-munin/" title="Permalink to MikroTik Monitoring With Munin" rel="bookmark">MikroTik Monitoring With Munin</a></h2>
+<h6>Written by <a href="https://plus.google.com/103839803047317952696" title="Visit vaheeD&#8217;s website" rel="author external">vaheeD</a> on January 21, 2013</h6>
+</hgroup>
+</header>
+<div class="post-ratings" data-post="344">
+<div class="rating" data-post="344" data-rating="5" data-readonly="0"></div>
+<div class="rating-meta">
+<strong>5.00</strong> avg. rating (<strong>94</strong>% score) - <strong class="votes">1</strong> vote	</div>
+</div>
+<p><span id="more-344"></span></p>
+<h1>Introduction</h1>
+<p>Munin is a very powerful, feature rich monitoring server based on Tobias Oetiker&#8217;s RRDTool. The monitoring server runs every 5 minutes via cron and connect to various configured nodes. Each node runs a daemon listening for connections from the server, and executes a wide range of completely customisable scripts to return data to the munin server to generate graphs from.</p>
+<p>As the backend graphing engine is based on RRDTool, any feature available in RRDTool is also available as options to Munin. The really nice thing about Munin and RRDTool, is that negative numbers can be graphed.</p>
+<p>In this article I will explain how to install Munin as well as Munin-Node on a single server, and how to get Munin to probe your Mikrotik devices via SNMP as well as Telnet (Depending on the type of graph). I would strongly advise that time is spend reading the Munin as well as RRDTool documentation available at the web sites, so that a clear understanding can be obtained on how Munin operates and generates graphs.</p>
+<h1>Munin Server Installation and Configuration</h1>
+<p>Munin-Server is only available in Linux format. As I use Ubuntu and FreeBSD only, I will base this installation guide on a Ubuntu Linux server. Once the general packages has been installed, the configuration should however be pretty much the same to any Munin installation, regardless of the flavour of Linux preferred.</p>
+<h2>Installing Munin</h2>
+<p>In our case, we are going to run both munin as well as munin-node on the same machine. Untill such time that (fingers crossed) we can get a munin-node integrated into Mikrotik, the node will be required to run on the same server as Munin itself for best results.</p>
+<p>As such, and being Ubuntu, we simply install the two packages, and make sure that we meet all the requirements in terms of dependencies. Additionally, for the Mikrotik scripts below to work, we also need to install the Net::SNMP, and Net::Telnet::Cisco Perl packages.</p>
+<pre>$sudo apt-get install munin munin-node libnet-telnet-cisco-perl libnet-snmp-perl</pre>
+<p>Now that we have all that we need installed (I am presuming you have Apache / tinyHTTP Web server already installed), it&#8217;s time to head off and do some basic configurations.</p>
+<h2>Configuring the Master</h2>
+<p>First things first, we need to edit the Master&#8217;s configuration file, by default, <b>/etc/munin/munin.conf</b>. This is the file where you configure every munin-node that the master needs to poll. As we are using a simple model here, we are only going be to polling localhost, which is accessible via 127.0.0.1 (If it isn&#8217;t you have bigger problems than monitoring ;-) ).</p>
+<p>Your Munin configuration should thus look something similar to below (Paths may vary on different distributions):</p>
+<pre>dbdir       /var/lib/munin/
+htmldir     /var/www/munin/
+logdir      /var/log/munin
+rundir      /var/run/munin/
+
+[localhost]
+        address 127.0.0.1</pre>
+<p><b>dbdir</b> will be the database where munin stores its internal state files, as well as the RRD database files<br>
+<b>htmldir</b> will be the directory where munin will greate the appropriate html files as well as png images<br>
+<b>logdir</b> keeps various log files of what munin is doing &#8211; useful when things don&#8217;t go as you intended<br>
+<b>rundir</b> munin pid files, lock files, etc. Nothing fancy here really</p>
+<p>Additionally, we have configured one active node which munin needs to poll. Munin will connect to 127.0.0.1 on 4949/TCP (default port that munin runs on) and pull this node for any nodes and/or scripts configured to be graphed.</p>
+<h2>Configuring the Node</h2>
+<p>Whilst Munin-Node is pretty secure out of the box, there are some basic things we need to change. Even though the node only authorizes just localhost to gather data from it, it listens by default on all IP addresses. As a security measure, we are going to alter the munin-node configuration file and ensure that we are only listening on localhost for connections from the Munin Server. As such, we need to open up <b>/etc/munin/munin-node.conf</b> in your faviourite editor of choice.</p>
+<p>We need to alter the <b>Host</b> value in order to bind munin-node to the 127.0.0.1 address. Your config should now look like this:</p>
+<pre>#host *
+host 127.0.0.1</pre>
+<p>This is about all that you need to do to get Munin working. As we have modified the configurations, we need to restart the munin-node service, in Ubuntu I issue:</p>
+<pre>$ /etc/init.d/munin-node restart</pre>
+<h2>Configuring Apache</h2>
+<p>Apache needs access to Munin&#8217;s htmldir configuration in order for you to see the pretty graphs and generated html in the browser of your choice. As such we need to configure some Alias and Directory settings in Apache&#8217;s configuration. This can be done either inside a Virtual Host of your choice, or in apache&#8217;s main configuration. As a example, I have elected to configure a new Apache Virtual Host which will only serve up the munin pages. The Virtual Host&#8217;s configuration will be something similar to</p>
+<pre>&lt;VirtualHost *:80&gt;
+        ServerAdmin <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="473022252a2634332235072b2824262b2f283433">[email&#160;protected]</a>
+        ServerName monitor.example.com
+        DocumentRoot /var/www/munin
+        &lt;Directory /&gt;
+                Options FollowSymLinks
+                AllowOverride None
+        &lt;/Directory&gt;
+        CustomLog /var/log/apache2/monitor.example.com.access.log combined
+        ErrorLog /var/log/apache2/monitor.example.com.error.log
+        ServerSignature On
+&lt;/VirtualHost&gt;</pre>
+<p>Verify that your syntax of the Apache configuration file is correct (apache2ctl -t), and then restart your Apache web server to enable the newly configured Virtual Host</p>
+<pre>$ sudo apache2ctl -t
+Syntax OK
+$ sudo apache2ctl graceful
+$</pre>
+<p>Open up your faviourite web browser, browse to <a href="http://monitor.example.com/" rel="nofollow">http://monitor.example.com</a>, and you should have pretty graphs for the server on which you are running munin.</p>
+<p>&nbsp;</p>
+<h1>Munin Node for Mikrotik</h1>
+<p>To configure Munin to monitor a Mikrotik device, is really a two step process. In a conventional configuration where Munin-Node is available on the target being monitored, we normally would only need to configure Munin to monitor the node in question, however, due to the lack of Munin on Mikrotik, we need to <i>alias</i> the Mikrotik node to our configured Munin-Node server in order to execute scripts on our Mikrotik device. The downside of this is that all scripts will need to be executed twice and as such scripts which use Telnet to obtain data will login two times into the routers that is being monitored.</p>
+<p>&nbsp;</p>
+<h2>Configuring additional Nodes in Munin</h2>
+<p>The first step in monitoring Mikrotik devices, is to configure the nodes as a alias to our locally running Munin-Node. This is done by editing the Munin-Node configuration file, by default located at <b>/etc/munin/munin.conf</b>. We edit this file using our faviourite editor of choice, and define the two new nodes as listed below.</p>
+<p>The part in the brackets define the node&#8217;s name, and for sanity purposes I recommend that the FQDN always be used to make your life allot easier in the following sections. The address, will always be pointing to 127.0.0.1 as Munin needs to connect to our only <i>real</i> munin-node we have running on localhost.</p>
+<pre>[node1.somewhere.com]
+    address 127.0.0.1
+
+[node2.somewhere.com]
+    address 127.0.0.1</pre>
+<p>&nbsp;</p>
+<h2>Monitoring CPU Usage</h2>
+<p>Now that we have our Munin node configured, we need to configure the scripts inside Munin-Node to poll our Mikrotik Devices. This is where things get complicated, and as a example I will configure a script to monitor and graph both our router&#8217;s CPU usage. The scripts are by default located in<b>/etc/munin/plugins/</b>. The naming of these scripts are very important, and attention need to be given to the location as well as names.</p>
+<p>Our CPU Monitoring script utilises SNMP, therefore, make sure that SNMP is enabled on your routers, and that the Server running munin has access to query your router via SNMP. A simple test can be performed to ensure that this is the case:</p>
+<pre>$ snmpget -v 1 -c public node1.somewhere.com .1.3.6.1.2.1.25.3.3.1.2.1
+HOST-RESOURCES-MIB::hrProcessorLoad.1 = INTEGER: 5
+$</pre>
+<p>Congratulations, we have just obtained our CPU usage of our router via a simple SNMP query. Should this query not be successfull, it means that Munin will be unable to query your router via SNMP, and you need to correct this before proceeding.</p>
+<p>Now that we know SNMP queries are working like they should, we need to get a simple script operational to pull this data into Munin for monitoring&#8230; Copy the script below to query the nodes via SNMP for CPU usage, and save it in the <b>/etc/munin/plugins</b> directory having the specific file name of mikrotikcpu_node1.somewhere.com (where node1.somewhere.com is the same as the node name you configured earlier in <b>/etc/munin/munin.conf</b>). These names MUST be the same, otherwise, the scripts <b>WILL</b> fail.</p>
+<p>Mikrotik CPU Usage via SNMP:</p>
+<pre>#!/usr/bin/perl
+###############################################################################
+use diagnostics;
+use Net::SNMP;
+use strict;
+use warnings;
+###############################################################################
+my $CPUOID = ".1.3.6.1.2.1.25.3.3.1.2.1";
+my $SNMPCommunity = "public";
+my $SNMPPort = "161";
+
+###############################################################################
+## Determine Hostname
+my $Host = undef;
+$0 =~ /mikrotikcpu_(.+)*$/;
+unless ($Host = $1) {
+  exit 2;
+}
+
+###############################################################################
+## Initiate SNMP Session
+my ($Session, $Error) = Net::SNMP-&gt;session (-hostname  =&gt; $Host,
+                                            -community =&gt; $SNMPCommunity,
+                                            -port      =&gt; $SNMPPort,
+                                            -timeout   =&gt; 60,
+                                            -retries   =&gt; 5,
+                                            -version   =&gt; 1);
+if (!defined($Session)) {
+  die "Croaking: $Error";
+}
+
+###############################################################################
+## Configuration
+if ($ARGV[0] &amp;&amp; $ARGV[0] eq "config") {
+  print "host_name " . $Host . "\n";
+  print "graph_args -l 0 -r --vertical-label percent --lower-limit 0 --upper-limit 100\n";
+  print "graph_title CPU usage\n";
+  print "graph_category system\n";
+  print "graph_info This graph shows the router's CPU usage.\n";
+  print "graph_order Total\n";
+  print "graph_vlabel %\n";
+  print "graph_scale no\n";
+  print "Total.label CPU Usage\n";
+  print "Total.draw AREA\n";
+  print "Total.warning 60\n";
+  print "Total.critical 90\n";
+  $Session-&gt;close;
+  exit;
+}
+
+###############################################################################
+## Execution
+if (my $Result = $Session-&gt;get_request(-varbindlist =&gt; [$CPUOID])) {
+  print "Total.value " . $Result-&gt;{$CPUOID} . "\n";
+  $Session-&gt;close;
+  exit;
+}</pre>
+<p>Next, we need to make sure that Munin can execute the file, and that the script os operating successfully</p>
+<pre>$ chmod u+x /etc/munin/plugins/mikrotikcpu_node1.somewhere.com
+$ chown munin:munin /etc/munin/plugins/mikrotikcpu_node1.somewhere.com
+$ /etc/munin/plugins/mikrotikcpu_node1.somewhere.com config
+host_name node1.somewhere.com
+graph_args -l 0 -r --vertical-label percent --lower-limit 0 --upper-limit 100
+graph_title CPU usage
+graph_category system
+graph_info This graph shows the router's CPU usage.
+graph_order Total
+graph_vlabel %
+graph_scale no
+Total.label CPU Usage
+Total.draw AREA
+Total.warning 60
+Total.critical 90</pre>
+<p>Our scripts seems to be working fine. <b>Very</b> important, when the script is executed with the config parameter, make 100% sure that the value of the host_name configuration variable is returned correctly, and that it is identical to the name of the node configured in <b>/etc/munin/munin.conf</b>.</p>
+<p>The last step is to restart our munin-node, as we have made changes to it (we added more scripts). We simply execute the restart command:</p>
+<pre>$ /etc/init.d/munin-node restart</pre>
+<p>Now that we have restarted munin-node, we can also test the configuration, and see what munin will be seeing when quering the nodes that we have configured. In order to do this, we are going to telnet into Munin-Node, and obtain the graph data ourselves. This is done by telneting to the munin-node engine, running at 127.0.0.1 port 4949 (if you didn&#8217;t change any other configurations except that mentioned in this document), and we then send the &#8216;<b>nodes</b>&#8216; command, which will give us a list of nodes running under the munin-node that we have configured.</p>
+<pre>$ telnet localhost 4949
+Trying 127.0.0.1...
+Connected to 127.0.0.1.
+Escape character is '^]'.
+# munin node at localhost.somewhere.com
+nodes
+localhost
+node1.somewhere.com
+node2.somewhere.com
+.</pre>
+<p>It seems to be perfect. We have localhost, node1.somewhere.com, as well as node2.somewhere.com. Let&#8217;s see what plugins is available under each node. Again, we telnet into the munin-node deamon, but this time, we will execute two commands, &#8216;<b>list node1.somewhere.com</b>&#8216; and &#8216;<b>list node2.somewhere.com</b>&#8216;. This will list all the plugins currently configured for these two nodes.</p>
+<pre>$ telnet 127.0.0.1 4949
+Trying 127.0.0.1...
+Connected to 127.0.0.1.
+Escape character is '^]'.
+# munin node at localhost.somewhere.com
+list node1.somwehere.com
+mikrotikcpu_node1.somewhere.com
+list node2.somewhere.com
+mikrotikcpu_node2.somewhere.com</pre>
+<p>We can see in both instances, the mikrotikcpu_ script has been configured, and is activated for both our mikrotik nodes. We can also attempt to fetch the data by executing a &#8216;<b>fetch mikrotikcpu_node1.somewhere.com</b>&#8216; command in munin, at which time munin-node will query the Mikrotik Router, and return the data back through Munin.</p>
+<p>If all went well, you should by now have two additional nodes listed on the Web Interface munin has, and both these two additional nodes should have graphs indicating the CPU usage as a % value, between 0 and 100.</p>
+<h1>Available Scripts</h1>
+<p>From where on out, the installation of the scripts are pretty much the same, regardless of what you monitor or how. Each script that I have so far will be covered in the remaining sections, including details on what is required, the naming of the scripts, limitations, as well as installation instructions. As mentioned previously, if there is any monitoring not covered that you would like to see, please let me know and I will see about writing scritps to do what is required.</p>
+<h2>mikrotikcpu_</h2>
+<table>
+<tbody>
+<tr>
+<td>Installation:</td>
+<td>Quick &amp; Easy</td>
+</tr>
+<tr>
+<td>Technology Used:</td>
+<td>SNMP</td>
+</tr>
+<tr>
+<td>Sample Graph:</td>
+<td><a href="http://wiki.mikrotik.com/wiki/File:Mikrotikcpu_.png"><img loading="lazy" alt="Mikrotikcpu .png" src="http://wiki.mikrotik.com/images/a/af/Mikrotikcpu_.png" width="495" height="264"></a></td>
+</tr>
+</tbody>
+</table>
+<p>Script:</p>
+<pre>#!/usr/bin/perl
+###############################################################################
+use diagnostics;
+use Net::SNMP;
+use strict;
+use warnings;
+###############################################################################
+my $CPUOID = ".1.3.6.1.2.1.25.3.3.1.2.1";
+my $SNMPCommunity = "public";
+my $SNMPPort = "161";
+
+###############################################################################
+## Determine Hostname
+my $Host = undef;
+$0 =~ /mikrotikcpu_(.+)*$/;
+unless ($Host = $1) {
+  exit 2;
+}
+
+###############################################################################
+## Initiate SNMP Session
+my ($Session, $Error) = Net::SNMP-&gt;session (-hostname  =&gt; $Host,
+                                            -community =&gt; $SNMPCommunity,
+                                            -port      =&gt; $SNMPPort,
+                                            -timeout   =&gt; 60,
+                                            -retries   =&gt; 5,
+                                            -version   =&gt; 1);
+if (!defined($Session)) {
+  die "Croaking: $Error";
+}
+
+###############################################################################
+## Configuration
+if ($ARGV[0] &amp;&amp; $ARGV[0] eq "config") {
+  print "host_name " . $Host . "\n";
+  print "graph_args -l 0 -r --vertical-label percent --lower-limit 0 --upper-limit 100\n";
+  print "graph_title CPU usage\n";
+  print "graph_category system\n";
+  print "graph_info This graph shows the router's CPU usage.\n";
+  print "graph_order Total\n";
+  print "graph_vlabel %\n";
+  print "graph_scale no\n";
+  print "Total.label CPU Usage\n";
+  print "Total.draw AREA\n";
+  print "Total.warning 60\n";
+  print "Total.critical 90\n";
+  $Session-&gt;close;
+  exit;
+}
+
+###############################################################################
+## Execution
+if (my $Result = $Session-&gt;get_request(-varbindlist =&gt; [$CPUOID])) {
+  print "Total.value " . $Result-&gt;{$CPUOID} . "\n";
+  $Session-&gt;close;
+  exit;
+}</pre>
+<p>&nbsp;</p>
+<h2>mikrotikdiskspace_</h2>
+<table>
+<tbody>
+<tr>
+<td>Installation:</td>
+<td>Quick &amp; Easy</td>
+</tr>
+<tr>
+<td>Technology Used:</td>
+<td>SNMP</td>
+</tr>
+<tr>
+<td>Sample Graph:</td>
+<td><a href="http://wiki.mikrotik.com/wiki/File:Mikrotikdiskspace_.png"><img loading="lazy" alt="Mikrotikdiskspace .png" src="http://wiki.mikrotik.com/images/f/f0/Mikrotikdiskspace_.png" width="495" height="276"></a></td>
+</tr>
+</tbody>
+</table>
+<p>Script:</p>
+<pre>#!/usr/bin/perl
+###############################################################################
+use diagnostics;
+use Net::SNMP;
+use strict;
+use warnings;
+###############################################################################
+my $DiskTotalOID = ".1.3.6.1.2.1.25.2.3.1.5.1";
+my $DiskUsedOID = ".1.3.6.1.2.1.25.2.3.1.6.1";
+my $SNMPCommunity = "public";
+my $SNMPPort = "161";
+
+###############################################################################
+## Determine Hostname
+my $Host = undef;
+$0 =~ /mikrotikdiskspace_(.+)*$/;
+unless ($Host = $1) {
+  exit 2;
+}
+
+###############################################################################
+## Initiate SNMP Session
+my ($Session, $Error) = Net::SNMP-&gt;session (-hostname  =&gt; $Host,
+                                            -community =&gt; $SNMPCommunity,
+                                            -port      =&gt; $SNMPPort,
+                                            -timeout   =&gt; 60,
+                                            -retries   =&gt; 5,
+                                            -version   =&gt; 1);
+if (!defined($Session)) {
+  die "Croaking: $Error";
+}
+
+###############################################################################
+## Configuration
+if ($ARGV[0] &amp;&amp; $ARGV[0] eq "config") {
+  my $Result = $Session-&gt;get_request(-varbindlist =&gt; [$DiskTotalOID]);
+  print "host_name " . $Host . "\n";
+  print "graph_args --base 1024 -l 0 --vertical-label Bytes --upper-limit " . ($Result-&gt;{$DiskTotalOID} * 1024) . "\n";
+  print "graph_title Disk Space usage\n";
+  print "graph_category system\n";
+  print "graph_info This graph shows the router's Disk Space usage.\n";
+  print "graph_order Total Used\n";
+  print "graph_vlabel bytes\n";
+  print "Total.label Total Disk Space\n";
+  print "Total.draw AREA\n";
+  print "Used.label Used Disk Space\n";
+  print "Used.draw AREA\n";
+  $Session-&gt;close;
+  exit;
+}
+
+###############################################################################
+## Execution
+if (my $Result = $Session-&gt;get_request(-varbindlist =&gt; [$DiskTotalOID, $DiskUsedOID])) {
+  print "Total.value " . ($Result-&gt;{$DiskTotalOID} * 1024) . "\n";
+  print "Used.value " . ($Result-&gt;{$DiskUsedOID} * 1024) . "\n";
+  $Session-&gt;close;
+  exit;
+}</pre>
+<p>&nbsp;</p>
+<h2>mikrotikmemory_</h2>
+<table>
+<tbody>
+<tr>
+<td>Installation:</td>
+<td>Quick &amp; Easy</td>
+</tr>
+<tr>
+<td>Technology Used:</td>
+<td>SNMP</td>
+</tr>
+<tr>
+<td>Sample Graph:</td>
+<td><a href="http://wiki.mikrotik.com/wiki/File:Mikrotikmemory_.png"><img loading="lazy" alt="Mikrotikmemory .png" src="http://wiki.mikrotik.com/images/a/ab/Mikrotikmemory_.png" width="495" height="276"></a></td>
+</tr>
+</tbody>
+</table>
+<p>Script:</p>
+<pre>#!/usr/bin/perl
+###############################################################################
+use diagnostics;
+use Net::SNMP;
+use strict;
+use warnings;
+###############################################################################
+my $MemTotalOID = ".1.3.6.1.2.1.25.2.3.1.5.2";
+my $MemUsedOID = ".1.3.6.1.2.1.25.2.3.1.6.2";
+my $SNMPCommunity = "public";
+my $SNMPPort = "161";
+
+###############################################################################
+## Determine Hostname
+my $Host = undef;
+$0 =~ /mikrotikmemory_(.+)*$/;
+unless ($Host = $1) {
+  exit 2;
+}
+
+###############################################################################
+## Initiate SNMP Session
+my ($Session, $Error) = Net::SNMP-&gt;session (-hostname  =&gt; $Host,
+                                            -community =&gt; $SNMPCommunity,
+                                            -port      =&gt; $SNMPPort,
+                                            -timeout   =&gt; 60,
+                                            -retries   =&gt; 5,
+                                            -version   =&gt; 1);
+if (!defined($Session)) {
+  die "Croaking: $Error";
+}
+
+###############################################################################
+## Configuration
+if ($ARGV[0] &amp;&amp; $ARGV[0] eq "config") {
+  my $Result = $Session-&gt;get_request(-varbindlist =&gt; [$MemTotalOID]);
+  print "host_name " . $Host . "\n";
+  print "graph_args --base 1024 -l 0 --vertical-label Bytes --upper-limit " . ($Result-&gt;{$MemTotalOID} * 1024) . "\n";
+  print "graph_title Memory usage\n";
+  print "graph_category system\n";
+  print "graph_info This graph shows the router's memory usage.\n";
+  print "graph_order Total Used\n";
+  print "graph_vlabel bytes\n";
+  print "Total.label Total Memory\n";
+  print "Total.draw AREA\n";
+  print "Used.label Used Memory\n";
+  print "Used.draw AREA\n";
+  $Session-&gt;close;
+  exit;
+}
+
+###############################################################################
+## Execution
+if (my $Result = $Session-&gt;get_request(-varbindlist =&gt; [$MemTotalOID, $MemUsedOID])) {
+  print "Total.value " . ($Result-&gt;{$MemTotalOID} * 1024) . "\n";
+  print "Used.value " . ($Result-&gt;{$MemUsedOID} * 1024) . "\n";
+  $Session-&gt;close;
+  exit;
+}</pre>
+<p>&nbsp;</p>
+<h2>mikrotikppp_</h2>
+<table>
+<tbody>
+<tr>
+<td>Installation:</td>
+<td>Easy to Intermediate</td>
+</tr>
+<tr>
+<td>Technology Used:</td>
+<td>Telnet (RO Access, Single Login)</td>
+</tr>
+<tr>
+<td>Sample Graph:</td>
+<td><a href="http://wiki.mikrotik.com/wiki/File:Mikrotikppp-day.png"><img loading="lazy" alt="Mikrotikppp-day.png" src="http://wiki.mikrotik.com/images/7/71/Mikrotikppp-day.png" width="501" height="319"></a></td>
+</tr>
+</tbody>
+</table>
+<p>Script:</p>
+<pre>#!/usr/bin/perl
+#
+# Beware - some perl Net::Telnet::Cisco packages are broken and you may need
+# to manually hack a 'g' out of a file if you get an error message!
+# Nick Barnes 20090610
+#
+###############################################################################
+use diagnostics;
+use Net::Telnet::Cisco;
+use strict;
+use warnings;
+##############################################################################
+my $TelnetPort = "23";
+my $TelnetUser = "username";
+my $TelnetPass = "password";
+
+###############################################################################
+## Determine Hostname
+my $Host = undef;
+$0 =~ /mikrotikppp_(.+)*$/;
+unless ($Host = $1) {
+  exit 2;
+}
+
+###############################################################################
+## Initiate Telnet Session
+my $MT = Net::Telnet::Cisco-&gt;new(Host    =&gt; $Host,
+                                 Port    =&gt; $TelnetPort,
+                                 Prompt  =&gt; '/[\&gt;\#] $/',
+                                 Timeout =&gt; 30);
+
+###############################################################################
+## Configuration
+if ($ARGV[0] &amp;&amp; $ARGV[0] eq "config") {
+  print "host_name " . $Host . "\n";
+  print "graph_args --base 1000 -l 0 -r --lower-limit 0\n";
+  print "graph_title Active PPP Client Connections\n";
+  print "graph_vlabel number\n";
+  print "graph_category network\n";
+  print "graph_info This graph shows the active amount of ppp connections\n";
+  print "graph_order async isdn l2tp ovpn pppoe pptp\n";
+  print "async.label async\n";
+  print "async.info ASync Connections\n";
+  print "isdn.label isdn\n";
+  print "isdn.info ISDN Connections\n";
+  print "l2tp.label l2tp\n";
+  print "l2tp.info L2TP Connections\n";
+  print "ovpn.label ovpn\n";
+  print "ovpn.info OVPN Connections\n";
+  print "pppoe.label pppoe\n";
+  print "pppoe.info PPPoE Connections\n";
+  print "pptp.label pptp\n";
+  print "pptp.info PPTP Connections\n";
+  exit;
+}
+
+###############################################################################
+## Execution
+if (!defined($MT-&gt;login($TelnetUser . "+ct", $TelnetPass))) {
+  die "Croaking: $MT-&gt;error";
+} else {
+  my $async = 0;
+  my $isdn = 0;
+  my $ltp = 0;
+  my $ovpn = 0;
+  my $pppoe = 0;
+  my $pptp = 0;
+  my @Output = $MT-&gt;cmd("/ppp active print without-paging terse");
+  foreach my $Line (@Output) {
+    my ($tmp, $rest) = split(/ name/, $Line, 2);
+    if ($rest &amp;&amp; $rest =~ /async/ ) { $async++; };
+    if ($rest &amp;&amp; $rest =~ /isdn/ ) { $isdn++; };
+    if ($rest &amp;&amp; $rest =~ /l2tp/ ) { $ltp++; };
+    if ($rest &amp;&amp; $rest =~ /ovpn/ ) { $ovpn++; };
+    if ($rest &amp;&amp; $rest =~ /pppoe/ ) { $pppoe++; };
+    if ($rest &amp;&amp; $rest =~ /pptp/ ) { $pptp++; };
+  }
+  print "async.value " . $async . "\n";
+  print "isdn.value " . $isdn . "\n";
+  print "l2tp.value " . $ltp . "\n";
+  print "ovpn.value " . $ovpn . "\n";
+  print "pppoe.value " . $pppoe . "\n";
+  print "pptp.value " . $pptp . "\n";
+  exit;
+}</pre>
+<h2>mikrotikradius_</h2>
+<table>
+<tbody>
+<tr>
+<td>Installation:</td>
+<td>Easy to Intermediate</td>
+</tr>
+<tr>
+<td>Technology Used:</td>
+<td>Telnet (RO Access, Single Login)</td>
+</tr>
+<tr>
+<td>Sample Graph:</td>
+<td><a href="http://wiki.mikrotik.com/wiki/File:Mikrotikradius_.png"><img loading="lazy" alt="Mikrotikradius .png" src="http://wiki.mikrotik.com/images/4/46/Mikrotikradius_.png" width="495" height="336"></a></td>
+</tr>
+</tbody>
+</table>
+<p>Script:</p>
+<pre>#!/usr/bin/perl
+###############################################################################
+use diagnostics;
+use Net::Telnet::Cisco;
+use strict;
+use warnings;
+###############################################################################
+my $RadiusHost = "192.168.1.251";       ## This is the address of the Radius
+                                        ## Server we monitor as configured in
+                                        ## /radius on Mikrotik
+my $TelnetPort = "23";
+my $TelnetUser = "username";
+my $TelnetPass = "password";
+
+###############################################################################
+## Determine Hostname
+my $Host = undef;
+$0 =~ /mikrotikradius_(.+)*$/;
+unless ($Host = $1) {
+  exit 2;
+}
+
+###############################################################################
+## Initiate Telnet Session
+my $MT = Net::Telnet::Cisco-&gt;new(Host    =&gt; $Host,
+                                 Port    =&gt; $TelnetPort,
+                                 Prompt  =&gt; '/[\&gt;\#] $/',
+                                 Timeout =&gt; 30);
+if (!defined($MT-&gt;login($TelnetUser . "+ct", $TelnetPass))) {
+  die "Croaking: $MT-&gt;error";
+}
+
+###############################################################################
+## Configuration
+if ($ARGV[0] &amp;&amp; $ARGV[0] eq "config") {
+  print "host_name " . $Host . "\n";
+  print "graph_args --base 1000 -l 0 -r --lower-limit 0\n";
+  print "graph_title Radius Statistics\n";
+  print "graph_vlabel requests/s\n";
+  print "graph_category system\n";
+  print "graph_info This graph shows Radius usage.\n";
+  print "graph_period second\n";
+  print "graph_order pending requests accepts rejects resends timeouts badreplies\n";
+  print "pending.label pending\n";
+  print "pending.info Requests Pending\n";
+  print "requests.label requests\n";
+  print "requests.info Requests Completed\n";
+  print "requests.type COUNTER\n";
+  print "accepts.label accepts\n";
+  print "accepts.info Authentication Accepted\n";
+  print "accepts.type COUNTER\n";
+  print "rejects.label rejects\n";
+  print "rejects.info Authentication Rejected\n";
+  print "rejects.type COUNTER\n";
+  print "resends.label resends\n";
+  print "resends.info Request Resends\n";
+  print "resends.type COUNTER\n";
+  print "timeouts.label timeouts\n";
+  print "timeouts.info Request Timeouts\n";
+  print "timeouts.type COUNTER\n";
+  print "badreplies.label badreplies\n";
+  print "badreplies.info Bad Replies\n";
+  print "badreplies.type COUNTER\n";
+  exit;
+}
+
+###############################################################################
+## Execution
+my ($tmp, $pending, $requests, $accepts, $rejects, $resends, $timeouts, $badreplies, $rtt) = undef;
+my @Output = $MT-&gt;cmd("/radius monitor [find address=" . $RadiusHost . "] once");
+foreach my $Line (@Output) {
+  if ($Line =~ /pending/) {
+    ($tmp, $pending) = split(/: /, $Line, 2);
+  } elsif ($Line =~ /requests/) {
+    ($tmp, $requests) = split(/: /, $Line, 2);
+  } elsif ($Line =~ /accepts/) {
+    ($tmp, $accepts) = split(/: /, $Line, 2);
+  } elsif ($Line =~ /rejects/) {
+    ($tmp, $rejects) = split(/: /, $Line, 2);
+  } elsif ($Line =~ /resends/) {
+    ($tmp, $resends) = split(/: /, $Line, 2);
+  } elsif ($Line =~ /timeouts/) {
+    ($tmp, $timeouts) = split(/: /, $Line, 2);
+  } elsif ($Line =~ /bad-replies/) {
+    ($tmp, $badreplies) = split(/: /, $Line, 2);
+  }
+}
+print "pending.value " . $pending;
+print "requests.value " . $requests;
+print "accepts.value " . $accepts;
+print "rejects.value " . $rejects;
+print "resends.value " . $resends;
+print "timeouts.value " . $timeouts;
+print "badreplies.value " . $badreplies;</pre>
+<p>&nbsp;</p>
+<h2>mikrotikroutes_</h2>
+<table>
+<tbody>
+<tr>
+<td>Installation:</td>
+<td>Easy to Intermediate</td>
+</tr>
+<tr>
+<td>Technology Used:</td>
+<td>Telnet (RO Access, Single Login)</td>
+</tr>
+<tr>
+<td>Sample Graph:</td>
+<td><a href="http://wiki.mikrotik.com/wiki/File:Mikrotikroutes_.png"><img loading="lazy" alt="Mikrotikroutes .png" src="http://wiki.mikrotik.com/images/c/c1/Mikrotikroutes_.png" width="481" height="408"></a></td>
+</tr>
+</tbody>
+</table>
+<p>Script:</p>
+<pre>#!/usr/bin/perl
+###############################################################################
+use diagnostics;
+use Net::Telnet::Cisco;
+use strict;
+use warnings;
+##############################################################################
+my ($total, $disabled, $active, $dynamic, $connected, $static, $rip, $bgp, $ospf, $mme, $blackhole, $unreachable, $prohibit) = undef;
+my $TelnetPort = "23";
+my $TelnetUser = "username";
+my $TelnetPass = "password";
+
+###############################################################################
+## Determine Hostname
+my $Host = undef;
+$0 =~ /mikrotikroutes_(.+)*$/;
+unless ($Host = $1) {
+  exit 2;
+}
+
+###############################################################################
+## Initiate Telnet Session
+my $MT = Net::Telnet::Cisco-&gt;new(Host    =&gt; $Host,
+                                 Port    =&gt; $TelnetPort,
+                                 Prompt  =&gt; '/[\&gt;\#] $/',
+                                 Timeout =&gt; 30);
+
+###############################################################################
+## Configuration
+if ($ARGV[0] &amp;&amp; $ARGV[0] eq "config") {
+  print "host_name " . $Host . "\n";
+  print "graph_args --base 1000 -l 0 -r --lower-limit 0\n";
+  print "graph_title Routing Tables\n";
+  print "graph_vlabel number\n";
+  print "graph_category network\n";
+  print "graph_info This graph shows the routing table size\n";
+  print "graph_order total disabled active dynamic connected static rip bgp ospf mme blackhole unreachable prohibit\n";
+  print "total.label total\n";
+  print "total.info Total Routes\n";
+  print "disabled.label disabled\n";
+  print "disabled.info Total Disabled Routes\n";
+  print "active.label active\n";
+  print "active.info Total Active Routes\n";
+  print "dynamic.label dynamic\n";
+  print "dynamic.info Total Dynamic Routes\n";
+  print "connected.label connected\n";
+  print "connected.info Total Connected Routes\n";
+  print "static.label static\n";
+  print "static.info Total Static Routes\n";
+  print "rip.label rip\n";
+  print "rip.info Routes obtained via RIP\n";
+  print "bgp.label bgp\n";
+  print "bgp.info Routes obtained via BGP\n";
+  print "ospf.label ospf\n";
+  print "ospf.info Routes obtained via OSPF\n";
+  print "mme.label mme\n";
+  print "mme.info Routes obtained via MME\n";
+  print "blackhole.label blackhold\n";
+  print "blackhole.info Blackhole Routes\n";
+  print "unreachable.label unreachable\n";
+  print "unreachable.info Routes currently unreachable\n";
+  print "prohibit.label prohibit\n";
+  print "prohibit.info Prohibited routes\n";
+  exit;
+}
+
+###############################################################################
+## Execution
+if (!defined($MT-&gt;login($TelnetUser . "+ct", $TelnetPass))) {
+  die "Croaking: $MT-&gt;error";
+} else {
+  my @Output = $MT-&gt;cmd("/ip route print without-paging terse");
+  $total = 0;
+  $disabled = 0;
+  $active = 0;
+  $dynamic = 0;
+  $connected = 0;
+  $static = 0;
+  $rip = 0;
+  $bgp = 0;
+  $ospf = 0;
+  $mme = 0;
+  $blackhole = 0;
+  $unreachable = 0;
+  $prohibit = 0;
+
+  foreach my $Line (@Output) {
+    $total = $total + 1;
+    my ($tmp, $rest) = split(/  /, $Line, 2);
+    if ($tmp &amp;&amp; $tmp =~ /X/) {$disabled = $disabled + 1;}
+    if ($tmp &amp;&amp; $tmp =~ /A/) {$active = $active + 1;}
+    if ($tmp &amp;&amp; $tmp =~ /D/) {$dynamic = $dynamic + 1;}
+    if ($tmp &amp;&amp; $tmp =~ /C/) {$connected = $connected + 1;}
+    if ($tmp &amp;&amp; $tmp =~ /S/) {$static = $static + 1;}
+    if ($tmp &amp;&amp; $tmp =~ /r/) {$rip = $rip + 1;}
+    if ($tmp &amp;&amp; $tmp =~ /b/) {$bgp = $bgp + 1;}
+    if ($tmp &amp;&amp; $tmp =~ /o/) {$ospf = $ospf + 1;}
+    if ($tmp &amp;&amp; $tmp =~ /m/) {$mme = $mme + 1;}
+    if ($tmp &amp;&amp; $tmp =~ /B/) {$blackhole = $blackhole + 1;}
+    if ($tmp &amp;&amp; $tmp =~ /U/) {$unreachable = $unreachable + 1;}
+    if ($tmp &amp;&amp; $tmp =~ /P/) {$prohibit = $prohibit + 1;}
+  }
+  print "total.value " . $total . "\n";
+  print "disabled.value " . $disabled . "\n";
+  print "active.value " . $active . "\n";
+  print "dynamic.value " . $dynamic . "\n";
+  print "connected.value " . $connected . "\n";
+  print "static.value " . $static . "\n";
+  print "rip.value " . $rip . "\n";
+  print "bgp.value " . $bgp . "\n";
+  print "ospf.value " . $ospf . "\n";
+  print "mme.value " . $mme . "\n";
+  print "blackhole.value " . $blackhole . "\n";
+  print "unreachable.value " . $unreachable . "\n";
+  print "prohibit.value " . $prohibit . "\n";
+  exit;
+}</pre>
+<h2>mikrotikwirelessinterface_</h2>
+<table>
+<tbody>
+<tr>
+<td>Installation:</td>
+<td>Easy to Intermediate</td>
+</tr>
+<tr>
+<td>Technology Used:</td>
+<td>Telnet (RO Access, Single Login)</td>
+</tr>
+<tr>
+<td>Notes:</td>
+<td>Monitors Wireless Interface (CCQ, Signals, etc) on CPE side only, Interface MUST BE in station mode to operate, Only monitors the first interface found (Interface number 0 in /interface wireless print</td>
+</tr>
+<tr>
+<td>Sample Graph:</td>
+<td><a href="http://wiki.mikrotik.com/wiki/File:Mikrotikwirelessinterface_.png"><img loading="lazy" alt="Mikrotikwirelessinterface .png" src="http://wiki.mikrotik.com/images/c/c7/Mikrotikwirelessinterface_.png" width="495" height="348"></a></td>
+</tr>
+</tbody>
+</table>
+<p>Script:</p>
+<pre>#!/usr/bin/perl
+###############################################################################
+use diagnostics;
+use Net::Telnet::Cisco;
+use strict;
+use warnings;
+##############################################################################
+my $TelnetPort = "23";
+my $TelnetUser = "username";
+my $TelnetPass = "password";
+
+###############################################################################
+## Determine Hostname
+my $Host = undef;
+$0 =~ /mikrotikwirelessinterface_(.+)*$/;
+unless ($Host = $1) {
+  exit 2;
+}
+
+###############################################################################
+## Initiate Telnet Session
+my $MT = Net::Telnet::Cisco-&gt;new(Host    =&gt; $Host,
+                                 Port    =&gt; $TelnetPort,
+                                 Prompt  =&gt; '/[\&gt;\#] $/',
+                                 Timeout =&gt; 30);
+
+###############################################################################
+## Configuration
+if ($ARGV[0] &amp;&amp; $ARGV[0] eq "config") {
+  print "host_name " . $Host . "\n";
+  print "graph_args -l 0 --lower-limit -100 --upper-limit 100\n";
+  print "graph_title Wireless Interface Quality (MACAddress)\n";
+  print "graph_vlabel Comms Quality\n";
+  print "graph_category network\n";
+  print "graph_info This graph shows the wireless interface statistics\n";
+  print "graph_order txccq rxccq txsignal txrate rxrate acttimeout noisefloor\n";
+  print "graph_scale no\n";
+  print "txccq.label TX CCQ (%)\n";
+  print "rxccq.label RX CCQ (%)\n";
+  print "txsignal.label TX Signal Strength (dBm)\n";
+  print "acttimeout.label ACT Timeout (us)\n";
+  print "noisefloor.label Noise Floor (dBm)\n";
+  print "txrate.label TX Rate (Mbps)\n";
+  print "rxrate.label RX Rate (Mbps)\n";
+  exit;
+}
+
+###############################################################################
+## Execution
+if (!defined($MT-&gt;login($TelnetUser . "+ct", $TelnetPass))) {
+  die "Croaking: $MT-&gt;error";
+} else {
+  my @Output = $MT-&gt;cmd("/interface wireless monitor 0 once\nD\n");
+  my ($rest, $tmp, $txccq, $rxccq, $txsignal, $stn, $otxccq, $acttimeout, $noisefloor, $txrate, $rxrate) = undef;
+  foreach my $Line (@Output) {
+    if (($Line =~ /tx-ccq/ &amp;&amp; $Line !~ /overall-tx-ccq/) &amp;&amp; $Line =~ m/(\d+)/) {
+      $txccq = $1;
+    }
+    if ($Line =~ /rx-ccq/ &amp;&amp; $Line =~ m/(\d+)/) {
+      $rxccq = $1;
+    }
+    if ($Line =~ /tx-signal-strength/ &amp;&amp; $Line =~ m/(.\d+)/) {
+      $txsignal = $1;
+    }
+    if ($Line =~ /current-ack-timeout/ &amp;&amp; $Line =~ m/(.\d+)/) {
+      $acttimeout = $1;
+    }
+    if ($Line =~ /noise-floor/ &amp;&amp; $Line =~ m/(.\d+)/) {
+      $noisefloor = $1;
+    }
+    if ($Line =~ /tx-rate/ &amp;&amp; $Line =~ m/(\d+)/) {
+      $txrate = $1;
+    }
+    if ($Line =~ /rx-rate/ &amp;&amp; $Line =~ m/(\d+)/) {
+      $rxrate = $1;
+    }
+  }
+  print "txccq.value " . $txccq . "\n";
+  print "rxccq.value " . $rxccq . "\n";
+  print "txsignal.value " . $txsignal . "\n";
+  print "acttimeout.value " . $acttimeout . "\n";
+  print "noisefloor.value " . $noisefloor . "\n";
+  print "txrate.value " . $txrate . "\n";
+  print "rxrate.value " . $rxrate . "\n";
+  exit;
+}</pre>
+<p>&nbsp;</p>
+<h2>mikrotikwirelessregistration_</h2>
+<table>
+<tbody>
+<tr>
+<td>Installation:</td>
+<td>Advanced</td>
+</tr>
+<tr>
+<td>Technology Used:</td>
+<td>Telnet (RO Access, Double Login)</td>
+</tr>
+<tr>
+<td>Notes:</td>
+<td>Script is NOT YET 100%. The registration table is not parsed properly. This script will need editing. Patches and/or updates are welcome!</td>
+</tr>
+<tr>
+<td>Sample Graph:</td>
+<td><a href="http://wiki.mikrotik.com/wiki/File:Mikrotikwirelessregistration_.png"><img loading="lazy" alt="Mikrotikwirelessregistration .png" src="http://wiki.mikrotik.com/images/c/ca/Mikrotikwirelessregistration_.png" width="495" height="408"></a></td>
+</tr>
+</tbody>
+</table>
+<p>Script:</p>
+<pre>#!/usr/bin/perl
+###############################################################################
+use diagnostics;
+use Net::Telnet::Cisco;
+use strict;
+use warnings;
+##############################################################################
+my @Output = undef;
+my $TelnetPort = "23";
+my $TelnetUser = "username";
+my $TelnetPass = "password";
+
+###############################################################################
+## Determine Hostname
+my $Host = undef;
+$0 =~ /mikrotikwirelessregistration_(.+)*$/;
+unless ($Host = $1) {
+  exit 2;
+}
+
+###############################################################################
+## Initiate Telnet Session
+my $MT = Net::Telnet::Cisco-&gt;new(Host    =&gt; $Host,
+                                 Port    =&gt; $TelnetPort,
+                                 Prompt  =&gt; '/[\&gt;\#] $/',
+                                 Timeout =&gt; 30);
+if (!defined($MT-&gt;login($TelnetUser . "+ct", $TelnetPass))) {
+  die "Croaking: $MT-&gt;error";
+}
+
+###############################################################################
+## Configuration
+if ($ARGV[0] &amp;&amp; $ARGV[0] eq "config") {
+  print "host_name " . $Host . "\n";
+  print "graph_args -l 0 --lower-limit -100 --upper-limit 0\n";
+  print "graph_title Wireless Interface Registrations (Signal Strength)\n";
+  print "graph_vlabel dBm Signal\n";
+  print "graph_category network\n";
+  print "graph_info This graph shows the wireless registration signal strength\n";
+  print "graph_scale no\n";
+  @Output = $MT-&gt;cmd("/interface wireless registration-table print without-paging");
+  foreach my $Line (@Output) {
+    my ($tmp, $number, $interface, $radio, $mac, $ap, $signal, $txrate, $uptime) = split(/\s+/, $Line, 9);
+    if ($interface &amp;&amp; $interface ne "INTERFACE") {
+      print $interface . ".label " . $interface . "\n";
+    }
+  }
+  exit;
+}
+
+###############################################################################
+## Execution
+@Output = $MT-&gt;cmd("/interface wireless registration-table print without-paging");
+foreach my $Line (@Output) {
+  my ($tmp, $number, $interface, $radio, $mac, $ap, $signal, $txrate, $uptime) = split(/\s+/, $Line, 9);
+  if ($interface &amp;&amp; $interface ne "INTERFACE") {
+    if ($signal =~ m/(.\d+)/) {
+      print $interface . ".value " . $1 . "\n";
+    }
+  }
+}
+exit;</pre>
+<p>&#8212;<a title="User:Savage (page does not exist)" href="http://wiki.mikrotik.com/index.php?title=User:Savage&amp;action=edit&amp;redlink=1">Savage</a> 14:02, 14 January 2009 (EET)</p>
+<h2>mikrotikdhcpleases_</h2>
+<table>
+<tbody>
+<tr>
+<td>Installation:</td>
+<td>Advanced</td>
+</tr>
+<tr>
+<td>Technology Used:</td>
+<td>API (PHP)</td>
+</tr>
+<tr>
+<td>Notes:</td>
+<td>Produces a graph which shows the number of active leases for each DHCP server. Assumes that the DHCP servers are sensibly named! &#8220;server 1&#8221; and &#8220;server1&#8221; are treated as the same server!</td>
+</tr>
+<tr>
+<td>Sample Graph:</td>
+<td><a href="http://wiki.mikrotik.com/wiki/File:Dhcpleases.png"><img loading="lazy" alt="Dhcpleases.png" src="http://wiki.mikrotik.com/images/e/e6/Dhcpleases.png" width="501" height="307"></a></td>
+</tr>
+</tbody>
+</table>
+<p>Script:</p>
+<pre>#!/usr/bin/php
+&lt;?php
+
+// Change the following path as appropriate
+require('/var/www/html/ros/routeros_api.class.php');
+
+$API = new routeros_api();
+
+// debug
+$API-&gt;debug = false;
+
+// Work out which hostname we're connecting to.
+$hostname = explode("_",$argv[0],2);
+
+if (isset($hostname[1])) {
+  $hostname = $hostname[1];
+} else {
+  die("No hostname available");
+}
+
+// First things first, get the information we want to look at
+// change username/password as appropriate
+if ($API-&gt;connect($hostname, 'munin', 'munin')) {
+
+   $API-&gt;write('/ip/dhcp-server/getall');
+   $dhcp_servers = $API-&gt;read();
+
+// Not very optimal - we get the leases even if we don't need them, but it'll do for the moment.
+   $API-&gt;write('/ip/dhcp-server/lease/getall');
+   $dhcp_leases = $API-&gt;read();
+
+   $API-&gt;disconnect();
+
+   $connect = 'yes';
+} else {
+   $connect = 'no (could not connect)';
+}
+
+if ($argc &gt; 1 &amp;&amp; $argv[1] == 'autoconf') {
+  print $connect . "\n";
+  exit;
+}
+
+//Output configuration information
+if ($argc &gt; 1 &amp;&amp; $argv[1] == 'config') {
+  print "host_name $hostname\n";
+  print "graph_args --base 1000 -l 0 -r --lower-limit 0\n";
+  print "graph_title DHCP leases\n";
+  print "graph_vlabel number\n";
+  print "graph_category network\n";
+  print "graph_info This graph shows the number of active leases for each DHCP server\n";
+  print "graph_scale no\n";
+  if (!empty($dhcp_servers)) {
+    foreach ($dhcp_servers as $value) {
+      $nicename=ereg_replace("[^A-Za-z0-9]", "",$value["name"]);
+      print $nicename . ".label " . $value["name"] . "\n";
+    }
+  }
+  exit;
+}
+
+// Exit if we don't have any servers to report on.
+if (empty($dhcp_servers)) {
+  exit;
+}
+
+// Set count for each server to zero.
+foreach ($dhcp_servers as $value) {
+  $dhcp_server_leases[$value["name"]]=0 ;
+}
+
+// Then calculate the count for each server.
+if (!empty($dhcp_leases)) {
+  foreach ($dhcp_leases as $value) {
+    if (array_key_exists("active-server",$value)) {
+      $dhcp_server_leases[$value["active-server"]]+=1;
+    }
+  }
+}
+
+// Finally, print it all out.
+foreach ($dhcp_server_leases as $key =&gt; $value) {
+  print ereg_replace("[^A-Za-z0-9]", "",$key) . ".value " . $value . "\n";
+}
+
+exit;
+
+?&gt;</pre>
+<h2>mikrotikfirewallrules_</h2>
+<table>
+<tbody>
+<tr>
+<td>Installation:</td>
+<td>Advanced</td>
+</tr>
+<tr>
+<td>Technology Used:</td>
+<td>API (PHP)</td>
+</tr>
+<tr>
+<td>Notes:</td>
+<td>Produces a graph which shows the number of active firewall rules for each chain.</td>
+</tr>
+<tr>
+<td>Sample Graph:</td>
+<td><a href="http://wiki.mikrotik.com/wiki/File:Firewallrules.png"><img loading="lazy" alt="Firewallrules.png" src="http://wiki.mikrotik.com/images/c/c0/Firewallrules.png" width="501" height="319"></a></td>
+</tr>
+</tbody>
+</table>
+<p>Script:</p>
+<pre>#!/usr/bin/php
+&lt;?php
+
+require('/var/www/html/ros/routeros_api.class.php');
+
+$API = new routeros_api();
+
+// debug
+$API-&gt;debug = false;
+
+// Work out which hostname we're connecting to.
+$hostname = explode("_",$argv[0],2);
+
+if (isset($hostname[1])) {
+  $hostname = $hostname[1];
+} else {
+  die("No hostname available");
+}
+
+// First things first, get the information we want to look at
+if ($API-&gt;connect($hostname, 'munin', 'munin')) {
+
+   $API-&gt;write('/ip/firewall/filter/getall');
+   $firewall_rules = $API-&gt;read();
+
+   $API-&gt;disconnect();
+
+   $rulecount=array();
+
+   foreach ($firewall_rules as $value) {
+
+// Some versions of ROS use disabled=true, others use invalid=true
+     if ((array_key_exists("disabled",$value) &amp;&amp; $value["disabled"] == 'false') ||
+     (array_key_exists("invalid",$value) &amp;&amp; $value["invalid"] == 'false')) {
+       if (array_key_exists($value["chain"],$rulecount)) {
+         $rulecount[$value["chain"]] += 1;
+       } else {
+         $rulecount[$value["chain"]] = 1;
+       }
+     }
+   }
+
+   $connect = 'yes';
+} else {
+   $connect = 'no (could not connect)';
+}
+
+if ($argc &gt; 1 &amp;&amp; $argv[1] == 'autoconf') {
+  print $connect . "\n";
+  exit;
+}
+
+if ($argc &gt; 1 &amp;&amp; $argv[1] == 'config') {
+  print "host_name $hostname\n";
+  print "graph_args --base 1000 -l 0 -r --lower-limit 0\n";
+  print "graph_title Firewall rules\n";
+  print "graph_vlabel number\n";
+  print "graph_category network\n";
+  print "graph_info This graph shows the number of active firewall rules in each chain\n";
+  print "graph_scale no\n";
+
+  if (!empty($rulecount)) {
+    foreach ($rulecount as $key =&gt; $value) {
+      print $key . ".label " . $key . "\n";
+    }
+  }
+  exit;
+}
+
+if (empty($rulecount)) {
+  exit;
+}
+
+foreach ($rulecount as $key =&gt; $value) {
+  print $key . ".value " . $value . "\n";
+}
+
+exit;
+
+?&gt;</pre>
+<h2>mikrotikfirewallcount_</h2>
+<table>
+<tbody>
+<tr>
+<td>Installation:</td>
+<td>Advanced</td>
+</tr>
+<tr>
+<td>Technology Used:</td>
+<td>API (PHP)</td>
+</tr>
+<tr>
+<td>Notes:</td>
+<td>Produces a graph which shows the number of packets for specified firewall rules. Packets matching a firewall rule are graphed when the comments field for the rule starts &#8220;GRAPH &#8211; &#8220;. The end of the line is used to label the points (e.g. &#8220;GRAPH &#8211; Dropped packets&#8221;, &#8220;Dropped packets is the label&#8221;). Note that this does not work on ROS 3.25 as for some bizarre reason, rule comments are no longer accessible from the API.</td>
+</tr>
+<tr>
+<td>Sample Graph:</td>
+<td><a href="http://wiki.mikrotik.com/wiki/File:Firewallcount.png"><img loading="lazy" alt="Firewallcount.png" src="http://wiki.mikrotik.com/images/5/53/Firewallcount.png" width="501" height="295"></a></td>
+</tr>
+</tbody>
+</table>
+<p>Script:</p>
+<pre>#!/usr/bin/php
+&lt;?php
+
+require('/var/www/html/ros/routeros_api.class.php');
+
+$API = new routeros_api();
+
+// debug
+$API-&gt;debug = false;
+
+// Work out which hostname we're connecting to.
+$hostname = explode("_",$argv[0],2);
+
+if (isset($hostname[1])) {
+  $hostname = $hostname[1];
+} else {
+  die("No hostname available");
+}
+
+// First things first, get the information we want to look at
+if ($API-&gt;connect($hostname, 'munin', 'munin')) {
+
+   $API-&gt;write('/ip/firewall/filter/getall');
+   $firewall_rules = $API-&gt;read();
+
+   $API-&gt;disconnect();
+
+   $graphme=array();
+
+   foreach ($firewall_rules as $value) {
+     if (array_key_exists("comment",$value)) {
+       $comment = explode(" - ",$value["comment"]);
+       if ($comment[0] == "GRAPH" &amp;&amp; isset($comment[1])) {
+         $id=ereg_replace("[^A-Za-z0-9]", "",$value[".id"]);
+         $graphme[$id]["name"]=$comment[1];
+         $graphme[$id]["packets"]=$value["packets"];
+       }
+     }
+   }
+
+   $connect = 'yes';
+} else {
+   $connect = 'no (could not connect)';
+}
+
+if ($argc &gt; 1 &amp;&amp; $argv[1] == 'autoconf') {
+  print $connect . "\n";
+  exit;
+}
+
+if ($argc &gt; 1 &amp;&amp; $argv[1] == 'config') {
+  print "host_name $hostname\n";
+  print "graph_args --base 1000 -l 0 -r --lower-limit 0\n";
+  print "graph_title Logged packets \n";
+  print "graph_vlabel number\n";
+  print "graph_category firewall\n";
+  print "graph_info This graph shows the number of packets for logged firewall rules\n";
+  print "graph_scale no\n";
+
+  if (!empty($graphme)) {
+    foreach ($graphme as $key =&gt; $value) {
+      $id=ereg_replace("[^A-Za-z0-9]", "",$key);
+      print $id . ".label " . $value["name"] . "\n";
+      print $id . ".type COUNTER\n";
+    }
+  }
+  exit;
+}
+
+// If there's nothing to graph, don't bother.
+if (empty($graphme)) {
+  exit;
+}
+
+foreach ($graphme as $key =&gt; $value) {
+  print $key . ".value " . $value["packets"] . "\n";
+}
+
+exit;
+
+?&gt;</pre>
+<h2>mikrotikifrate_</h2>
+<table>
+<tbody>
+<tr>
+<td>Installation:</td>
+<td>Advanced</td>
+</tr>
+<tr>
+<td>Technology Used:</td>
+<td>API (PHP)</td>
+</tr>
+<tr>
+<td>Notes:</td>
+<td>This graph shows the incoming and outgoing transfer rate of a specified interface. Uses PHP API.Tested on v3.30, v4.6, v5.0beta2.</td>
+</tr>
+<tr>
+<td>Usage:</td>
+<td>As above, except you also need to specify the name of the monitored interface in the filename.</td>
+</tr>
+<tr>
+<td>Filename syntax:</td>
+<td><b>mikrotikifrate_hostname_interfacename</b></td>
+</tr>
+<tr>
+<td>Filename example:</td>
+<td><i>mikrotikifrate_example.changeip.net_ether1</i></td>
+</tr>
+<tr>
+<td>Sample Graph:</td>
+<td><a href="http://wiki.mikrotik.com/wiki/File:Ifrate.png"><img loading="lazy" alt="Ifrate.png" src="http://wiki.mikrotik.com/images/5/56/Ifrate.png" width="503" height="292"></a></td>
+</tr>
+</tbody>
+</table>
+<p>Script:</p>
+<pre>#!/usr/bin/php
+&lt;?php
+
+// Change the following path as appropriate
+require('/var/www/html/ros/routeros_api.class.php');
+
+$API = new routeros_api();
+
+// debug
+$API-&gt;debug = false;
+
+// Work out hostname and interface name
+$param = explode("_",$argv[0],3);
+
+if (isset($param[1])) {
+  $hostname = $param[1];
+} else {
+  die("No hostname available. Filename should be like: mikrotikifrate_example.changeip.net_ether1");
+}
+
+if (isset($param[2])) {
+  $ifname = $param[2];
+} else {
+  die("No interface name available. Filename should be like: mikrotikifrate_example.changeip.net_ether1");
+}
+
+// change username/password as appropriate
+if ($API-&gt;connect($hostname, 'munin', 'munin')) {
+
+   $API-&gt;write('/interface/print',false);
+   $API-&gt;write('=stats=');
+
+   $READ = $API-&gt;read(false);
+   $interfaces = $API-&gt;parse_response($READ);
+
+   $API-&gt;disconnect();
+
+   $connect = 'yes';
+} else {
+   $connect = 'no (could not connect)';
+}
+
+if ($argc &gt; 1 &amp;&amp; $argv[1] == 'autoconf') {
+  print $connect . "\n";
+  exit;
+}
+
+// Output configuration information
+if ($argc &gt; 1 &amp;&amp; $argv[1] == 'config') {
+  print "host_name $hostname\n";
+  print "graph_args --base 1000\n";
+  print "graph_title $ifname traffic\n";
+  print "graph_vlabel bits per second\n";
+  print "graph_category network\n";
+  print "graph_info This graph shows the incoming and outgoing traffic rate of an interface\n";
+  print "in.label received\n";
+  print "in.type DERIVE\n";
+  print "in.draw AREA\n";
+  print "in.min 0\n";
+  print "in.cdef in,8,*\n";
+  print "out.label sent\n";
+  print "out.type DERIVE\n";
+  print "out.draw LINE1\n";
+  print "out.min 0\n";
+  print "out.cdef out,8,*\n";
+
+  exit;
+}
+
+// Exit if we don't have any servers to report on.
+if (empty($interfaces)) {
+  exit;
+}
+
+// Finally, print it all out.
+    foreach ($interfaces as $interface)
+    {
+	if ($interface['name']==$ifname)
+	{
+	    //print_r($interface);
+	    $bytes = explode("/", $interface['bytes']);
+	    print ("in.value ") . $bytes[0] . "\n";
+	    print ("out.value ") . $bytes[1] . "\n";
+	}
+    }
+
+exit;
+
+?&gt;</pre>
+<p>&nbsp;</p>
+<h2>mikrotikwirelessconnected_</h2>
+<table>
+<tbody>
+<tr>
+<td>Installation:</td>
+<td>Easy to Intermediate</td>
+</tr>
+<tr>
+<td>Technology Used:</td>
+<td>Telnet (RO Access, Single Login)</td>
+</tr>
+<tr>
+<td>Notes:</td>
+<td>This chart shows the number of clients connected to each wireless interface.Tested on v3.30, v4.9.</td>
+</tr>
+<tr>
+<td>Usage:</td>
+<td>As above, except you also need to specify more than 9 interfaces.</td>
+</tr>
+<tr>
+<td>Filename syntax:</td>
+<td><b>mikrotikwirelessconnected_hostname</b></td>
+</tr>
+<tr>
+<td>Filename example:</td>
+<td><i>mikrotikwirelessconnected_ap1.domain.ext</i></td>
+</tr>
+<tr>
+<td>Sample Graph:</td>
+<td><a href="http://wiki.mikrotik.com/wiki/File:Graph-mkwireless_host-day.png"><img loading="lazy" alt="Graph-mkwireless host-day.png" src="http://wiki.mikrotik.com/images/9/92/Graph-mkwireless_host-day.png" width="495" height="307"></a></td>
+</tr>
+</tbody>
+</table>
+<p>Script:</p>
+<pre>#!/usr/bin/perl
+###############################################################################
+use diagnostics;
+use Net::Telnet::Cisco;
+use strict;
+use warnings;
+##############################################################################
+my $TelnetPort = "23";
+my $TelnetUser = "munin";
+my $TelnetPass = "password";
+
+###############################################################################
+## Determine Hostname
+my $Host = undef;
+$0 =~ /mikrotikwirelessconnected_(.+)*$/;
+unless ($Host = $1) {
+  exit 2;
+}
+
+###############################################################################
+## Initiate Telnet Session
+my $MT = Net::Telnet::Cisco-&gt;new(Host    =&gt; $Host,
+                                 Port    =&gt; $TelnetPort,
+                                 Prompt  =&gt; '/[\&gt;\#] $/',
+                                 Timeout =&gt; 30);
+
+###############################################################################
+## Configuration
+if ($ARGV[0] &amp;&amp; $ARGV[0] eq "config") {
+  print "host_name " . $Host . "\n";
+  print "graph_args -l 0 --lower-limit 0 --upper-limit 40\n";
+  print "graph_title Wireless clients in " . $Host . " \n";
+  print "graph_vlabel Number of clients\n";
+  print "graph_category network\n";
+  print "graph_info This graph shows the number of clients connected at the interfaces Wireless\n";
+  # Pega num interfaces para grafico
+  if (!defined($MT-&gt;login($TelnetUser . "+ct", $TelnetPass))) {
+    die "Croaking: $MT-&gt;error";
+    } else {
+      # Pega o numero de interfaces na AP
+	  # Gets the number of interfaces in AP
+      my @interfaces = $MT-&gt;cmd("/interface wireless print count-only\nD\n");
+      my ($count,$int,$cli_online,$inter_number) = undef;
+
+      $count = 0;
+      foreach my $Line (@interfaces) {
+        if ( $Line =~ m/([0-9]\n)/ &amp;&amp; $count&lt;1 ){
+          $int = $1;
+          $count = $count+1;
+        }
+      }
+
+      print "graph_order";
+      $inter_number = 1;
+      for ($count=1;$count&lt;=$int;$count++){
+          print " cl_on_wlan" . $inter_number ."";
+          $inter_number = $count +1;
+      }
+      print "\n";
+
+      for ($count=1;$count&lt;=$int;$count++){
+        $inter_number = $count ;
+        print "cl_on_wlan" . $inter_number . ".warning 25\n";
+        print "cl_on_wlan" . $inter_number . ".critical 30\n";
+        print "cl_on_wlan" . $inter_number . ".label WLAN". $inter_number . "\n";
+        print "cl_on_wlan" . $inter_number . ".info WIRELESS LAN " . $inter_number . "\n";
+      }
+
+    }
+  exit;
+}
+
+###############################################################################
+## Execution
+if (!defined($MT-&gt;login($TelnetUser . "+ct", $TelnetPass))) {
+  die "Croaking: $MT-&gt;error";
+  } else {
+
+  # Pega o numero de interfaces na AP
+  # Gets the number of interfaces in AP
+  my @interfaces = $MT-&gt;cmd("/interface wireless print count-only\nD\n");
+  my ($count,$int) = undef;
+
+  $count = 0;
+  foreach my $Line (@interfaces) {
+  if ( $Line =~ m/([0-9]\n)/ &amp;&amp; $count&lt;1 ){
+        $int = $1;
+        $count = $count+1;
+    }
+  }
+
+# Pega o número de clientes para cada interface
+# Gets the number of customers for each interface
+for ($count = 0; $count &lt; $int; $count++) {
+  my @Output = $MT-&gt;cmd("/interface wireless monitor " . $count . " once\nD\n");
+  my ($rest, $tmp, $cli_online, $inter_number, $cl_on_wlan14) = undef;
+  foreach my $Line (@Output) {
+  # Pega clientes registrados
+    if ($Line =~ /registered-clients/ &amp;&amp; $Line =~ m/(\d+)/) {
+        $cli_online = $1;
+        $inter_number = $count+1;
+        print "cl_on_wlan" . $inter_number . ".value " . $1 . "\n";
+    }
+  }
+  print "cl_on_wlan" . $inter_number . ".value " . $cli_online . "\n";
+  }
+  exit;
+}
+</pre>
+<p>REFERENCE : MikroTik wiki </p>
+<div class="post-ratings" data-post="344">
+<div class="rating" data-post="344" data-rating="5" data-readonly="0"></div>
+<div class="rating-meta">
+<strong>5.00</strong> avg. rating (<strong>94</strong>% score) - <strong class="votes">1</strong> vote	</div>
+</div>
+<footer>
+<p></p>
+<p>Posted Under: <a href="/category/linux/" rel="category tag">Linux</a>, <a href="/category/mikrotik/" rel="category tag">MikroTik</a></p>
+<section class="row">
+<div class="twelve columns">
+<div class="panel author-box">
+<a class="th"><img alt="" src="https://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=55&#038;d=mm&#038;r=g" srcset="http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=110&#038;d=mm&#038;r=g 2x" class="author_gravatar left  avatar-55 photo" height="55" width="55" loading="lazy"></a>
+<h5>About <a href="https://plus.google.com/103839803047317952696" title="Visit vaheeD&#8217;s website" rel="author external">vaheeD</a>
+</h5>
+<p>
+</p>
+</div>
+</div>
+</section>
+
+
+<div id="respond" class="comment-respond">
+<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/mikrotik-monitoring-with-munin/#respond" style="display:none;">Cancel reply</a></small>
+</h3>
+<form action="/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p>
+<p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p>
+<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200"></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="344" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>
+<div style="text-align:center; font-style:italic; font-size:12px;">Protected by <a href="http://boliquan.com/wp-anti-spam/" target="_blank">WP Anti Spam</a>
+</div>
+</form> </div>
+</footer>
+</article>
+<hr>
+</div>
+
+
+<aside class="three columns">
+<div>
+<form method="get" id="searchform" action="/">
+<div class="row">
+<div class="twelve columns">
+<div class="row collapse">
+<div class="eight mobile-three columns">
+<input type="text" name="s" id="s" placeholder="Search">
+</div>
+<div class="four mobile-one columns">
+<input type="submit" class="postfix button expand" name="submit" id="searchsubmit" value="Search">
+</div>
+</div>
+</div>
+</div>
+</form>
+</div>
+<div>
+<h5>Categories</h5>
+<ul>
+<li class="cat-item cat-item-17">
+<a href="/category/cisco/">Cisco</a>
+</li>
+<li class="cat-item cat-item-6">
+<a href="/category/linux/">Linux</a>
+</li>
+<li class="cat-item cat-item-8">
+<a href="/category/macosx/">Macosx</a>
+</li>
+<li class="cat-item cat-item-7">
+<a href="/category/mikrotik/">MikroTik</a>
+</li>
+<li class="cat-item cat-item-10">
+<a href="/category/network/">Network</a>
+</li>
+<li class="cat-item cat-item-20">
+<a href="/category/openstack/">openstack</a>
+</li>
+<li class="cat-item cat-item-11">
+<a href="/category/security/">Security</a>
+</li>
+<li class="cat-item cat-item-1">
+<a href="/category/uncategorized/">Uncategorized</a>
+</li>
+</ul>
+</div>
+</aside>
+
+</div>
+
+
+<footer class="row">
+<div class="twelve columns">
+<ul class="link-list">
+</ul>
+</div>
+</footer>
+
+<div id="foot">
+<strong>vaheeD.NET</strong> | linux, mikrotik, macosx | 2012, 2013</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="a2e5b76ff00706a75d4b46bf-text/javascript" src="//vjs.zencdn.net/5.9.2/video.js?ver=1.0.2" id="videojs-js"></script>
+<script type="a2e5b76ff00706a75d4b46bf-text/javascript" src="/wp-content/plugins/videojs-hls-player/videojs-contrib-hls/videojs-contrib-hls.min.js?ver=1.0.2" id="videojs-hls-js"></script>
+<script type="a2e5b76ff00706a75d4b46bf-text/javascript" src="/wp-content/plugins/videojs-hls-player/videojs-airplay/videojs.airplay.js?ver=1.0.2" id="videojs-airplay-js"></script>
+<script type="a2e5b76ff00706a75d4b46bf-text/javascript" src="/wp-content/plugins/videojs-hls-player/videojs-hls-player.js?ver=1.0.2" id="videojs-custom-js"></script>
+<script type="a2e5b76ff00706a75d4b46bf-text/javascript" src="/wp-includes/js/jquery/suggest.min.js?ver=1.1-20110113" id="suggest-js"></script>
+<script type="a2e5b76ff00706a75d4b46bf-text/javascript" id="wp-search-suggest-js-extra">
+/* <![CDATA[ */
+var wpss_options = {"url":"http:\/\/vaheed.net\/wp-admin\/admin-ajax.php","nonce":"ffc31e8139","ajaxurl":"http:\/\/vaheed.net\/wp-admin\/admin-ajax.php?action=wp-search-suggest&_wpnonce=9c0d5b0c5c"};
+/* ]]> */
+</script>
+<script type="a2e5b76ff00706a75d4b46bf-text/javascript" src="/wp-content/plugins/wp-search-suggest/js/wpss-search-suggest.js?ver=5" id="wp-search-suggest-js"></script>
+<script type="a2e5b76ff00706a75d4b46bf-text/javascript" src="/wp-content/themes/drewsymo-Foundation-3b62be5/javascripts/foundation.min.js?ver=1.0" id="foundation-js"></script>
+<script type="a2e5b76ff00706a75d4b46bf-text/javascript" src="/wp-content/themes/drewsymo-Foundation-3b62be5/javascripts/app.js?ver=1.0" id="app-js"></script>
+<script type="a2e5b76ff00706a75d4b46bf-text/javascript" id="post-ratings-js-extra">
+/* <![CDATA[ */
+var post_ratings = {"ajaxURL":"http:\/\/vaheed.net\/wp-admin\/admin-ajax.php","nonce":"a8b298b24a","path":"http:\/\/vaheed.net\/wp-content\/plugins\/post-ratings\/assets\/images\/","number":"5"};
+/* ]]> */
+</script>
+<script type="a2e5b76ff00706a75d4b46bf-text/javascript" src="/wp-content/plugins/post-ratings/js/post-ratings.js?ver=3.0" id="post-ratings-js"></script>
+<script type="a2e5b76ff00706a75d4b46bf-text/javascript" src="/wp-content/plugins/post-ratings/assets/jquery.raty.js?ver=3.0" id="post-ratings-raty-js"></script>
+<script type="a2e5b76ff00706a75d4b46bf-text/javascript" src="/wp-includes/js/wp-embed.min.js?ver=5.7.2" id="wp-embed-js"></script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="a2e5b76ff00706a75d4b46bf-|49" defer></script>
+</body>
+</html>

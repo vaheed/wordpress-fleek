@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-US"
+	prefix="og: https://ogp.me/ns#" > <![endif]--><!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en-US"
+	prefix="og: https://ogp.me/ns#" > <![endif]--><!--[if IE 8]>    <html class="no-js lt-ie9" lang="en-US"
+	prefix="og: https://ogp.me/ns#" > <![endif]--><!--[if gt IE 8]><!--><html class="no-js" lang="en-US" prefix="og: https://ogp.me/ns#"> <!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="pingback" href="/xmlrpc.php">
+
+<meta name="viewport" content="width=device-width">
+
+<title>Tunnel between two mikroTik | vaheeD khoshnouD</title>
+<meta name="description" content="Tunnel between two mikroTik">
+<link rel="canonical" href="http://Tunnel%20between%20two%20mikroTik/">
+<meta property="og:site_name" content="vaheeD khoshnouD | linux, mikrotik, macosx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tunnel between two mikroTik | vaheeD khoshnouD">
+<meta property="og:description" content="Tunnel between two mikroTik">
+<meta property="og:url" content="http://Tunnel%20between%20two%20mikroTik">
+<meta property="article:published_time" content="2015-08-24T06:23:00Z">
+<meta property="article:modified_time" content="2015-08-24T06:38:51Z">
+<meta property="twitter:card" content="summary">
+<meta property="twitter:domain" content="vaheed.net">
+<meta property="twitter:title" content="Tunnel between two mikroTik | vaheeD khoshnouD">
+<meta property="twitter:description" content="Tunnel between two mikroTik">
+<script type="application/ld+json" class="aioseo-schema">
+			{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebSite","@id":"http:\/\/vaheed.net\/#website","url":"http:\/\/vaheed.net\/","name":"vaheeD khoshnouD","description":"linux, mikrotik, macosx","publisher":{"@id":"http:\/\/vaheed.net\/#organization"}},{"@type":"Organization","@id":"http:\/\/vaheed.net\/#organization","name":"vaheeD khoshnouD","url":"http:\/\/vaheed.net\/"},{"@type":"BreadcrumbList","@id":"http:\/\/vaheed.net\/tunnel-between-two-mikrotik\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"http:\/\/vaheed.net\/#listItem","position":"1","item":{"@id":"http:\/\/vaheed.net\/#item","name":"Home","description":"vaheeD khoshnouD | linux, mikrotik, macosx","url":"http:\/\/vaheed.net\/"},"nextItem":"http:\/\/vaheed.net\/tunnel-between-two-mikrotik\/#listItem"},{"@type":"ListItem","@id":"http:\/\/vaheed.net\/tunnel-between-two-mikrotik\/#listItem","position":"2","item":{"@id":"http:\/\/vaheed.net\/tunnel-between-two-mikrotik\/#item","name":"Tunnel between two mikroTik","description":"Tunnel between two mikroTik","url":"http:\/\/vaheed.net\/tunnel-between-two-mikrotik\/"},"previousItem":"http:\/\/vaheed.net\/#listItem"}]},{"@type":"Person","@id":"http:\/\/vaheed.net\/author\/vaheed\/#author","url":"http:\/\/vaheed.net\/author\/vaheed\/","name":"vaheeD khoshnouD","image":{"@type":"ImageObject","@id":"http:\/\/vaheed.net\/tunnel-between-two-mikrotik\/#authorImage","url":"http:\/\/1.gravatar.com\/avatar\/4ef8c65e8d3633adf28103cadb4591c2?s=96&d=mm&r=g","width":"96","height":"96","caption":"vaheeD khoshnouD"}},{"@type":"WebPage","@id":"http:\/\/vaheed.net\/tunnel-between-two-mikrotik\/#webpage","url":"http:\/\/vaheed.net\/tunnel-between-two-mikrotik\/","name":"Tunnel between two mikroTik | vaheeD khoshnouD","description":"Tunnel between two mikroTik","inLanguage":"en-US","isPartOf":{"@id":"http:\/\/vaheed.net\/#website"},"breadcrumb":{"@id":"http:\/\/vaheed.net\/tunnel-between-two-mikrotik\/#breadcrumblist"},"author":"http:\/\/vaheed.net\/tunnel-between-two-mikrotik\/#author","creator":"http:\/\/vaheed.net\/tunnel-between-two-mikrotik\/#author","datePublished":"2015-08-24T06:23:00+03:30","dateModified":"2015-08-24T06:38:51+03:30"},{"@type":"Article","@id":"http:\/\/vaheed.net\/tunnel-between-two-mikrotik\/#article","name":"Tunnel between two mikroTik | vaheeD khoshnouD","description":"Tunnel between two mikroTik","headline":"Tunnel between two mikroTik","author":{"@id":"http:\/\/vaheed.net\/author\/vaheed\/#author"},"publisher":{"@id":"http:\/\/vaheed.net\/#organization"},"datePublished":"2015-08-24T06:23:00+03:30","dateModified":"2015-08-24T06:38:51+03:30","articleSection":"MikroTik","mainEntityOfPage":{"@id":"http:\/\/vaheed.net\/tunnel-between-two-mikrotik\/#webpage"},"isPartOf":{"@id":"http:\/\/vaheed.net\/tunnel-between-two-mikrotik\/#webpage"}}]}
+		</script>
+<script type="60c3b5309c67950aad7b477d-text/javascript">
+			window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+			ga('create', "UA-3072201-3", 'auto');
+			ga('send', 'pageview');
+		</script>
+<script async src="https://www.google-analytics.com/analytics.js" type="60c3b5309c67950aad7b477d-text/javascript"></script>
+
+<link rel="dns-prefetch" href="//vjs.zencdn.net">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//s.w.org">
+<link rel="alternate" type="application/rss+xml" title="vaheeD khoshnouD &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="vaheeD khoshnouD &raquo; Comments Feed" href="/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="vaheeD khoshnouD &raquo; Tunnel between two mikroTik Comments Feed" href="/tunnel-between-two-mikrotik/feed/">
+<link rel="publisher" href="https://plus.google.com/103839803047317952696">
+<script type="60c3b5309c67950aad7b477d-text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/vaheed.net\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.7.2"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="videojs-css" href="//vjs.zencdn.net/5.9.2/video-js.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="videojs-style-css" href="/wp-content/plugins/videojs-hls-player/videojs-hls-player.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="videojs-airplay-css" href="/wp-content/plugins/videojs-hls-player/videojs-airplay/videojs.airplay.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="wp-search-suggest-css" href="/wp-content/plugins/wp-search-suggest/css/wpss-search-suggest.css?ver=5" type="text/css" media="all">
+<link rel="stylesheet" id="foundation-css" href="/wp-content/themes/drewsymo-Foundation-3b62be5/stylesheets/foundation.min.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="app-css" href="/wp-content/themes/drewsymo-Foundation-3b62be5/style.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C300&#038;ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="post-ratings-raty-css" href="/wp-content/plugins/post-ratings/assets/jquery.raty.css?ver=3.0" type="text/css" media="all">
+<link rel="stylesheet" id="wp-author-bio-css" href="/wp-content/plugins/wp-about-author/wp-about-author.css?ver=5.7.2" type="text/css" media="all">
+<script type="60c3b5309c67950aad7b477d-text/javascript" src="/wp-includes/js/jquery/jquery.min.js?ver=3.5.1" id="jquery-core-js"></script>
+<script type="60c3b5309c67950aad7b477d-text/javascript" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+<script type="60c3b5309c67950aad7b477d-text/javascript" src="//vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js?ver=1.0.2" id="videojs-ie8-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/712">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 5.7.2">
+<link rel="shortlink" href="/?p=712">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Ftunnel-between-two-mikrotik%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Ftunnel-between-two-mikrotik%2F&#038;format=xml">
+
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body class="post-template-default single single-post postid-712 single-format-standard">
+<header class="row">
+<hgroup class="site-title twelve columns">
+<h1><a href="/" title="vaheeD khoshnouD" rel="home">vaheeD khoshnouD</a></h1>
+<h3 class="subheader">linux, mikrotik, macosx</h3>
+</hgroup>
+<div class="twelve columns"><ul class="nav-bar"><li class="page_item page-item-7"><a href="/about-me/">About Me</a></li></ul></div>
+</header>
+
+<script type="60c3b5309c67950aad7b477d-text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//ns1.faratar.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//ns1.faratar.org/piwik/piwik.php?idsite=1" style="border:0;" alt=""></p></noscript>
+
+
+<div class="row">
+
+<div class="nine columns" role="content">
+<article>
+<header>
+<hgroup>
+<h2><a href="/tunnel-between-two-mikrotik/" title="Permalink to Tunnel between two mikroTik" rel="bookmark">Tunnel between two mikroTik</a></h2>
+<h6>Written by <a href="https://plus.google.com/103839803047317952696" title="Visit vaheeD&#8217;s website" rel="author external">vaheeD</a> on August 24, 2015</h6>
+</hgroup>
+</header>
+<div class="post-ratings" data-post="712">
+<div class="rating" data-post="712" data-rating="5" data-readonly="0"></div>
+<div class="rating-meta">
+<strong>5.00</strong> avg. rating (<strong>96</strong>% score) - <strong class="votes">2</strong> votes	</div>
+</div>
+<p><span id="more-712"></span></p>
+<p>&nbsp;</p>
+<p>You need two mikrotik for this example and many many client :D</p>
+<p>In this case you need &#8230;<br>
+1) two mikrotik connect to the internet<br>
+2) just one interface<br>
+3) Just have IP address for connecting to internet and Default Gateway<br>
+4)Copy and past :D</p>
+<p>Now start with MT-01</p>
+<p>open terminal and paste&#8230;</p>
+<p><code><br>
+# aug/01/2015 12:00:00 by RouterOS 6.31<br>
+# vaheeD MT-S<br>
+#Please Attention to all comment<br>
+#Secure VPN Server with<br>
+#OVPN SERVER ON PORT 10022 ** You can chenage this port to XXXXX<br>
+#SSTP SERVER ON PORT 1025 ** You can chenage this port to XXXXX<br>
+#WINBOX PORT 6600 ### SSH PORT 2221<br>
+#<br>
+/certificate<br>
+add name=ca-template common-name=myCa key-usage=key-cert-sign,crl-sign<br>
+sign ca-template name=myCa<br>
+/ip ipsec proposal<br>
+set [ find default=yes ] enc-algorithms=3des,aes-128-cbc<br>
+/ip pool<br>
+add name=pool ranges=192.168.88.100-192.168.88.200<br>
+/ppp profile<br>
+set 0 dns-server=8.8.8.8,4.2.2.1 local-address=192.168.88.1 remote-address=\<br>
+pool<br>
+set 1 dns-server=8.8.8.8,4.2.2.1 local-address=192.168.88.1 \<br>
+remote-address=pool<br>
+/interface ovpn-server server<br>
+set enabled=yes \<br>
+port=10022<br>
+/interface sstp-server server<br>
+set enabled=yes port=1025<br>
+/ip address<br>
+###CHANGE PUBLIC_IP ADDRESS TO xxx.xxx.xxx.xxx<br>
+#add address=PUBLIC_IP interface=ether1<br>
+add address=192.168.88.1/24 interface=ether1 network=192.168.99.0<br>
+/ip dns<br>
+set allow-remote-requests=yes servers=8.8.8.8,8.8.4.4,4.2.2.1<br>
+/ip firewall mangle<br>
+/ip firewall nat<br>
+add action=masquerade chain=srcnat<br>
+###CHANGE PUBLIC_IP ADDRESS TO xxx.xxx.xxx.xxx<br>
+#add action=src-nat chain=srcnat to-addresses=PUBLIC_IP<br>
+###CHANGE DefaultGateway ADDRESS TO zzz.zzz.zzz.zzz<br>
+#/ip route<br>
+#add distance=1 gateway=DefaultGateway<br>
+/ip service<br>
+set telnet disabled=yes<br>
+set ftp disabled=yes<br>
+set www disabled=yes<br>
+set ssh disabled=yes port=2221<br>
+set winbox port=6600<br>
+set api disabled=yes<br>
+set api-ssl disabled=yes<br>
+/ppp secret<br>
+add name=ppp password=ppp<br>
+###EXPORT CA For Client ###OPTIONAL<br>
+#/certificate export-certificate myCa<br>
+#/certificate export-certificate client1 export-passphrase=xxxxxxxx<br>
+#/certificate export-certificate client2 export-passphrase=xxxxxxxx<br>
+###FINISH SCRIPT.<br>
+</code></p>
+<p>now paste</p>
+<p><code><br>
+/interface ovpn-server server<br>
+set certificate=myca<br>
+</code></p>
+<p>
+Move to MT-02</p>
+<p>****<br>
+now change xxx.xxx.xxx.xxx TO Public ip address MT-01<br>
+****</p>
+<p>open terminal and paste&#8230;</p>
+<p><code><br>
+# aug/01/2015 12:00:00 by RouterOS 6.31<br>
+# vaheeD MT-CS<br>
+#Please Attention to all comment<br>
+#Secure VPN Server with<br>
+#PPTP SERVER With PAP Configuration<br>
+#L2TP SERVER With PresharedKEY : 123456789<br>
+#WEB_PROXY SERVER ON PORT 9090<br>
+#SOCKS_PROXY SERVER ON PORT 10520<br>
+#WINBOX PORT 6600 ### SSH PORT 2221<br>
+#<br>
+### CHANGE xxx.xxx.xxx.xxx TO IP MT-S<br>
+:global vpnserverOUT xxx.xxx.xxx.xxx<br>
+/interface ovpn-client<br>
+add auth=md5 connect-to="$vpnserverOUT" name=\<br>
+ovpn-out1 password=ppp port=10022 user=ppp<br>
+add auth=md5 cipher=aes192 connect-to="$vpnserverOUT" name=\<br>
+ovpn-out2 password=ppp port=10022 user=ppp<br>
+add auth=md5 cipher=aes192 connect-to="$vpnserverOUT" name=\<br>
+ovpn-out3 password=ppp port=10022 user=ppp<br>
+add auth=md5 cipher=aes128 connect-to="$vpnserverOUT" name=\<br>
+ovpn-out4 password=ppp port=10022 user=ppp<br>
+add cipher=aes256 connect-to="$vpnserverOUT" name=\<br>
+ovpn-out5 password=ppp port=10022 user=ppp<br>
+add auth=md5 connect-to="$vpnserverOUT" name=\<br>
+ovpn-out6 password=ppp port=10022 user=ppp<br>
+add cipher=aes128 connect-to="$vpnserverOUT" name=\<br>
+ovpn-out7 password=ppp port=10022 user=ppp<br>
+add auth=md5 cipher=aes128 connect-to="$vpnserverOUT" name=\<br>
+ovpn-out8 password=ppp port=10022 user=ppp<br>
+/ip ipsec proposal<br>
+set [ find default=yes ] enc-algorithms=3des,aes-128-cbc,aes-256-cbc \<br>
+pfs-group=none<br>
+/ip pool<br>
+add name=vpn ranges=192.168.89.100-192.168.89.200<br>
+/ppp profile<br>
+add change-tcp-mss=yes dns-server=192.168.89.1,8.8.8.8 \<br>
+local-address=192.168.89.1 name=VPN remote-address=vpn<br>
+/interface sstp-client<br>
+add connect-to="$vpnserverOUT:1025" disabled=no http-proxy=0.0.0.0:1025 name=\<br>
+sstp-out1 password=ppp pfs=yes profile=default-encryption user=ppp<br>
+add connect-to="$vpnserverOUT:1025" disabled=no http-proxy=0.0.0.0:1025 name=\<br>
+sstp-out2 password=ppp pfs=yes profile=default-encryption user=ppp<br>
+add connect-to="$vpnserverOUT:1025" disabled=no http-proxy=0.0.0.0:1025 name=\<br>
+sstp-out3 password=ppp pfs=yes profile=default-encryption user=ppp<br>
+add connect-to="$vpnserverOUT:1025" disabled=no http-proxy=0.0.0.0:1025 name=\<br>
+sstp-out4 password=ppp pfs=yes profile=default-encryption user=ppp<br>
+add connect-to="$vpnserverOUT:1025" disabled=no http-proxy=0.0.0.0:1025 name=\<br>
+sstp-out5 password=ppp pfs=yes profile=default-encryption user=ppp<br>
+add connect-to="$vpnserverOUT:1025" disabled=no http-proxy=0.0.0.0:1025 name=\<br>
+sstp-out6 password=ppp pfs=yes profile=default-encryption user=ppp<br>
+add connect-to="$vpnserverOUT:1025" disabled=no http-proxy=0.0.0.0:1025 name=\<br>
+sstp-out7 password=ppp pfs=yes profile=default-encryption user=ppp<br>
+add connect-to="$vpnserverOUT:1025" disabled=no http-proxy=0.0.0.0:1025 name=\<br>
+sstp-out8 password=ppp pfs=yes profile=default-encryption user=ppp<br>
+/interface l2tp-server server<br>
+set default-profile=VPN enabled=yes max-mru=1460 max-mtu=1460<br>
+/interface pptp-server server<br>
+set authentication=pap default-profile=VPN enabled=yes max-mru=1460 max-mtu=\<br>
+1460<br>
+/ip address<br>
+###CHANGE PUBLIC_IP ADDRESS TO xxx.xxx.xxx.xxx<br>
+#add address=PUBLIC_IP interface=ether1<br>
+add address=192.168.89.1/24 interface=ether1 network=192.168.89.0<br>
+/ip dns<br>
+set allow-remote-requests=yes cache-max-ttl=1h cache-size=8192KiB \<br>
+max-udp-packet-size=8192 servers=4.2.2.4,8.8.8.8<br>
+/ip firewall address-list<br>
+add address=192.168.0.0/16 list=local<br>
+add address=172.16.0.0/12 list=local<br>
+add address=10.0.0.0/8 list=local<br>
+/ip firewall mangle<br>
+add chain=prerouting comment=accept-internal-network dst-address-list=local<br>
+add chain=output comment=accept-internal-network dst-address-list=local<br>
+add action=mark-routing chain=prerouting new-routing-mark=VPN src-address=\<br>
+192.168.89.0/24<br>
+add action=mark-routing chain=output dst-port=80 new-routing-mark=VPN \<br>
+protocol=tcp<br>
+add action=mark-routing chain=output dst-port=443 new-routing-mark=VPN \<br>
+protocol=tcp<br>
+add action=mark-routing chain=output dst-port=53 new-routing-mark=VPN \<br>
+protocol=udp<br>
+/ip firewall nat<br>
+add action=masquerade chain=srcnat<br>
+add action=redirect chain=dstnat dst-port=53 protocol=udp to-ports=53<br>
+/ip ipsec peer<br>
+add address=0.0.0.0/0 enc-algorithm=3des exchange-mode=main-l2tp \<br>
+generate-policy=port-override local-address=0.0.0.0 secret=123456789<br>
+/ip proxy<br>
+set always-from-cache=yes anonymous=yes cache-administrator=noway! \<br>
+cache-on-disk=yes cache-path=disk1/web-proxy1 enabled=yes parent-proxy=\<br>
+0.0.0.0 port=9090 serialize-connections=yes<br>
+/ip proxy direct<br>
+add dst-address=192.168.0.0/16<br>
+add dst-address=172.16.0.0/16<br>
+add dst-address=10.10.0.0/16<br>
+add dst-host=*.ir<br>
+/ip route<br>
+add comment=OUTPUT distance=1 gateway="ovpn-out1,ovpn-out2,ovpn-out3,ovpn-out4,\<br>
+ovpn-out5,ovpn-out6,ovpn-out7,ovpn-out8,sstp-out1,sstp-out2,sstp-out3,sstp\<br>
+-out4,sstp-out5,sstp-out6,sstp-out7,sstp-out8" routing-mark=VPN<br>
+/ip service<br>
+set telnet disabled=yes<br>
+set ftp disabled=yes<br>
+set www disabled=yes<br>
+set ssh port=2221<br>
+set api disabled=yes<br>
+set winbox port=6600<br>
+/ip socks<br>
+set connection-idle-timeout=5m enabled=yes max-connections=500 port=10520<br>
+/ppp secret<br>
+add name=ppp password=ppp profile=VPN<br>
+###FINISH SCRIPT<br>
+</code></p>
+<p>Client Connect to MT-02 with Public IP address.</p>
+<p>Have a GOOD Day!</p>
+<div class="post-ratings" data-post="712">
+<div class="rating" data-post="712" data-rating="5" data-readonly="0"></div>
+<div class="rating-meta">
+<strong>5.00</strong> avg. rating (<strong>96</strong>% score) - <strong class="votes">2</strong> votes	</div>
+</div>
+<footer>
+<p></p>
+<p>Posted Under: <a href="/category/mikrotik/" rel="category tag">MikroTik</a></p>
+<section class="row">
+<div class="twelve columns">
+<div class="panel author-box">
+<a class="th"><img alt="" src="https://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=55&#038;d=mm&#038;r=g" srcset="http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=110&#038;d=mm&#038;r=g 2x" class="author_gravatar left  avatar-55 photo" height="55" width="55" loading="lazy"></a>
+<h5>About <a href="https://plus.google.com/103839803047317952696" title="Visit vaheeD&#8217;s website" rel="author external">vaheeD</a>
+</h5>
+<p>
+</p>
+</div>
+</div>
+</section>
+
+
+<div id="respond" class="comment-respond">
+<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/tunnel-between-two-mikrotik/#respond" style="display:none;">Cancel reply</a></small>
+</h3>
+<form action="/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p>
+<p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p>
+<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200"></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="712" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>
+<div style="text-align:center; font-style:italic; font-size:12px;">Protected by <a href="http://boliquan.com/wp-anti-spam/" target="_blank">WP Anti Spam</a>
+</div>
+</form> </div>
+</footer>
+</article>
+<hr>
+</div>
+
+
+<aside class="three columns">
+<div>
+<form method="get" id="searchform" action="/">
+<div class="row">
+<div class="twelve columns">
+<div class="row collapse">
+<div class="eight mobile-three columns">
+<input type="text" name="s" id="s" placeholder="Search">
+</div>
+<div class="four mobile-one columns">
+<input type="submit" class="postfix button expand" name="submit" id="searchsubmit" value="Search">
+</div>
+</div>
+</div>
+</div>
+</form>
+</div>
+<div>
+<h5>Categories</h5>
+<ul>
+<li class="cat-item cat-item-17">
+<a href="/category/cisco/">Cisco</a>
+</li>
+<li class="cat-item cat-item-6">
+<a href="/category/linux/">Linux</a>
+</li>
+<li class="cat-item cat-item-8">
+<a href="/category/macosx/">Macosx</a>
+</li>
+<li class="cat-item cat-item-7">
+<a href="/category/mikrotik/">MikroTik</a>
+</li>
+<li class="cat-item cat-item-10">
+<a href="/category/network/">Network</a>
+</li>
+<li class="cat-item cat-item-20">
+<a href="/category/openstack/">openstack</a>
+</li>
+<li class="cat-item cat-item-11">
+<a href="/category/security/">Security</a>
+</li>
+<li class="cat-item cat-item-1">
+<a href="/category/uncategorized/">Uncategorized</a>
+</li>
+</ul>
+</div>
+</aside>
+
+</div>
+
+
+<footer class="row">
+<div class="twelve columns">
+<ul class="link-list">
+</ul>
+</div>
+</footer>
+
+<div id="foot">
+<strong>vaheeD.NET</strong> | linux, mikrotik, macosx | 2012, 2013</div>
+<script type="60c3b5309c67950aad7b477d-text/javascript" src="//vjs.zencdn.net/5.9.2/video.js?ver=1.0.2" id="videojs-js"></script>
+<script type="60c3b5309c67950aad7b477d-text/javascript" src="/wp-content/plugins/videojs-hls-player/videojs-contrib-hls/videojs-contrib-hls.min.js?ver=1.0.2" id="videojs-hls-js"></script>
+<script type="60c3b5309c67950aad7b477d-text/javascript" src="/wp-content/plugins/videojs-hls-player/videojs-airplay/videojs.airplay.js?ver=1.0.2" id="videojs-airplay-js"></script>
+<script type="60c3b5309c67950aad7b477d-text/javascript" src="/wp-content/plugins/videojs-hls-player/videojs-hls-player.js?ver=1.0.2" id="videojs-custom-js"></script>
+<script type="60c3b5309c67950aad7b477d-text/javascript" src="/wp-includes/js/jquery/suggest.min.js?ver=1.1-20110113" id="suggest-js"></script>
+<script type="60c3b5309c67950aad7b477d-text/javascript" id="wp-search-suggest-js-extra">
+/* <![CDATA[ */
+var wpss_options = {"url":"http:\/\/vaheed.net\/wp-admin\/admin-ajax.php","nonce":"ffc31e8139","ajaxurl":"http:\/\/vaheed.net\/wp-admin\/admin-ajax.php?action=wp-search-suggest&_wpnonce=9c0d5b0c5c"};
+/* ]]> */
+</script>
+<script type="60c3b5309c67950aad7b477d-text/javascript" src="/wp-content/plugins/wp-search-suggest/js/wpss-search-suggest.js?ver=5" id="wp-search-suggest-js"></script>
+<script type="60c3b5309c67950aad7b477d-text/javascript" src="/wp-content/themes/drewsymo-Foundation-3b62be5/javascripts/foundation.min.js?ver=1.0" id="foundation-js"></script>
+<script type="60c3b5309c67950aad7b477d-text/javascript" src="/wp-content/themes/drewsymo-Foundation-3b62be5/javascripts/app.js?ver=1.0" id="app-js"></script>
+<script type="60c3b5309c67950aad7b477d-text/javascript" id="post-ratings-js-extra">
+/* <![CDATA[ */
+var post_ratings = {"ajaxURL":"http:\/\/vaheed.net\/wp-admin\/admin-ajax.php","nonce":"a8b298b24a","path":"http:\/\/vaheed.net\/wp-content\/plugins\/post-ratings\/assets\/images\/","number":"5"};
+/* ]]> */
+</script>
+<script type="60c3b5309c67950aad7b477d-text/javascript" src="/wp-content/plugins/post-ratings/js/post-ratings.js?ver=3.0" id="post-ratings-js"></script>
+<script type="60c3b5309c67950aad7b477d-text/javascript" src="/wp-content/plugins/post-ratings/assets/jquery.raty.js?ver=3.0" id="post-ratings-raty-js"></script>
+<script type="60c3b5309c67950aad7b477d-text/javascript" src="/wp-includes/js/wp-embed.min.js?ver=5.7.2" id="wp-embed-js"></script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="60c3b5309c67950aad7b477d-|49" defer></script>
+</body>
+</html>

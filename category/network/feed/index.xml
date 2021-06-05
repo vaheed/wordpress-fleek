@@ -1,0 +1,1514 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Network | vaheeD khoshnouD</title>
+	<atom:link href="/category/network/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>linux, mikrotik, macosx</description>
+	<lastBuildDate>Mon, 18 Aug 2014 16:54:54 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.7.2</generator>
+	<item>
+		<title>Example PAC File</title>
+		<link>/example-pac-file/</link>
+					<comments>/example-pac-file/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Tue, 19 Mar 2013 18:56:14 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Macosx]]></category>
+		<category><![CDATA[Network]]></category>
+		<guid isPermaLink="false">/?p=648</guid>
+
+					<description><![CDATA[<p>Example PAC File The basic for all good PAC files start with a clear and concise coding methodology. It’s possible to achieve the same result using several different methods, both with the PAC file functions available and the flexibility of the JavaScript language. This page includes a PAC file example which has been proven to... </p>
+<p><a class="small button secondary" href="/example-pac-file/">Continue Reading</a></p>
+The post <a href="/example-pac-file/">Example PAC File</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-648"></span></p>
+<h2>Example PAC File</h2>
+<p>The basic for all good PAC files start with a clear and concise coding methodology. It’s possible to achieve the same result using several different methods, both with the PAC file functions available and the flexibility of the JavaScript language.</p>
+<p>This page includes a PAC file example which has been proven to be flexible, easy to update, while still providing accurate results.</p>
+<h3>Features</h3>
+<ul>
+<li>Proxy bypass rules for private IP networks, internal hostnames, and hosts with .local domain extension.
+<ul>
+<li>While the other rules in this example may be optional, most deployments should begin with this code block (lines 3-10).</li>
+</ul>
+</li>
+<li>Example hostname bypass rule.</li>
+<li>Example protocol and URL bypass rule.</li>
+<li>Example machine based IP routing rule.</li>
+<li>Default proxy rule, if all above rules don’t match.</li>
+</ul>
+<h3>Example PAC File</h3>
+<div>
+<div id="highlighter_828293">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td>
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<div>4</div>
+<div>5</div>
+<div>6</div>
+<div>7</div>
+<div>8</div>
+<div>9</div>
+<div>10</div>
+<div>11</div>
+<div>12</div>
+<div>13</div>
+<div>14</div>
+<div>15</div>
+<div>16</div>
+<div>17</div>
+<div>18</div>
+<div>19</div>
+<div>20</div>
+<div>21</div>
+<div>22</div>
+<div>23</div>
+<div>24</div>
+<div>25</div>
+<div>26</div>
+<div>27</div>
+<div>28</div>
+<div>29</div>
+<div>30</div>
+</td>
+<td>
+<div>
+<div><code>function</code> <code>FindProxyForURL(url, host) {</code></div>
+<div></div>
+<div><code>// If the hostname matches, send direct.</code></div>
+<div><code>    </code><code>if</code> <code>(dnsDomainIs(host, </code><code>"intranet.domain.com"</code><code>) ||</code></div>
+<div><code>        </code><code>shExpMatch(host, </code><code>"abcdomain.com"</code><code>))</code></div>
+<div><code>        </code><code>return</code> <code>"DIRECT"</code><code>;</code></div>
+<div></div>
+<div><code>// If the protocol or URL matches, send direct.</code></div>
+<div><code>    </code><code>if</code> <code>(url.substring(0, 4)==</code><code>"ftp:"</code> <code>||</code></div>
+<div><code>        </code><code>shExpMatch(url, </code><code>"<a href="http://abcdomain.com/folder/">http://abcdomain.com/folder/</a>*"</code><code>))</code></div>
+<div><code>        </code><code>return</code> <code>"DIRECT"</code><code>;</code></div>
+<div></div>
+<div><code>// If the requested website is hosted within the internal network, send direct.</code></div>
+<div><code>    </code><code>if</code> <code>(isPlainHostName(host) ||</code></div>
+<div><code>        </code><code>shExpMatch(host, </code><code>"*.local"</code><code>) ||</code></div>
+<div><code>        </code><code>isInNet(dnsResolve(host), </code><code>"10.0.0.0"</code><code>, </code><code>"255.0.0.0"</code><code>) ||</code></div>
+<div><code>        </code><code>isInNet(dnsResolve(host), </code><code>"172.16.0.0"</code><code>,  </code><code>"255.240.0.0"</code><code>) ||</code></div>
+<div><code>        </code><code>isInNet(dnsResolve(host), </code><code>"192.168.0.0"</code><code>,  </code><code>"255.255.0.0"</code><code>) ||</code></div>
+<div><code>        </code><code>isInNet(dnsResolve(host), </code><code>"127.0.0.0"</code><code>, </code><code>"255.255.255.0"</code><code>))</code></div>
+<div><code>        </code><code>return</code> <code>"DIRECT"</code><code>;</code></div>
+<div></div>
+<div><code>// If the IP address of the local machine is within a defined</code></div>
+<div><code>// subnet, send to a specific proxy.</code></div>
+<div><code>    </code><code>if</code> <code>(isInNet(myIpAddress(), </code><code>"10.10.5.0"</code><code>, </code><code>"255.255.255.0"</code><code>))</code></div>
+<div><code>        </code><code>return</code> <code>"PROXY 1.2.3.4:8080"</code><code>;</code></div>
+<div></div>
+<div><code>// DEFAULT RULE: All other traffic, use below proxies, in fail-over order.</code></div>
+<div><code>    </code><code>return</code> <code>"PROXY 4.5.6.7:8080; PROXY 7.8.9.10:8080"</code><code>;</code></div>
+<div></div>
+<div><code>}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div>
+<h3>Recommendations</h3>
+<p>When deploying URL and host rules care must be taken to ensure rules are as explicit as possible. The examples below detail how host and URL rules should be implemented.</p>
+<div>
+<div>
+<div id="highlighter_587675">
+<table border="0" cellspacing="0" cellpadding="0">
+<caption>Host Example</caption>
+<tbody>
+<tr>
+<td>
+<div>1</div>
+<div>2</div>
+</td>
+<td>
+<div>
+<div><code>if</code> <code>(dnsDomainIs(host, </code><code>"abcdomain.com"</code><code>))</code></div>
+<div><code>        </code><code>return</code> <code>"DIRECT"</code><code>;</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div>
+<div id="highlighter_446682">
+<table border="0" cellspacing="0" cellpadding="0">
+<caption>URL Example</caption>
+<tbody>
+<tr>
+<td>
+<div>1</div>
+<div>2</div>
+</td>
+<td>
+<div>
+<div><code>if</code> <code>(shExpMatch(url, </code><code>"<a href="http://abcdomain.com/folder/">http://abcdomain.com/folder/</a>*"</code><code>))</code></div>
+<div><code>        </code><code>return</code> <code>"DIRECT"</code><code>;</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h3>Warnings</h3>
+<p>The following code is an example <b><i>which may have unintended consequences</i></b> due to the broad interpretation of using the shExpMatch function, wildcards, and hostnames.</p>
+<div>
+<div id="highlighter_948653">
+<table border="0" cellspacing="0" cellpadding="0">
+<caption>Cautionary Example</caption>
+<tbody>
+<tr>
+<td>
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<div>4</div>
+<div>5</div>
+</td>
+<td>
+<div>
+<div><code>// Would send both of the following requests direct to the Internet:</code></div>
+<div><code>// 1. www.hotmail.com 2. phishing-scam.com?email=someone@hotmail.com</code></div>
+<div></div>
+<div><code>if</code> <code>(shExpMatch(url, </code><code>"*hotmail.com*"</code><code>))</code></div>
+<div><code>        </code><code>return</code> <code>"DIRECT"</code><code>;</code></div>
+<p><code> </code></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/example-pac-file/">Example PAC File</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/example-pac-file/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>ECMP load balancing with masquerade</title>
+		<link>/ecmp-load-balancing-with-masquerade/</link>
+					<comments>/ecmp-load-balancing-with-masquerade/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Sat, 12 Jan 2013 07:32:53 +0000</pubDate>
+				<category><![CDATA[MikroTik]]></category>
+		<category><![CDATA[Network]]></category>
+		<guid isPermaLink="false">/?p=493</guid>
+
+					<description><![CDATA[<p>Introduction This example is improved (different) version of round-robin load balancing example. It adds persistent user sessions, i.e. a particular user would use the same source IP address for all outgoing connections. Quick Start for Impatient Configuration export from the gateway router: / ip address add address=192.168.0.1/24 network=192.168.0.0 broadcast=192.168.0.255 interface=Local add address=10.111.0.2/24 network=10.111.0.0 broadcast=10.111.0.255 interface=wlan2... </p>
+<p><a class="small button secondary" href="/ecmp-load-balancing-with-masquerade/">Continue Reading</a></p>
+The post <a href="/ecmp-load-balancing-with-masquerade/">ECMP load balancing with masquerade</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-493"></span></p>
+<h2>Introduction</h2>
+<p>This example is improved (different) version of round-robin load balancing example. It adds persistent user sessions, i.e. a particular user would use the same source IP address for all outgoing connections.</p>
+<h2>Quick Start for Impatient</h2>
+<p>Configuration export from the gateway router:</p>
+<pre>/ ip address
+add address=192.168.0.1/24 network=192.168.0.0 broadcast=192.168.0.255 interface=Local 
+add address=10.111.0.2/24 network=10.111.0.0 broadcast=10.111.0.255 interface=wlan2
+add address=10.112.0.2/24 network=10.112.0.0 broadcast=10.112.0.255 interface=wlan1
+
+/ ip route
+add dst-address=0.0.0.0/0 gateway=10.111.0.1,10.112.0.1 check-gateway=ping 
+
+/ ip firewall nat 
+add chain=srcnat out-interface=wlan1 action=masquerade
+add chain=srcnat out-interface=wlan2 action=masquerade
+
+/ ip firewall mangle
+add chain=input in-interface=wlan1 action=mark-connection new-connection-mark=wlan1_conn
+add chain=input in-interface=wlan2 action=mark-connection new-connection-mark=wlan2_conn
+add chain=output connection-mark=wlan1_conn action=mark-routing new-routing-mark=to_wla1     
+add chain=output connection-mark=wlan1_conn action=mark-routing new-routing-mark=to_wla2     
+
+/ ip route
+add dst-address=0.0.0.0/0 gateway=10.111.0.1 routing-mark=to_wla1 
+add dst-address=0.0.0.0/0 gateway=10.111.0.2 routing-mark=to_wla2</pre>
+<h2>Explanation</h2>
+<p>First we give a code snippet and then explain what it actually does.</p>
+<h3>IP Addresses</h3>
+<pre>/ ip address 
+add address=192.168.0.1/24 network=192.168.0.0 broadcast=192.168.0.255 interface=Local
+add address=10.111.0.2/24 network=10.111.0.0 broadcast=10.111.0.255 interface=wlan2 
+add address=10.112.0.2/24 network=10.112.0.0 broadcast=10.112.0.255 interface=wlan1</pre>
+<p>The router has two upstream (WAN) interfaces with the addresses of 10.111.0.2/24 and 10.112.0.2/24. The LAN interface has the name &#8220;Local&#8221; and IP address of 192.168.0.1/24.</p>
+<p>&nbsp;</p>
+<h3>NAT</h3>
+<pre>/ ip firewall nat 
+add chain=srcnat out-interface=wlan1 action=masquerade
+add chain=srcnat out-interface=wlan2 action=masquerade</pre>
+<p>As routing decision is already made we just need rules that will fix src-addresses for all outgoing packets. if this packet will leave via wlan1 it will be NATed to 10.112.0.2/24, if via wlan2 then NATed to 10.111.0.2/24</p>
+<p>&nbsp;</p>
+<h3>Routing</h3>
+<pre>/ ip route 
+add dst-address=0.0.0.0/0 gateway=10.111.0.1,10.112.0.1 check-gateway=ping</pre>
+<p>This is typical ECMP (Equal Cost Multi-Path) gateway with check-gateway. ECMP is &#8220;persistent per-connection load balancing&#8221; or &#8220;per-src-dst-address combination load balancing&#8221;. As soon as one of the gateway will not be reachable, check-gateway will remove it from gateway list. And you will have a &#8220;failover&#8221; effect.<br />
+You can use asymmetric bandwidth links also &#8211; for example one link is 2Mbps other 10Mbps. Just use this command to make load balancing 1:5</p>
+<pre>/ ip route 
+add dst-address=0.0.0.0/0 gateway=10.111.0.1,10.112.0.1,10.112.0.1,10.112.0.1,10.112.0.1,10.112.0.1 check-gateway=ping</pre>
+<p>&nbsp;</p>
+<h3>Connections to the router itself</h3>
+<pre>/ ip firewall mangle
+add chain=input in-interface=wlan1 action=mark-connection new-connection-mark=wlan1_conn
+add chain=input in-interface=wlan2 action=mark-connection new-connection-mark=wlan2_conn
+add chain=output connection-mark=wlan1_conn action=mark-routing new-routing-mark=to_wlan1     
+add chain=output connection-mark=wlan1_conn action=mark-routing new-routing-mark=to_wlan2</pre>
+<pre>/ ip route
+add dst-address=0.0.0.0/0 gateway=10.111.0.1 routing-mark=to_wlan1 
+add dst-address=0.0.0.0/0 gateway=10.111.0.2 routing-mark=to_wlan2</pre>
+<p>With all multi-gateway situations there is a usual problem to reach router from public network via one, other or both gateways. Explanations is very simple &#8211; Outgoing packets uses same routing decision as packets that are going trough the router. So reply to a packet that was received via wlan1 might be send out and masqueraded via wlan2.</p>
+<p>To avoid that we need to policy routing those connections.</p>
+<h2>Known Issues</h2>
+<h3>DNS issues</h3>
+<p>ISP specific DNS servers might have custom configuration that treats specific requests from ISP&#8217;s network differently than requests from other network. So in case connection is made via other gateway those sites will not be accessible.</p>
+<p>To avoid that we suggest to use 3rd-party (public) DNS servers, and in case you need ISP specific recourse, create static DNS entry and policy route that traffic to specific gateway.</p>
+<h3>Routing table flushing</h3>
+<p>Every time when something triggers flush of the routing table and ECMP cache is flushed. Connections will be assigned to gateways once again and may or may not be on the same gateway.(in case of 2 gateways there are 50% chance that traffic will start to flow via other gateway).<br />
+If you have fully routed network (clients address can be routed via all available gateway), change of the gateway will have no ill effect, but in case you use masquerade, change of the gateway will result in change of the packet&#8217;s source address and connection will be dropped.<br />
+Routing table flush can be caused by 2 things:</p>
+<p>1) routing table change (dynamic routing protocol update, user manual changes)</p>
+<p>2) every 10 minutes routing table is flushed for security reasons (to avoid possible DoS attacks)</p>
+<p><b>So even if you do not have any changes of routing table, connections may jump to other gateway every 10 minutes</b></p>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/ecmp-load-balancing-with-masquerade/">ECMP load balancing with masquerade</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/ecmp-load-balancing-with-masquerade/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Top 30 Nmap Command Examples</title>
+		<link>/top-30-nmap-command-examples/</link>
+					<comments>/top-30-nmap-command-examples/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Sun, 06 Jan 2013 17:48:54 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Macosx]]></category>
+		<category><![CDATA[Network]]></category>
+		<category><![CDATA[Security]]></category>
+		<guid isPermaLink="false">/?p=400</guid>
+
+					<description><![CDATA[<p>Nmap is short for Network Mapper. It is an open source security tool for network exploration, security scanning and auditing. However, nmap command comes with lots of options that can make the utility more robust and difficult to follow for new users. The purpose of this post is to introduce a user to the nmap... </p>
+<p><a class="small button secondary" href="/top-30-nmap-command-examples/">Continue Reading</a></p>
+The post <a href="/top-30-nmap-command-examples/">Top 30 Nmap Command Examples</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-400"></span><br />
+Nmap is short for Network Mapper. It is an open source security tool for network exploration, security scanning and auditing. However, nmap command comes with lots of options that can make the utility more robust and difficult to follow for new users.</p>
+<p>The purpose of this post is to introduce a user to the nmap command line tool to scan a host and/or network, so to find out the possible vulnerable points in the hosts. You will also learn how to use Nmap for offensive and defensive purposes.</p>
+<h2>More about nmap</h2>
+<p>From the man page:</p>
+<blockquote><p>Nmap (&#8220;Network Mapper&#8221;) is an open source tool for network exploration and security auditing. It was designed to rapidly scan large networks, although it works fine against single hosts. Nmap uses raw IP packets in novel ways to determine what hosts are available on the network, what services (application name and version) those hosts are offering, what operating systems (and OS versions) they are running, what type of packet filters/firewalls are in use, and dozens of other characteristics. While Nmap is commonly used for security audits, many systems and network administrators find it useful for routine tasks such as network inventory, managing service upgrade schedules, and monitoring host or service uptime.</p></blockquote>
+<p>It was originally written by Gordon Lyon and it can answer the following questions easily:</p>
+<ol>
+<li>What computers did you find running on the local network?</li>
+<li>What IP addresses did you find running on the local network?</li>
+<li>What is the operating system of your target machine?</li>
+<li>Find out what ports are open on the machine that you just scanned?</li>
+<li>Find out if the system is infected with malware or virus.</li>
+<li>Search for unauthorized servers or network service on your network.</li>
+<li>Find and remove computers which don&#8217;t meet the organization&#8217;s minimum level of security.</li>
+</ol>
+<h2>Sample setup (LAB)</h2>
+<p>Port scanning may be illegal in some jurisdictions. So setup a lab as follows:</p>
+<pre>                              +---------+
+        +---------+           | Network |         +--------+
+        | server1 |-----------+ swtich  +---------|server2 |
+        +---------+           | (sw0)   |         +--------+
+                              +----+----+
+                                   |
+                                   |
+                         +---------+----------+
+                         | wks01 Linux/OSX    |
+                         +--------------------+</pre>
+<p>Where,</p>
+<ul>
+<li>wks01 is your computer either running Linux/OS X or Unix like operating system. It is used for scanning your local network. The nmap command must be installed on this computer.</li>
+<li>server1 can be powered by Linux / Unix / MS-Windows operating systems. This is an unpatched server. Feel free to install a few services such as a web-server, file server and so on.</li>
+<li>server2 can be powered by Linux / Unix / MS-Windows operating systems. This is a <a title="See how to setup Linux firewall" href="/20-iptables-examples-for-new-administrator/">fully patched server with firewall</a>. Again, feel free to install few services such as a web-server, file server and so on.</li>
+<li>All three systems are connected via switch.</li>
+</ul>
+<h2>How do I install nmap?</h2>
+<p>See:</p>
+<p><a href="/install-nmap-software-for-scanning-network/">Install nmap Network Security Scanner</a></p>
+<h2>#1: Scan a single host or an IP address (IPv4)</h2>
+<pre>### Scan a single ip address ###
+nmap 192.168.1.1
+
+## Scan a host name ###
+nmap server1.vaheed.net
+
+## Scan a host name with more info###
+nmap -v server1.vaheed.net</pre>
+<p>Sample outputs:</p>
+<pre>Starting Nmap 6.25 ( http://nmap.org/ ) at 2013-01-06 20:44 IRST
+Initiating Ping Scan at 20:44
+Scanning 192.168.1.1 [2 ports]
+Completed Ping Scan at 20:44, 0.00s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 20:44
+Completed Parallel DNS resolution of 1 host. at 20:44, 0.25s elapsed
+Initiating Connect Scan at 20:44
+Scanning 192.168.1.1 [1000 ports]
+Discovered open port 53/tcp on 192.168.1.1
+Discovered open port 80/tcp on 192.168.1.1
+Discovered open port 1723/tcp on 192.168.1.1</pre>
+<p>&nbsp;</p>
+<h2>#2: Scan multiple IP address or subnet (IPv4)</h2>
+<pre>nmap 192.168.1.1 192.168.1.2 192.168.1.3
+## works with same subnet i.e. 192.168.1.0/24
+nmap 192.168.1.1,2,3</pre>
+<p>You can scan a range of IP address too:</p>
+<pre>nmap 192.168.1.1-20</pre>
+<p>You can scan a range of IP address using a wildcard:</p>
+<pre>nmap 192.168.1.*</pre>
+<p>Finally, you scan an entire subnet:</p>
+<pre>nmap 192.168.1.0/24</pre>
+<h2>#3: Read list of hosts/networks from a file (IPv4)</h2>
+<p>The -iL option allows you to read the list of target systems using a text file. This is useful to scan a large number of hosts/networks. Create a text file as follows:<br />
+<code>cat &gt; /tmp/test.txt</code><br />
+Sample outputs:</p>
+<pre>server1.vaheed.net
+192.168.1.0/24
+192.168.1.1/24
+10.1.2.3
+localhost</pre>
+<p>The syntax is:</p>
+<pre>nmap -iL /tmp/test.txt</pre>
+<h2>#4: Excluding hosts/networks (IPv4)</h2>
+<p>When scanning a large number of hosts/networks you can exclude hosts from a scan:</p>
+<pre>nmap 192.168.1.0/24 --exclude 192.168.1.5
+nmap 192.168.1.0/24 --exclude 192.168.1.5,192.168.1.254</pre>
+<p>OR exclude list from a file called /tmp/exclude.txt</p>
+<pre>nmap -iL /tmp/scanlist.txt --excludefile /tmp/exclude.txt</pre>
+<h2>#5: Turn on OS and version detection scanning script (IPv4)</h2>
+<pre>nmap -A 192.168.1.254
+nmap -v -A 192.168.1.1
+nmap -A -iL /tmp/scanlist.txt</pre>
+<h2>#6: Find out if a host/network is protected by a firewall</h2>
+<pre>nmap -sA 192.168.1.254
+nmap -sA server1.vaheed.net</pre>
+<h2>#7: Scan a host when protected by the firewall</h2>
+<pre>nmap -PN 192.168.1.1
+nmap -PN server1.vaheed.net</pre>
+<h2>#8: Scan an IPv6 host/address</h2>
+<p>The <kbd>-6</kbd> option enable IPv6 scanning. The syntax is:</p>
+<pre>nmap -6 IPv6-Address-Here
+nmap -6 server1.vaheed.net
+nmap -6 2607:f0d0:1002:51::4
+nmap -v A -6 2607:f0d0:1002:51::4</pre>
+<h2>#9: Scan a network and find out which servers and devices are up and running</h2>
+<p>This is known as host discovery or ping scan:</p>
+<pre>nmap -sP 192.168.1.0/24</pre>
+<p>Sample outputs:</p>
+<pre>Host 192.168.1.1 is up (0.00035s latency).
+MAC Address: BC:AE:C5:C3:16:93 (Unknown)
+Host 192.168.1.2 is up (0.0038s latency).
+MAC Address: 74:44:01:40:57:FB (Unknown)
+Host 192.168.1.5 is up.
+Host nas03 (192.168.1.12) is up (0.0091s latency).
+MAC Address: 00:11:32:11:15:FC (Synology Incorporated)
+Nmap done: 256 IP addresses (4 hosts up) scanned in 2.80 second</pre>
+<h2>#10: How do I perform a fast scan?</h2>
+<pre>nmap -F 192.168.1.1</pre>
+<h2>#11: Display the reason a port is in a particular state</h2>
+<pre>nmap --reason 192.168.1.1
+nmap --reason server1.vaheed.net</pre>
+<h2>#12: Only show open (or possibly open) ports</h2>
+<pre>nmap --open 192.168.1.1
+nmap --open server1.vaheed.net</pre>
+<h2>#13: Show all packets sent and received</h2>
+<pre>nmap --packet-trace 192.168.1.1
+nmap --packet-trace server1.vaheed.net</pre>
+<h2>14#: Show host interfaces and routes</h2>
+<p>This is useful for debugging (<a href="/configure-static-routes-in-debian-or-red-hat-enterprise-linux/">ip command</a> or <a href="/configure-static-routes-in-debian-or-red-hat-enterprise-linux/">route command</a> or netstat command like output using nmap)</p>
+<pre>nmap --iflist</pre>
+<p>Sample outputs:</p>
+<pre>Starting Nmap 5.00 ( http://nmap.org/ ) at 2012-11-27 02:01 IST
+************************INTERFACES************************
+DEV    (SHORT)  IP/MASK          TYPE        UP MAC
+lo     (lo)     127.0.0.1/8      loopback    up
+eth0   (eth0)   192.168.1.5/24   ethernet    up B8:AC:6F:65:31:E5
+vmnet1 (vmnet1) 192.168.121.1/24 ethernet    up 00:50:56:C0:00:01
+vmnet8 (vmnet8) 192.168.179.1/24 ethernet    up 00:50:56:C0:00:08
+ppp0   (ppp0)   10.1.19.69/32    point2point up
+
+**************************ROUTES**************************
+DST/MASK         DEV    GATEWAY
+10.0.31.178/32   ppp0
+209.133.67.35/32 eth0   192.168.1.2
+192.168.1.0/0    eth0
+192.168.121.0/0  vmnet1
+192.168.179.0/0  vmnet8
+169.254.0.0/0    eth0
+10.0.0.0/0       ppp0
+0.0.0.0/0        eth0   192.168.1.2</pre>
+<h2>#15: How do I scan specific ports?</h2>
+<pre>map -p [port] hostName
+## Scan port 80
+nmap -p 80 192.168.1.1
+
+## Scan TCP port 80
+nmap -p T:80 192.168.1.1
+
+## Scan UDP port 53
+nmap -p U:53 192.168.1.1
+
+## Scan two ports ##
+nmap -p 80,443 192.168.1.1
+
+## Scan port ranges ##
+nmap -p 80-200 192.168.1.1
+
+## Combine all options ##
+nmap -p U:53,111,137,T:21-25,80,139,8080 192.168.1.1
+nmap -p U:53,111,137,T:21-25,80,139,8080 server1.vaheed.net
+nmap -v -sU -sT -p U:53,111,137,T:21-25,80,139,8080 192.168.1.254
+
+## Scan all ports with * wildcard ##
+nmap -p "*" 192.168.1.1
+
+## Scan top ports i.e. scan $number most common ports ##
+nmap --top-ports 5 192.168.1.1
+nmap --top-ports 10 192.168.1.1</pre>
+<p>Sample outputs:</p>
+<pre>Starting Nmap 5.00 ( http://nmap.org/ ) at 2012-11-27 01:23 IST
+Interesting ports on 192.168.1.1:
+PORT     STATE  SERVICE
+21/tcp   closed ftp
+22/tcp   open   ssh
+23/tcp   closed telnet
+25/tcp   closed smtp
+80/tcp   open   http
+110/tcp  closed pop3
+139/tcp  closed netbios-ssn
+443/tcp  closed https
+445/tcp  closed microsoft-ds
+3389/tcp closed ms-term-serv
+MAC Address: BC:AE:C5:C3:16:93 (Unknown)
+
+Nmap done: 1 IP address (1 host up) scanned in 0.51 seconds</pre>
+<h2>#16: The fastest way to scan all your devices/computers for open ports ever</h2>
+<pre>nmap -T5 192.168.1.0/24</pre>
+<h2>#17: How do I detect remote operating system?</h2>
+<p>You can identify a remote host apps and OS using the -O option:</p>
+<pre> 
+nmap -O 192.168.1.1
+nmap -O  --osscan-guess 192.168.1.1
+nmap -v -O --osscan-guess 192.168.1.1</pre>
+<p>Sample outputs:</p>
+<pre>Starting Nmap 5.00 ( http://nmap.org/ ) at 2012-11-27 01:29 IST
+NSE: Loaded 0 scripts for scanning.
+Initiating ARP Ping Scan at 01:29
+Scanning 192.168.1.1 [1 port]
+Completed ARP Ping Scan at 01:29, 0.01s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 01:29
+Completed Parallel DNS resolution of 1 host. at 01:29, 0.22s elapsed
+Initiating SYN Stealth Scan at 01:29
+Scanning 192.168.1.1 [1000 ports]
+Discovered open port 80/tcp on 192.168.1.1
+Discovered open port 22/tcp on 192.168.1.1
+Completed SYN Stealth Scan at 01:29, 0.16s elapsed (1000 total ports)
+Initiating OS detection (try #1) against 192.168.1.1
+Retrying OS detection (try #2) against 192.168.1.1
+Retrying OS detection (try #3) against 192.168.1.1
+Retrying OS detection (try #4) against 192.168.1.1
+Retrying OS detection (try #5) against 192.168.1.1
+Host 192.168.1.1 is up (0.00049s latency).
+Interesting ports on 192.168.1.1:
+Not shown: 998 closed ports
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+MAC Address: BC:AE:C5:C3:16:93 (Unknown)
+Device type: WAP|general purpose|router|printer|broadband router
+Running (JUST GUESSING) : Linksys Linux 2.4.X (95%), Linux 2.4.X|2.6.X (94%), MikroTik RouterOS 3.X (92%), Lexmark embedded (90%), Enterasys embedded (89%), D-Link Linux 2.4.X (89%), Netgear Linux 2.4.X (89%)
+Aggressive OS guesses: OpenWrt White Russian 0.9 (Linux 2.4.30) (95%), OpenWrt 0.9 - 7.09 (Linux 2.4.30 - 2.4.34) (94%), OpenWrt Kamikaze 7.09 (Linux 2.6.22) (94%), Linux 2.4.21 - 2.4.31 (likely embedded) (92%), Linux 2.6.15 - 2.6.23 (embedded) (92%), Linux 2.6.15 - 2.6.24 (92%), MikroTik RouterOS 3.0beta5 (92%), MikroTik RouterOS 3.17 (92%), Linux 2.6.24 (91%), Linux 2.6.22 (90%)
+No exact OS matches for host (If you know what OS is running on it, see http://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=5.00%D=11/27%OT=22%CT=1%CU=30609%PV=Y%DS=1%G=Y%M=BCAEC5%TM=50B3CA
+OS:4B%P=x86_64-unknown-linux-gnu)SEQ(SP=C8%GCD=1%ISR=CB%TI=Z%CI=Z%II=I%TS=7
+OS:)OPS(O1=M2300ST11NW2%O2=M2300ST11NW2%O3=M2300NNT11NW2%O4=M2300ST11NW2%O5
+OS:=M2300ST11NW2%O6=M2300ST11)WIN(W1=45E8%W2=45E8%W3=45E8%W4=45E8%W5=45E8%W
+OS:6=45E8)ECN(R=Y%DF=Y%T=40%W=4600%O=M2300NNSNW2%CC=N%Q=)T1(R=Y%DF=Y%T=40%S
+OS:=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%R
+OS:D=0%Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=
+OS:0%S=A%A=Z%F=R%O=%RD=0%Q=)T7(R=N)U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID
+OS:=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S)
+Uptime guess: 12.990 days (since Wed Nov 14 01:44:40 2012)
+Network Distance: 1 hop
+TCP Sequence Prediction: Difficulty=200 (Good luck!)
+IP ID Sequence Generation: All zeros
+Read data files from: /usr/share/nmap
+OS detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 12.38 seconds
+           Raw packets sent: 1126 (53.832KB) | Rcvd: 1066 (46.100KB)</pre>
+<p>See also: <a href="/find-out-dns-server-version-with-dns-server-fingeprinting-tool/">dns server</a> command line tools for more information.</p>
+<h2>#18: How do I detect remote services (server / daemon) version numbers?</h2>
+<pre>nmap -sV 192.168.1.1</pre>
+<p>Sample outputs:</p>
+<pre>Starting Nmap 5.00 ( http://nmap.org/ ) at 2012-11-27 01:34 IST
+Interesting ports on 192.168.1.1:
+Not shown: 998 closed ports
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     <strong>Dropbear sshd 0.52 (protocol 2.0)</strong>
+80/tcp open  http?
+1 service unrecognized despite returning data.</pre>
+<h2>#19: Scan a host using TCP ACK (PA) and TCP Syn (PS) ping</h2>
+<p>If firewall is blocking standard ICMP pings, try the following host discovery methods:</p>
+<pre>nmap -PS 192.168.1.1
+nmap -PS 80,21,443 192.168.1.1
+nmap -PA 192.168.1.1
+nmap -PA 80,21,200-512 192.168.1.1</pre>
+<h2>#20: Scan a host using IP protocol ping</h2>
+<pre>nmap -PO 192.168.1.1</pre>
+<h2>#21: Scan a host using UDP ping</h2>
+<p>This scan bypasses firewalls and filters that only screen TCP:</p>
+<pre>nmap -PU 192.168.1.1
+nmap -PU 2000.2001 192.168.1.1</pre>
+<h2>#22: Find out the most commonly used TCP ports using TCP SYN Scan</h2>
+<pre> 
+### Stealthy scan ###
+nmap -sS 192.168.1.1
+
+### Find out the most commonly used TCP ports using  TCP connect scan (warning: no stealth scan)
+###  OS Fingerprinting ###
+nmap -sT 192.168.1.1
+
+### Find out the most commonly used TCP ports using TCP ACK scan
+nmap -sA 192.168.1.1
+
+### Find out the most commonly used TCP ports using TCP Window scan
+nmap -sW 192.168.1.1
+
+### Find out the most commonly used TCP ports using TCP Maimon scan
+nmap -sM 192.168.1.1</pre>
+<h2>#23: Scan a host for UDP services (UDP scan)</h2>
+<p>Most popular services on the Internet run over the TCP protocol. DNS, SNMP, and DHCP are three of the most common UDP services. Use the following syntax to find out UDP services:</p>
+<pre>nmap -sU nas03
+nmap -sU 192.168.1.1</pre>
+<p>Sample outputs:</p>
+<pre> 
+Starting Nmap 5.00 ( http://nmap.org/ ) at 2012-11-27 00:52 IST
+Stats: 0:05:29 elapsed; 0 hosts completed (1 up), 1 undergoing UDP Scan
+UDP Scan Timing: About 32.49% done; ETC: 01:09 (0:11:26 remaining)
+Interesting ports on nas03 (192.168.1.12):
+Not shown: 995 closed ports
+PORT     STATE         SERVICE
+111/udp  open|filtered rpcbind
+123/udp  open|filtered ntp
+161/udp  open|filtered snmp
+2049/udp open|filtered nfs
+5353/udp open|filtered zeroconf
+MAC Address: 00:11:32:11:15:FC (Synology Incorporated)
+
+Nmap done: 1 IP address (1 host up) scanned in 1099.55 seconds</pre>
+<h2>#24: Scan for IP protocol</h2>
+<p>This type of scan allows you to determine which IP protocols (TCP, ICMP, IGMP, etc.) are supported by target machines:</p>
+<pre>nmap -sO 192.168.1.1</pre>
+<h2>#25: Scan a firewall for security weakness</h2>
+<p>The following scan types exploit a subtle loophole in the TCP and good for testing security of common attacks:</p>
+<pre> 
+## TCP Null Scan to fool a firewall to generate a response ##
+## Does not set any bits (TCP flag header is 0) ##
+nmap -sN 192.168.1.254
+
+## TCP Fin scan to check firewall ##
+## Sets just the TCP FIN bit ##
+nmap -sF 192.168.1.254
+
+## TCP Xmas scan to check firewall ##
+## Sets the FIN, PSH, and URG flags, lighting the packet up like a Christmas tree ##
+nmap -sX 192.168.1.254</pre>
+<p>See <a href="/how-to-block-xmas-packkets-syn-floods-and-other-conman-attacks/">how to block Xmas packkets, syn-floods and other conman attacks</a> with iptables.</p>
+<h2>#26: Scan a firewall for packets fragments</h2>
+<p>The -f option causes the requested scan (including ping scans) to use tiny fragmented IP packets. The idea is to split up the TCP header over<br />
+several packets to make it harder for packet filters, intrusion detection systems, and other annoyances to detect what you are doing.</p>
+<pre lang="bash">nmap -f 192.168.1.1
+nmap -f fw2.nixcraft.net.in
+nmap -f 15 fw2.nixcraft.net.in
+## Set your own offset size with the --mtu option ##
+nmap --mtu 32 192.168.1.1</pre>
+<h2>#27: Cloak a scan with decoys</h2>
+<p>The <kbd>-D</kbd> option it appear to the remote host that the host(s) you specify as decoys are scanning the target network too. Thus their IDS might report 5-10 port scans from unique IP addresses, but they won&#8217;t know which IP was scanning them and which were innocent decoys:</p>
+<pre>nmap -n -Ddecoy-ip1,decoy-ip2,your-own-ip,decoy-ip3,decoy-ip4 remote-host-ip
+nmap -n -D192.168.1.5,10.5.1.2,172.1.2.4,3.4.2.1 192.168.1.5</pre>
+<h2>#28: Scan a firewall for MAC address spoofing</h2>
+<pre> 
+### Spoof your MAC address ##
+nmap --spoof-mac MAC-ADDRESS-HERE 192.168.1.1
+
+### Add other options ###
+nmap -v -sT -PN --spoof-mac MAC-ADDRESS-HERE 192.168.1.1
+
+<b>sudo nmap -sS -sU -p 1-65535 -T4 -A -v 192.168.1.1 </b>
+
+### Use a random MAC address ###
+### The number 0, means nmap chooses a completely random MAC address ###
+nmap -v -sT -PN --spoof-mac 0 192.168.1.1</pre>
+<h2>#29: How do I save output to a text file?</h2>
+<p>The syntax is:</p>
+<pre>nmap 192.168.1.1 &gt; output.txt
+nmap -oN /path/to/filename 192.168.1.1
+nmap -oN output.txt 192.168.1.1</pre>
+<h2>#30: Not a fan of command line tools?</h2>
+<p>Try <a href="http://nmap.org/zenmap/" target="_blank">zenmap the official network mapper</a> front end:</p>
+<blockquote><p>Zenmap is the official Nmap Security Scanner GUI. It is a multi-platform (Linux, Windows, Mac OS X, BSD, etc.) free and open source application which aims to make Nmap easy for beginners to use while providing advanced features for experienced Nmap users. Frequently used scans can be saved as profiles to make them easy to run repeatedly. A command creator allows interactive creation of Nmap command lines. Scan results can be saved and viewed later. Saved scan results can be compared with one another to see how they differ. The results of recent scans are stored in a searchable database.</p></blockquote>
+<p>You can install zenmap using the following apt-get command:<br />
+<code>$ sudo apt-get install zenmap</code><br />
+Sample outputs:</p>
+<pre>[sudo] password for vivek:
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following NEW packages will be installed:
+  zenmap
+0 upgraded, 1 newly installed, 0 to remove and 11 not upgraded.
+Need to get 616 kB of archives.
+After this operation, 1,827 kB of additional disk space will be used.
+Get:1 http://debian.osuosl.org/debian/ squeeze/main zenmap amd64 5.00-3 [616 kB]
+Fetched 616 kB in 3s (199 kB/s)
+Selecting previously deselected package zenmap.
+(Reading database ... 281105 files and directories currently installed.)
+Unpacking zenmap (from .../zenmap_5.00-3_amd64.deb) ...
+Processing triggers for desktop-file-utils ...
+Processing triggers for gnome-menus ...
+Processing triggers for man-db ...
+Setting up zenmap (5.00-3) ...
+Processing triggers for python-central ...</pre>
+<p>Type the following command to start zenmap:<br />
+<code>$ sudo zenmap</code><br />
+Sample outputs</p>
+<p><a href="/?attachment_id=416" rel="attachment wp-att-275"><img loading="lazy" title="Nmap Command GUI Usage Examples Output From zenmap" alt="Fig.02: zenmap in action" src="http://s0.cyberciti.org/uploads/cms/2012/11/nmap-usage-examples-output.png" width="592" height="640" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Fig.02: zenmap in action</p>
+<p>&nbsp;</p>
+<h2>How do I detect and block port scanning?</h2>
+<p>Try the following resources:</p>
+<ol>
+<li><a href="/psad-linux-detect-and-block-port-scan-attacks-in-real-time/">How to use psad tool to detect and block port scan attacks in real time.</a></li>
+<li><a href="/centos-redhat-iptables-firewall-configuration-tutorial/">CentOS / Redhat Iptables Firewall Configuration Tutorial.</a></li>
+<li><a href="/20-iptables-examples-for-new-administrator/">Linux: 20 Iptables Examples For Administrator</a>.</li>
+</ol>
+<h5>REFERENCES:</h5>
+<ul>
+<li><a href="http://nmap.org/book/toc.html" target="_blank">The official Nmap project guide to network discovery and security Scanning</a>.</li>
+<li><a href="http://nmap.org/" target="_blank">The official Nmap project</a> home page.</li>
+</ul>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/top-30-nmap-command-examples/">Top 30 Nmap Command Examples</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/top-30-nmap-command-examples/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>how to block Xmas packkets, syn-floods and other conman attacks</title>
+		<link>/how-to-block-xmas-packkets-syn-floods-and-other-conman-attacks/</link>
+					<comments>/how-to-block-xmas-packkets-syn-floods-and-other-conman-attacks/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Sun, 06 Jan 2013 17:44:56 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Macosx]]></category>
+		<category><![CDATA[Network]]></category>
+		<category><![CDATA[Security]]></category>
+		<guid isPermaLink="false">/?p=408</guid>
+
+					<description><![CDATA[<p>Following list summaries the common attack on any type of Linux computer: Syn-flood protection In this attack system is floods with a series of SYN packets. Each packets causes system to issue a SYN-ACK responses. Then system waits for ACK that follows the SYN+ACK (3 way handshake). Since attack never sends back ACK again entire... </p>
+<p><a class="small button secondary" href="/how-to-block-xmas-packkets-syn-floods-and-other-conman-attacks/">Continue Reading</a></p>
+The post <a href="/how-to-block-xmas-packkets-syn-floods-and-other-conman-attacks/">how to block Xmas packkets, syn-floods and other conman attacks</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-408"></span></p>
+<p>Following list summaries the common attack on any type of Linux computer:</p>
+<h2>Syn-flood protection</h2>
+<p>In this attack system is floods with a series of SYN packets. Each packets causes system to issue a SYN-ACK responses. Then system waits for ACK that follows the SYN+ACK (3 way handshake). Since attack never sends back ACK again entire system resources get fulled aka backlog queue. Once the queue is full system will ignored incoming request from legitimate users for services (http/mail etc). Hence it is necessary to stop this attack with iptables.</p>
+<h2>Force SYN packets check</h2>
+<p>Make sure NEW incoming tcp connections are SYN packets; otherwise we need to drop them:</p>
+<pre>iptables -A INPUT -p tcp ! --syn -m state --state NEW -j DROP</pre>
+<h2>Force Fragments packets check</h2>
+<p>Packets with incoming fragments drop them. This attack result into Linux server panic such data loss.</p>
+<pre>iptables -A INPUT -f -j DROP</pre>
+<h2>XMAS packets</h2>
+<p>Incoming malformed XMAS packets drop them:</p>
+<pre>iptables -A INPUT -p tcp --tcp-flags ALL ALL -j DROP</pre>
+<h2>Drop all NULL packets</h2>
+<p>Incoming malformed NULL packets:</p>
+<pre>iptables -A INPIT -p tcp --tcp-flags ALL NONE -j DROP</pre>
+<h2>Block Spoofing and bad addresses</h2>
+<p>Using iptables you can filter to drop suspicious source address. Network server should not accept packets claiming from the Internet that claim to originate from inside your network. Spoofing can be classified as:<br />
+a) IP spoofing – Disable the source address of authentication, for example rhosts based authentication. Filter RPC based services such as portmap and NFS,<br />
+b) DNS spoofing<br />
+Please see <a href="/linux-iptables-avoid-ip-spoofing-and-bad-addresses-attacks/">Iptables: How to avoid Spoofing and bad addresses</a> attack tip for more information.</p>
+<p>Also use NAT for your internal network. This makes difficult for attacker to spoof IP address from outside.</p>
+<h2>Filter incoming ICMP, PING traffic</h2>
+<p>It includes the ping of death attack and ICMP floods. You should block all ICMP and PING traffic for outside except for your own internal network (so that you can ping to see status of your own server) . See <a href="/linux-iptables-allow-or-block-icmp-ping-request/">Linux : Iptables Allow or block ICMP ping request</a> article.</p>
+<p>Once system is secured, test your firewall with nmap or hping2 command:<br />
+<code># nmap -v -f FIREWALL-IP<br />
+# nmap -v -sX FIREWALL-IP<br />
+# nmap -v -sN FIREWALL-IP<br />
+# hping2 -X FIREWALL-IP</code></p>
+<h2>Block Access To Outgoing IP Address</h2>
+<p>The following rule will block ip address 202.54.1.22 from making any outgoing connection:<br />
+<code>iptables -A OUTPUT -d 202.54.1.22 -j DROP</code></p>
+<p>The above will block chat server ip address or site having dangerous contains such as viruses or malware.</p>
+<h2>Block Access To Outgoing IP TCP / UDP Port Number</h2>
+<p>It is also possible to block specific port numbers. For example, you can block tcp port # 5050 as follows:<br />
+<code>iptables -A OUTPUT -p tcp –dport 5050 -j DROP</code></p>
+<p>To block tcp port # 5050 for an IP address 192.168.1.2 only, enter:<br />
+<code>iptables -A OUTPUT -p tcp -d 192.168.1.2 –dport 5050 -j DROP</code></p>
+<p>Finally, you need to <a href="/how-do-i-save-iptables-rules-or-settings/">save your firewall rules</a>. Under CentOS / RHEL / Fedora Linux, enter:<br />
+<code># /sbin/service iptables save</code><br />
+OR<br />
+<code># /etc/init.d/iptables save</code></p>
+<h2>Further readings</h2>
+<ul>
+<li>Man page : hping2(8), nmap(1), iptables(8)</li>
+</ul>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/how-to-block-xmas-packkets-syn-floods-and-other-conman-attacks/">how to block Xmas packkets, syn-floods and other conman attacks</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/how-to-block-xmas-packkets-syn-floods-and-other-conman-attacks/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Find out DNS Server Version With DNS Server Fingeprinting tool</title>
+		<link>/find-out-dns-server-version-with-dns-server-fingeprinting-tool/</link>
+					<comments>/find-out-dns-server-version-with-dns-server-fingeprinting-tool/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Sun, 06 Jan 2013 17:25:48 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Macosx]]></category>
+		<category><![CDATA[Network]]></category>
+		<category><![CDATA[Security]]></category>
+		<guid isPermaLink="false">/?p=403</guid>
+
+					<description><![CDATA[<p>By hiding out DNS server version number you can improve server security. fpdns is a program that remotely determines DNS server versions. It does this by sending a series of borderline DNS queries which are compared against a table of responses and server versions. A nameserver basically responds to a query. Interoperability is an obvious... </p>
+<p><a class="small button secondary" href="/find-out-dns-server-version-with-dns-server-fingeprinting-tool/">Continue Reading</a></p>
+The post <a href="/find-out-dns-server-version-with-dns-server-fingeprinting-tool/">Find out DNS Server Version With DNS Server Fingeprinting tool</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-403"></span></p>
+<p>By hiding out DNS server version number you can improve server security. fpdns is a program that remotely determines DNS server versions. It does this by sending a series of borderline DNS queries which are compared against a table of responses and server versions.</p>
+<p>A nameserver basically responds to a query. Interoperability is an obvious requirement here. The standard protocol behavior of different DNS implementations is expected to be the same.</p>
+<h2>Install fpdns</h2>
+<p>Debian / Ubuntu user, enter the following command:<br />
+<code>$ sudo apt-get install fpdns</code><br />
+FreeBSD user, either use ports or binary package:<br />
+<code>$ pkg_add -v -r fpdns</code><br />
+Alternatively grab source code from official web site.</p>
+<h2>Howto remotely determine DNS server version</h2>
+<p>To determine DNS server version for domain nixcraft.com, enter:<br />
+<code>$ fpdns -D yahoo.com</code><br />
+Output:</p>
+<p>fingerprint (yahoo.com, 68.142.196.63): ISC BIND 9.2.3rc1 &#8212; 9.6.1-P1<br />
+fingerprint (yahoo.com, 68.180.131.16): ISC BIND 9.2.3rc1 &#8212; 9.6.1-P1<br />
+fingerprint (yahoo.com, 202.43.223.170): ISC BIND 9.2.3rc1 &#8212; 9.6.1-P1<br />
+fingerprint (yahoo.com, 202.165.104.22): ISC BIND 9.2.3rc1 &#8212; 9.6.1-P1<br />
+fingerprint (yahoo.com, 119.160.247.124): ISC BIND 9.2.3rc1 &#8212; 9.6.1-P1<br />
+fingerprint (yahoo.com, 68.142.255.16): ISC BIND 9.2.3rc1 &#8212; 9.6.1-P1<br />
+fingerprint (yahoo.com, 121.101.152.99): ISC BIND 9.2.3rc1 &#8212; 9.6.1-P1</p>
+<p><code> </code></p>
+<h2>Further readings</h2>
+<p>=&gt; Read fpdns man page.</p>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/find-out-dns-server-version-with-dns-server-fingeprinting-tool/">Find out DNS Server Version With DNS Server Fingeprinting tool</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/find-out-dns-server-version-with-dns-server-fingeprinting-tool/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Install nmap Software For Scanning Network</title>
+		<link>/install-nmap-software-for-scanning-network/</link>
+					<comments>/install-nmap-software-for-scanning-network/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Sun, 06 Jan 2013 17:07:09 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Macosx]]></category>
+		<category><![CDATA[Network]]></category>
+		<category><![CDATA[Security]]></category>
+		<guid isPermaLink="false">/?p=395</guid>
+
+					<description><![CDATA[<p>Nmap is a command line tool for network exploration or security auditing.It supports ping scanning (determine which hosts are up), many port scanning techniques (determine what services the hosts are offering), and TCP/IP fingerprinting (remote host operating system identification). &#160; Installation Debian / Ubuntu To install nmap for Debian and Ubuntu Linux based server systems... </p>
+<p><a class="small button secondary" href="/install-nmap-software-for-scanning-network/">Continue Reading</a></p>
+The post <a href="/install-nmap-software-for-scanning-network/">Install nmap Software For Scanning Network</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-395"></span></p>
+<p>Nmap is a command line tool for network exploration or security auditing.It supports ping scanning (determine which hosts are up), many port scanning techniques (determine what services the hosts are offering), and TCP/IP fingerprinting (remote host operating system identification).</p>
+<p>&nbsp;</p>
+<h2>Installation Debian / Ubuntu</h2>
+<p>To install nmap for Debian and Ubuntu Linux based server systems type the following apt-get command:<br />
+<code>$ sudo apt-get install nmap</code><br />
+Sample outputs:</p>
+<pre>Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following NEW packages will be installed:
+  nmap
+0 upgraded, 1 newly installed, 0 to remove and 2 not upgraded.
+Need to get 1,643 kB of archives.
+After this operation, 6,913 kB of additional disk space will be used.
+Get:1 http://mirrors.service.networklayer.com/ubuntu/ precise/main nmap amd64 5.21-1.1ubuntu1 [1,643 kB]
+Fetched 1,643 kB in 0s (16.4 MB/s)
+Selecting previously unselected package nmap.
+(Reading database ... 56834 files and directories currently installed.)
+Unpacking nmap (from .../nmap_5.21-1.1ubuntu1_amd64.deb) ...
+Processing triggers for man-db ...
+Setting up nmap (5.21-1.1ubuntu1) ...</pre>
+<h2>Examples</h2>
+<p>To find the nmap version, enter:<br />
+<code># nmap -V</code><br />
+OR<br />
+<code># nmap --version</code><br />
+Sample outputs:</p>
+<pre>Nmap version 5.21 ( http://nmap.org/ )</pre>
+<p>&nbsp;</p>
+<h2>Installation CentOS / RHEL</h2>
+<p>To install nmap on RHEL based Linux distributions, type the following yum command:<br />
+<code># yum install nmap</code><br />
+Sample outputs:</p>
+<pre> 
+Loaded plugins: protectbase, rhnplugin, security
+0 packages excluded due to repository protections
+Setting up Install Process
+Resolving Dependencies
+--&gt; Running transaction check
+---&gt; Package nmap.x86_64 2:5.51-2.el6 will be installed
+--&gt; Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package    Arch         Version               Repository                  Size
+================================================================================
+Installing:
+ nmap       x86_64       2:5.51-2.el6          rhel-x86_64-server-6       2.8 M
+
+Transaction Summary
+================================================================================
+Install       1 Package(s)
+
+Total download size: 2.8 M
+Installed size: 0
+Is this ok [y/N]: y
+Downloading Packages:
+nmap-5.51-2.el6.x86_64.rpm                               | 2.8 MB     00:00
+Running rpm_check_debug
+Running Transaction Test
+Transaction Test Succeeded
+Running Transaction
+  Installing : 2:nmap-5.51-2.el6.x86_64                                     1/1
+  Verifying  : 2:nmap-5.51-2.el6.x86_64                                     1/1
+
+Installed:
+  nmap.x86_64 2:5.51-2.el6
+
+Complete!</pre>
+<h2>How do I use nmap command?</h2>
+<p>To find out nmap version, run:<br />
+<code># nmap --version</code><br />
+Sample outputs:</p>
+<pre>Nmap version 5.51 ( http://nmap.org/ )</pre>
+<p>&nbsp;</p>
+<h2>Installation OpenBSD</h2>
+<p>Use pkg_add command to install software package called nmap under OpenBSD operating system. First, you must set the PKG_PATH environment variable as follows:</p>
+<p>&nbsp;</p>
+<p><kbd>export PKG_PATH=http://mirror.esc7.net/pub/OpenBSD/`uname -r`/packages/`machine -a`/</kbd></p>
+<p>Type the following pkg_add command to install nmap tool. The -v flag was used to give a more verbose output. This option is not needed but it is helpful for debugging and was used here to give a little more insight into what pkg_add is actually doing under OpenBSD:<br />
+<code># pkg_add -v nmap</code><br />
+Sample outputs:</p>
+<pre>nmap-6.01: ok</pre>
+<h2>Examples</h2>
+<p>To find out nmap version, enter:<br />
+<code># nmap --version</code><br />
+Sample outputs:</p>
+<pre>Nmap version 6.01 ( http://nmap.org/ )
+Platform: i386-unknown-openbsd5.2
+Compiled with: liblua-5.1.5 openssl-1.0.0f libpcre-8.30 libpcap-(OpenBSD libpcap) nmap-libdnet-1.12 ipv6
+Compiled without:</pre>
+<p>&nbsp;</p>
+<h2>Installation Mac OSX</h2>
+<p>To install nmap for Mac OSX based server systems type the following port command:<br />
+<code>$ sudo port install nmap</code><br />
+Sample outputs:</p>
+<pre>---&gt;  Computing dependencies for nmap
+
+..
+..
+..</pre>
+<h2>Examples</h2>
+<p>To find the nmap version, enter:<br />
+<code># nmap -V</code><br />
+OR<br />
+<code># nmap --version</code><br />
+Sample outputs:</p>
+<p>Nmap version 6.25 ( http://nmap.org/ )<br />
+Platform: x86_64-apple-darwin10.8.0<br />
+Compiled with: liblua-5.2.1 openssl-0.9.7l nmap-libpcre-7.6 nmap-libpcap-1.2.1 nmap-libdnet-1.12 ipv6<br />
+Compiled without:<br />
+Available nsock engines: kqueue poll select</p>
+<p>&nbsp;</p>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/install-nmap-software-for-scanning-network/">Install nmap Software For Scanning Network</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/install-nmap-software-for-scanning-network/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Configure Static Routes In Debian or Red Hat Enterprise Linux</title>
+		<link>/configure-static-routes-in-debian-or-red-hat-enterprise-linux/</link>
+					<comments>/configure-static-routes-in-debian-or-red-hat-enterprise-linux/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Sun, 06 Jan 2013 16:52:06 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Macosx]]></category>
+		<category><![CDATA[Network]]></category>
+		<guid isPermaLink="false">/?p=389</guid>
+
+					<description><![CDATA[<p>Task: Display Current Routing Table Using ip command By using the ip command, you can setup and view static route. For example, to display current routing table you can type command: # ip route show Sample output: 192.168.2.0/24 dev eth1 proto kernel scope link src 192.168.2.1 192.168.1.0/24 dev eth0 proto kernel scope link src 192.168.1.2... </p>
+<p><a class="small button secondary" href="/configure-static-routes-in-debian-or-red-hat-enterprise-linux/">Continue Reading</a></p>
+The post <a href="/configure-static-routes-in-debian-or-red-hat-enterprise-linux/">Configure Static Routes In Debian or Red Hat Enterprise Linux</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-389"></span></p>
+<h2>Task: Display Current Routing Table Using ip command</h2>
+<p>By using the ip command, you can setup and view static route. For example, to display current routing table you can type command:<br />
+<code># ip route show</code><br />
+Sample output:</p>
+<pre>192.168.2.0/24 dev eth1 proto kernel  scope link  src 192.168.2.1
+192.168.1.0/24 dev eth0  proto kernel  scope link  src 192.168.1.2
+default via 192.168.1.254 dev eth0</pre>
+<p>You can add static route using following command:<br />
+<strong>ip route add {NETWORK} via {IP} dev {DEVICE}</strong><br />
+For example network 192.168.55.0/24 available via 192.168.1.254:<br />
+<code># ip route add 192.168.55.0/24 via 192.168.1.254 dev eth1</code><br />
+Alternatively, you can use old good route command:<br />
+<code># route add -net 192.168.55.0 netmask 255.255.255.0 gw 192.168.1.254 dev eth1</code></p>
+<h2>Linux Persistence Routes</h2>
+<p>The drawback of &#8216;ip&#8217; or &#8216;route&#8217; command is that, when Linux reboots it will forget static routes. So store them in configuration file. Static routing describes a system that does not implement adaptive routing. In these systems routes through a data network are described by fixed paths (statically). These routes are usually entered into the router by the system administrator</p>
+<p><a name="rhelf"></a></p>
+<h3>Red Hat (RHEL) / CentOS / Fedora Linux Persistence Static Routing</h3>
+<p>You need to open /etc/sysconfig/network-scripts/route-eth0 file to define static routes for eth0 interface:<br />
+<code># cat /etc/sysconfig/network-scripts/route-eth0</code><br />
+Sample Output:</p>
+<pre>GATEWAY0=192.168.1.254
+NETMASK0=255.255.255.0
+ADDRESS0=192.168.55.0
+GATEWAY1=10.164.234.112
+NETMASK1= 255.255.255.240
+ADDRESS1=10.164.234.132</pre>
+<h4>How do I define static routing for network 10.0.0.0/8 via 10.9.38.65 router?</h4>
+<p>Open /etc/sysconfig/network-scripts/route-eth0:<br />
+<code># vi /etc/sysconfig/network-scripts/route-eth0</code><br />
+Append following line:<br />
+<code>10.0.0.0/8 via 10.9.38.65</code><br />
+Save and close the file. Restart networking:<br />
+<code># service network restart</code><br />
+Verify new routing table:<br />
+<code># route -n</code><br />
+<a name="deb"></a></p>
+<h3>Debian / Ubuntu Linux Persistence Static Routing</h3>
+<p>Open configuration file /etc/network/interfaces<br />
+<code># cat /etc/network/interfaces</code><br />
+Output:</p>
+<pre>auto eth0
+iface eth0 inet static
+address 192.168.1.2
+netmask 255.255.255.0
+gateway 192.168.1.254
+up route add -net 192.168.2.0 netmask 255.255.255.0 gw 192.168.2.1
+down route del -net 192.168.2.0 netmask 255.255.255.0 gw 192.168.2.1</pre>
+<h5>DEBIAN / UBUNTU LINUX STATIC ROUTING FOR TWO INTERFACES:</h5>
+<pre>auto lo
+iface lo inet loopback
+auto eth0
+iface eth0 inet static
+        address 10.9.38.76
+        netmask 255.255.255.240
+        network 10.9.38.64
+        broadcast 10.9.38.79
+	### static routing ###
+        post-up route add -net 10.0.0.0 netmask 255.0.0.0 gw 10.9.38.65
+        pre-down route del -net 10.0.0.0 netmask 255.0.0.0 gw 10.9.38.65
+auto eth1
+iface eth1 inet static
+        address 204.186.149.140
+        netmask 255.255.255.240
+        network 204.186.149.128
+        broadcast 204.186.149.143
+        gateway 204.186.149.129
+        # dns-* options are implemented by the resolvconf package, if installed
+        dns-nameservers 10.0.80.11 10.0.80.12
+        dns-search nixcraft.in</pre>
+<p>Updated for accuracy.</p>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/configure-static-routes-in-debian-or-red-hat-enterprise-linux/">Configure Static Routes In Debian or Red Hat Enterprise Linux</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/configure-static-routes-in-debian-or-red-hat-enterprise-linux/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Linux Set Up Routing with ip Command</title>
+		<link>/linux-set-up-routing-with-ip-command/</link>
+					<comments>/linux-set-up-routing-with-ip-command/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Sun, 06 Jan 2013 16:49:47 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Macosx]]></category>
+		<category><![CDATA[Network]]></category>
+		<guid isPermaLink="false">/?p=386</guid>
+
+					<description><![CDATA[<p>ip command can be used for the following tasks : =&#62; Show / manipulate routing =&#62; Show / manipulate devices =&#62; Policy routing =&#62; Tunnels Task: View / Display Routing Table Type the following command: $ ip route show Output: 10.0.31.18 dev ppp0 proto kernel scope link src 10.1.3.103 192.168.2.0/24 dev eth0 proto kernel scope... </p>
+<p><a class="small button secondary" href="/linux-set-up-routing-with-ip-command/">Continue Reading</a></p>
+The post <a href="/linux-set-up-routing-with-ip-command/">Linux Set Up Routing with ip Command</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-386"></span></p>
+<p>ip command can be used for the following tasks :<br />
+=&gt; Show / manipulate routing</p>
+<p>=&gt; Show / manipulate devices</p>
+<p>=&gt; Policy routing</p>
+<p>=&gt; Tunnels</p>
+<h2>Task: View / Display Routing Table</h2>
+<p>Type the following command:<br />
+<code>$ ip route show</code><br />
+Output:</p>
+<pre>10.0.31.18 dev ppp0  proto kernel  scope link  src 10.1.3.103
+192.168.2.0/24 dev eth0  proto kernel  scope link  src 192.168.2.1
+192.168.1.0/24 dev ra0  proto kernel  scope link  src 192.168.1.106
+169.254.0.0/16 dev eth0  scope link  metric 1000
+10.0.0.0/8 dev ppp0  scope link
+default via 192.168.1.1 dev ra0  metric 100</pre>
+<p>Each entry is nothing but an entry in the routing table (Linux kernel routing table). For example. following line represents the route for the local network. All network packets to a system in the same network are sent directly through the device ra0:</p>
+<pre>192.168.1.0/24 dev ra0  proto kernel  scope link  src 192.168.1.106</pre>
+<p>Our default route is set via ra0 interface i.e. all network packets that cannot be sent according to the previous entries of the routing table are sent through the gateway defined in this entry i.e <strong>192.168.1.1 is our default</strong> gateway.</p>
+<h3>Task: Set a Route to the Locally Connected Network eth0</h3>
+<p>Type the following command to sent all packets to the local network 192.168.1.0 directly through the device eth0:, enter:<br />
+<code># ip route add 192.168.1.0/24 dev eth0</code></p>
+<h3>Task: Set a default route</h3>
+<p>All network packets that cannot be sent according to the previous entries of the routing table are sent through the following default gateway<br />
+<code># ip route add default via 192.168.1.254</code></p>
+<h3>Task: Delete route from table</h3>
+<p>Type the following command<br />
+<code># ip route delete 192.168.1.0/24 dev eth0</code></p>
+<h2>How do I save routing information to a configuration file?</h2>
+<p>All routing settings made with the ip tool (route command) are lost when you reboot Linux server</p>
+<p>See our previous article about <a href="/configure-static-routes-in-debian-or-red-hat-enterprise-linux/">configuring static routes in Debian or Red Hat Linux systems</a></p>
+<p>&nbsp;</p>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/linux-set-up-routing-with-ip-command/">Linux Set Up Routing with ip Command</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/linux-set-up-routing-with-ip-command/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Understanding Routing Table</title>
+		<link>/understanding-routing-table/</link>
+					<comments>/understanding-routing-table/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Sun, 06 Jan 2013 16:43:52 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Macosx]]></category>
+		<category><![CDATA[MikroTik]]></category>
+		<category><![CDATA[Network]]></category>
+		<guid isPermaLink="false">/?p=384</guid>
+
+					<description><![CDATA[<p>Almost all computers and network devices connected to Internet use routing tables to compute the next hop for a packet. It is electronic table that is stored in a router or a networked computer. The routing table stores the routes (and in some cases, metrics associated with those routes) to particular network destinations. This information... </p>
+<p><a class="small button secondary" href="/understanding-routing-table/">Continue Reading</a></p>
+The post <a href="/understanding-routing-table/">Understanding Routing Table</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-384"></span></p>
+<p>Almost all computers and network devices connected to Internet use routing tables to compute the next hop for a packet. It is electronic table that is stored in a router or a networked computer. The routing table stores the routes (and in some cases, metrics associated with those routes) to particular network destinations. This information contains the topology of the network immediately around it. The construction of routing table is the primary goal of routing protocols and static routes.</p>
+<p>Each Linux / UNIX / Windows or any computer that uses TCP/IP need to make routing decision. Routing table is used to control these decisions. To display routing table type the following command at UNIX / Linux shell prompt:<br />
+<code>$ netstat -r -n</code><br />
+OR<br />
+<code>$ route -n</code><br />
+Sample output:</p>
+<pre>Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+192.168.2.0     0.0.0.0         255.255.255.0   U     0      0        0 eth0
+192.168.1.0     0.0.0.0         255.255.255.0   U     0      0        0 ra0
+169.254.0.0     0.0.0.0         255.255.0.0     U     1000   0        0 eth0
+0.0.0.0         192.168.1.1     0.0.0.0         UG    100    0        0 ra0</pre>
+<p>If you are using Windows Server type the following at a command prompt:<br />
+<code>D:&gt; route print</code><br />
+Flag G indicates path to route packets via a gateway. If you would like to visit yahoo.com from your computer you need to go via 192.168.1.1 gateway. This usually means that you have to set up a static route to the gateway beforehand. If you specify the address of one of your local interfaces, it will be used to decide about the interface to which the packets should be routed to. metric field used by routing daemons. This is required on large LAN and wan setups. The output of the kernel routing table is organized in the following columns:</p>
+<ul>
+<li><strong>Destination</strong> : The destination network or destination host.</li>
+<li><strong>Gateway</strong> : The gateway address or ’*’ if none set.</li>
+<li><strong>Genmask</strong> : The netmask for the destination net; 255.255.255.255 for a host destination and 0.0.0.0 for the default route.</li>
+<li><strong>Flags</strong> : Possible flags include
+<ul>
+<li>U (route is up)</li>
+<li>H (target is a host)</li>
+<li>G (use gateway)</li>
+<li>R (reinstate route for dynamic routing)</li>
+<li>D (dynamically installed by daemon or redirect)</li>
+<li>M (modified from routing daemon or redirect)</li>
+<li>A (installed by addrconf)</li>
+<li>C (cache entry)</li>
+<li>! (reject route)</li>
+</ul>
+</li>
+<li><strong>Metric</strong> : The distance to the target (usually counted in hops). It is not used by recent kernels, but may be needed by routing daemons.</li>
+<li><strong>Ref</strong> : Number of references to this route. (Not used in the Linux kernel.)</li>
+<li><strong>Use</strong> : Count of lookups for the route. Depending on the use of -F and -C this will be either route cache misses (-F) or hits (-C).</li>
+<li><strong>Iface</strong> : Interface to which packets for this route will be sent.</li>
+<li><strong>MSS</strong> : Default maximum segment size for TCP connections over this route.</li>
+<li><strong>Window</strong> : Default window size for TCP connections over this route.</li>
+<li><strong>irtt</strong> : Initial RTT (Round Trip Time). The kernel uses this to guess about the best TCP protocol parameters without waiting on (possibly slow) answers.</li>
+<li><strong>HH (cached only)</strong> : The number of ARP entries and cached routes that refer to the hardware header cache for the cached route. This will be -1 if a hardware address is not needed for the interface of the cached route (e.g. lo).</li>
+<li><strong>Arp (cached only)</strong> : Whether or not the hardware address for the cached route is up to date.</li>
+</ul>
+<p>Your routing table is created automatically, based on the current TCP/IP configuration of your Linux / UNIX computer. You can manually add / modify / edit routing table using route and ip command. The types of entries in a routing table:</p>
+<ul>
+<li><strong>Network Route</strong>: A route (path) to a specific Network ID in the internetwork.</li>
+<li><strong>Host Route</strong> : A route to a specific internetwork address (Network ID and Host ID). Host routes allow intelligent routing decisions to be made for each network address. Host routes are used to create custom routes to control or optimize specific types of network traffic.</li>
+<li><strong>Default Route</strong>: A route that is used when no other routes for the destination are found in the routing table. If a router or end system (such as a PC running Microsoft Windows or Linux), cannot find a route for a destination, the default route is used. The default route is used if no other host or network route matches the destination address. Please see related FAQs below for more examples of route and ip command.</li>
+</ul>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/understanding-routing-table/">Understanding Routing Table</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/understanding-routing-table/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>CentOS / Redhat Iptables Firewall Configuration Tutorial</title>
+		<link>/centos-redhat-iptables-firewall-configuration-tutorial/</link>
+					<comments>/centos-redhat-iptables-firewall-configuration-tutorial/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Fri, 04 Jan 2013 16:36:47 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Network]]></category>
+		<category><![CDATA[Security]]></category>
+		<guid isPermaLink="false">/?p=353</guid>
+
+					<description><![CDATA[<p>Iptables Config File The default config files for RHEL / CentOS / Fedora Linux are: /etc/sysconfig/iptables &#8211; The system scripts that activate the firewall by reading this file. Task: Display Default Rules Type the following command: iptables --line-numbers -n -L Sample outputs: Chain INPUT (policy ACCEPT) num target prot opt source destination 1 RH-Firewall-1-INPUT all... </p>
+<p><a class="small button secondary" href="/centos-redhat-iptables-firewall-configuration-tutorial/">Continue Reading</a></p>
+The post <a href="/centos-redhat-iptables-firewall-configuration-tutorial/">CentOS / Redhat Iptables Firewall Configuration Tutorial</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-353"></span></p>
+<h2>Iptables Config File</h2>
+<p>The default config files for RHEL / CentOS / Fedora Linux are:</p>
+<ul>
+<li>/etc/sysconfig/iptables &#8211; The system scripts that activate the firewall by reading this file.</li>
+</ul>
+<div></div>
+<h2>Task: Display Default Rules</h2>
+<p>Type the following command:<br />
+<code>iptables --line-numbers -n -L</code><br />
+Sample outputs:</p>
+<pre>Chain INPUT (policy ACCEPT)
+num  target     prot opt source               destination
+1    RH-Firewall-1-INPUT  all  --  0.0.0.0/0            0.0.0.0/0
+Chain FORWARD (policy ACCEPT)
+num  target     prot opt source               destination
+1    RH-Firewall-1-INPUT  all  --  0.0.0.0/0            0.0.0.0/0
+Chain OUTPUT (policy ACCEPT)
+num  target     prot opt source               destination
+Chain RH-Firewall-1-INPUT (2 references)
+num  target     prot opt source               destination
+1    ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0
+2    ACCEPT     icmp --  0.0.0.0/0            0.0.0.0/0           icmp type 255
+3    ACCEPT     udp  --  0.0.0.0/0            224.0.0.251         udp dpt:5353
+4    ACCEPT     udp  --  0.0.0.0/0            0.0.0.0/0           udp dpt:53
+5    ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0           state RELATED,ESTABLISHED
+6    ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0           state NEW tcp dpt:22
+7    ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0           state NEW tcp dpt:53
+8    REJECT     all  --  0.0.0.0/0            0.0.0.0/0           reject-with icmp-host-prohibited</pre>
+<h2>Task: Turn On Firewall</h2>
+<p>Type the following two commands to turn on firewall:</p>
+<pre>chkconfig iptables on
+service iptables start
+# restart the firewall
+service iptables restart
+# stop the firewall
+service iptables stop</pre>
+<h2>Understanding Firewall</h2>
+<p>There are total 4 chains:</p>
+<ol>
+<li><strong>INPUT</strong> &#8211; The default chain is used for packets addressed to the system. Use this to open or close incoming ports (such as 80,25, and 110 etc) and ip addresses / subnet (such as 202.54.1.20/29).</li>
+<li><strong>OUTPUT</strong> &#8211; The default chain is used when packets are generating from the system. Use this open or close outgoing ports and ip addresses / subnets.</li>
+<li><strong>FORWARD</strong> &#8211; The default chains is used when packets send through another interface. Usually used when you setup Linux as router. For example, eth0 connected to ADSL/Cable modem and eth1 is connected to local LAN. Use FORWARD chain to send and receive traffic from LAN to the Internet.</li>
+<li><strong>RH-Firewall-1-INPUT </strong>&#8211; This is a user-defined custom chain. It is used by the INPUT, OUTPUT and FORWARD chains.</li>
+</ol>
+<h3>Packet Matching Rules</h3>
+<ol>
+<li>Each packet starts at the first rule in the chain .</li>
+<li>A packet proceeds until it matches a rule.</li>
+<li>If a match found, then control will jump to the specified target (such as REJECT, ACCEPT, DROP).</li>
+</ol>
+<h3>Target Meanings</h3>
+<ol>
+<li>The target <strong>ACCEPT</strong> means allow packet.</li>
+<li>The target <strong>REJECT</strong> means to drop the packet and send an error message to remote host.</li>
+<li>The target <strong>DROP</strong> means drop the packet and do not send an error message to remote host or sending host.</li>
+</ol>
+<h2>/etc/sysconfig/iptables</h2>
+<p>Edit /etc/sysconfig/iptables, enter:<br />
+<code># vi /etc/sysconfig/iptables</code><br />
+You will see default rules as follows:</p>
+<pre>*filter
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+:RH-Firewall-1-INPUT - [0:0]
+-A INPUT -j RH-Firewall-1-INPUT
+-A FORWARD -j RH-Firewall-1-INPUT
+-A RH-Firewall-1-INPUT -i lo -j ACCEPT
+-A RH-Firewall-1-INPUT -p icmp --icmp-type any -j ACCEPT
+-A RH-Firewall-1-INPUT -p udp --dport 5353 -d 224.0.0.251 -j ACCEPT
+-A RH-Firewall-1-INPUT -p udp -m udp --dport 53 -j ACCEPT
+-A RH-Firewall-1-INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+-A RH-Firewall-1-INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
+-A RH-Firewall-1-INPUT -m state --state NEW -m tcp -p tcp --dport 53 -j ACCEPT
+-A RH-Firewall-1-INPUT -j REJECT --reject-with icmp-host-prohibited
+COMMIT</pre>
+<h3>Drop All Traffic</h3>
+<p>Find lines:</p>
+<pre>*filter
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]</pre>
+<p>Update as follows to change the default policy to DROP from ACCEPT for the INPUT and FORWARD built-in chains:</p>
+<pre>:INPUT DROP [0:0]
+:FORWARD DROP [0:0]</pre>
+<h3>Log and Drop Spoofing Source Addresses</h3>
+<p>Append the following lines before final COMMIT line:</p>
+<pre>-A INPUT -i eth0 -s 10.0.0.0/8 -j LOG --log-prefix "IP DROP SPOOF "
+-A INPUT -i eth0 -s 172.16.0.0/12 -j LOG --log-prefix "IP DROP SPOOF "
+-A INPUT -i eth0 -s 192.168.0.0/16 -j LOG --log-prefix "IP DROP SPOOF "
+-A INPUT -i eth0 -s 224.0.0.0/4 -j LOG --log-prefix "IP DROP MULTICAST "
+-A INPUT -i eth0 -s 240.0.0.0/5 -j LOG --log-prefix "IP DROP SPOOF "
+-A INPUT -i eth0 -d 127.0.0.0/8 -j LOG --log-prefix "IP DROP LOOPBACK "
+-A INPUT -i eth0 -s 169.254.0.0/16  -j LOG --log-prefix "IP DROP MULTICAST "
+-A INPUT -i eth0 -s 0.0.0.0/8  -j LOG --log-prefix "IP DROP "
+-A INPUT -i eth0 -s  240.0.0.0/4  -j LOG --log-prefix "IP DROP "
+-A INPUT -i eth0 -s  255.255.255.255/32  -j LOG --log-prefix "IP DROP  "
+-A INPUT -i eth0 -s 168.254.0.0/16  -j LOG --log-prefix "IP DROP "
+-A INPUT -i eth0 -s 248.0.0.0/5  -j LOG --log-prefix "IP DROP "</pre>
+<h3>Log And Drop All Traffic</h3>
+<p>Find the lines:</p>
+<pre>-A RH-Firewall-1-INPUT -j REJECT --reject-with icmp-host-prohibited
+COMMIT</pre>
+<p>Update it as follows:</p>
+<pre>-A RH-Firewall-1-INPUT -j LOG
+-A RH-Firewall-1-INPUT -j DROP
+COMMIT</pre>
+<h3>Open Port</h3>
+<p>To open port 80 (Http server) add the following before COMMIT line:</p>
+<pre>-A RH-Firewall-1-INPUT -m tcp -p tcp --dport 80 -j ACCEPT</pre>
+<p>To open port 53 (DNS Server) add the following before COMMIT line:</p>
+<pre>-A RH-Firewall-1-INPUT -m tcp -p tcp --dport 53 -j ACCEPT
+-A RH-Firewall-1-INPUT -m udp -p tcp --dport 53 -j ACCEPT</pre>
+<p>To open port 443 (Https server) add the following before COMMIT line:</p>
+<pre>-A RH-Firewall-1-INPUT -m tcp -p tcp --dport 443 -j ACCEPT</pre>
+<p>To open port 25 (smtp server) add the following before COMMIT line:</p>
+<pre>-A RH-Firewall-1-INPUT -m tcp -p tcp --dport 25 -j ACCEPT</pre>
+<h4>Only allow SSH traffic From 192.168.1.0/24</h4>
+<pre>-A RH-Firewall-1-INPUT -s 192.168.1.0/24 -m state --state NEW -p tcp --dport 22 -j ACCEPT</pre>
+<h4>Enable Printing Access For 192.168.1.0/24</h4>
+<pre>-A RH-Firewall-1-INPUT -s 192.168.1.0/24 -p udp -m udp --dport 631 -j ACCEPT
+-A RH-Firewall-1-INPUT -s 192.168.1.0/24 -p tcp -m tcp --dport 631 -j ACCEPT</pre>
+<h4>Allow Legitimate NTP Clients to Access the Server</h4>
+<pre>-A RH-Firewall-1-INPUT -s 192.168.1.0/24 -m state --state NEW -p udp --dport 123 -j ACCEPT</pre>
+<h4>Open FTP Port 21 (FTP)</h4>
+<pre>-A RH-Firewall-1-INPUT -m state --state NEW -p tcp --dport 21 -j ACCEPT</pre>
+<p>Save and close the file. Edit /etc/sysconfig/iptables-config, enter:<br />
+<code># vi /etc/sysconfig/iptables-config</code><br />
+Make sure ftp module is loaded with the space-separated list of modules:</p>
+<pre>IPTABLES_MODULES="ip_conntrack_ftp"</pre>
+<p>To restart firewall, type the following commands:<br />
+<code># service iptables restart<br />
+# iptables -vnL --line-numbers</code></p>
+<h2>Edit /etc/sysctl.conf For DoS and Syn Protection</h2>
+<p>Edit /etc/sysctl.conf to defend against certain types of attacks and append / update as follows:</p>
+<pre> 
+net.ipv4.conf.all.log_martians = 1
+net.ipv4.conf.default.accept_source_route = 0
+net.ipv4.conf.default.accept_redirects = 0
+net.ipv4.conf.default.secure_redirects = 0
+net.ipv4.icmp_echo_ignore_broadcasts = 1
+#net.ipv4.icmp_ignore_bogus_error_messages = 1
+net.ipv4.tcp_syncookies = 1
+net.ipv4.conf.all.rp_filter = 1
+net.ipv4.conf.default.rp_filter = 1</pre>
+<p>See previous FAQ, &#8220;<a href="/linux-kernel-etcsysctl-conf-security-hardening/">Linux Kernel /etc/sysctl.conf</a> Security Hardening&#8221; for more details.</p>
+<h2>Alternate Configuration Option</h2>
+<p>You can skip /etc/sysconfig/iptables file and create a shell script from scratch as follows:</p>
+<pre>#!/bin/bash
+# A sample firewall shell script 
+IPT="/sbin/iptables"
+SPAMLIST="blockedip"
+SPAMDROPMSG="BLOCKED IP DROP"
+SYSCTL="/sbin/sysctl"
+BLOCKEDIPS="/root/scripts/blocked.ips.txt"
+
+# Stop certain attacks
+echo "Setting sysctl IPv4 settings..."
+$SYSCTL net.ipv4.ip_forward=0
+$SYSCTL net.ipv4.conf.all.send_redirects=0
+$SYSCTL net.ipv4.conf.default.send_redirects=0
+$SYSCTL net.ipv4.conf.all.accept_source_route=0
+$SYSCTL net.ipv4.conf.all.accept_redirects=0
+$SYSCTL net.ipv4.conf.all.secure_redirects=0
+$SYSCTL net.ipv4.conf.all.log_martians=1
+$SYSCTL net.ipv4.conf.default.accept_source_route=0
+$SYSCTL net.ipv4.conf.default.accept_redirects=0
+$SYSCTL net.ipv4.conf.default.secure_redirects=0
+$SYSCTL net.ipv4.icmp_echo_ignore_broadcasts=1
+#$SYSCTL net.ipv4.icmp_ignore_bogus_error_messages=1
+$SYSCTL net.ipv4.tcp_syncookies=1
+$SYSCTL net.ipv4.conf.all.rp_filter=1
+$SYSCTL net.ipv4.conf.default.rp_filter=1
+$SYSCTL kernel.exec-shield=1
+$SYSCTL kernel.randomize_va_space=1
+
+echo "Starting IPv4 Firewall..."
+$IPT -F
+$IPT -X
+$IPT -t nat -F
+$IPT -t nat -X
+$IPT -t mangle -F
+$IPT -t mangle -X
+
+# load modules
+modprobe ip_conntrack
+
+[ -f "$BLOCKEDIPS" ] &amp;&amp; BADIPS=$(egrep -v -E "^#|^$" "${BLOCKEDIPS}")
+
+# interface connected to the Internet 
+PUB_IF="eth0"
+
+#Unlimited traffic for loopback
+$IPT -A INPUT -i lo -j ACCEPT
+$IPT -A OUTPUT -o lo -j ACCEPT
+
+# DROP all incomming traffic
+$IPT -P INPUT DROP
+$IPT -P OUTPUT DROP
+$IPT -P FORWARD DROP
+
+if [ -f "${BLOCKEDIPS}" ];
+then
+# create a new iptables list
+$IPT -N $SPAMLIST
+
+for ipblock in $BADIPS
+do
+   $IPT -A $SPAMLIST -s $ipblock -j LOG --log-prefix "$SPAMDROPMSG "
+   $IPT -A $SPAMLIST -s $ipblock -j DROP
+done
+
+$IPT -I INPUT -j $SPAMLIST
+$IPT -I OUTPUT -j $SPAMLIST
+$IPT -I FORWARD -j $SPAMLIST
+fi
+
+# Block sync
+$IPT -A INPUT -i ${PUB_IF} -p tcp ! --syn -m state --state NEW  -m limit --limit 5/m --limit-burst 7 -j LOG --log-level 4 --log-prefix "Drop Sync"
+$IPT -A INPUT -i ${PUB_IF} -p tcp ! --syn -m state --state NEW -j DROP
+
+# Block Fragments
+$IPT -A INPUT -i ${PUB_IF} -f  -m limit --limit 5/m --limit-burst 7 -j LOG --log-level 4 --log-prefix "Fragments Packets"
+$IPT -A INPUT -i ${PUB_IF} -f -j DROP
+
+# Block bad stuff
+$IPT  -A INPUT -i ${PUB_IF} -p tcp --tcp-flags ALL FIN,URG,PSH -j DROP
+$IPT  -A INPUT -i ${PUB_IF} -p tcp --tcp-flags ALL ALL -j DROP
+
+$IPT  -A INPUT -i ${PUB_IF} -p tcp --tcp-flags ALL NONE -m limit --limit 5/m --limit-burst 7 -j LOG --log-level 4 --log-prefix "NULL Packets"
+$IPT  -A INPUT -i ${PUB_IF} -p tcp --tcp-flags ALL NONE -j DROP # NULL packets
+
+$IPT  -A INPUT -i ${PUB_IF} -p tcp --tcp-flags SYN,RST SYN,RST -j DROP
+
+$IPT  -A INPUT -i ${PUB_IF} -p tcp --tcp-flags SYN,FIN SYN,FIN -m limit --limit 5/m --limit-burst 7 -j LOG --log-level 4 --log-prefix "XMAS Packets"
+$IPT  -A INPUT -i ${PUB_IF} -p tcp --tcp-flags SYN,FIN SYN,FIN -j DROP #XMAS
+
+$IPT  -A INPUT -i ${PUB_IF} -p tcp --tcp-flags FIN,ACK FIN -m limit --limit 5/m --limit-burst 7 -j LOG --log-level 4 --log-prefix "Fin Packets Scan"
+$IPT  -A INPUT -i ${PUB_IF} -p tcp --tcp-flags FIN,ACK FIN -j DROP # FIN packet scans
+
+$IPT  -A INPUT -i ${PUB_IF} -p tcp --tcp-flags ALL SYN,RST,ACK,FIN,URG -j DROP
+
+# Allow full outgoing connection but no incomming stuff
+$IPT -A INPUT -i ${PUB_IF} -m state --state ESTABLISHED,RELATED -j ACCEPT
+$IPT -A OUTPUT -o ${PUB_IF} -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+
+# Allow ssh
+$IPT -A INPUT -i ${PUB_IF} -p tcp --destination-port 22 -j ACCEPT
+
+# Allow http / https (open port 80 / 443)
+$IPT -A INPUT -i ${PUB_IF} -p tcp --destination-port 80 -j ACCEPT
+#$IPT -A INPUT -o ${PUB_IF} -p tcp --destination-port 443 -j ACCEPT
+
+# allow incomming ICMP ping pong stuff
+$IPT -A INPUT -i ${PUB_IF} -p icmp --icmp-type 8 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+#$IPT -A OUTPUT -o ${PUB_IF} -p icmp --icmp-type 0 -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+# Allow port 53 tcp/udp (DNS Server)
+$IPT -A INPUT -i ${PUB_IF} -p udp --dport 53 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+#$IPT -A OUTPUT -o ${PUB_IF} -p udp --sport 53 -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+$IPT -A INPUT -i ${PUB_IF} -p tcp --destination-port 53 -m state --state NEW,ESTABLISHED,RELATED  -j ACCEPT
+#$IPT -A OUTPUT -o ${PUB_IF} -p tcp --sport 53 -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+# Open port 110 (pop3) / 143
+$IPT -A INPUT -i ${PUB_IF} -p tcp --destination-port 110 -j ACCEPT
+$IPT -A INPUT -i ${PUB_IF} -p tcp --destination-port 143 -j ACCEPT
+
+##### Add your rules below ######
+#
+# 
+##### END your rules ############
+
+# Do not log smb/windows sharing packets - too much logging
+$IPT -A INPUT -p tcp -i ${PUB_IF} --dport 137:139 -j REJECT
+$IPT -A INPUT -p udp -i ${PUB_IF} --dport 137:139 -j REJECT
+
+# log everything else and drop
+$IPT -A INPUT -j LOG
+$IPT -A FORWARD -j LOG
+$IPT -A INPUT -j DROP
+
+exit 0</pre>
+<p>&nbsp;</p>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/centos-redhat-iptables-firewall-configuration-tutorial/">CentOS / Redhat Iptables Firewall Configuration Tutorial</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/centos-redhat-iptables-firewall-configuration-tutorial/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

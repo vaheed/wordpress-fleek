@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: psad: Linux Detect And Block Port Scan Attacks In Real Time	</title>
+	<atom:link href="/psad-linux-detect-and-block-port-scan-attacks-in-real-time/feed/" rel="self" type="application/rss+xml" />
+	<link>/psad-linux-detect-and-block-port-scan-attacks-in-real-time/</link>
+	<description>linux, mikrotik, macosx</description>
+	<lastBuildDate>Sun, 06 Jan 2013 18:08:55 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.7.2</generator>
+</channel>
+</rss>

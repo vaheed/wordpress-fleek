@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-US"
+	prefix="og: https://ogp.me/ns#" > <![endif]--><!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en-US"
+	prefix="og: https://ogp.me/ns#" > <![endif]--><!--[if IE 8]>    <html class="no-js lt-ie9" lang="en-US"
+	prefix="og: https://ogp.me/ns#" > <![endif]--><!--[if gt IE 8]><!--><html class="no-js" lang="en-US" prefix="og: https://ogp.me/ns#"> <!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="pingback" href="/xmlrpc.php">
+
+<meta name="viewport" content="width=device-width">
+
+<title>How To Create A MySQL Database And Set Privileges To User | vaheeD khoshnouD</title>
+<meta name="description" content="MySQL is a widely spread SQL database management system mainly used on LAMP (Linux/Apache/MySQL/PHP) projects. In order to be able to use a database, one needs to create: a new database, give access permission to the database server to a database user and finally grant all right to that specific database to this user. This tutorial... Continue Reading">
+<link rel="canonical" href="/how-to-create-a-mysql-database-and-set-privileges-to-user/">
+<meta property="og:site_name" content="vaheeD khoshnouD | linux, mikrotik, macosx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How To Create A MySQL Database And Set Privileges To User | vaheeD khoshnouD">
+<meta property="og:description" content="MySQL is a widely spread SQL database management system mainly used on LAMP (Linux/Apache/MySQL/PHP) projects. In order to be able to use a database, one needs to create: a new database, give access permission to the database server to a database user and finally grant all right to that specific database to this user. This tutorial... Continue Reading">
+<meta property="og:url" content="http://vaheed.net/how-to-create-a-mysql-database-and-set-privileges-to-user/">
+<meta property="article:published_time" content="2013-01-18T10:54:10Z">
+<meta property="article:modified_time" content="2013-01-18T11:05:51Z">
+<meta property="twitter:card" content="summary">
+<meta property="twitter:domain" content="vaheed.net">
+<meta property="twitter:title" content="How To Create A MySQL Database And Set Privileges To User | vaheeD khoshnouD">
+<meta property="twitter:description" content="MySQL is a widely spread SQL database management system mainly used on LAMP (Linux/Apache/MySQL/PHP) projects. In order to be able to use a database, one needs to create: a new database, give access permission to the database server to a database user and finally grant all right to that specific database to this user. This tutorial... Continue Reading">
+<script type="application/ld+json" class="aioseo-schema">
+			{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebSite","@id":"http:\/\/vaheed.net\/#website","url":"http:\/\/vaheed.net\/","name":"vaheeD khoshnouD","description":"linux, mikrotik, macosx","publisher":{"@id":"http:\/\/vaheed.net\/#organization"}},{"@type":"Organization","@id":"http:\/\/vaheed.net\/#organization","name":"vaheeD khoshnouD","url":"http:\/\/vaheed.net\/"},{"@type":"BreadcrumbList","@id":"http:\/\/vaheed.net\/how-to-create-a-mysql-database-and-set-privileges-to-user\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"http:\/\/vaheed.net\/#listItem","position":"1","item":{"@id":"http:\/\/vaheed.net\/#item","name":"Home","description":"vaheeD khoshnouD | linux, mikrotik, macosx","url":"http:\/\/vaheed.net\/"},"nextItem":"http:\/\/vaheed.net\/how-to-create-a-mysql-database-and-set-privileges-to-user\/#listItem"},{"@type":"ListItem","@id":"http:\/\/vaheed.net\/how-to-create-a-mysql-database-and-set-privileges-to-user\/#listItem","position":"2","item":{"@id":"http:\/\/vaheed.net\/how-to-create-a-mysql-database-and-set-privileges-to-user\/#item","name":"How To Create A MySQL Database And Set Privileges To User","description":"MySQL is a widely spread SQL database management system mainly used on LAMP (Linux\/Apache\/MySQL\/PHP) projects. In order to be able to use a database, one needs to create: a new database, give access permission to the database server to a database user and finally grant all right to that specific database to this user. This tutorial... Continue Reading","url":"http:\/\/vaheed.net\/how-to-create-a-mysql-database-and-set-privileges-to-user\/"},"previousItem":"http:\/\/vaheed.net\/#listItem"}]},{"@type":"Person","@id":"http:\/\/vaheed.net\/author\/vaheed\/#author","url":"http:\/\/vaheed.net\/author\/vaheed\/","name":"vaheeD khoshnouD","image":{"@type":"ImageObject","@id":"http:\/\/vaheed.net\/how-to-create-a-mysql-database-and-set-privileges-to-user\/#authorImage","url":"http:\/\/1.gravatar.com\/avatar\/4ef8c65e8d3633adf28103cadb4591c2?s=96&d=mm&r=g","width":"96","height":"96","caption":"vaheeD khoshnouD"}},{"@type":"WebPage","@id":"http:\/\/vaheed.net\/how-to-create-a-mysql-database-and-set-privileges-to-user\/#webpage","url":"http:\/\/vaheed.net\/how-to-create-a-mysql-database-and-set-privileges-to-user\/","name":"How To Create A MySQL Database And Set Privileges To User | vaheeD khoshnouD","description":"MySQL is a widely spread SQL database management system mainly used on LAMP (Linux\/Apache\/MySQL\/PHP) projects. In order to be able to use a database, one needs to create: a new database, give access permission to the database server to a database user and finally grant all right to that specific database to this user. This tutorial... Continue Reading","inLanguage":"en-US","isPartOf":{"@id":"http:\/\/vaheed.net\/#website"},"breadcrumb":{"@id":"http:\/\/vaheed.net\/how-to-create-a-mysql-database-and-set-privileges-to-user\/#breadcrumblist"},"author":"http:\/\/vaheed.net\/how-to-create-a-mysql-database-and-set-privileges-to-user\/#author","creator":"http:\/\/vaheed.net\/how-to-create-a-mysql-database-and-set-privileges-to-user\/#author","datePublished":"2013-01-18T10:54:10+03:30","dateModified":"2013-01-18T11:05:51+03:30"},{"@type":"Article","@id":"http:\/\/vaheed.net\/how-to-create-a-mysql-database-and-set-privileges-to-user\/#article","name":"How To Create A MySQL Database And Set Privileges To User | vaheeD khoshnouD","description":"MySQL is a widely spread SQL database management system mainly used on LAMP (Linux\/Apache\/MySQL\/PHP) projects. In order to be able to use a database, one needs to create: a new database, give access permission to the database server to a database user and finally grant all right to that specific database to this user. This tutorial... Continue Reading","headline":"How To Create A MySQL Database And Set Privileges To User","author":{"@id":"http:\/\/vaheed.net\/author\/vaheed\/#author"},"publisher":{"@id":"http:\/\/vaheed.net\/#organization"},"datePublished":"2013-01-18T10:54:10+03:30","dateModified":"2013-01-18T11:05:51+03:30","articleSection":"Linux","mainEntityOfPage":{"@id":"http:\/\/vaheed.net\/how-to-create-a-mysql-database-and-set-privileges-to-user\/#webpage"},"isPartOf":{"@id":"http:\/\/vaheed.net\/how-to-create-a-mysql-database-and-set-privileges-to-user\/#webpage"}}]}
+		</script>
+<script type="392851e6d3457f72f89282fe-text/javascript">
+			window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+			ga('create', "UA-3072201-3", 'auto');
+			ga('send', 'pageview');
+		</script>
+<script async src="https://www.google-analytics.com/analytics.js" type="392851e6d3457f72f89282fe-text/javascript"></script>
+
+<link rel="dns-prefetch" href="//vjs.zencdn.net">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//s.w.org">
+<link rel="alternate" type="application/rss+xml" title="vaheeD khoshnouD &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="vaheeD khoshnouD &raquo; Comments Feed" href="/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="vaheeD khoshnouD &raquo; How To Create A MySQL Database And Set Privileges To User Comments Feed" href="/how-to-create-a-mysql-database-and-set-privileges-to-user/feed/">
+<link rel="publisher" href="https://plus.google.com/103839803047317952696">
+<script type="392851e6d3457f72f89282fe-text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/vaheed.net\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.7.2"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="videojs-css" href="//vjs.zencdn.net/5.9.2/video-js.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="videojs-style-css" href="/wp-content/plugins/videojs-hls-player/videojs-hls-player.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="videojs-airplay-css" href="/wp-content/plugins/videojs-hls-player/videojs-airplay/videojs.airplay.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="wp-search-suggest-css" href="/wp-content/plugins/wp-search-suggest/css/wpss-search-suggest.css?ver=5" type="text/css" media="all">
+<link rel="stylesheet" id="foundation-css" href="/wp-content/themes/drewsymo-Foundation-3b62be5/stylesheets/foundation.min.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="app-css" href="/wp-content/themes/drewsymo-Foundation-3b62be5/style.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C300&#038;ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="post-ratings-raty-css" href="/wp-content/plugins/post-ratings/assets/jquery.raty.css?ver=3.0" type="text/css" media="all">
+<link rel="stylesheet" id="wp-author-bio-css" href="/wp-content/plugins/wp-about-author/wp-about-author.css?ver=5.7.2" type="text/css" media="all">
+<script type="392851e6d3457f72f89282fe-text/javascript" src="/wp-includes/js/jquery/jquery.min.js?ver=3.5.1" id="jquery-core-js"></script>
+<script type="392851e6d3457f72f89282fe-text/javascript" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+<script type="392851e6d3457f72f89282fe-text/javascript" src="//vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js?ver=1.0.2" id="videojs-ie8-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/549">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 5.7.2">
+<link rel="shortlink" href="/?p=549">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fhow-to-create-a-mysql-database-and-set-privileges-to-user%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fhow-to-create-a-mysql-database-and-set-privileges-to-user%2F&#038;format=xml">
+
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body class="post-template-default single single-post postid-549 single-format-standard">
+<header class="row">
+<hgroup class="site-title twelve columns">
+<h1><a href="/" title="vaheeD khoshnouD" rel="home">vaheeD khoshnouD</a></h1>
+<h3 class="subheader">linux, mikrotik, macosx</h3>
+</hgroup>
+<div class="twelve columns"><ul class="nav-bar"><li class="page_item page-item-7"><a href="/about-me/">About Me</a></li></ul></div>
+</header>
+
+<script type="392851e6d3457f72f89282fe-text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//ns1.faratar.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//ns1.faratar.org/piwik/piwik.php?idsite=1" style="border:0;" alt=""></p></noscript>
+
+
+<div class="row">
+
+<div class="nine columns" role="content">
+<article>
+<header>
+<hgroup>
+<h2><a href="/how-to-create-a-mysql-database-and-set-privileges-to-user/" title="Permalink to How To Create A MySQL Database And Set Privileges To User" rel="bookmark">How To Create A MySQL Database And Set Privileges To User</a></h2>
+<h6>Written by <a href="https://plus.google.com/103839803047317952696" title="Visit vaheeD&#8217;s website" rel="author external">vaheeD</a> on January 18, 2013</h6>
+</hgroup>
+</header>
+<div class="post-ratings" data-post="549">
+<div class="rating" data-post="549" data-rating="5" data-readonly="0"></div>
+<div class="rating-meta">
+<strong>5.00</strong> avg. rating (<strong>94</strong>% score) - <strong class="votes">1</strong> vote	</div>
+</div>
+<p><span id="more-549"></span></p>
+<p><strong>MySQL</strong> is a widely spread SQL database management system mainly used on LAMP (Linux/Apache/MySQL/PHP) projects.</p>
+<p>In order to be able to use a database, one needs to create: a new database, give access permission to the database server to a database user and finally grant all right to that specific database to this user.</p>
+<p>This tutorial will explain how to create a new database and give a user the appropriate grant permissions.</p>
+<p>&nbsp;</p>
+<p>For the purpose of this tutorial, I will explain how to create a database and user for the music player <strong>Amarok</strong>. In order to index its music collection, Amarok quand use a mysql backend.<br>
+The requirement for this set up is to have access to a database. We are going to create a database called <em>amarok</em> which will be accessible from <em>localhost</em> to user<em>amarok</em> idetified by the password <em>amarok</em>….</p>
+<p>Obviously, we need to to have a mysql server installed as well as amarok:</p>
+<pre>$ sudo apt-get install mysql-server amarok</pre>
+<p>On a default settings, <strong>mysql</strong> root user do not need a password to authenticate from localhost. In this case, ou can login as root on your mysql server using:</p>
+<pre>$ mysql -u root</pre>
+<p>If a password is required, use the extra switch <em>-p</em>:</p>
+<pre>$ mysql -u root -p
+Enter password:</pre>
+<p>Now that you are logged in, we create a database:</p>
+<pre>mysql&gt; create database amarokdb;
+Query OK, 1 row affected (0.00 sec)</pre>
+<p>We allow user amarokuser to connect to the server from localhost using the password <em>amarokpasswd</em>:</p>
+<pre>mysql&gt; grant usage on *.* to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6d0c000c1f0206181e081f2d01020e0c0105021e19">[email&#160;protected]</a> identified by ‘amarokpasswd’;
+Query OK, 0 rows affected (0.00 sec)</pre>
+<p>And finally we grant all privileges on the amarok database to this user:</p>
+<pre>mysql&gt; grant all privileges on amarokdb.* to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ddbcb0bcafb2b6a8aeb8af9db1b2bebcb1b5b2aea9">[email&#160;protected]</a> ;
+Query OK, 0 rows affected (0.00 sec)</pre>
+<p>And that’s it. You can now check that you can connect to the MySQL server using this command:</p>
+<pre>$ mysql -u amarokuser -p’amarokpasswd’ amarokdb
+Your MySQL connection id is 12
+Server version: 5.0.38-Ubuntu_0ubuntu1-log Ubuntu 7.04 distribution
+
+Type ‘help;’ or ‘\h’ for help. Type ‘\c’ to clear the buffer.
+
+mysql&gt;</pre>
+<h2>How To Grant Different User Permissions</h2>
+<p>Here is a short list of other common possible permissions that users can enjoy.</p>
+<ul>
+<ul>
+<li>ALL PRIVILEGES- as we saw previously, this would allow a MySQL user all access to a designated database (or if no database is selected, across the system)</li>
+</ul>
+</ul>
+<ul>
+<ul>
+<li>CREATE- allows them to create new tables or databases</li>
+</ul>
+</ul>
+<ul>
+<ul>
+<li>DROP- allows them to them to delete tables or databases</li>
+</ul>
+</ul>
+<ul>
+<ul>
+<li>DELETE- allows them to delete rows from tables</li>
+</ul>
+</ul>
+<ul>
+<ul>
+<li>INSERT- allows them to insert rows into tables</li>
+</ul>
+</ul>
+<ul>
+<ul>
+<li>SELECT- allows them to use the Select command to read through databases</li>
+</ul>
+</ul>
+<ul>
+<ul>
+<li>UPDATE- allow them to update table rows</li>
+</ul>
+</ul>
+<li>GRANT OPTION- allows them to grant or remove other users&#8217; privileges</li>
+
+
+<p>
+&nbsp;</p>
+<div class="post-ratings" data-post="549">
+<div class="rating" data-post="549" data-rating="5" data-readonly="0"></div>
+<div class="rating-meta">
+<strong>5.00</strong> avg. rating (<strong>94</strong>% score) - <strong class="votes">1</strong> vote	</div>
+</div>
+<footer>
+<p></p>
+<p>Posted Under: <a href="/category/linux/" rel="category tag">Linux</a></p>
+<section class="row">
+<div class="twelve columns">
+<div class="panel author-box">
+<a class="th"><img alt="" src="https://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=55&#038;d=mm&#038;r=g" srcset="http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=110&#038;d=mm&#038;r=g 2x" class="author_gravatar left  avatar-55 photo" height="55" width="55" loading="lazy"></a>
+<h5>About <a href="https://plus.google.com/103839803047317952696" title="Visit vaheeD&#8217;s website" rel="author external">vaheeD</a>
+</h5>
+<p>
+</p>
+</div>
+</div>
+</section>
+
+
+<div id="respond" class="comment-respond">
+<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/how-to-create-a-mysql-database-and-set-privileges-to-user/#respond" style="display:none;">Cancel reply</a></small>
+</h3>
+<form action="/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p>
+<p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p>
+<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200"></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="549" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>
+<div style="text-align:center; font-style:italic; font-size:12px;">Protected by <a href="http://boliquan.com/wp-anti-spam/" target="_blank">WP Anti Spam</a>
+</div>
+</form> </div>
+</footer>
+</article>
+<hr>
+</div>
+
+
+<aside class="three columns">
+<div>
+<form method="get" id="searchform" action="/">
+<div class="row">
+<div class="twelve columns">
+<div class="row collapse">
+<div class="eight mobile-three columns">
+<input type="text" name="s" id="s" placeholder="Search">
+</div>
+<div class="four mobile-one columns">
+<input type="submit" class="postfix button expand" name="submit" id="searchsubmit" value="Search">
+</div>
+</div>
+</div>
+</div>
+</form>
+</div>
+<div>
+<h5>Categories</h5>
+<ul>
+<li class="cat-item cat-item-17">
+<a href="/category/cisco/">Cisco</a>
+</li>
+<li class="cat-item cat-item-6">
+<a href="/category/linux/">Linux</a>
+</li>
+<li class="cat-item cat-item-8">
+<a href="/category/macosx/">Macosx</a>
+</li>
+<li class="cat-item cat-item-7">
+<a href="/category/mikrotik/">MikroTik</a>
+</li>
+<li class="cat-item cat-item-10">
+<a href="/category/network/">Network</a>
+</li>
+<li class="cat-item cat-item-20">
+<a href="/category/openstack/">openstack</a>
+</li>
+<li class="cat-item cat-item-11">
+<a href="/category/security/">Security</a>
+</li>
+<li class="cat-item cat-item-1">
+<a href="/category/uncategorized/">Uncategorized</a>
+</li>
+</ul>
+</div>
+</aside>
+
+</div>
+
+
+<footer class="row">
+<div class="twelve columns">
+<ul class="link-list">
+</ul>
+</div>
+</footer>
+
+<div id="foot">
+<strong>vaheeD.NET</strong> | linux, mikrotik, macosx | 2012, 2013</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="392851e6d3457f72f89282fe-text/javascript" src="//vjs.zencdn.net/5.9.2/video.js?ver=1.0.2" id="videojs-js"></script>
+<script type="392851e6d3457f72f89282fe-text/javascript" src="/wp-content/plugins/videojs-hls-player/videojs-contrib-hls/videojs-contrib-hls.min.js?ver=1.0.2" id="videojs-hls-js"></script>
+<script type="392851e6d3457f72f89282fe-text/javascript" src="/wp-content/plugins/videojs-hls-player/videojs-airplay/videojs.airplay.js?ver=1.0.2" id="videojs-airplay-js"></script>
+<script type="392851e6d3457f72f89282fe-text/javascript" src="/wp-content/plugins/videojs-hls-player/videojs-hls-player.js?ver=1.0.2" id="videojs-custom-js"></script>
+<script type="392851e6d3457f72f89282fe-text/javascript" src="/wp-includes/js/jquery/suggest.min.js?ver=1.1-20110113" id="suggest-js"></script>
+<script type="392851e6d3457f72f89282fe-text/javascript" id="wp-search-suggest-js-extra">
+/* <![CDATA[ */
+var wpss_options = {"url":"http:\/\/vaheed.net\/wp-admin\/admin-ajax.php","nonce":"ffc31e8139","ajaxurl":"http:\/\/vaheed.net\/wp-admin\/admin-ajax.php?action=wp-search-suggest&_wpnonce=9c0d5b0c5c"};
+/* ]]> */
+</script>
+<script type="392851e6d3457f72f89282fe-text/javascript" src="/wp-content/plugins/wp-search-suggest/js/wpss-search-suggest.js?ver=5" id="wp-search-suggest-js"></script>
+<script type="392851e6d3457f72f89282fe-text/javascript" src="/wp-content/themes/drewsymo-Foundation-3b62be5/javascripts/foundation.min.js?ver=1.0" id="foundation-js"></script>
+<script type="392851e6d3457f72f89282fe-text/javascript" src="/wp-content/themes/drewsymo-Foundation-3b62be5/javascripts/app.js?ver=1.0" id="app-js"></script>
+<script type="392851e6d3457f72f89282fe-text/javascript" id="post-ratings-js-extra">
+/* <![CDATA[ */
+var post_ratings = {"ajaxURL":"http:\/\/vaheed.net\/wp-admin\/admin-ajax.php","nonce":"a8b298b24a","path":"http:\/\/vaheed.net\/wp-content\/plugins\/post-ratings\/assets\/images\/","number":"5"};
+/* ]]> */
+</script>
+<script type="392851e6d3457f72f89282fe-text/javascript" src="/wp-content/plugins/post-ratings/js/post-ratings.js?ver=3.0" id="post-ratings-js"></script>
+<script type="392851e6d3457f72f89282fe-text/javascript" src="/wp-content/plugins/post-ratings/assets/jquery.raty.js?ver=3.0" id="post-ratings-raty-js"></script>
+<script type="392851e6d3457f72f89282fe-text/javascript" src="/wp-includes/js/wp-embed.min.js?ver=5.7.2" id="wp-embed-js"></script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="392851e6d3457f72f89282fe-|49" defer></script>
+</body>
+</html>

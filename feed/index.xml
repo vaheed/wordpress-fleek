@@ -1,0 +1,1023 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>vaheeD khoshnouD</title>
+	<atom:link href="/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>linux, mikrotik, macosx</description>
+	<lastBuildDate>Mon, 12 Apr 2021 19:17:37 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.7.2</generator>
+	<item>
+		<title>How to safer in Linux for newbie</title>
+		<link>/how-to-safer-in-linux-for-newbie/</link>
+					<comments>/how-to-safer-in-linux-for-newbie/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Mon, 12 Apr 2021 19:04:47 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<guid isPermaLink="false">/?p=815</guid>
+
+					<description><![CDATA[<p>1. Run updates any time you can 2. Enable firewall protection 3. Disable nonessential services that are prone to exploitation Recognize which services could cause potential vulnerabilities to your system. For each service: 4. Check for listening ports 5. Scan for malware</p>
+The post <a href="/how-to-safer-in-linux-for-newbie/">How to safer in Linux for newbie</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<span id="more-815"></span>
+
+
+
+<p></p>
+
+
+
+<p></p>
+
+
+
+<p>1. Run updates any time you can</p>
+
+
+
+<pre class="wp-block-code"><code>sudo apt-get update &amp;&amp; apt-get upgrade
+</code></pre>
+
+
+
+<p></p>
+
+
+
+<p></p>
+
+
+
+<p>2. Enable firewall protection</p>
+
+
+
+<pre class="wp-block-code"><code>sudo apt-get install ufw
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+ufw allow ssh
+sudo ufw enable
+</code></pre>
+
+
+
+<p></p>
+
+
+
+<p></p>
+
+
+
+<p>3. Disable nonessential services that are prone to exploitation</p>
+
+
+
+<pre class="wp-block-code"><code>sudo apt-get install systemd
+systemctl list-units
+</code></pre>
+
+
+
+<p>Recognize which services could cause potential vulnerabilities to your system. For each service:</p>
+
+
+
+<pre class="wp-block-code"><code>systemctl stop &lt;service&gt;
+systemctl disable &lt;service&gt;
+systemctl status &lt;service&gt;
+</code></pre>
+
+
+
+<p></p>
+
+
+
+<p></p>
+
+
+
+<p>4. Check for listening ports</p>
+
+
+
+<pre class="wp-block-code"><code>netstat -tulpn
+</code></pre>
+
+
+
+<p></p>
+
+
+
+<p></p>
+
+
+
+<p>5. Scan for malware</p>
+
+
+
+<pre class="wp-block-code"><code>sudo apt-get install clamav
+sudo freshclam
+sudo clamscan -r --bell -i /
+</code></pre>
+
+
+
+<p></p>
+
+
+
+<p></p>
+
+
+
+<p></p>
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+<p><div style="float:left; text-align:left;><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></p>The post <a href="/how-to-safer-in-linux-for-newbie/">How to safer in Linux for newbie</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/how-to-safer-in-linux-for-newbie/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>How to install ACME2 SSL Certificate On ViciDial</title>
+		<link>/how-to-install-acme2-ssl-certificate-on-vicidial/</link>
+					<comments>/how-to-install-acme2-ssl-certificate-on-vicidial/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Tue, 20 Oct 2020 06:08:22 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<guid isPermaLink="false">/?p=809</guid>
+
+					<description><![CDATA[<p>Just realized that client isnt ACME2 compatible. I recommend you do the following: Then create this script and run it. Syntax is -e some@testdomain.com -d vicidial.testdomain.com Now chmode your script and run &#8230;</p>
+The post <a href="/how-to-install-acme2-ssl-certificate-on-vicidial/">How to install ACME2 SSL Certificate On ViciDial</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<span id="more-809"></span>
+
+
+
+<p>Just realized that client isnt ACME2 compatible. I recommend you do the following:
+</p>
+
+
+<p></p>
+
+
+<pre class="wp-block-code"><code>
+zypper in socat
+wget -O -  https://get.acme.sh/ | sh
+</code></pre>
+
+
+<p></p>
+
+
+<p>Then create this script and run it. Syntax is -e some@testdomain.com -d vicidial.testdomain.com
+</p>
+
+
+
+<pre class="wp-block-code"><code>
+#!/bin/bash
+
+while getopts ":e:d:" options; do
+    case "${options}" in
+        e)
+           EMAIL=${OPTARG} ;;
+        d)
+      DOMAIN=${OPTARG} ;;
+        :) echo "Error: -${OPTARG} requires an argument."; exit 1;;
+        *) echo "Internal error!" ; exit 1 ;;
+    esac
+done
+
+if &#91; -z "$EMAIL" ]
+then
+   echo "Missing -e Email option!"
+   exit 1
+fi
+if &#91; -z "$DOMAIN" ]
+then
+   echo "Missing -d Domain option!"
+   exit 1
+fi
+
+mkdir /etc/certbot/live/$DOMAIN
+/root/.acme.sh/acme.sh --issue -d $DOMAIN -w /srv/www/htdocs/ --cert-file /etc/certbot/live/$DOMAIN/cert.pem --key-file /etc/certbot/live/$DOMAIN/privkey.pem --fullchain-file /etc/certbot/live/$DOMAIN/fullchain.pem --accountemail $EMAIL
+
+sed -i "/SSLCertificateFile/c\\\tSSLCertificateFile /etc/certbot/live/$DOMAIN/cert.pem" /etc/apache2/vhosts.d/1111-default-ssl.conf
+sed -i "/SSLCertificateKeyFile/c\\\tSSLCertificateKeyFile /etc/certbot/live/$DOMAIN/privkey.pem" /etc/apache2/vhosts.d/1111-default-ssl.conf
+sed -i "/SSLCACertificateFile/c\\\tSSLCACertificateFile /etc/certbot/live/$DOMAIN/fullchain.pem" /etc/apache2/vhosts.d/1111-default-ssl.conf
+sed -i "/tlscertfile=/c\\tlscertfile=/etc/certbot/live/$DOMAIN/cert.pem" /etc/asterisk/http.conf
+sed -i "/tlsprivatekey=/c\\tlsprivatekey=/etc/certbot/live/$DOMAIN/privkey.pem" /etc/asterisk/http.conf
+/usr/sbin/rasterisk -x 'module reload http'
+/sbin/service apache2 restart
+
+echo "  If this is a telephony server you will need to modify the 'Web Socket URL'"
+echo "  field for this server under the Admin --> Servers section. It will need to be"
+echo "  changed to :"
+echo "    wss://$DOMAIN:8089/ws"
+echo
+echo "  You will also need to modify the 'webRTC' template under the Admin --> Templates"
+echo "  section. You want to change the following options under the "
+echo "  'Template Contents' :"
+echo "    dtlscertfile=/etc/certbot/live/$DOMAIN/cert.pem"
+echo "    dtlsprivatekey=/etc/certbot/live/$DOMAIN/privkey.pem"
+
+</code></pre>
+
+
+
+<p>Now chmode your script and run &#8230; 
+</p>
+
+
+<p></p><p><div style="float:left; text-align:left;><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></p>The post <a href="/how-to-install-acme2-ssl-certificate-on-vicidial/">How to install ACME2 SSL Certificate On ViciDial</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/how-to-install-acme2-ssl-certificate-on-vicidial/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>How to install PHPMyAdmin on Ubuntu 18.04 in Nginx webserver</title>
+		<link>/how-to-install-phpmyadmin-on-ubuntu-18-04-in-nginx-webserver/</link>
+					<comments>/how-to-install-phpmyadmin-on-ubuntu-18-04-in-nginx-webserver/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Sun, 18 Oct 2020 13:51:43 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<guid isPermaLink="false">/?p=807</guid>
+
+					<description><![CDATA[<p>This is done by updating your server’s package index and then using the apt packaging system to pull down the files and install them on your system: For the server selection, choose NONE. Then paste this code into this file and if you want to change example.com to your domain</p>
+The post <a href="/how-to-install-phpmyadmin-on-ubuntu-18-04-in-nginx-webserver/">How to install PHPMyAdmin on Ubuntu 18.04 in Nginx webserver</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<span id="more-807"></span>
+
+
+
+<p>This is done by updating your server’s package index and then using the apt packaging system to pull down the files and install them on your system:  </p>
+
+
+
+<pre class="wp-block-code"><code>
+sudo apt update
+sudo apt install phpmyadmin php-mbstring php-gettext
+</code></pre>
+
+
+
+<p>
+For the server selection, choose NONE.
+</p>
+
+
+
+<pre class="wp-block-code"><code>
+sudo phpenmod mbstring
+</code></pre>
+
+
+
+<pre class="wp-block-code"><code>
+sudo vi /etc/nginx/conf.d/phpmyadmin.conf</code></pre>
+
+
+
+<p>
+Then paste this code into this file and if you want to change example.com to your domain
+</p>
+
+
+
+<pre class="wp-block-code"><code>
+server {
+  listen 81;
+  listen &#91;::]:81;
+  server_name example.com;
+  root /usr/share/phpmyadmin/;
+  index index.php index.html index.htm index.nginx-debian.html;
+
+  access_log /var/log/nginx/phpmyadmin_access.log;
+  error_log /var/log/nginx/phpmyadmin_error.log;
+
+  location / {
+    try_files $uri $uri/ /index.php;
+  }
+
+  location ~ ^/(doc|sql|setup)/ {
+    deny all;
+  }
+
+  location ~ \.php$ {
+    fastcgi_pass unix:/run/php/php7.2-fpm.sock;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    include fastcgi_params;
+    include snippets/fastcgi-php.conf;
+  }
+
+  location ~ /\.ht {
+    deny all;
+  }
+}
+</code></pre>
+
+
+
+<pre class="wp-block-code"><code>
+sudo systemctl reload nginx
+</code></pre>
+<p><div style="float:left; text-align:left;><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></p>The post <a href="/how-to-install-phpmyadmin-on-ubuntu-18-04-in-nginx-webserver/">How to install PHPMyAdmin on Ubuntu 18.04 in Nginx webserver</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/how-to-install-phpmyadmin-on-ubuntu-18-04-in-nginx-webserver/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>How to upgrade Ubuntu 16.04 PHP version</title>
+		<link>/how-to-upgrade-ubuntu-16-04-php-version/</link>
+					<comments>/how-to-upgrade-ubuntu-16-04-php-version/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Tue, 06 Oct 2020 06:42:18 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<guid isPermaLink="false">/?p=788</guid>
+
+					<description><![CDATA[<p>As you know the default PHP version for Ubuntu 16.04 is 7.0. If you want to install a new version of PHP on 16.04 you need to use an additional PPA (as it is shown below) or you must compile it on your own. Now you can see PHP version</p>
+The post <a href="/how-to-upgrade-ubuntu-16-04-php-version/">How to upgrade Ubuntu 16.04 PHP version</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<span id="more-788"></span>
+
+
+
+<p>As you know the default PHP version for Ubuntu 16.04 is 7.0. If you want to install a new version of PHP on 16.04 you need to use an additional PPA (as it is shown below) or you must compile it on your own.  </p>
+
+
+
+<pre class="wp-block-code"><code># Add the repository 'ppa:ondrej/php'
+</code></pre>
+
+
+
+<pre class="wp-block-code"><code>sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:ondrej/php
+sudo apt update</code></pre>
+
+
+
+<pre class="wp-block-code"><code># Install PHP 7.2
+</code></pre>
+
+
+
+<pre class="wp-block-code"><code>sudo apt install -y php7.2 php7.2-cli libapache2-mod-php7.2
+sudo apt install -y php-imagick php-gettext php-memcache php-apcu php-pear php-xml php-xmlrpc
+sudo apt install -y php-memcached php-mysql php-intl php-mbstring php-curl php-gd php-imagick
+sudo apt install -y php7.2-common php7.2-mysql php7.2-cgi 
+sudo apt install -y php7.2-curl php7.2-zip php7.2-mbstring php7.2-xmlrpc php7.2-gd php7.2-xml php7.2-xsl
+sudo apt install -y php7.2-dev php7.2-bz2 php7.2-intl php7.2-json php7.2-opcache php7.2-readline 
+sudo apt install -y php7.2-imap php7.2-pspell php7.2-recode php7.2-sqlite3 php7.2-tidy php7.2-bcmath #php7.2-mcrypt
+</code></pre>
+
+
+
+<pre class="wp-block-code"><code># Update the Apache's PHP version
+</code></pre>
+
+
+
+<pre class="wp-block-code"><code>sudo a2dismod php7.0
+sudo a2enmod php7.2
+sudo systemctl restart apache2.service</code></pre>
+
+
+
+<pre class="wp-block-code"><code># Update the CLI PHP version
+</code></pre>
+
+
+
+<pre class="wp-block-code"><code>sudo update-alternatives --set php /usr/bin/php7.2
+</code></pre>
+
+
+
+<p>Now you can see PHP version</p>
+
+
+
+<pre class="wp-block-code"><code>php -v
+PHP 7.2.33-1+ubuntu16.04.1+deb.sury.org+1 (cli) (built: Aug  7 2020 14:43:59) ( NTS )
+Copyright (c) 1997-2018 The PHP Group
+Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
+    with Zend OPcache v7.2.33-1+ubuntu16.04.1+deb.sury.org+1, Copyright (c) 1999-2018, by Zend Technologies
+</code></pre>
+
+
+
+<!--more-->
+<p><div style="float:left; text-align:left;><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></p>The post <a href="/how-to-upgrade-ubuntu-16-04-php-version/">How to upgrade Ubuntu 16.04 PHP version</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/how-to-upgrade-ubuntu-16-04-php-version/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Step by step Ubuntu LXD</title>
+		<link>/step-by-step-ubuntu-lxd/</link>
+					<comments>/step-by-step-ubuntu-lxd/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Wed, 06 Jan 2016 10:11:44 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[openstack]]></category>
+		<category><![CDATA[Security]]></category>
+		<guid isPermaLink="false">/?p=734</guid>
+
+					<description><![CDATA[<p>sudo add-apt-repository ppa:ubuntu-lxc/lxd-stable sudo apt-get update sudo apt-get install lxd ======================== lxd-images import ubuntu --alias ubuntu =======================Your first container================ lxc image list lxc launch ubuntu first lxc list lxc info first lxc config show first =======================Limiting resources================= free -m lxc exec first -- free -m lxc config set first limits.memory 64MB lxc exec first --... </p>
+<p><a class="small button secondary" href="/step-by-step-ubuntu-lxd/">Continue Reading</a></p>
+The post <a href="/step-by-step-ubuntu-lxd/">Step by step Ubuntu LXD</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-734"></span></p>
+<p><code><br />
+sudo add-apt-repository ppa:ubuntu-lxc/lxd-stable<br />
+sudo apt-get update<br />
+sudo apt-get install lxd<br />
+========================</p>
+<p>lxd-images import ubuntu --alias ubuntu</p>
+<p>=======================Your first container================<br />
+lxc image list<br />
+lxc launch ubuntu first<br />
+lxc list<br />
+lxc info first<br />
+lxc config show first<br />
+=======================Limiting resources=================<br />
+free -m<br />
+lxc exec first -- free -m<br />
+lxc config set first limits.memory 64MB<br />
+lxc exec first -- free -m<br />
+=======================Snapshots==========================<br />
+lxc exec first -- apt-get update<br />
+lxc exec first -- apt-get dist-upgrade -y<br />
+lxc exec first -- apt-get autoremove --purge -y</p>
+<p>lxc snapshot first clean</p>
+<p>lxc exec first -- rm -Rf /etc /usr</p>
+<p>lxc exec first -- bash</p>
+<p>lxc restore first clean</p>
+<p>lxc exec first -- bash<br />
+========================Creating images===================<br />
+lxc publish first/clean --alias clean-ubuntu<br />
+lxc delete first<br />
+lxc launch clean-ubuntu second<br />
+=======================Accessing files from the container=<br />
+lxc file pull second/etc/hosts .<br />
+echo "1.2.3.4 my-example" >> hosts<br />
+lxc file push hosts second/etc/hosts<br />
+lxc file pull second/var/log/syslog - | less<br />
+lxc delete second<br />
+=======================Use a remote image server=========<br />
+lxc remote add images images.linuxcontainers.org<br />
+lxc image list images: | less<br />
+lxc launch images:centos/7/amd64 third<br />
+lxc exec third -- cat /etc/redhat-release<br />
+lxc delete third<br />
+lxc remote list<br />
+=======================Interact with remote LXD servers=<br />
+lxc list tryit:<br />
+lxc image list tryit:<br />
+lxc launch clean-ubuntu tryit:fourth<br />
+lxc exec tryit:fourth bash<br />
+lxc copy tryit:fourth tryit:fifth<br />
+lxc move tryit:fifth sixth<br />
+lxc start sixth<br />
+lxc exec sixth -- bash<br />
+lxc delete sixth<br />
+lxc delete tryit:fourth<br />
+lxc image delete clean-ubuntu<br />
+======================</p>
+<p>iptables -t nat -A PREROUTING -p tcp --dport 9000 -j DNAT --to 10.0.3.204:9000<br />
+</code></p>
+<p><div style="float:left; text-align:left;><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div>
+<h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3>
+</p>
+<p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p>
+<p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></p>The post <a href="/step-by-step-ubuntu-lxd/">Step by step Ubuntu LXD</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/step-by-step-ubuntu-lxd/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Step by Step install Openstack all in one Virtual machines</title>
+		<link>/step_by_step_install_openstack_all_in_one_virtual_machines/</link>
+					<comments>/step_by_step_install_openstack_all_in_one_virtual_machines/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Wed, 30 Dec 2015 08:16:37 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[openstack]]></category>
+		<guid isPermaLink="false">/?p=731</guid>
+
+					<description><![CDATA[<p>Requirements: OS Type : Ubuntu 14.04 CPU : 2 Core RAM : 8G Disk: 60G First Step we need add user for configure and running devstack sudo bash useradd -m stack echo "stack ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers su stack sudo aptitude update sudo aptitude upgrade -y reboot now install dependency package sudo aptitude install... </p>
+<p><a class="small button secondary" href="/step_by_step_install_openstack_all_in_one_virtual_machines/">Continue Reading</a></p>
+The post <a href="/step_by_step_install_openstack_all_in_one_virtual_machines/">Step by Step install Openstack all in one Virtual machines</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-731"></span></p>
+<p></p>
+<p>Requirements:<br />
+OS Type : Ubuntu 14.04<br />
+CPU : 2 Core<br />
+RAM : 8G<br />
+Disk: 60G<br />
+<br />
+First Step we need add user for configure and running devstack<br />
+<code><br />
+sudo bash<br />
+useradd -m stack<br />
+echo "stack ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers<br />
+su stack<br />
+sudo aptitude update<br />
+sudo aptitude upgrade -y<br />
+reboot<br />
+</code><br />
+<br />
+now install dependency package<br />
+<code><br />
+sudo aptitude install build-essential htop atop vim-nox nload git -y<br />
+sudo bash<br />
+su stack<br />
+cd<br />
+git clone https://github.com/openstack-dev/devstack.git<br />
+cd devstack<br />
+</code><br />
+<br />
+now we need local configuration<br />
+<code><br />
+vi /home/stack/devstack/local.conf<br />
+</code><br />
+<br />
+and paste configuration<br />
+<code><br />
+[[local|localrc]]<br />
+#=================<br />
+#khoshnud@gmail.com<br />
+#=================<br />
+#Password list configuration<br />
+ADMIN_PASSWORD=nova<br />
+MYSQL_PASSWORD=nova<br />
+RABBIT_PASSWORD=nova<br />
+SERVICE_PASSWORD=$ADMIN_PASSWORD<br />
+SERVICE_TOKEN=nova<br />
+#=================<br />
+#seet UUID as keystone token which is much shorter and easier to work with.<br />
+KEYSTONE_TOKEN_FORMAT=UUID<br />
+#=================<br />
+#Swift-Object_Storage<br />
+ENABLED_SERVICES+=,s-proxy,s-object,s-container,s-account<br />
+SWIFT_HASH=66a3d6b56c1f479c8b4e70ab5c2000f5<br />
+SWIFT_REPLICAS=1<br />
+SWIFT_DATA_DIR=$DEST/data<br />
+#=================<br />
+#Ceilometer-Metering_Service<br />
+ENABLED_SERVICES+=,ceilometer-acompute,ceilometer-acentral,ceilometer-collector,ceilometer-api<br />
+ENABLED_SERVICES+=,ceilometer-alarm-notify,ceilometer-alarm-eval<br />
+#=================<br />
+#Heat-Orchestration_Service<br />
+ENABLED_SERVICES+=,heat,h-api,h-api-cfn,h-api-cw,h-eng<br />
+#=================<br />
+#Apache_fronted_for_WSGI<br />
+APACHE_ENABLED_SERVICES+=keystone,swift<br />
+#=================<br />
+#Murano<br />
+enable_plugin murano git://git.openstack.org/openstack/murano<br />
+enable_service murano-cfapi<br />
+#MURANO_APPS=io.murano.apps.apache.Tomcat,io.murano.apps.Guacamole<br />
+#MURANO_APPS=io.murano.apps.apache.Tomcat,io.murano.apps.Guacamole,io.murano.apps.HDPSandbox,io.murano.apps.RabbitMQ,io.murano.apps.TestCluster,io.murano.apps.WordPress,io.murano.apps.ZabbixAgent,io.murano.apps.ZabbixServer,io.murano.apps.linux.Git,io.murano.apps.linux.Telnet,io.murano.databases.MySql,io.murano.apps.apache.ApacheHttpServer,io.murano.apps.apache.TomcatCluster,io.murano.apps.apache.TomcatServletContainer,io.murano.apps.apache.TomcatSingle,io.murano.apps.java.HelloWorld,io.murano.apps.java.HelloWorldCluster,io.murano.apps.mongodb.MongoReplicationSet,io.murano.apps.openstack.Murano,io.murano.apps.openstack.MuranoDashboard,io.murano.apps.paas.CloudFoundry.DEAng,io.murano.apps.paas.CloudFoundry,io.murano.apps.paas.CloudFoundryUI,io.murano.apps.test.SimpleVMcluster,io.murano.databases.PostgreSql,io.murano.databases.SqlDatabase,io.murano.windows.ActiveDirectory,io.murano.windows.FailoverCluster,io.murano.windows.SqlServer,io.murano.windows.SqlServerCluster,io.murano.apps.docker.DockerStandaloneHost,io.murano.apps.SugarCRM<br />
+#=================<br />
+#Enable_Logging<br />
+LOGFILE=/opt/stack/logs/stack.sh.log<br />
+VERBOSE=True<br />
+LOG_COLOR=True<br />
+SCREEN_LOGDIR=/opt/stack/logs<br />
+#=================<br />
+#Network_Configuration<br />
+FLOATING_RANGE=192.168.25.0/27<br />
+FLAT_INTERFACE=eth0<br />
+LOGFILE=/home/stack/stack.sh.log<br />
+Q_FLOATING_ALLOCATION_POOL=start=192.168.25.10,end=192.168.25.20<br />
+PUBLIC_NETWORK_GATEWAY=192.168.25.1<br />
+#=================<br />
+#install_devstack_single_node<br />
+disable_service n-net<br />
+enable_service q-svc<br />
+enable_service q-agt<br />
+enable_service q-dhcp<br />
+enable_service q-l3<br />
+enable_service q-meta<br />
+enable_service neutron<br />
+enable_service tempest<br />
+#=================<br />
+#install_devstack_multi_node<br />
+#disable_service n-net<br />
+#enable_service q-svc<br />
+#enable_service q-agt<br />
+#enable_service q-dhcp<br />
+#enable_service q-l3<br />
+#enable_service q-meta<br />
+#enable_service neutron<br />
+#================<br />
+#Runnig_this_section_for_all_node_connected_to_controler<br />
+#ENABLED_SERVICES=n-cpu,rabbit,neutron,q-agt<br />
+#SERVICE_HOST=[IP of controller node]<br />
+#MYSQL_HOST=$SERVICE_HOST<br />
+#RABBIT_HOST=$SERVICE_HOST<br />
+#Q_HOST=$SERVICE_HOST<br />
+</code><br />
+now go to devstack directory and run ./stack.sh<br />
+<br />
+virtual machine in openstack need internet and other network activity<br />
+<code><br />
+sudo bash<br />
+echo 1 > /proc/sys/net/ipv4/ip_forward<br />
+echo 1 > /proc/sys/net/ipv4/conf/eth0/proxy_arp<br />
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE<br />
+</code><br />
+<br />
+Attention: never poweroff or reboot openstack server, just pause and play (Snapshot ):D</p>
+<p>have a good day dude!</p>
+<p><div style="float:left; text-align:left;><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div>
+<h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3>
+</p>
+<p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p>
+<p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></p>The post <a href="/step_by_step_install_openstack_all_in_one_virtual_machines/">Step by Step install Openstack all in one Virtual machines</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/step_by_step_install_openstack_all_in_one_virtual_machines/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Install Qemu on Mac OS With Homebrew</title>
+		<link>/install-qemu-on-mac-os-with-homebrew/</link>
+					<comments>/install-qemu-on-mac-os-with-homebrew/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Mon, 12 Oct 2015 20:16:11 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Macosx]]></category>
+		<guid isPermaLink="false">/?p=727</guid>
+
+					<description><![CDATA[<p>First Step we need package manager on MAC OS ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" Second Step Instal Qemu brew install qemu</p>
+The post <a href="/install-qemu-on-mac-os-with-homebrew/">Install Qemu on Mac OS With Homebrew</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-727"></span></p>
+<p></p>
+<p>First Step we need package manager on MAC OS</p>
+<p><code>ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</code></p>
+<p>Second Step Instal Qemu</p>
+<p><code>brew install qemu</code></p>
+<p><div style="float:left; text-align:left;><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div>
+<h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3>
+</p>
+<p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p>
+<p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></p>The post <a href="/install-qemu-on-mac-os-with-homebrew/">Install Qemu on Mac OS With Homebrew</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/install-qemu-on-mac-os-with-homebrew/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Tunnel between two mikroTik</title>
+		<link>/tunnel-between-two-mikrotik/</link>
+					<comments>/tunnel-between-two-mikrotik/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Mon, 24 Aug 2015 06:23:00 +0000</pubDate>
+				<category><![CDATA[MikroTik]]></category>
+		<guid isPermaLink="false">/?p=712</guid>
+
+					<description><![CDATA[<p>&#160; You need two mikrotik for this example and many many client :D In this case you need &#8230; 1) two mikrotik connect to the internet 2) just one interface 3) Just have IP address for connecting to internet and Default Gateway 4)Copy and past :D Now start with MT-01 open terminal and paste&#8230; #... </p>
+<p><a class="small button secondary" href="/tunnel-between-two-mikrotik/">Continue Reading</a></p>
+The post <a href="/tunnel-between-two-mikrotik/">Tunnel between two mikroTik</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-712"></span></p>
+<p>&nbsp;</p>
+<p>You need two mikrotik for this example and many many client :D</p>
+<p>In this case you need &#8230;<br />
+1) two mikrotik connect to the internet<br />
+2) just one interface<br />
+3) Just have IP address for connecting to internet and Default Gateway<br />
+4)Copy and past :D</p>
+<p>Now start with MT-01</p>
+<p>open terminal and paste&#8230;</p>
+<p><code><br />
+# aug/01/2015 12:00:00 by RouterOS 6.31<br />
+# vaheeD MT-S<br />
+#Please Attention to all comment<br />
+#Secure VPN Server with<br />
+#OVPN SERVER ON PORT 10022 ** You can chenage this port to XXXXX<br />
+#SSTP SERVER ON PORT 1025  ** You can chenage this port to XXXXX<br />
+#WINBOX PORT 6600   ###   SSH PORT  2221<br />
+#<br />
+/certificate<br />
+add name=ca-template common-name=myCa key-usage=key-cert-sign,crl-sign<br />
+sign ca-template name=myCa<br />
+/ip ipsec proposal<br />
+set [ find default=yes ] enc-algorithms=3des,aes-128-cbc<br />
+/ip pool<br />
+add name=pool ranges=192.168.88.100-192.168.88.200<br />
+/ppp profile<br />
+set 0 dns-server=8.8.8.8,4.2.2.1 local-address=192.168.88.1 remote-address=\<br />
+    pool<br />
+set 1 dns-server=8.8.8.8,4.2.2.1 local-address=192.168.88.1 \<br />
+    remote-address=pool<br />
+/interface ovpn-server server<br />
+set enabled=yes \<br />
+    port=10022<br />
+/interface sstp-server server<br />
+set enabled=yes port=1025<br />
+/ip address<br />
+###CHANGE PUBLIC_IP ADDRESS TO xxx.xxx.xxx.xxx<br />
+#add address=PUBLIC_IP interface=ether1<br />
+add address=192.168.88.1/24 interface=ether1 network=192.168.99.0<br />
+/ip dns<br />
+set allow-remote-requests=yes servers=8.8.8.8,8.8.4.4,4.2.2.1<br />
+/ip firewall mangle<br />
+/ip firewall nat<br />
+add action=masquerade chain=srcnat<br />
+###CHANGE PUBLIC_IP ADDRESS TO xxx.xxx.xxx.xxx<br />
+#add action=src-nat chain=srcnat to-addresses=PUBLIC_IP<br />
+###CHANGE DefaultGateway ADDRESS TO zzz.zzz.zzz.zzz<br />
+#/ip route<br />
+#add distance=1 gateway=DefaultGateway<br />
+/ip service<br />
+set telnet disabled=yes<br />
+set ftp disabled=yes<br />
+set www disabled=yes<br />
+set ssh disabled=yes port=2221<br />
+set winbox port=6600<br />
+set api disabled=yes<br />
+set api-ssl disabled=yes<br />
+/ppp secret<br />
+add name=ppp password=ppp<br />
+###EXPORT CA For Client ###OPTIONAL<br />
+#/certificate export-certificate myCa<br />
+#/certificate export-certificate client1 export-passphrase=xxxxxxxx<br />
+#/certificate export-certificate client2 export-passphrase=xxxxxxxx<br />
+###FINISH SCRIPT.<br />
+</code></p>
+<p>now paste</p>
+<p><code><br />
+/interface ovpn-server server<br />
+set certificate=myca<br />
+</code></p>
+<p>
+Move to MT-02</p>
+<p>****<br />
+now change xxx.xxx.xxx.xxx  TO   Public ip address MT-01<br />
+****</p>
+<p>open terminal and paste&#8230;</p>
+<p><code><br />
+# aug/01/2015 12:00:00 by RouterOS 6.31<br />
+# vaheeD MT-CS<br />
+#Please Attention to all comment<br />
+#Secure VPN Server with<br />
+#PPTP SERVER With PAP Configuration<br />
+#L2TP SERVER With PresharedKEY : 123456789<br />
+#WEB_PROXY SERVER ON PORT 9090<br />
+#SOCKS_PROXY SERVER ON PORT 10520<br />
+#WINBOX PORT 6600   ###   SSH PORT  2221<br />
+#<br />
+### CHANGE xxx.xxx.xxx.xxx TO IP MT-S<br />
+:global vpnserverOUT xxx.xxx.xxx.xxx<br />
+/interface ovpn-client<br />
+add auth=md5 connect-to="$vpnserverOUT" name=\<br />
+    ovpn-out1 password=ppp port=10022 user=ppp<br />
+add auth=md5 cipher=aes192 connect-to="$vpnserverOUT" name=\<br />
+    ovpn-out2 password=ppp port=10022 user=ppp<br />
+add auth=md5 cipher=aes192 connect-to="$vpnserverOUT" name=\<br />
+    ovpn-out3 password=ppp port=10022 user=ppp<br />
+add auth=md5 cipher=aes128 connect-to="$vpnserverOUT" name=\<br />
+  ovpn-out4 password=ppp port=10022 user=ppp<br />
+add cipher=aes256 connect-to="$vpnserverOUT" name=\<br />
+    ovpn-out5 password=ppp port=10022 user=ppp<br />
+add auth=md5 connect-to="$vpnserverOUT" name=\<br />
+    ovpn-out6 password=ppp port=10022 user=ppp<br />
+add cipher=aes128 connect-to="$vpnserverOUT" name=\<br />
+    ovpn-out7 password=ppp port=10022 user=ppp<br />
+add auth=md5 cipher=aes128 connect-to="$vpnserverOUT" name=\<br />
+    ovpn-out8 password=ppp port=10022 user=ppp<br />
+/ip ipsec proposal<br />
+set [ find default=yes ] enc-algorithms=3des,aes-128-cbc,aes-256-cbc \<br />
+    pfs-group=none<br />
+/ip pool<br />
+add name=vpn ranges=192.168.89.100-192.168.89.200<br />
+/ppp profile<br />
+add change-tcp-mss=yes dns-server=192.168.89.1,8.8.8.8 \<br />
+    local-address=192.168.89.1 name=VPN remote-address=vpn<br />
+/interface sstp-client<br />
+add connect-to="$vpnserverOUT:1025" disabled=no http-proxy=0.0.0.0:1025 name=\<br />
+    sstp-out1 password=ppp pfs=yes profile=default-encryption user=ppp<br />
+add connect-to="$vpnserverOUT:1025" disabled=no http-proxy=0.0.0.0:1025 name=\<br />
+    sstp-out2 password=ppp pfs=yes profile=default-encryption user=ppp<br />
+add connect-to="$vpnserverOUT:1025" disabled=no http-proxy=0.0.0.0:1025 name=\<br />
+    sstp-out3 password=ppp pfs=yes profile=default-encryption user=ppp<br />
+add connect-to="$vpnserverOUT:1025" disabled=no http-proxy=0.0.0.0:1025 name=\<br />
+    sstp-out4 password=ppp pfs=yes profile=default-encryption user=ppp<br />
+add connect-to="$vpnserverOUT:1025" disabled=no http-proxy=0.0.0.0:1025 name=\<br />
+    sstp-out5 password=ppp pfs=yes profile=default-encryption user=ppp<br />
+add connect-to="$vpnserverOUT:1025" disabled=no http-proxy=0.0.0.0:1025 name=\<br />
+    sstp-out6 password=ppp pfs=yes profile=default-encryption user=ppp<br />
+add connect-to="$vpnserverOUT:1025" disabled=no http-proxy=0.0.0.0:1025 name=\<br />
+    sstp-out7 password=ppp pfs=yes profile=default-encryption user=ppp<br />
+add connect-to="$vpnserverOUT:1025" disabled=no http-proxy=0.0.0.0:1025 name=\<br />
+    sstp-out8 password=ppp pfs=yes profile=default-encryption user=ppp<br />
+/interface l2tp-server server<br />
+set default-profile=VPN enabled=yes max-mru=1460 max-mtu=1460<br />
+/interface pptp-server server<br />
+set authentication=pap default-profile=VPN enabled=yes max-mru=1460 max-mtu=\<br />
+    1460<br />
+/ip address<br />
+###CHANGE PUBLIC_IP ADDRESS TO xxx.xxx.xxx.xxx<br />
+#add address=PUBLIC_IP interface=ether1<br />
+add address=192.168.89.1/24 interface=ether1 network=192.168.89.0<br />
+/ip dns<br />
+set allow-remote-requests=yes cache-max-ttl=1h cache-size=8192KiB \<br />
+    max-udp-packet-size=8192 servers=4.2.2.4,8.8.8.8<br />
+/ip firewall address-list<br />
+add address=192.168.0.0/16 list=local<br />
+add address=172.16.0.0/12 list=local<br />
+add address=10.0.0.0/8 list=local<br />
+/ip firewall mangle<br />
+add chain=prerouting comment=accept-internal-network dst-address-list=local<br />
+add chain=output comment=accept-internal-network dst-address-list=local<br />
+add action=mark-routing chain=prerouting new-routing-mark=VPN src-address=\<br />
+    192.168.89.0/24<br />
+add action=mark-routing chain=output dst-port=80 new-routing-mark=VPN \<br />
+    protocol=tcp<br />
+add action=mark-routing chain=output dst-port=443 new-routing-mark=VPN \<br />
+    protocol=tcp<br />
+add action=mark-routing chain=output dst-port=53 new-routing-mark=VPN \<br />
+    protocol=udp<br />
+/ip firewall nat<br />
+add action=masquerade chain=srcnat<br />
+add action=redirect chain=dstnat dst-port=53 protocol=udp to-ports=53<br />
+/ip ipsec peer<br />
+add address=0.0.0.0/0 enc-algorithm=3des exchange-mode=main-l2tp \<br />
+    generate-policy=port-override local-address=0.0.0.0 secret=123456789<br />
+/ip proxy<br />
+set always-from-cache=yes anonymous=yes cache-administrator=noway! \<br />
+    cache-on-disk=yes cache-path=disk1/web-proxy1 enabled=yes parent-proxy=\<br />
+    0.0.0.0 port=9090 serialize-connections=yes<br />
+/ip proxy direct<br />
+add dst-address=192.168.0.0/16<br />
+add dst-address=172.16.0.0/16<br />
+add dst-address=10.10.0.0/16<br />
+add dst-host=*.ir<br />
+/ip route<br />
+add comment=OUTPUT distance=1 gateway="ovpn-out1,ovpn-out2,ovpn-out3,ovpn-out4,\<br />
+    ovpn-out5,ovpn-out6,ovpn-out7,ovpn-out8,sstp-out1,sstp-out2,sstp-out3,sstp\<br />
+    -out4,sstp-out5,sstp-out6,sstp-out7,sstp-out8" routing-mark=VPN<br />
+/ip service<br />
+set telnet disabled=yes<br />
+set ftp disabled=yes<br />
+set www disabled=yes<br />
+set ssh port=2221<br />
+set api disabled=yes<br />
+set winbox port=6600<br />
+/ip socks<br />
+set connection-idle-timeout=5m enabled=yes max-connections=500 port=10520<br />
+/ppp secret<br />
+add name=ppp password=ppp profile=VPN<br />
+###FINISH SCRIPT<br />
+</code></p>
+<p>Client Connect to MT-02 with Public IP address.</p>
+<p>Have a GOOD Day!</p>
+<p><div style="float:left; text-align:left;><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div>
+<h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3>
+</p>
+<p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p>
+<p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></p>The post <a href="/tunnel-between-two-mikrotik/">Tunnel between two mikroTik</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/tunnel-between-two-mikrotik/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>PPTP Client on XBMCbuntu</title>
+		<link>/pptp-client-xbmcbuntu/</link>
+					<comments>/pptp-client-xbmcbuntu/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Wed, 04 Jun 2014 06:42:33 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<guid isPermaLink="false">/?p=700</guid>
+
+					<description><![CDATA[<p>&#160; Installing the Client Program &#160;   apt-get install pptp-linux &#160; cat /etc/ppp/chap-secrets USERNAME PPTP PASSWORD * __EOF__ cat /etc/ppp/peers/pptp pty "pptp SERVER-IP-ADDRESS --nolaunchpppd" name USERNAME usepeerdns noauth file /etc/ppp/options.pptp ipparam pptp __EOF__ &#160; Connect pon pptp &#160; Disconnect poff pptp &#160; route add -net 0.0.0.0 dev ppp0 &#160; &#160;</p>
+The post <a href="/pptp-client-xbmcbuntu/">PPTP Client on XBMCbuntu</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-700"></span></p>
+<p>&nbsp;</p>
+<p><b style="color: #000000;">Installing the Client Program</b></p>
+<p>&nbsp;</p>
+<p><b style="color: #000000; font-family: verdana, arial, helvetica, sans-serif; font-size: medium; line-height: normal;"> </b></p>
+<pre>
+apt-get install pptp-linux
+</pre>
+<p>&nbsp;<br />
+</p>
+<pre>
+cat <<'__EOF__' >> /etc/ppp/chap-secrets
+USERNAME  PPTP  PASSWORD  *
+__EOF__
+</pre>
+<pre>
+cat <<'__EOF__' >> /etc/ppp/peers/pptp
+pty "pptp SERVER-IP-ADDRESS --nolaunchpppd"
+name USERNAME
+usepeerdns
+noauth
+file /etc/ppp/options.pptp
+ipparam pptp
+__EOF__
+</pre>
+<p>&nbsp;<br />
+<br />
+Connect</p>
+<pre>
+pon pptp
+</pre>
+<p>
+&nbsp;</p>
+<p>Disconnect</p>
+<pre>
+poff pptp
+</pre>
+<p>&nbsp;<br />
+</p>
+<pre>
+route add -net 0.0.0.0 dev ppp0
+</pre>
+<p>&nbsp;<br />
+&nbsp;</p>
+<p><div style="float:left; text-align:left;><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div>
+<h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3>
+</p>
+<p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p>
+<p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></p>The post <a href="/pptp-client-xbmcbuntu/">PPTP Client on XBMCbuntu</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/pptp-client-xbmcbuntu/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>How Remove Older Kernel on Ubuntu and Clear /boot Partition</title>
+		<link>/remove-older-kernel-ubuntu-clear-boot-partition/</link>
+					<comments>/remove-older-kernel-ubuntu-clear-boot-partition/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Tue, 03 Jun 2014 21:24:49 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<guid isPermaLink="false">/?p=695</guid>
+
+					<description><![CDATA[<p>&#160; How Remove Older Kernel on Ubuntu and Clear /boot Partition &#160; Just login as root user or using sudo command like &#8230; &#160; sudo apt-get remove --purge $(dpkg -l 'linux-*' &#124; sed '/^ii/!d;/'"$(uname -r &#124; sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d')</p>
+The post <a href="/remove-older-kernel-ubuntu-clear-boot-partition/">How Remove Older Kernel on Ubuntu and Clear /boot Partition</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-695"></span></p>
+<p>&nbsp;</p>
+<p>How Remove Older Kernel on Ubuntu and Clear /boot Partition</p>
+<p>&nbsp;</p>
+<p>Just login as root user or using sudo command like &#8230;</p>
+<p>&nbsp;</p>
+<pre>
+sudo apt-get remove --purge $(dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d')
+</pre>
+<p><div style="float:left; text-align:left;><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div>
+<h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3>
+</p>
+<p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p>
+<p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></p>The post <a href="/remove-older-kernel-ubuntu-clear-boot-partition/">How Remove Older Kernel on Ubuntu and Clear /boot Partition</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/remove-older-kernel-ubuntu-clear-boot-partition/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

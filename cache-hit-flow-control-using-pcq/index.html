@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-US"
+	prefix="og: https://ogp.me/ns#" > <![endif]--><!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en-US"
+	prefix="og: https://ogp.me/ns#" > <![endif]--><!--[if IE 8]>    <html class="no-js lt-ie9" lang="en-US"
+	prefix="og: https://ogp.me/ns#" > <![endif]--><!--[if gt IE 8]><!--><html class="no-js" lang="en-US" prefix="og: https://ogp.me/ns#"> <!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="pingback" href="/xmlrpc.php">
+
+<meta name="viewport" content="width=device-width">
+
+<title>Cache Hit Flow Control Using PCQ | vaheeD khoshnouD</title>
+<meta name="description" content="Objective 1. All users in general category would get maximum download speed(HTTP and/or P2P) @ 8 Mbps from Cache. 2. All users in 16M category would get maximum download speed (HTTP and/or P2P) @ 16 Mbps per file download instance from Cache. 3. All users in 12M category would get maximum download speed (HTTP and/or... Continue Reading">
+<link rel="canonical" href="/cache-hit-flow-control-using-pcq/">
+<meta property="og:site_name" content="vaheeD khoshnouD | linux, mikrotik, macosx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cache Hit Flow Control Using PCQ | vaheeD khoshnouD">
+<meta property="og:description" content="Objective 1. All users in general category would get maximum download speed(HTTP and/or P2P) @ 8 Mbps from Cache. 2. All users in 16M category would get maximum download speed (HTTP and/or P2P) @ 16 Mbps per file download instance from Cache. 3. All users in 12M category would get maximum download speed (HTTP and/or... Continue Reading">
+<meta property="og:url" content="http://vaheed.net/cache-hit-flow-control-using-pcq/">
+<meta property="article:published_time" content="2013-01-09T16:06:29Z">
+<meta property="article:modified_time" content="2013-01-09T16:06:29Z">
+<meta property="twitter:card" content="summary">
+<meta property="twitter:domain" content="vaheed.net">
+<meta property="twitter:title" content="Cache Hit Flow Control Using PCQ | vaheeD khoshnouD">
+<meta property="twitter:description" content="Objective 1. All users in general category would get maximum download speed(HTTP and/or P2P) @ 8 Mbps from Cache. 2. All users in 16M category would get maximum download speed (HTTP and/or P2P) @ 16 Mbps per file download instance from Cache. 3. All users in 12M category would get maximum download speed (HTTP and/or... Continue Reading">
+<script type="application/ld+json" class="aioseo-schema">
+			{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebSite","@id":"http:\/\/vaheed.net\/#website","url":"http:\/\/vaheed.net\/","name":"vaheeD khoshnouD","description":"linux, mikrotik, macosx","publisher":{"@id":"http:\/\/vaheed.net\/#organization"}},{"@type":"Organization","@id":"http:\/\/vaheed.net\/#organization","name":"vaheeD khoshnouD","url":"http:\/\/vaheed.net\/"},{"@type":"BreadcrumbList","@id":"http:\/\/vaheed.net\/cache-hit-flow-control-using-pcq\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"http:\/\/vaheed.net\/#listItem","position":"1","item":{"@id":"http:\/\/vaheed.net\/#item","name":"Home","description":"vaheeD khoshnouD | linux, mikrotik, macosx","url":"http:\/\/vaheed.net\/"},"nextItem":"http:\/\/vaheed.net\/cache-hit-flow-control-using-pcq\/#listItem"},{"@type":"ListItem","@id":"http:\/\/vaheed.net\/cache-hit-flow-control-using-pcq\/#listItem","position":"2","item":{"@id":"http:\/\/vaheed.net\/cache-hit-flow-control-using-pcq\/#item","name":"Cache Hit Flow Control Using PCQ","description":"Objective 1. All users in general category would get maximum download speed(HTTP and\/or P2P) @ 8 Mbps from Cache. 2. All users in 16M category would get maximum download speed (HTTP and\/or P2P) @ 16 Mbps per file download instance from Cache. 3. All users in 12M category would get maximum download speed (HTTP and\/or... Continue Reading","url":"http:\/\/vaheed.net\/cache-hit-flow-control-using-pcq\/"},"previousItem":"http:\/\/vaheed.net\/#listItem"}]},{"@type":"Person","@id":"http:\/\/vaheed.net\/author\/vaheed\/#author","url":"http:\/\/vaheed.net\/author\/vaheed\/","name":"vaheeD khoshnouD","image":{"@type":"ImageObject","@id":"http:\/\/vaheed.net\/cache-hit-flow-control-using-pcq\/#authorImage","url":"http:\/\/1.gravatar.com\/avatar\/4ef8c65e8d3633adf28103cadb4591c2?s=96&d=mm&r=g","width":"96","height":"96","caption":"vaheeD khoshnouD"}},{"@type":"WebPage","@id":"http:\/\/vaheed.net\/cache-hit-flow-control-using-pcq\/#webpage","url":"http:\/\/vaheed.net\/cache-hit-flow-control-using-pcq\/","name":"Cache Hit Flow Control Using PCQ | vaheeD khoshnouD","description":"Objective 1. All users in general category would get maximum download speed(HTTP and\/or P2P) @ 8 Mbps from Cache. 2. All users in 16M category would get maximum download speed (HTTP and\/or P2P) @ 16 Mbps per file download instance from Cache. 3. All users in 12M category would get maximum download speed (HTTP and\/or... Continue Reading","inLanguage":"en-US","isPartOf":{"@id":"http:\/\/vaheed.net\/#website"},"breadcrumb":{"@id":"http:\/\/vaheed.net\/cache-hit-flow-control-using-pcq\/#breadcrumblist"},"author":"http:\/\/vaheed.net\/cache-hit-flow-control-using-pcq\/#author","creator":"http:\/\/vaheed.net\/cache-hit-flow-control-using-pcq\/#author","datePublished":"2013-01-09T16:06:29+03:30","dateModified":"2013-01-09T16:06:29+03:30"},{"@type":"Article","@id":"http:\/\/vaheed.net\/cache-hit-flow-control-using-pcq\/#article","name":"Cache Hit Flow Control Using PCQ | vaheeD khoshnouD","description":"Objective 1. All users in general category would get maximum download speed(HTTP and\/or P2P) @ 8 Mbps from Cache. 2. All users in 16M category would get maximum download speed (HTTP and\/or P2P) @ 16 Mbps per file download instance from Cache. 3. All users in 12M category would get maximum download speed (HTTP and\/or... Continue Reading","headline":"Cache Hit Flow Control Using PCQ","author":{"@id":"http:\/\/vaheed.net\/author\/vaheed\/#author"},"publisher":{"@id":"http:\/\/vaheed.net\/#organization"},"datePublished":"2013-01-09T16:06:29+03:30","dateModified":"2013-01-09T16:06:29+03:30","articleSection":"MikroTik","mainEntityOfPage":{"@id":"http:\/\/vaheed.net\/cache-hit-flow-control-using-pcq\/#webpage"},"isPartOf":{"@id":"http:\/\/vaheed.net\/cache-hit-flow-control-using-pcq\/#webpage"}}]}
+		</script>
+<script type="761305da98115cb4f61bf6a6-text/javascript">
+			window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+			ga('create', "UA-3072201-3", 'auto');
+			ga('send', 'pageview');
+		</script>
+<script async src="https://www.google-analytics.com/analytics.js" type="761305da98115cb4f61bf6a6-text/javascript"></script>
+
+<link rel="dns-prefetch" href="//vjs.zencdn.net">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//s.w.org">
+<link rel="alternate" type="application/rss+xml" title="vaheeD khoshnouD &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="vaheeD khoshnouD &raquo; Comments Feed" href="/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="vaheeD khoshnouD &raquo; Cache Hit Flow Control Using PCQ Comments Feed" href="/cache-hit-flow-control-using-pcq/feed/">
+<link rel="publisher" href="https://plus.google.com/103839803047317952696">
+<script type="761305da98115cb4f61bf6a6-text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/vaheed.net\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.7.2"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="videojs-css" href="//vjs.zencdn.net/5.9.2/video-js.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="videojs-style-css" href="/wp-content/plugins/videojs-hls-player/videojs-hls-player.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="videojs-airplay-css" href="/wp-content/plugins/videojs-hls-player/videojs-airplay/videojs.airplay.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="wp-search-suggest-css" href="/wp-content/plugins/wp-search-suggest/css/wpss-search-suggest.css?ver=5" type="text/css" media="all">
+<link rel="stylesheet" id="foundation-css" href="/wp-content/themes/drewsymo-Foundation-3b62be5/stylesheets/foundation.min.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="app-css" href="/wp-content/themes/drewsymo-Foundation-3b62be5/style.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C300&#038;ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="post-ratings-raty-css" href="/wp-content/plugins/post-ratings/assets/jquery.raty.css?ver=3.0" type="text/css" media="all">
+<link rel="stylesheet" id="wp-author-bio-css" href="/wp-content/plugins/wp-about-author/wp-about-author.css?ver=5.7.2" type="text/css" media="all">
+<script type="761305da98115cb4f61bf6a6-text/javascript" src="/wp-includes/js/jquery/jquery.min.js?ver=3.5.1" id="jquery-core-js"></script>
+<script type="761305da98115cb4f61bf6a6-text/javascript" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+<script type="761305da98115cb4f61bf6a6-text/javascript" src="//vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js?ver=1.0.2" id="videojs-ie8-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/472">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 5.7.2">
+<link rel="shortlink" href="/?p=472">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fcache-hit-flow-control-using-pcq%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fcache-hit-flow-control-using-pcq%2F&#038;format=xml">
+
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body class="post-template-default single single-post postid-472 single-format-standard">
+<header class="row">
+<hgroup class="site-title twelve columns">
+<h1><a href="/" title="vaheeD khoshnouD" rel="home">vaheeD khoshnouD</a></h1>
+<h3 class="subheader">linux, mikrotik, macosx</h3>
+</hgroup>
+<div class="twelve columns"><ul class="nav-bar"><li class="page_item page-item-7"><a href="/about-me/">About Me</a></li></ul></div>
+</header>
+
+<script type="761305da98115cb4f61bf6a6-text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//ns1.faratar.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//ns1.faratar.org/piwik/piwik.php?idsite=1" style="border:0;" alt=""></p></noscript>
+
+
+<div class="row">
+
+<div class="nine columns" role="content">
+<article>
+<header>
+<hgroup>
+<h2><a href="/cache-hit-flow-control-using-pcq/" title="Permalink to Cache Hit Flow Control Using PCQ" rel="bookmark">Cache Hit Flow Control Using PCQ</a></h2>
+<h6>Written by <a href="https://plus.google.com/103839803047317952696" title="Visit vaheeD&#8217;s website" rel="author external">vaheeD</a> on January 9, 2013</h6>
+</hgroup>
+</header>
+<div class="post-ratings" data-post="472">
+<div class="rating" data-post="472" data-rating="4.2" data-readonly="0"></div>
+<div class="rating-meta">
+<strong>4.20</strong> avg. rating (<strong>84</strong>% score) - <strong class="votes">5</strong> votes	</div>
+</div>
+<p><span id="more-472"></span></p>
+<h3>Objective</h3>
+<p>1. All users in general category would get maximum download speed(HTTP and/or P2P) @ 8 Mbps from Cache.</p>
+<p>2. All users in 16M category would get maximum download speed (HTTP and/or P2P) @ 16 Mbps per file download instance from Cache.</p>
+<p>3. All users in 12M category would get maximum download speed (HTTP and/or P2P) @ 12 Mbps per file download instance from Cache.</p>
+<p>4. Multiple download instances on one single user from the cache would share his own download speed quota(8M/12M/16M) among download instances.</p>
+<p>5. In this example the individual user 192.168.100.1 and all the users in network 192.168.220.0/24 would have 12 Mbps speed for cache hit (HTTP and/or P2P) from Cache.</p>
+<p>6. Also, the individual user 192.168.200.1 and all the users in network 192.168.210.0/24 would have 16 Mbps speed for cache hit (HTTP and/or P2P) from Cache.</p>
+<p>7. All other users of 192.168.100.0/24 and 192.168.200.0/24 networks would have to be considered in general category to have speed quota @ 8 Mbps for for cache hit</p>
+<p>(HTTP and/or P2P) from Cache.</p>
+<h3>Assumptions</h3>
+<p>1. IP address of the cache is 192.168.248.14.</p>
+<p>2. HTTP proxy in the cache runs in &#8216;hidden&#8217; mode. Meaning it spoofs the ip address of the subscribers while sending requests to the servers. Therefore the servers do not detect the presence of the http proxy.</p>
+<p>3. HTTP cache hit traffic is marked with DSCP=4 in the Cache. Meaning all traffic through MiktoTik with DSCP mark 4 are considered HTTP cache hit.</p>
+<p>4. P2P cache hit traffic is having a source IP address as that of the cache. Therefore, any traffic through Mikrotik that has source IP address= 192.168.248.14 is considered as P2P cache hit traffic.</p>
+<h3>Solution</h3>
+<p>Static Simple Queues won&#8217;t work. Because, if the ISP has few thousand users, there should be that many simple queues defined. This is fairly impractical. Also, static simple queues would not support dynamic assignment of IP addresses to subscribers.</p>
+<p>We need to use dynamic simple queues along with PCQ. This would create thousands of dynamic sub-queues for thousands of subscribers automatically.</p>
+<h3>Network Diagram</h3>
+<pre>[Internet]
+    |
+    |
+    |
+    |
+[L-3 Switch]--------[Mikrotik in bridge mode using ether2 and ether3]---------[HTTP &amp;P2P Cache]
+    |                                                                                                                        
+    |     
+    |
+    |
+[Subscribers]
+
+=======
+Subscribers' subnets in this example: 192.168.100.0/24; 192.168.200.0/24; 192.168.210.0/24; 192.168.220.0/24</pre>
+<h3>Bridge</h3>
+<p>1. Create a bridge named bridge1</p>
+<pre>/interface bridge 
+add name="bridge1"</pre>
+<p>2. Add interfaces ether2 and ether3 to bridge1</p>
+<pre>/interface bridge port 
+add interface=ether2 bridge=bridge1 
+add interface=ether3 bridge=bridge1</pre>
+<p>3. Configure bridge1 to use ip firewall so that packet marking works.</p>
+<pre>/interface bridge settings
+set use-ip-firewall=yes</pre>
+<h3>Address-List</h3>
+<p>1. Add address of Cache servers to the address-list P2P_Cache</p>
+<pre>/ip firewall address-list
+add address=192.168.248.14 disabled=no list=Cache</pre>
+<p>2. Add host/network Addresses to address lists P2P_Client_12M or P2P_Client_16m for 12 Mbps or 16 Mbps download speed quota.</p>
+<pre>add address=192.168.100.1 disabled=no list=Client_12M
+add address=192.168.200.1 disabled=no list=Client_16m
+add address=192.168.220.0/24 disabled=no list=Client_12M
+add address=192.168.210.0/24 disabled=no list=Client_16m</pre>
+<h3>Connection Tracking</h3>
+<p>1. Enable connection tracking for PCQ to work. TCP-established timeout has been reduced from default 1 day to 1 hour.</p>
+<pre>/ip firewall connection tracking
+set enabled=yes tcp-established-timeout=1h</pre>
+<h3>Mangle</h3>
+<p>1. All the packets with source IP address equal to the IP address of P2P interface on CacheMARA needs to be classified by packet marking into 12M, 16M or General</p>
+<p>classes.</p>
+<pre>/ip firewall mangle
+
+add action=mark-packet chain=prerouting comment="HTTP Cache Hit Packet Mark for 12M Clients" 
+dst-address-list=Client_12M new-packet-mark=Cache_Hit_12M passthrough=no dscp=4
+
+add action=mark-packet chain=prerouting comment="P2P Cache Hit Packet Mark for 12M Clients" 
+dst-address-list=Client_12M new-packet-mark=Cache_Hit_12M passthrough=no src-address-list=Cache
+
+add action=mark-packet chain=prerouting comment="HTTP Cache Hit Packet Mark for 16M Clients" 
+dst-address-list=Client_16M new-packet-mark=Cache_Hit_16M passthrough=no dscp=4
+
+add action=mark-packet chain=prerouting comment="P2P Cache Hit Packet Mark for 16M Clients" 
+dst-address-list=Client_16M new-packet-mark=Cache_Hit_16M passthrough=no src-address-list=Cache
+
+add action=mark-packet chain=prerouting comment="HTTP Cache Hit Packet Mark for All Clients" 
+new-packet-mark=Cache_Hit_General passthrough=no dscp=4
+
+add action=mark-packet chain=prerouting comment="P2P Cache Hit Packet Mark for All Clients" 
+new-packet-mark=Cache_Hit_General passthrough=no src-address-list=Cache</pre>
+<h3>Per Connection Queuing</h3>
+<p>1. Different PCQs for 12M, 16M or general class need to be created.</p>
+<pre>/queue type
+add kind=pcq name=8Mbps pcq-rate=8M
+add kind=pcq name=12Mbps pcq-rate=12M 
+add kind=pcq name=16Mbps pcq-rate=16M</pre>
+<h3>Simple Queue</h3>
+<p>Create simple queues for different speed limits.</p>
+<pre>/queue simple
+
+add comment="HTTP P2P Cache Hit @ 16 Mbps" name=HTTP_P2P_16 packet-marks=Cache_Hit_16M queue=16Mbps/16Mbps
+
+add comment="HTTP P2P Cache Hit @ 12 Mbps" name=HTTP_P2P_12 packet-marks=Cache_Hit_12M queue=12Mbps/12Mbps
+
+add comment="HTTP P2P Cache Hit @ 8 Mbps" name=HTTP_P2P_8 packet-marks=Cache_Hit_General queue=8Mbps/8Mbps</pre>
+<p>&nbsp;</p>
+<div class="post-ratings" data-post="472">
+<div class="rating" data-post="472" data-rating="4.2" data-readonly="0"></div>
+<div class="rating-meta">
+<strong>4.20</strong> avg. rating (<strong>84</strong>% score) - <strong class="votes">5</strong> votes	</div>
+</div>
+<footer>
+<p></p>
+<p>Posted Under: <a href="/category/mikrotik/" rel="category tag">MikroTik</a></p>
+<section class="row">
+<div class="twelve columns">
+<div class="panel author-box">
+<a class="th"><img alt="" src="https://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=55&#038;d=mm&#038;r=g" srcset="http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=110&#038;d=mm&#038;r=g 2x" class="author_gravatar left  avatar-55 photo" height="55" width="55" loading="lazy"></a>
+<h5>About <a href="https://plus.google.com/103839803047317952696" title="Visit vaheeD&#8217;s website" rel="author external">vaheeD</a>
+</h5>
+<p>
+</p>
+</div>
+</div>
+</section>
+
+
+<div id="respond" class="comment-respond">
+<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/cache-hit-flow-control-using-pcq/#respond" style="display:none;">Cancel reply</a></small>
+</h3>
+<form action="/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p>
+<p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p>
+<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200"></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="472" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>
+<div style="text-align:center; font-style:italic; font-size:12px;">Protected by <a href="http://boliquan.com/wp-anti-spam/" target="_blank">WP Anti Spam</a>
+</div>
+</form> </div>
+</footer>
+</article>
+<hr>
+</div>
+
+
+<aside class="three columns">
+<div>
+<form method="get" id="searchform" action="/">
+<div class="row">
+<div class="twelve columns">
+<div class="row collapse">
+<div class="eight mobile-three columns">
+<input type="text" name="s" id="s" placeholder="Search">
+</div>
+<div class="four mobile-one columns">
+<input type="submit" class="postfix button expand" name="submit" id="searchsubmit" value="Search">
+</div>
+</div>
+</div>
+</div>
+</form>
+</div>
+<div>
+<h5>Categories</h5>
+<ul>
+<li class="cat-item cat-item-17">
+<a href="/category/cisco/">Cisco</a>
+</li>
+<li class="cat-item cat-item-6">
+<a href="/category/linux/">Linux</a>
+</li>
+<li class="cat-item cat-item-8">
+<a href="/category/macosx/">Macosx</a>
+</li>
+<li class="cat-item cat-item-7">
+<a href="/category/mikrotik/">MikroTik</a>
+</li>
+<li class="cat-item cat-item-10">
+<a href="/category/network/">Network</a>
+</li>
+<li class="cat-item cat-item-20">
+<a href="/category/openstack/">openstack</a>
+</li>
+<li class="cat-item cat-item-11">
+<a href="/category/security/">Security</a>
+</li>
+<li class="cat-item cat-item-1">
+<a href="/category/uncategorized/">Uncategorized</a>
+</li>
+</ul>
+</div>
+</aside>
+
+</div>
+
+
+<footer class="row">
+<div class="twelve columns">
+<ul class="link-list">
+</ul>
+</div>
+</footer>
+
+<div id="foot">
+<strong>vaheeD.NET</strong> | linux, mikrotik, macosx | 2012, 2013</div>
+<script type="761305da98115cb4f61bf6a6-text/javascript" src="//vjs.zencdn.net/5.9.2/video.js?ver=1.0.2" id="videojs-js"></script>
+<script type="761305da98115cb4f61bf6a6-text/javascript" src="/wp-content/plugins/videojs-hls-player/videojs-contrib-hls/videojs-contrib-hls.min.js?ver=1.0.2" id="videojs-hls-js"></script>
+<script type="761305da98115cb4f61bf6a6-text/javascript" src="/wp-content/plugins/videojs-hls-player/videojs-airplay/videojs.airplay.js?ver=1.0.2" id="videojs-airplay-js"></script>
+<script type="761305da98115cb4f61bf6a6-text/javascript" src="/wp-content/plugins/videojs-hls-player/videojs-hls-player.js?ver=1.0.2" id="videojs-custom-js"></script>
+<script type="761305da98115cb4f61bf6a6-text/javascript" src="/wp-includes/js/jquery/suggest.min.js?ver=1.1-20110113" id="suggest-js"></script>
+<script type="761305da98115cb4f61bf6a6-text/javascript" id="wp-search-suggest-js-extra">
+/* <![CDATA[ */
+var wpss_options = {"url":"http:\/\/vaheed.net\/wp-admin\/admin-ajax.php","nonce":"ffc31e8139","ajaxurl":"http:\/\/vaheed.net\/wp-admin\/admin-ajax.php?action=wp-search-suggest&_wpnonce=9c0d5b0c5c"};
+/* ]]> */
+</script>
+<script type="761305da98115cb4f61bf6a6-text/javascript" src="/wp-content/plugins/wp-search-suggest/js/wpss-search-suggest.js?ver=5" id="wp-search-suggest-js"></script>
+<script type="761305da98115cb4f61bf6a6-text/javascript" src="/wp-content/themes/drewsymo-Foundation-3b62be5/javascripts/foundation.min.js?ver=1.0" id="foundation-js"></script>
+<script type="761305da98115cb4f61bf6a6-text/javascript" src="/wp-content/themes/drewsymo-Foundation-3b62be5/javascripts/app.js?ver=1.0" id="app-js"></script>
+<script type="761305da98115cb4f61bf6a6-text/javascript" id="post-ratings-js-extra">
+/* <![CDATA[ */
+var post_ratings = {"ajaxURL":"http:\/\/vaheed.net\/wp-admin\/admin-ajax.php","nonce":"a8b298b24a","path":"http:\/\/vaheed.net\/wp-content\/plugins\/post-ratings\/assets\/images\/","number":"5"};
+/* ]]> */
+</script>
+<script type="761305da98115cb4f61bf6a6-text/javascript" src="/wp-content/plugins/post-ratings/js/post-ratings.js?ver=3.0" id="post-ratings-js"></script>
+<script type="761305da98115cb4f61bf6a6-text/javascript" src="/wp-content/plugins/post-ratings/assets/jquery.raty.js?ver=3.0" id="post-ratings-raty-js"></script>
+<script type="761305da98115cb4f61bf6a6-text/javascript" src="/wp-includes/js/wp-embed.min.js?ver=5.7.2" id="wp-embed-js"></script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="761305da98115cb4f61bf6a6-|49" defer></script>
+</body>
+</html>

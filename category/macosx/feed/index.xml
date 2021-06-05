@@ -1,0 +1,1605 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Macosx | vaheeD khoshnouD</title>
+	<atom:link href="/category/macosx/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>linux, mikrotik, macosx</description>
+	<lastBuildDate>Mon, 12 Oct 2015 20:18:22 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.7.2</generator>
+	<item>
+		<title>Install Qemu on Mac OS With Homebrew</title>
+		<link>/install-qemu-on-mac-os-with-homebrew/</link>
+					<comments>/install-qemu-on-mac-os-with-homebrew/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Mon, 12 Oct 2015 20:16:11 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Macosx]]></category>
+		<guid isPermaLink="false">/?p=727</guid>
+
+					<description><![CDATA[<p>First Step we need package manager on MAC OS ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" Second Step Instal Qemu brew install qemu vaheeDMore Posts - Website Follow Me:</p>
+The post <a href="/install-qemu-on-mac-os-with-homebrew/">Install Qemu on Mac OS With Homebrew</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-727"></span></p>
+<p></p>
+<p>First Step we need package manager on MAC OS</p>
+<p><code>ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</code></p>
+<p>Second Step Instal Qemu</p>
+<p><code>brew install qemu</code></p>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/install-qemu-on-mac-os-with-homebrew/">Install Qemu on Mac OS With Homebrew</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/install-qemu-on-mac-os-with-homebrew/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>How to burn a .iso to a USB device with dd</title>
+		<link>/how-to-burn-a-iso-to-a-usb-device-without-any-application/</link>
+					<comments>/how-to-burn-a-iso-to-a-usb-device-without-any-application/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Wed, 05 Feb 2014 19:03:50 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Macosx]]></category>
+		<guid isPermaLink="false">/?p=660</guid>
+
+					<description><![CDATA[<p>BIOS and UEFI Bootable USB Using dd Note: This method is recommended due to its simplicity. Warning: This will irrevocably destroy all data on /dev/sdx. In GNU/Linux Tip: Check that the USB flash installation media is not mounted with lsblk. &#160; Note: Use /dev/sdx instead of /dev/sdx1, and adjust x to reflect the targeted device. &#160; # dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx &#38;&#38; sync In Mac OS X To... </p>
+<p><a class="small button secondary" href="/how-to-burn-a-iso-to-a-usb-device-without-any-application/">Continue Reading</a></p>
+The post <a href="/how-to-burn-a-iso-to-a-usb-device-without-any-application/">How to burn a .iso to a USB device with dd</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-660"></span></p>
+<h2>BIOS and UEFI Bootable USB</h2>
+<h3>Using dd</h3>
+<div><strong>Note: </strong>This method is recommended due to its simplicity.</div>
+<div></div>
+<div><strong>Warning: </strong>This will irrevocably destroy all data on <code>/dev/sd<b>x</b></code>.</div>
+<h4>In GNU/Linux</h4>
+<div><strong>Tip: </strong>Check that the USB flash installation media is <b>not</b> mounted with <code>lsblk</code>.</div>
+<p>&nbsp;</p>
+<div><strong>Note: </strong>Use <code>/dev/sd<b>x</b></code> instead of <code>/dev/sd<b>x1</b></code>, and adjust <b>x</b> to reflect the targeted device.</div>
+<div></div>
+<p>&nbsp;</p>
+<pre># dd bs=4M if=/path/to/archlinux.iso of=/dev/sd<b>x</b> &amp;&amp; sync</pre>
+<h4>In Mac OS X</h4>
+<p>To be able to use <code>dd</code> on your USB device on a Mac you have to do some special maneuvers. First of all insert your usb device, OS X will automount it, and in <code>Terminal.app</code> run:</p>
+<pre>$ diskutil list</pre>
+<p>Figure out what your USB device is called with <code>mount</code> or <code>sudo dmesg | tail</code> (e.g. <code>/dev/disk1</code>) and unmount the partitions on the device (i.e., /dev/disk1s1) while keeping the device proper (i.e., /dev/disk1):</p>
+<pre>$ diskutil unmountDisk /dev/disk1</pre>
+<p>Now we can continue in accordance with the instructions above (but use <code>bs=8192</code> if you are using the OS X <code>dd</code>, the number comes from <code>1024*8</code>).</p>
+<pre>dd if=image.iso of=/dev/disk1 bs=8192</pre>
+<pre>20480+0 records in
+20480+0 records out
+167772160 bytes transferred in 220.016918 secs (762542 bytes/sec)</pre>
+<p>It is probably a good idea to eject your drive before physical removal at this point:</p>
+<pre>$ diskutil eject /dev/disk1
+
+
+</pre>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/how-to-burn-a-iso-to-a-usb-device-without-any-application/">How to burn a .iso to a USB device with dd</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/how-to-burn-a-iso-to-a-usb-device-without-any-application/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>How to Run Cron Every 5 Minutes, Seconds, Hours, Days, Months</title>
+		<link>/how-to-run-cron-every-5-minutes-seconds-hours-days-months/</link>
+					<comments>/how-to-run-cron-every-5-minutes-seconds-hours-days-months/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Fri, 29 Mar 2013 19:40:08 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Macosx]]></category>
+		<guid isPermaLink="false">/?p=651</guid>
+
+					<description><![CDATA[<p>1. Execute a cron job every 5 Minutes The first field is for Minutes. If you specify * in this field, it runs every minutes. If you specify */5 in the 1st field, it runs every 5 minutes as shown below. */5 * * * * /home/backup.sh Note: In the same way, use */10 for every... </p>
+<p><a class="small button secondary" href="/how-to-run-cron-every-5-minutes-seconds-hours-days-months/">Continue Reading</a></p>
+The post <a href="/how-to-run-cron-every-5-minutes-seconds-hours-days-months/">How to Run Cron Every 5 Minutes, Seconds, Hours, Days, Months</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-651"></span></p>
+<h3>1. Execute a cron job every 5 Minutes</h3>
+<p>The first field is for Minutes. If you specify * in this field, it runs every minutes. If you specify */5 in the 1st field, it runs every 5 minutes as shown below.</p>
+<pre>*/5 * * * * /home/backup.sh</pre>
+<p><strong>Note:</strong> In the same way, use */10 for every 10 minutes, */15 for every 15 minutes, */30 for every 30 minutes, etc.</p>
+<h3>2. Execute a cron job every 5 Hours</h3>
+<p>The second field is for hours. If you specify * in this field, it runs every hour. If you specify */5 in the 2nd field, it runs every 5 hours as shown below.</p>
+<pre>0 */5 * * * /home/backup.sh</pre>
+<p><strong>Note:</strong> In the same way, use */2 for every 2 hours, */3 for every 3 hours, */4 for every 4 hours, etc.</p>
+<h3>3. Execute a job every 5 Seconds</h3>
+<p>Cron job cannot be used to schedule a job in seconds interval. i.e You cannot schedule a cron job to run every 5 seconds. The alternative is to write a shell script that uses ‘sleep 5′ command in it.</p>
+<p>&nbsp;</p>
+<div></div>
+<p>Create a shell script every-5-seconds.sh using bash while loop as shown below.</p>
+<pre>$ cat every-5-seconds.sh
+#!/bin/bash
+while true
+do
+ /home/backup.sh
+ sleep 5
+done</pre>
+<p>Now, execute this shell script in the background using nohup as shown below. This will keep executing the script even after you logout from your session. This will execute your backup.sh shell script every 5 seconds.</p>
+<pre>$ nohup ./every-5-seconds.sh &amp;</pre>
+<h3>4. Execute a job every 5th weekday</h3>
+<p>This example is not about scheduling “every 5 days”. But this is for scheduling “every 5th weekday”.</p>
+<p>The 5th field is DOW (day of the week). If you specify * in this field, it runs every day. To run every Friday, specify either 5 of Fri in this field.</p>
+<p>The following example runs the backup.sh every Friday at midnight.</p>
+<pre>0 0 * * 5 /home/backup.sh
+(or)
+0 0 * * Fri /home/backup.sh</pre>
+<p>You can either user number or the corresponding three letter acronym for the weekday as shown below.</p>
+<ul>
+<li>0=Sun</li>
+<li>1=Mon</li>
+<li>2=Tue</li>
+<li>3=Wed</li>
+<li>4=Thu</li>
+<li>5=Fri</li>
+<li>6=Sat</li>
+</ul>
+<p><strong>Note:</strong> Get into the habit of using Fri instead of 5. Please note that the number starts with 0 (not with 1), and 0 is for Sun (not Mon).</p>
+<h3>5. Execute a job every 5 months</h3>
+<p>There is no direct way of saying ‘every 5 months’, instead you have to specify what specific months you want to run the job. Probably you may want to run the job on 5th month (May), and 10th month (Oct).</p>
+<p>The fourth field is for Months. If you specify * in this field, it runs every month. To run for the specific month, you have to specify the number that corresponds to the month. For example, to run the job on May and Oct, you should specify 5,10 (or) you can simply use the 3 letter acronym of the month and specify May,Oct.</p>
+<p>The third field is for DOM (Day of the Month). If you specify * in this field, it runs every day of the month. If you specify 1 in this month, it runs 1st of the month.</p>
+<p>The following example runs the backup.sh twice a year. i.e 1st May at midnight, and 1st Oct at midnight.</p>
+<pre>0 0 1 5,10 * /home/backup.sh
+(or)
+0 0 1 May,Oct * /home/backup.sh</pre>
+<p><strong>Note:</strong> Don’t make the mistake of specifying 5-10 in the 4th field, which means from 5th month until 10th month. If you want only 5th and 10th month, you should use comma.</p>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/how-to-run-cron-every-5-minutes-seconds-hours-days-months/">How to Run Cron Every 5 Minutes, Seconds, Hours, Days, Months</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/how-to-run-cron-every-5-minutes-seconds-hours-days-months/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Example PAC File</title>
+		<link>/example-pac-file/</link>
+					<comments>/example-pac-file/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Tue, 19 Mar 2013 18:56:14 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Macosx]]></category>
+		<category><![CDATA[Network]]></category>
+		<guid isPermaLink="false">/?p=648</guid>
+
+					<description><![CDATA[<p>Example PAC File The basic for all good PAC files start with a clear and concise coding methodology. It’s possible to achieve the same result using several different methods, both with the PAC file functions available and the flexibility of the JavaScript language. This page includes a PAC file example which has been proven to... </p>
+<p><a class="small button secondary" href="/example-pac-file/">Continue Reading</a></p>
+The post <a href="/example-pac-file/">Example PAC File</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-648"></span></p>
+<h2>Example PAC File</h2>
+<p>The basic for all good PAC files start with a clear and concise coding methodology. It’s possible to achieve the same result using several different methods, both with the PAC file functions available and the flexibility of the JavaScript language.</p>
+<p>This page includes a PAC file example which has been proven to be flexible, easy to update, while still providing accurate results.</p>
+<h3>Features</h3>
+<ul>
+<li>Proxy bypass rules for private IP networks, internal hostnames, and hosts with .local domain extension.
+<ul>
+<li>While the other rules in this example may be optional, most deployments should begin with this code block (lines 3-10).</li>
+</ul>
+</li>
+<li>Example hostname bypass rule.</li>
+<li>Example protocol and URL bypass rule.</li>
+<li>Example machine based IP routing rule.</li>
+<li>Default proxy rule, if all above rules don’t match.</li>
+</ul>
+<h3>Example PAC File</h3>
+<div>
+<div id="highlighter_828293">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td>
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<div>4</div>
+<div>5</div>
+<div>6</div>
+<div>7</div>
+<div>8</div>
+<div>9</div>
+<div>10</div>
+<div>11</div>
+<div>12</div>
+<div>13</div>
+<div>14</div>
+<div>15</div>
+<div>16</div>
+<div>17</div>
+<div>18</div>
+<div>19</div>
+<div>20</div>
+<div>21</div>
+<div>22</div>
+<div>23</div>
+<div>24</div>
+<div>25</div>
+<div>26</div>
+<div>27</div>
+<div>28</div>
+<div>29</div>
+<div>30</div>
+</td>
+<td>
+<div>
+<div><code>function</code> <code>FindProxyForURL(url, host) {</code></div>
+<div></div>
+<div><code>// If the hostname matches, send direct.</code></div>
+<div><code>    </code><code>if</code> <code>(dnsDomainIs(host, </code><code>"intranet.domain.com"</code><code>) ||</code></div>
+<div><code>        </code><code>shExpMatch(host, </code><code>"abcdomain.com"</code><code>))</code></div>
+<div><code>        </code><code>return</code> <code>"DIRECT"</code><code>;</code></div>
+<div></div>
+<div><code>// If the protocol or URL matches, send direct.</code></div>
+<div><code>    </code><code>if</code> <code>(url.substring(0, 4)==</code><code>"ftp:"</code> <code>||</code></div>
+<div><code>        </code><code>shExpMatch(url, </code><code>"<a href="http://abcdomain.com/folder/">http://abcdomain.com/folder/</a>*"</code><code>))</code></div>
+<div><code>        </code><code>return</code> <code>"DIRECT"</code><code>;</code></div>
+<div></div>
+<div><code>// If the requested website is hosted within the internal network, send direct.</code></div>
+<div><code>    </code><code>if</code> <code>(isPlainHostName(host) ||</code></div>
+<div><code>        </code><code>shExpMatch(host, </code><code>"*.local"</code><code>) ||</code></div>
+<div><code>        </code><code>isInNet(dnsResolve(host), </code><code>"10.0.0.0"</code><code>, </code><code>"255.0.0.0"</code><code>) ||</code></div>
+<div><code>        </code><code>isInNet(dnsResolve(host), </code><code>"172.16.0.0"</code><code>,  </code><code>"255.240.0.0"</code><code>) ||</code></div>
+<div><code>        </code><code>isInNet(dnsResolve(host), </code><code>"192.168.0.0"</code><code>,  </code><code>"255.255.0.0"</code><code>) ||</code></div>
+<div><code>        </code><code>isInNet(dnsResolve(host), </code><code>"127.0.0.0"</code><code>, </code><code>"255.255.255.0"</code><code>))</code></div>
+<div><code>        </code><code>return</code> <code>"DIRECT"</code><code>;</code></div>
+<div></div>
+<div><code>// If the IP address of the local machine is within a defined</code></div>
+<div><code>// subnet, send to a specific proxy.</code></div>
+<div><code>    </code><code>if</code> <code>(isInNet(myIpAddress(), </code><code>"10.10.5.0"</code><code>, </code><code>"255.255.255.0"</code><code>))</code></div>
+<div><code>        </code><code>return</code> <code>"PROXY 1.2.3.4:8080"</code><code>;</code></div>
+<div></div>
+<div><code>// DEFAULT RULE: All other traffic, use below proxies, in fail-over order.</code></div>
+<div><code>    </code><code>return</code> <code>"PROXY 4.5.6.7:8080; PROXY 7.8.9.10:8080"</code><code>;</code></div>
+<div></div>
+<div><code>}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div>
+<h3>Recommendations</h3>
+<p>When deploying URL and host rules care must be taken to ensure rules are as explicit as possible. The examples below detail how host and URL rules should be implemented.</p>
+<div>
+<div>
+<div id="highlighter_587675">
+<table border="0" cellspacing="0" cellpadding="0">
+<caption>Host Example</caption>
+<tbody>
+<tr>
+<td>
+<div>1</div>
+<div>2</div>
+</td>
+<td>
+<div>
+<div><code>if</code> <code>(dnsDomainIs(host, </code><code>"abcdomain.com"</code><code>))</code></div>
+<div><code>        </code><code>return</code> <code>"DIRECT"</code><code>;</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div>
+<div id="highlighter_446682">
+<table border="0" cellspacing="0" cellpadding="0">
+<caption>URL Example</caption>
+<tbody>
+<tr>
+<td>
+<div>1</div>
+<div>2</div>
+</td>
+<td>
+<div>
+<div><code>if</code> <code>(shExpMatch(url, </code><code>"<a href="http://abcdomain.com/folder/">http://abcdomain.com/folder/</a>*"</code><code>))</code></div>
+<div><code>        </code><code>return</code> <code>"DIRECT"</code><code>;</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h3>Warnings</h3>
+<p>The following code is an example <b><i>which may have unintended consequences</i></b> due to the broad interpretation of using the shExpMatch function, wildcards, and hostnames.</p>
+<div>
+<div id="highlighter_948653">
+<table border="0" cellspacing="0" cellpadding="0">
+<caption>Cautionary Example</caption>
+<tbody>
+<tr>
+<td>
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<div>4</div>
+<div>5</div>
+</td>
+<td>
+<div>
+<div><code>// Would send both of the following requests direct to the Internet:</code></div>
+<div><code>// 1. www.hotmail.com 2. phishing-scam.com?email=someone@hotmail.com</code></div>
+<div></div>
+<div><code>if</code> <code>(shExpMatch(url, </code><code>"*hotmail.com*"</code><code>))</code></div>
+<div><code>        </code><code>return</code> <code>"DIRECT"</code><code>;</code></div>
+<p><code> </code></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/example-pac-file/">Example PAC File</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/example-pac-file/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>How To Flush Linux / UNIX DNS Cache</title>
+		<link>/how-to-flush-linux-unix-dns-cache/</link>
+					<comments>/how-to-flush-linux-unix-dns-cache/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Sat, 23 Feb 2013 20:56:43 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Macosx]]></category>
+		<guid isPermaLink="false">/?p=642</guid>
+
+					<description><![CDATA[<p>Under MS-Windows you can use the ipconfig command to flush dns cache. c:\ ipconfig /flushdns However, Linux and UNIX provides various ways to flush cache. Linux can run nscd or BIND or dnsmasq as the name service caching daemon. Large and work-group servers may use BIND or dnsmasq as a dedicated caching server to speed up... </p>
+<p><a class="small button secondary" href="/how-to-flush-linux-unix-dns-cache/">Continue Reading</a></p>
+The post <a href="/how-to-flush-linux-unix-dns-cache/">How To Flush Linux / UNIX DNS Cache</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-642"></span></p>
+<p>Under MS-Windows you can use the ipconfig command to flush dns cache.</p>
+<pre>c:\ ipconfig /flushdns</pre>
+<p>However, Linux and UNIX provides various ways to flush cache. Linux can run nscd or BIND or dnsmasq as the name service caching daemon. Large and work-group servers may use BIND or dnsmasq as a dedicated caching server to speed up queries.</p>
+<h2>HowTo: Flush nscd dns cache</h2>
+<p>Nscd caches libc-issued requests to the Name Service. If retrieving NSS data is fairly expensive, nscd is able to speed up consecutive access to the same data dramatically and increase overall system performance. Just restart nscd:<br />
+<code>$ sudo /etc/init.d/nscd restart</code><br />
+OR<br />
+<code># service nscd restart</code><br />
+OR<br />
+<code># service nscd reload</code><br />
+This daemon provides a cache for the most common name service requests. The default configuration file, /etc/nscd.conf, determines the behavior of the cache daemon.</p>
+<h2>Flush dnsmasq dns cache</h2>
+<p>dnsmasq is a lightweight DNS, TFTP and DHCP server. It is intended to provide coupled DNS and DHCP service to a LAN. Dnsmasq accepts DNS queries and either answers them from a small, local, cache or forwards them to a real, recursive, DNS server. This software is also installed many cheap routers to cache dns queries. Just restart the dnsmasq service to flush out dns cache:<br />
+<code>$ sudo /etc/init.d/dnsmasq restart</code><br />
+OR<br />
+<code># service dnsmasq restart</code></p>
+<h2>Flush caching BIND server dns cache</h2>
+<p>A caching BIND server obtains information from another server (a Zone Master) in response to a host query and then saves (caches) the data locally. All you have to do is restart bind to clear its cache:<br />
+<code># /etc/init.d/named restart</code><br />
+You can also use rndc command as follows flush out all cache:<br />
+<code># rndc restart</code><br />
+OR<br />
+<code># rndc exec</code><br />
+BIND v9.3.0 and above will support flushing all of the records attached to a particular domain name with rndc flushname command. In this example flush all records releated to cyberciti.biz domain:<br />
+<code># rndc flushname cyberciti.biz</code><br />
+It is also possible to flush out BIND views. For example, lan and wan views can be flushed using the following command:<br />
+<code># rndc flush lan<br />
+# rndc flush wan</code></p>
+<h2>A note about Mac OS X Unix users</h2>
+<p>Type the following command as root user:<br />
+<code># dscacheutil -flushcache</code><br />
+OR<br />
+<code>$ sudo dscacheutil -flushcache</code><br />
+If you are using OS X 10.5 or earlier try the following command:<br />
+<code>lookupd -flushcache</code></p>
+<h2>A note about /etc/hosts file</h2>
+<p>/etc/hosts act as the static table lookup for hostnames. You need to remove and/or update records as per your requirements under Unix like operating systems:<br />
+<code># vi /etc/hosts</code><br />
+Sample outputs:</p>
+<pre>127.0.0.1	localhost
+127.0.1.1	wks01.WAG160N	wks01
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+10.37.34.2     build
+192.168.1.10	nas01
+192.168.1.11	nas02
+192.168.1.12	nas03</pre>
+<p>&nbsp;</p>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/how-to-flush-linux-unix-dns-cache/">How To Flush Linux / UNIX DNS Cache</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/how-to-flush-linux-unix-dns-cache/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>How to choose a DLNA Media Server for Windows, Mac OS X or Linux</title>
+		<link>/how-to-choose-a-dlna-media-server-for-windows-mac-os-x-or-linux/</link>
+					<comments>/how-to-choose-a-dlna-media-server-for-windows-mac-os-x-or-linux/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Sun, 17 Feb 2013 18:44:47 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Macosx]]></category>
+		<guid isPermaLink="false">/?p=640</guid>
+
+					<description><![CDATA[<p>With so many new DLNA media receivers emerging on the market, including the PS3 and X-Box 360, there are many options for media server software to run. Each server application has its own set of pros and cons. I researched all of the known products and listed out prices, supported operating systems and features. I... </p>
+<p><a class="small button secondary" href="/how-to-choose-a-dlna-media-server-for-windows-mac-os-x-or-linux/">Continue Reading</a></p>
+The post <a href="/how-to-choose-a-dlna-media-server-for-windows-mac-os-x-or-linux/">How to choose a DLNA Media Server for Windows, Mac OS X or Linux</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-640"></span></p>
+<p>With so many new DLNA media receivers emerging on the market, including the PS3 and X-Box 360, there are many options for media server software to run. Each server application has its own set of pros and cons. I researched all of the known products and listed out prices, supported operating systems and features. I also took the time to make a few notes and award best-in-class to a few select products that are the easiest to use, have the best features overall and provide the best end-user experience. Read on to find out how to choose your media server software.</p>
+<p><strong>Comparison Chart</strong></p>
+<p>The products are listed in alphabetical order. All servers are UPnP compliant. The Server column is the name of the server and a link to the vendor&#8217;s product page. The Price column is how much the server costs. The Windows, Mac and Linux columns show support for those operating systems. The Music column indicates that the software can stream at least 1 type of music. The Photo column indicates that the software can serve at least 1 type of image. The Video column indicates that the software can stream at least 1 type of AV. The Transcoding column indicates that the software can transcode from one format to another.</p>
+<p>&nbsp;</p>
+<table width="506" border="1" cellspacing="0" cellpadding="0">
+<colgroup>
+<col width="251" /></colgroup>
+<colgroup>
+<col width="94" />
+<col width="66" />
+<col width="46" />
+<col width="52" />
+<col width="64" />
+<col width="55" />
+<col width="56" />
+<col width="90" /></colgroup>
+<tbody>
+<tr>
+<td align="center" width="251" height="17"><b><span>Server</span></b></td>
+<td align="center" width="94"><b><span>Price</span></b></td>
+<td align="center" width="66"><b><span>Windows</span></b></td>
+<td align="center" width="46"><b><span>Mac</span></b></td>
+<td align="center" width="52"><b><span>Linux</span></b></td>
+<td align="center" width="64"><b><span>Music</span></b></td>
+<td align="center" width="55"><b><span>Photo</span></b></td>
+<td align="center" width="56"><b><span>Video</span></b></td>
+<td align="center" width="90"><b><span>Transcoding</span></b></td>
+</tr>
+<tr>
+<td height="17"><span><a href="http://www.allegrosoft.com/ams.html" target="_blank">Allegro Media<br />
+Server</a></span></td>
+<td align="center"><span>39.95</span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b> </b></span></td>
+</tr>
+<tr>
+<td height="17"><span><a href="http://www.cidero.com/radioServer.html" target="_blank">Cidero Internet Radio Station<br />
+Server (Java)</a></span></td>
+<td align="center"><span>Free</span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b> </b></span></td>
+</tr>
+<tr>
+<td height="17"><span><a href="http://www.cybergarage.org/net/cmgate/java/index.html" target="_blank">Cyber Media Gate (Java)</a></span></td>
+<td align="center"><span>Free</span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b> </b></span></td>
+</tr>
+<tr>
+<td height="17"><span><a href="http://www.cyberlink.com/multi/products/main_111_ENU.html" target="_blank">Cyberlink Digital Home Enabler Kit</a></span></td>
+<td align="center"><span>79.95</span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b> </b></span></td>
+</tr>
+<tr>
+<td height="17"><span><a href="http://www.elgato.com/index.php?file=products_eyeconnect" target="_blank">Elgato Eyeconnect</a></span></td>
+<td align="center"><span>49.95</span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b> </b></span></td>
+</tr>
+<tr>
+<td height="17"><span><a href="http://fuppes.ulrich-voelkel.de/" target="_blank">Fuppes</a></span></td>
+<td align="center"><span>Free</span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+</tr>
+<tr>
+<td height="17"><span><a href="http://geexbox.org/en/index.html" target="_blank">Geexbox</a></span></td>
+<td align="center"><span>Free</span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b> </b></span></td>
+</tr>
+<tr>
+<td height="17"><span><a href="http://www.gnu.org/software/gmediaserver/" target="_blank">GMediaServer</a></span></td>
+<td align="center"><span>Free</span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b> </b></span></td>
+</tr>
+<tr>
+<td height="17"><span><a href="http://www.jrmediacenter.com/" target="_blank">JRiver Media Center<br />
+</a></span></td>
+<td align="center"><span>39.95</span></td>
+<td align="center"><span>X<b><br />
+</b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b> </b></span></td>
+</tr>
+<tr>
+<td height="17"><span><a href="http://mediatomb.cc/" target="_blank">MediaTomb</a></span></td>
+<td align="center"><span>Free</span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b><b><br />
+</b></span></td>
+</tr>
+<tr>
+<td height="17"><span><a href="http://www.conceiva.com/products/mezzmo/default.asp" target="_blank">Mezzmo</a></span></td>
+<td align="center"><span>24.95</span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+</tr>
+<tr>
+<td height="17"><span><a href="http://sourceforge.net/projects/minidlna/" target="_blank">MiniDLNA</a></span></td>
+<td align="center"><span>Free</span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>?</b></span></td>
+</tr>
+<tr>
+<td height="17"><span><a href="http://www.mythtv.org/" target="_blank">MythTV</a></span></td>
+<td align="center"><span>Free</span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+</tr>
+<tr>
+<td height="17"><span><a href="http://www.nero.com/enu/mediahome4-introduction.html" target="_blank">Nero<br />
+MediaHome</a></span></td>
+<td align="center"><span>79.99</span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+</tr>
+<tr>
+<td height="17"><span><a href="http://www.nullriver.com/products/medialink" target="_blank">Nullriver Medialink</a></span></td>
+<td align="center"><span>20.00</span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+</tr>
+<tr>
+<td height="17"><span><a href="http://www.on2share.com/UPnP/" target="_blank">On2Share</a></span></td>
+<td align="center"><span>19.95</span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b> </b></span></td>
+</tr>
+<tr>
+<td height="17"><span><a href="http://ps3mediaserver.blogspot.com/" target="_blank">PS3 Media Server</a></span></td>
+<td align="center"><span>Free</span></td>
+<td align="center"><span><b>X<br />
+</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X<br />
+</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+</tr>
+<tr>
+<td height="17"><span><a href="http://www.real.com/rhapsody/" target="_blank">Rhapsody</a></span></td>
+<td align="center"><span>12.99/month</span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b> </b></span></td>
+</tr>
+<tr>
+<td height="17"><span><a href="http://ez4media.com/simplecenter_premium.php" target="_blank">SimpleCenter Premium</a></span></td>
+<td align="center"><span>19.99</span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+</tr>
+<tr>
+<td height="17"><span><a href="http://tversity.com/home" target="_blank">Tversity</a></span></td>
+<td align="center"><span>Free</span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+</tr>
+<tr>
+<td height="17"><span><a href="http://www.twonkyvision.de/" target="_blank">TwonkyMedia</a></span></td>
+<td align="center"><span>39.95</span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+</tr>
+<tr>
+<td height="17"><span><a href="http://ushare.geexbox.org/" target="_blank">uShare</a></span></td>
+<td align="center"><span>Free</span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b> </b></span></td>
+</tr>
+<tr>
+<td height="17"><span><a href="http://www.wildmediaserver.com/" target="_blank">Wild Media Server</a></span></td>
+<td align="center"><span>$15</span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+</tr>
+<tr>
+<td height="17"><span><a href="https://winamp.orb.com/orb/html/login.html" target="_blank">Winamp Remote</a></span></td>
+<td align="center"><span>Free</span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>?</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>?</b></span></td>
+</tr>
+<tr>
+<td height="17"><span><a href="http://www.microsoft.com/windows/windowsmedia/devices/wmconnect/default.aspx" target="_blank">Windows Media Connect</a></span></td>
+<td align="center"><span>Free</span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b>X</b></span></td>
+</tr>
+<tr>
+<td height="17"><span><a href="http://new.music.yahoo.com/" target="_blank">Yahoo Music Jukebox</a></span></td>
+<td align="center"><span>Free</span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b>X</b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b> </b></span></td>
+<td align="center"><span><b> </b></span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>What is transcoding?</strong></p>
+<p>The average consumer doesn&#8217;t care about what technology is used to encode their media. They just want it to play. The problem is that many devices only support certain types of encoding and much media circulating around is in other formats. The solution? Transcoding. Transcoding means to convert a potentially unsupported encoding into a supported one for the receiving device on the fly. <a href="http://en.wikipedia.org/wiki/Transcode" target="_blank">Wikipedia has more details on transcoding.</a></p>
+<p><strong>Analysis</strong></p>
+<p>While basic functionality is indicated on this chart, there is no way of knowing how many types of music, photo or video formats are supported. It is also difficult to tell what formats can be transcoded. Most of the informational pages for these products don&#8217;t give enough details, so without setting up every single product and testing all formats against a variety of devices, it&#8217;s very difficult to know for sure what the level of support is.</p>
+<p>Four products support every operating system: <a href="http://www.cidero.com/radioServer.html" target="_blank">Cidero</a>, <a href="http://www.cybergarage.org/net/cmgate/java/index.html" target="_blank">Cyber Media Gate</a>, <a href="http://www.real.com/rhapsody/" target="_blank">Rhapsody</a> and <a href="http://www.twonkyvision.de/Products/TwonkyMedia/index.html" target="_blank">TwonkyMedia</a>. Both Cidero and Cyber Media Gate are Java-based ports of their original C++ open-source counterparts. They appear to run on any Java 1.5 platform.</p>
+<p><a href="http://www.twonkyvision.de/Products/TwonkyMedia/index.html" target="_blank">TwonkyMedia</a> not only supports every operating system but has every main feature covered as well. Their transcoding support is new, as last time I looked into their tech specs I didn&#8217;t see support for it, so time will tell how good it is.</p>
+<p><a href="http://geexbox.org/en/index.html" target="_blank">Geexbox</a> has no OS listed because despite being Linux-based, it runs its own distribution to work. To get similar DLNA server functionality in Linux, <a href="http://ushare.geexbox.org/" target="_blank">uShare</a> can be compiled and installed, which is what Geexbox uses for its own server.</p>
+<p><a href="http://www.simplecenter.com/" target="_blank">SimpleCenter</a> has a free version without transcoding support.</p>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/how-to-choose-a-dlna-media-server-for-windows-mac-os-x-or-linux/">How to choose a DLNA Media Server for Windows, Mac OS X or Linux</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/how-to-choose-a-dlna-media-server-for-windows-mac-os-x-or-linux/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Get System Hardware Mac OSX Configuration from Terminal</title>
+		<link>/get-system-hardware-mac-osx-configuration-from-terminal/</link>
+					<comments>/get-system-hardware-mac-osx-configuration-from-terminal/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Sat, 19 Jan 2013 19:52:16 +0000</pubDate>
+				<category><![CDATA[Macosx]]></category>
+		<guid isPermaLink="false">/?p=575</guid>
+
+					<description><![CDATA[<p>Get System Hardware configuration from Terminal in OsX could be tricky, here the command to show these infos. Open Terminal on macOSX and past &#8230; /usr/sbin/system_profiler SPHardwareDataType &#160; And here’s the output for Macbook book Air: Hardware: Hardware Overview: Model Name: MacBook Air Model Identifier: MacBookAir3,1 Processor Name: Intel Core 2 Duo Processor Speed: 1.6... </p>
+<p><a class="small button secondary" href="/get-system-hardware-mac-osx-configuration-from-terminal/">Continue Reading</a></p>
+The post <a href="/get-system-hardware-mac-osx-configuration-from-terminal/">Get System Hardware Mac OSX Configuration from Terminal</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-575"></span><br />
+Get System Hardware configuration from Terminal in OsX could be tricky, here the command to show these infos.</p>
+<p>Open Terminal on macOSX and past &#8230;</p>
+<pre>
+/usr/sbin/system_profiler SPHardwareDataType
+</pre>
+<p>
+&nbsp;<br />
+And here’s the output for Macbook book Air:<br />
+</p>
+<pre>
+Hardware:
+
+    Hardware Overview:
+
+      Model Name: MacBook Air
+      Model Identifier: MacBookAir3,1
+      Processor Name: Intel Core 2 Duo
+      Processor Speed: 1.6 GHz
+      Number of Processors: 1
+      Total Number of Cores: 2
+      L2 Cache: 3 MB
+      Memory: 4 GB
+      Bus Speed: 800 MHz
+      Boot ROM Version: MBA31.0000.0000
+      SMC Version (system): 00000
+      Serial Number (system): 00000000000
+      Hardware UUID: 0000000-0000-0000-0000-0000000000
+</pre>
+<p>&nbsp;</p>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/get-system-hardware-mac-osx-configuration-from-terminal/">Get System Hardware Mac OSX Configuration from Terminal</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/get-system-hardware-mac-osx-configuration-from-terminal/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>How to install and configure bind9 on CentOS/Debian</title>
+		<link>/how-to-install-and-configure-bind9-on-centosdebian/</link>
+					<comments>/how-to-install-and-configure-bind9-on-centosdebian/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Mon, 14 Jan 2013 14:24:28 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Macosx]]></category>
+		<guid isPermaLink="false">/?p=523</guid>
+
+					<description><![CDATA[<p>Step1: Install bind 9 on Debian/Ubuntu sudo apt-get install bind9 dnsutils -y Install bind 9 on CentOS/Fedora sudo yum install bind dnsutils -y Step 2: Configure the main Bind files. Usually,  you will have to edit the file named.conf. sudo vi /etc/bind/named.conf.local This is where we will insert our zones. By the way, a zone... </p>
+<p><a class="small button secondary" href="/how-to-install-and-configure-bind9-on-centosdebian/">Continue Reading</a></p>
+The post <a href="/how-to-install-and-configure-bind9-on-centosdebian/">How to install and configure bind9 on CentOS/Debian</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-523"></span></p>
+<p><b>Step1</b>:</p>
+<p>Install bind 9 on Debian/Ubuntu</p>
+<div>
+<pre dir="ltr">sudo apt-get install bind9 dnsutils -y</pre>
+</div>
+<p>Install bind 9 on CentOS/Fedora</p>
+<div>
+<pre dir="ltr">sudo yum install bind dnsutils -y</pre>
+</div>
+<p><b>Step 2</b>: Configure the main Bind files. Usually,  you will have to edit the file named.conf.</p>
+<div>
+<pre dir="ltr">sudo vi /etc/bind/named.conf.local</pre>
+</div>
+<p>This is where we will insert our zones. By the way, a zone is a domain name that is referenced in the DNS server<br />
+Insert this in the named.conf.local file:</p>
+<div>
+<div></div>
+<pre dir="ltr"># This is the zone definition. replace example.com with your domain name
+zone "<i>example.com</i>" {
+        type master;
+        file "/etc/bind/zones/<i>example.com</i>.db";
+        };
+
+# This is the zone definition for reverse DNS. replace 0.168.192 with your network address in reverse notation - e.g my network address is 192.168.0
+zone "<i>0.168.192</i>.in-addr.arpa" {
+     type master;
+     file "/etc/bind/zones/rev.<i>0.168.192</i>.in-addr.arpa";
+};</pre>
+</div>
+<p>Ok, now, let&#8217;s edit the options file:</p>
+<div>
+<div></div>
+<pre dir="ltr">sudo vi /etc/bind/named.conf.options</pre>
+</div>
+<p>We need to modify the forwarder. This is the DNS server to which your own DNS will forward the requests he cannot process.</p>
+<div>
+<div></div>
+<pre dir="ltr">forwarders {
+      # Replace the address below with the address of your provider's DNS server
+      123.123.123.123;
+};</pre>
+</div>
+<p>Now, let&#8217;s add the zone definition files (replace <i>example.com</i> with your domain name:</p>
+<div>
+<div></div>
+<pre dir="ltr">sudo mkdir /etc/bind/zones
+sudo vi /etc/bind/zones/<i>example.com</i>.db</pre>
+</div>
+<p>The zone definition file is where we will put all the addresses / machine names that our DNS server will know. You can take the following example:</p>
+<div>
+<div></div>
+<pre dir="ltr"><i>// replace example.com with your domain name. do not forget the . after the domain name!</i>
+<i>// Also, replace ns1 with the name of your DNS server</i>
+example.com.      IN      SOA     ns1.example.com. admin.example.com. (
+<i>// Do not modify the following lines!</i>
+                                                        2006081401
+                                                        28800
+                                                        3600
+                                                        604800
+                                                        38400
+ )
+
+<i>// Replace the following line as necessary:
+// ns1 = DNS Server name
+// mta = mail server name
+// example.com = domain name</i>
+example.com.      IN      NS              ns1.example.com.
+example.com.      IN      MX     10       mta.example.com.
+
+<i>// Replace the IP address with the right IP addresses.</i>
+www              IN      A       192.168.0.2
+mta              IN      A       192.168.0.3
+ns1              IN      A       192.168.0.1</pre>
+</div>
+<p>Now, let&#8217;s create the reverse DNS zone file:</p>
+<div>
+<div></div>
+<pre dir="ltr">sudo vi /etc/bind/zones/rev.0.168.192.in-addr.arpa</pre>
+</div>
+<p>Copy and paste the following text, modify as needed:</p>
+<div>
+<div></div>
+<pre dir="ltr"><i>//replace example.com with yoour domain name, ns1 with your DNS server name.
+// The number before IN PTR example.com is the machine address of the DNS server. in my case, it's 1, as my IP address is 192.168.0.1.</i>
+@ IN SOA ns1.example.com. admin.example.com. (
+                        2006081401;
+                        28800; 
+                        604800;
+                        604800;
+                        86400 
+)
+
+                     IN    NS     ns1.example.com.
+1                    IN    PTR    example.com</pre>
+</div>
+<p>Ok, now you just need to restart bind:</p>
+<div>
+<div></div>
+<pre dir="ltr">sudo /etc/init.d/bind9 restart</pre>
+</div>
+<p>We can now test the new DNS server&#8230;<br />
+Step 4: Modify the file resolv.conf with the following settings:</p>
+<div>
+<div></div>
+<pre dir="ltr">sudo vi /etc/resolv.conf</pre>
+</div>
+<p>enter the following:</p>
+<div>
+<div></div>
+<pre dir="ltr"><i>// replace example.com with your domain name, and 192.168.0.1 with the address of your new DNS server.</i>
+search example.com
+nameserver 192.168.0.1</pre>
+</div>
+<p>&nbsp;</p>
+<h3 id="5-checking-binds-zone-files-and-configuration">Checking bind&#8217;s zone files and configuration</h3>
+<p>Before we attempt to start a bind nameserver with a new zone and configuration here are some tools to check</p>
+<p>if we have not done some typo or misconfiguration. To check a configuration files run a following command:</p>
+<pre>named-checkconf</pre>
+<p>&nbsp;</p>
+<h3>Now, test your DNS:</h3>
+<div>
+<pre dir="ltr">dig example.com</pre>
+<p>&nbsp;</p>
+</div>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/how-to-install-and-configure-bind9-on-centosdebian/">How to install and configure bind9 on CentOS/Debian</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/how-to-install-and-configure-bind9-on-centosdebian/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>How install MacPorts and lunche &#8221; port &#8221; package manager</title>
+		<link>/how-install-macports-and-lunche-port-package-manager/</link>
+					<comments>/how-install-macports-and-lunche-port-package-manager/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Sat, 12 Jan 2013 09:43:44 +0000</pubDate>
+				<category><![CDATA[Macosx]]></category>
+		<guid isPermaLink="false">/?p=500</guid>
+
+					<description><![CDATA[<p>STEP1 : X11 ( XQuartz ) Download and install XQuartz, Please click this link: XQuartz Download About XQuartz : A version of the X.Org X Window System that runs on OS X XQuartz Website STEP2 : XCODE Please open the apple store then search and install XCode. The easiest way to install XCode, Please click this link:... </p>
+<p><a class="small button secondary" href="/how-install-macports-and-lunche-port-package-manager/">Continue Reading</a></p>
+The post <a href="/how-install-macports-and-lunche-port-package-manager/">How install MacPorts and lunche ” port ” package manager</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-500"></span></p>
+<h2>STEP1 : X11 ( XQuartz )</h2>
+<pre>Download and install XQuartz, Please click this link: <a href="http://xquartz.macosforge.org/downloads/SL/XQuartz-2.7.4.dmg">XQuartz Download
+</a></pre>
+<h3>About XQuartz :</h3>
+<pre>A version of the <a href="http://www.x.org/">X.Org X Window System</a> that runs on OS X
+
+<a href="http://xquartz.macosforge.org/">XQuartz Website</a></pre>
+<h2>STEP2 : XCODE</h2>
+<pre>Please open the apple store then search and install XCode.
+
+The easiest way to install XCode, Please click this link: <a href="https://itunes.apple.com/us/app/xcode/id497799835">XCode apple store link</a> ( XCode is FREE :D )</pre>
+<h3>About XCode :</h3>
+<p>Xcode is the complete toolset for building OS X and iOS applications — and with Xcode 4, the tools have been redesigned to be faster, easier to use, and more helpful than ever before. The Xcode IDE understands your project’s every detail, identifies mistakes in both syntax and logic, and will even fix your code for you. Quite simply, Xcode 4 will help you write better code.</p>
+<h2></h2>
+<h2>STEP2 : MacPorts</h2>
+<p>Please Download and install MacPorts.<br />
+The easiest way to install MacPorts on a Mac OS X system is by downloading the dmg for <a href="https://distfiles.macports.org/MacPorts/MacPorts-2.1.2-10.8-MountainLion.pkg">Mountain Lion</a>, <a href="https://distfiles.macports.org/MacPorts/MacPorts-2.1.2-10.7-Lion.pkg">Lion</a>, <a href="https://distfiles.macports.org/MacPorts/MacPorts-2.1.2-10.6-SnowLeopard.pkg">Snow Leopard</a> or<a href="https://distfiles.macports.org/MacPorts/MacPorts-2.1.2-10.5-Leopard.dmg">Leopard</a> and running the system&#8217;s Installer by double-clicking on the pkg contained therein, following the on-screen instructions until completion.</p>
+<h2>STEP3 : Update MacPorts Repository</h2>
+<pre>sudo port -v selfupdate
+sudo port sync</pre>
+<p>&nbsp;</p>
+<h2>STEP4 : Install all you neeD !!!</h2>
+<p>sudo port install &#8220;Package name&#8221;</p>
+<h3>For Example :</h3>
+<pre>sudo port install htop</pre>
+<p>&nbsp;</p>
+<h2>Tips for using port</h2>
+<pre><strong>sudo port list
+</strong><strong>sudo port search nmap
+sudo port install nmap
+sudo port upgrade nmap
+sudo port </strong><strong>dependents nmap
+</strong><strong>sudo port upgrade outdated</strong></pre>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/how-install-macports-and-lunche-port-package-manager/">How install MacPorts and lunche ” port ” package manager</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/how-install-macports-and-lunche-port-package-manager/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Top 20 OpenSSH Server Best Security Practices</title>
+		<link>/top-20-openssh-server-best-security-practices/</link>
+					<comments>/top-20-openssh-server-best-security-practices/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Wed, 09 Jan 2013 08:23:44 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Macosx]]></category>
+		<category><![CDATA[Security]]></category>
+		<guid isPermaLink="false">/?p=445</guid>
+
+					<description><![CDATA[<p>Default Config Files and SSH Port /etc/ssh/sshd_config &#8211; OpenSSH server configuration file. /etc/ssh/ssh_config &#8211; OpenSSH client configuration file. ~/.ssh/ &#8211; Users ssh configuration directory. ~/.ssh/authorized_keys or ~/.ssh/authorized_keys &#8211; Lists the public keys (RSA or DSA) that can be used to log into the user’s account /etc/nologin &#8211; If this file exists, sshd refuses to let anyone except root log in. /etc/hosts.allow and /etc/hosts.deny : Access... </p>
+<p><a class="small button secondary" href="/top-20-openssh-server-best-security-practices/">Continue Reading</a></p>
+The post <a href="/top-20-openssh-server-best-security-practices/">Top 20 OpenSSH Server Best Security Practices</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-445"></span></p>
+<h2>Default Config Files and SSH Port</h2>
+<ul>
+<li><strong>/etc/ssh/sshd_config </strong>&#8211; OpenSSH server configuration file.</li>
+<li><strong>/etc/ssh/ssh_config</strong> &#8211; OpenSSH client configuration file.</li>
+<li><strong>~/.ssh/</strong> &#8211; Users ssh configuration directory.</li>
+<li><strong>~/.ssh/authorized_keys</strong> or <strong>~/.ssh/authorized_keys</strong> &#8211; Lists the public keys (RSA or DSA) that can be used to log into the user’s account</li>
+<li><strong>/etc/nologin</strong> &#8211; If this file exists, sshd refuses to let anyone except root log in.</li>
+<li><strong>/etc/hosts.allow</strong> and <strong>/etc/hosts.deny</strong> : Access controls lists that should be enforced by tcp-wrappers are defined here.</li>
+<li><strong>SSH default port </strong>: TCP 22</li>
+</ul>
+<p>&nbsp;</p>
+<h2>#1: Disable OpenSSH Server</h2>
+<p>Workstations and laptop can work without OpenSSH server. If you need not to provide the remote login and file transfer capabilities of SSH, disable and remove the SSHD server. CentOS / RHEL / Fedora Linux user can disable and remove openssh-server with yum command:<br />
+<code># chkconfig sshd off<br />
+# yum erase openssh-server</code><br />
+Debian / Ubuntu Linux user can disable and remove the same with apt-get command:<br />
+<code># apt-get remove openssh-server</code><br />
+You may need to update your iptables script to remove ssh exception rule. Under CentOS / RHEL / Fedora edit the files /etc/sysconfig/iptables and /etc/sysconfig/ip6tables. Once done <a href="/redhat-centos-fedora-linux-open-port/">restart iptables</a> service:<br />
+<code># service iptables restart<br />
+# service ip6tables restart</code></p>
+<h2>#2: Only Use SSH Protocol 2</h2>
+<p>SSH protocol version 1 (SSH-1) has man-in-the-middle attacks problems and security vulnerabilities. SSH-1 is obsolete and should be avoided at all cost. Open sshd_config file and make sure the following line exists:</p>
+<pre>Protocol 2</pre>
+<h2>#3: Limit Users&#8217; SSH Access</h2>
+<p>By default all systems user can login via SSH using their password or public key. Sometime you create UNIX / Linux user account for ftp or email purpose. However, those user can login to system using ssh. They will have full access to system tools including compilers and scripting languages such as Perl, Python which can open network ports and do many other fancy things. One of my client has really outdated php script and an attacker was able to create a new account on the system via a php script. However, attacker failed to get into box via ssh because it wasn&#8217;t in AllowUsers.</p>
+<p>Only allow root, vivek and jerry user to use the system via SSH, add the following to sshd_config:</p>
+<pre>AllowUsers root vivek jerry</pre>
+<p>Alternatively, you can allow all users to login via SSH but deny only a few users, with the following line:</p>
+<pre>DenyUsers saroj anjali foo</pre>
+<p>You can also configure Linux PAM allows or deny login via the sshd server. You can allow list of group name to access or deny access to the ssh.</p>
+<h2>#4: Configure Idle Log Out Timeout Interval</h2>
+<p>User can login to server via ssh and you can set an idel timeout interval to avoid unattended ssh session. Open sshd_config and make sure following values are configured:</p>
+<pre>ClientAliveInterval 300
+ClientAliveCountMax 0</pre>
+<p>You are setting an idle timeout interval in seconds (300 secs = 5 minutes). After this interval has passed, the idle user will be automatically kicked out (read as logged out).</p>
+<h2>#5: Disable .rhosts Files</h2>
+<p>Don&#8217;t read the user&#8217;s ~/.rhosts and ~/.shosts files. Update sshd_config with the following settings:</p>
+<pre>IgnoreRhosts yes</pre>
+<p>SSH can emulate the behavior of the obsolete rsh command, just disable insecure access via RSH.</p>
+<h2>#6: Disable Host-Based Authentication</h2>
+<p>To disable host-based authentication, update sshd_config with the following option:</p>
+<pre>HostbasedAuthentication no</pre>
+<h2>#7: Disable root Login via SSH</h2>
+<p>There is no need to login as root via ssh over a network. Normal users can use su or sudo (recommended) to gain root level access. This also make sure you get full auditing information about who ran privileged commands on the system via sudo. To disable root login via SSH, update sshd_config with the following line:</p>
+<pre>PermitRootLogin no</pre>
+<p>However, bob made <a href="http://archives.neohapsis.com/archives/openbsd/2005-03/2878.html" target="_blank">excellent</a> point:</p>
+<blockquote><p>Saying &#8220;don&#8217;t login as root&#8221; is h******t. It stems from the days when people sniffed the first packets of sessions so logging in as yourself and su-ing decreased the chance an attacker would see the root pw, and decreast the chance you got spoofed as to your telnet host target, You&#8217;d get your password spoofed but not root&#8217;s pw. Gimme a break. this is 2005 &#8211; We have ssh, used properly it&#8217;s secure. used improperly none of this 1989 will make a damn bit of difference. -Bob</p></blockquote>
+<h2>#8: Enable a Warning Banner</h2>
+<p>Set a warning banner by updating sshd_config with the following line:</p>
+<pre>Banner /etc/issue</pre>
+<p>Sample /etc/issue file:</p>
+<pre>----------------------------------------------------------------------------------------------
+You are accessing a XYZ Government (XYZG) Information System (IS) that is provided for authorized use only.
+By using this IS (which includes any device attached to this IS), you consent to the following conditions:
++ The XYZG routinely intercepts and monitors communications on this IS for purposes including, but not limited to,
+penetration testing, COMSEC monitoring, network operations and defense, personnel misconduct (PM),
+law enforcement (LE), and counterintelligence (CI) investigations.
++ At any time, the XYZG may inspect and seize data stored on this IS.
++ Communications using, or data stored on, this IS are not private, are subject to routine monitoring,
+interception, and search, and may be disclosed or used for any XYZG authorized purpose.
++ This IS includes security measures (e.g., authentication and access controls) to protect XYZG interests--not
+for your personal benefit or privacy.
++ Notwithstanding the above, using this IS does not constitute consent to PM, LE or CI investigative searching
+or monitoring of the content of privileged communications, or work product, related to personal representation
+or services by attorneys, psychotherapists, or clergy, and their assistants. Such communications and work
+product are private and confidential. See User Agreement for details.
+----------------------------------------------------------------------------------------------</pre>
+<p>Above is standard sample, consult your legal team for exact user agreement and legal notice details.</p>
+<h2>#8: Firewall SSH Port # 22</h2>
+<p>You need to firewall ssh port # 22 by updating iptables or pf firewall configurations. Usually, OpenSSH server must only accept connections from your LAN or other remote WAN sites only.</p>
+<h3>Netfilter (Iptables) Configuration</h3>
+<p>Update /etc/sysconfig/iptables (Redhat and friends specific file) to accept connection only from 192.168.1.0/24 and 202.54.1.5/29, enter:</p>
+<pre>-A RH-Firewall-1-INPUT -s 192.168.1.0/24 -m state --state NEW -p tcp --dport 22 -j ACCEPT
+-A RH-Firewall-1-INPUT -s 202.54.1.5/29 -m state --state NEW -p tcp --dport 22 -j ACCEPT</pre>
+<p>If you&#8217;ve dual stacked sshd with IPv6, edit /etc/sysconfig/ip6tables (Redhat and friends specific file), enter:</p>
+<pre> -A RH-Firewall-1-INPUT -s ipv6network::/ipv6mask -m tcp -p tcp --dport 22 -j ACCEPT</pre>
+<p>Replace ipv6network::/ipv6mask with actual IPv6 ranges.</p>
+<h3>*BSD PF Firewall Configuration</h3>
+<p>If you are using PF firewall update /etc/pf.conf as follows:</p>
+<pre>pass in on $ext_if inet proto tcp from {192.168.1.0/24, 202.54.1.5/29} to $ssh_server_ip port ssh flags S/SA synproxy state</pre>
+<h2>Sample /etc/pf.conf</h2>
+<ol>
+<li>
+<div>#### First declare a couple of variables ####</div>
+</li>
+<li>
+<div>### Outgoing tcp / udp port ####</div>
+</li>
+<li>
+<div>### 43 &#8211; whois, 22 &#8211; ssh ###</div>
+</li>
+<li>
+<div>tcp_services = &#8220;{ ssh, smtp, domain, www, https, 22, ntp, 43,ftp, ftp-data}&#8221;</div>
+</li>
+<li>
+<div>udp_services = &#8220;{ domain, ntp }&#8221;</div>
+</li>
+<li>
+<div>### allow ping / pong ####</div>
+</li>
+<li>
+<div>icmp_types = &#8220;{ echoreq, unreach }&#8221;</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div>#### define tables. add all subnets and ips to block</div>
+</li>
+<li>
+<div>table &lt;blockedip&gt; persist file &#8220;/etc/pf.block.ip.conf&#8221;</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div>martians = &#8220;{ 127.0.0.0/8, 192.168.0.0/16, 172.16.0.0/12, 10.0.0.0/8, 169.254.0.0/16, 192.0.2.0/24, 0.0.0.0/8, 240.0.0.0/4 }&#8221;</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div>### admin server ranges ###</div>
+</li>
+<li>
+<div>adminrange = &#8220;112.220.11.0/23&#8221;</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># connected to internet</div>
+</li>
+<li>
+<div>ext_if = &#8220;em1&#8221;</div>
+</li>
+<li>
+<div># connected to vpn / lan</div>
+</li>
+<li>
+<div>int_if = &#8220;em0&#8221;</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div>##### ftp proxy</div>
+</li>
+<li>
+<div>#proxy=&#8221;127.0.0.1&#8243;</div>
+</li>
+<li>
+<div>#proxyport=&#8221;8021&#8243;</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div>#### Normalization</div>
+</li>
+<li>
+<div>#scrub provides a measure of protection against certain kinds of attacks based on incorrect handling of packet fragments</div>
+</li>
+<li>
+<div>scrub in all</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div>#### NAT and RDR start</div>
+</li>
+<li>
+<div>#nat-anchor &#8220;ftp-proxy/*&#8221;</div>
+</li>
+<li>
+<div>#rdr-anchor &#8220;ftp-proxy/*&#8221;</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># redirect ftp traffic</div>
+</li>
+<li>
+<div>#rdr pass proto tcp from any to any port ftp -&gt; $proxy port $proxyport</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># Drop incoming everything</div>
+</li>
+<li>
+<div>block in all</div>
+</li>
+<li>
+<div>block return</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># keep stats of outgoing connections</div>
+</li>
+<li>
+<div>pass out keep state</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># We need to have an anchor for ftp-proxy</div>
+</li>
+<li>
+<div>#anchor &#8220;ftp-proxy/*&#8221;</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># unlimited traffic for loopback and lan / vpn</div>
+</li>
+<li>
+<div>set skip on {lo0, $int_if}</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># activate spoofing protection for all interfaces</div>
+</li>
+<li>
+<div>block in quick from urpf-failed</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div>#antispoof is a common special case of filtering and blocking. This mechanism protects against activity from spoofed or forged IP addresses</div>
+</li>
+<li>
+<div>antispoof log for $ext_if</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div>#Block RFC 1918 addresses</div>
+</li>
+<li>
+<div>block drop in log (all) quick on $ext_if from $martians to any</div>
+</li>
+<li>
+<div>block drop out log (all) quick on $ext_if from any to $martians</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># Block all ips</div>
+</li>
+<li>
+<div># pfctl -t blockedip -T show</div>
+</li>
+<li>
+<div>block drop in log (all) quick on $ext_if from &lt;blockedip&gt; to any</div>
+</li>
+<li>
+<div>block drop out log (all) quick on $ext_if from any to &lt;blockedip&gt;</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># allow outgoing</div>
+</li>
+<li>
+<div>pass out on $ext_if proto tcp to any port $tcp_services</div>
+</li>
+<li>
+<div>pass out on $ext_if proto udp to any port $udp_services</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># Allow trace route</div>
+</li>
+<li>
+<div>pass out on $ext_if inet proto udp from any to any port 33433 &gt;&lt; 33626 keep state</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># Allow admin to get into box</div>
+</li>
+<li>
+<div>pass in on $int_if from $adminrange to any</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># Allow incoming ssh, http, bind traffic</div>
+</li>
+<li>
+<div># pass in on $ext_if proto tcp from any to any port 25</div>
+</li>
+<li>
+<div>pass in on $ext_if proto tcp from any to any port ssh flags S/SA synproxy state</div>
+</li>
+<li>
+<div>pass in on $ext_if proto udp from any to any port domain</div>
+</li>
+<li>
+<div>pass in on $ext_if proto tcp from any to any port domain flags S/SA synproxy state</div>
+</li>
+<li>
+<div>pass in on $ext_if proto tcp from any to any port http flags S/SA synproxy modulate state</div>
+</li>
+<li>
+<div>pass inet proto icmp all icmp-type $icmp_types keep state</div>
+</li>
+<li>
+<div>## add your rule below ##</div>
+</li>
+</ol>
+<h2>#9: Change SSH Port and Limit IP Binding</h2>
+<p>By default SSH listen to all available interfaces and IP address on the system. Limit ssh port binding and change ssh port (by default brute forcing scripts only try to connects to port # 22). To bind to 192.168.1.5 and 202.54.1.5 IPs and to port 300, add or correct the following line:</p>
+<pre>Port 300
+ListenAddress 192.168.1.5
+ListenAddress 202.54.1.5</pre>
+<p>A better approach to use proactive approaches scripts such as fail2ban or denyhosts (see below).</p>
+<h2>#10: Use Strong SSH Passwords and Passphrase</h2>
+<p>It cannot be stressed enough how important it is to use strong user passwords and passphrase for your keys. Brute force attack works because you use dictionary based passwords. You can force users to avoid passwords against a dictionary attack and use john the ripper tool to find out existing weak passwords. Here is a sample random password generator (put in your ~/.bashrc):</p>
+<pre>genpasswd() {
+	local l=$1
+       	[ "$l" == "" ] &amp;&amp; l=20
+      	tr -dc A-Za-z0-9_ &lt; /dev/urandom | head -c ${l} | xargs
+}</pre>
+<p>Run it:<br />
+<code>genpasswd 16</code><br />
+Output:</p>
+<pre>uw8CnDVMwC6vOKgW</pre>
+<h2>#11: Use Public Key Based Authentication</h2>
+<p>Use public/private key pair with password protection for the private key. See how to use RSA and DSA key based authentication. Never ever use passphrase free key (passphrase key less) login.</p>
+<p>Create the cryptographic Key on FreeBSD / Linux / UNIX workstation, enter:<br />
+<code>ssh-keygen -t rsa</code><br />
+Assign the pass phrase (press [enter] key twice if you don&#8217;t want a passphrase). It will create 2 files in ~/.ssh directory as follows:</p>
+<ul>
+<li>~/.ssh/id_rsa : identification (private) key</li>
+<li>~/.ssh/id_rsa.pub : public key</li>
+</ul>
+<p>Use scp to copy the id_rsa.pub (public key) to <em>rh9linux.nixcraft.org</em> server as authorized_keys2 file, this is know as Installing the public key to server.<br />
+<code>scp .ssh/id_rsa.pub vivek@rh9linux.nixcraft.org:.ssh/authorized_keys2</code><br />
+From FreeBSD workstation login to server:<br />
+<code>ssh rh9linux.nixcraft.org</code><br />
+Changing the pass-phrase on workstation (if needed):<br />
+<code>ssh-keygen -p</code><br />
+Use of ssh-agent to avoid continues pass-phrase typing<br />
+At freebsd workstation type:<br />
+<code>ssh-agent $BASH<br />
+ssh-add</code><br />
+Type your pass-phrase</p>
+<p>Now ssh server will not use prompt for the password. Above two commands can be added to your ~/.bash_profile file so that as soon as you login into workstation you can set the agent.</p>
+<h2>Deleting the keys hold by ssh-agent</h2>
+<p>To list keys, enter:<br />
+<code>ssh-add -l</code><br />
+To delete all keys, enter:<br />
+<code>ssh-add -D</code><br />
+To delete specific key, enter:<br />
+<code>ssh-add -d key</code></p>
+<h2>#12: Use Keychain Based Authentication</h2>
+<p>keychain is a special bash script designed to make key-based authentication incredibly convenient and flexible. It offers various security benefits over passphrase-free keys. See how to setup and use keychain software.</p>
+<h2>Install keychain on CentOS / RHEL / Fedora Linux</h2>
+<p>You need RPMForge repo enabled to install keychain package.<br />
+<code># yum install keychain</code></p>
+<h2>Install keychain on Debian / Ubuntu Linux</h2>
+<p><code># apt-get update &amp;&amp; apt-get install keychain</code></p>
+<h2>Install keychain on FreeBSD</h2>
+<p><code># portsnap fetch update<br />
+# cd /usr/ports/security/keychain<br />
+# make install clean</code></p>
+<h3>How Do I Setup SSH Keys With passphrase?</h3>
+<p>Simply type the following commands:<br />
+<code>$ ssh-keygen -t rsa</code><br />
+OR<br />
+<code>$ ssh-keygen -t dsa</code><br />
+Assign the pass phrase when prompted. See the following step-by-step guide for detailed information:</p>
+<p>&nbsp;</p>
+<h2>#13: Chroot SSHD (Lock Down Users To Their Home Directories)</h2>
+<p>By default users are allowed to browse the server directories such as /etc/, /bin and so on. You can protect ssh, using os based chroot or use special tools such as rssh. With the release of OpenSSH 4.8p1 or 4.9p1, you no longer have to rely on third-party hacks such as rssh or complicated chroot(1) setups to lock users to their home directories. See <a href="http://www.debian-administration.org/articles/590" target="_blank">this blog post</a> about new ChrootDirectory directive to lock down users to their home directories.</p>
+<h2>Install rssh</h2>
+<h3>CentOS / Fedora / RHEL Linux rssh installation</h3>
+<p>Visit Dag&#8217;s repo to grab <a href="http://dag.wieers.com/rpm/packages/rssh/">rssh package</a><br />
+<code># cd /tmp<br />
+# wget http://dag.wieers.com/rpm/packages/rssh/rssh-2.3.2-1.2.el5.rf.i386.rpm<br />
+# rpm -ivh rssh-2.3.2-1.2.el5.rf.i386.rpm</code></p>
+<h3>Debian / Ubuntu Linux rssh installation</h3>
+<p>Use apt-get command:<br />
+<code>$ sudo apt-get install rssh</code></p>
+<h3>FreeBSD installation</h3>
+<p><code># cd /usr/ports/shells/rssh<br />
+# make install clean</code></p>
+<p>&nbsp;</p>
+<h2>#14: Use TCP Wrappers</h2>
+<p>TCP Wrapper is a host-based Networking ACL system, used to filter network access to Internet. OpenSSH does supports TCP wrappers. Just update your /etc/hosts.allow file as follows to allow SSH only from 192.168.1.2 172.16.23.12 :</p>
+<pre>sshd : 192.168.1.2 172.16.23.12</pre>
+<p>&nbsp;</p>
+<h2>#15: Disable Empty Passwords</h2>
+<p>You need to explicitly disallow remote login from accounts with empty passwords, update sshd_config with the following line:</p>
+<pre>PermitEmptyPasswords no</pre>
+<h2>#16: Thwart SSH Crackers (Brute Force Attack)</h2>
+<p>Brute force is a method of defeating a cryptographic scheme by trying a large number of possibilities using a single or distributed computer network. To prevents brute force attacks against SSH, use the following softwares:</p>
+<ul>
+<li>DenyHosts is a Python based security tool for SSH servers. It is intended to prevent brute force attacks on SSH servers by monitoring invalid login attempts in the authentication log and blocking the originating IP addresses.</li>
+<li>Explains how to setup DenyHosts under RHEL / Fedora and CentOS Linux.</li>
+<li><a href="http://www.fail2ban.org/" target="_blank">Fail2ban</a> is a similar program that prevents brute force attacks against SSH.</li>
+<li><a href="http://sshguard.sourceforge.net/" target="_blank">security/sshguard-pf</a> protect hosts from brute force attacks against ssh and other services using pf.</li>
+<li><a href="http://sshguard.sourceforge.net/" target="_blank">security/sshguard-ipfw</a> protect hosts from brute force attacks against ssh and other services using ipfw.</li>
+<li><a href="http://sshguard.sourceforge.net/" target="_blank">security/sshguard-ipfilter</a> protect hosts from brute force attacks against ssh and other services using ipfilter.</li>
+<li><a href="http://www.bsdconsulting.no/tools/" target="_blank">security/sshblock</a> block abusive SSH login attempts.</li>
+<li><a href="http://anp.ath.cx/sshit/" target="_blank">security/sshit</a> checks for SSH/FTP bruteforce and blocks given IPs.</li>
+<li><a href="http://www.aczoom.com/cms/blockhosts/" target="_blank">BlockHosts</a> Automatic blocking of abusive IP hosts.</li>
+<li><a href="http://blinkeye.ch/dokuwiki/doku.php/projects/blacklist" target="_blank">Blacklist</a> Get rid of those bruteforce attempts.</li>
+<li><a href="http://www.rfxn.com/projects/brute-force-detection/" target="_blank">Brute Force Detection</a> A modular shell script for parsing application logs and checking for authentication failures. It does this using a rules system where application specific options are stored including regular expressions for each unique auth format.</li>
+<li><a href="https://savannah.nongnu.org/projects/ipqbdb/" target="_blank">IPQ BDB filter</a> May be considered as a fail2ban lite.</li>
+</ul>
+<h2>#17: Rate-limit Incoming Port # 22 Connections</h2>
+<p>Both netfilter and pf provides rate-limit option to perform simple throttling on incoming connections on port # 22.</p>
+<h3>Iptables Example</h3>
+<p>The following example will drop incoming connections which make more than 5 connection attempts upon port 22 within 60 seconds:</p>
+<pre>#!/bin/bash
+inet_if=eth1
+ssh_port=22
+$IPT -I INPUT -p tcp --dport ${ssh_port} -i ${inet_if} -m state --state NEW -m recent  --set
+$IPT -I INPUT -p tcp --dport ${ssh_port} -i ${inet_if} -m state --state NEW -m recent  --update --seconds 60 --hitcount 5 -j DROP</pre>
+<p>Call above script from your iptables scripts. Another config option:</p>
+<pre>$IPT -A INPUT  -i ${inet_if} -p tcp --dport ${ssh_port} -m state --state NEW -m limit --limit 3/min --limit-burst 3 -j ACCEPT
+$IPT -A INPUT  -i ${inet_if} -p tcp --dport ${ssh_port} -m state --state ESTABLISHED -j ACCEPT
+$IPT -A OUTPUT -o ${inet_if} -p tcp --sport ${ssh_port} -m state --state ESTABLISHED -j ACCEPT
+# another one line example
+# $IPT -A INPUT -i ${inet_if} -m state --state NEW,ESTABLISHED,RELATED -p tcp --dport 22 -m limit --limit 5/minute --limit-burst 5-j ACCEPT</pre>
+<p>See iptables man page for more details.</p>
+<h3>*BSD PF Example</h3>
+<p>The following will limits the maximum number of connections per source to 20 and rate limit the number of connections to 15 in a 5 second span. If anyone breaks our rules add them to our abusive_ips table and block them for making any further connections. Finally, flush keyword kills all states created by the matching rule which originate from the host which exceeds these limits.</p>
+<pre>sshd_server_ip="202.54.1.5"
+table &lt;abusive_ips&gt; persist
+block in quick from &lt;abusive_ips&gt;
+pass in on $ext_if proto tcp to $sshd_server_ip port ssh flags S/SA keep state (max-src-conn 20, max-src-conn-rate 15/5, overload &lt;abusive_ips&gt; flush)</pre>
+<h2>#18: Use Port Knocking</h2>
+<p><a href="http://en.wikipedia.org/wiki/Port_knocking" target="_blank">Port knocking</a> is a method of externally opening ports on a firewall by generating a connection attempt on a set of prespecified closed ports. Once a correct sequence of connection attempts is received, the firewall rules are dynamically modified to allow the host which sent the connection attempts to connect over specific port(s). A sample port Knocking example for ssh using iptables:</p>
+<pre>$IPT -N stage1
+$IPT -A stage1 -m recent --remove --name knock
+$IPT -A stage1 -p tcp --dport 3456 -m recent --set --name knock2
+
+$IPT -N stage2
+$IPT -A stage2 -m recent --remove --name knock2
+$IPT -A stage2 -p tcp --dport 2345 -m recent --set --name heaven
+
+$IPT -N door
+$IPT -A door -m recent --rcheck --seconds 5 --name knock2 -j stage2
+$IPT -A door -m recent --rcheck --seconds 5 --name knock -j stage1
+$IPT -A door -p tcp --dport 1234 -m recent --set --name knock
+
+$IPT -A INPUT -m --state ESTABLISHED,RELATED -j ACCEPT
+$IPT -A INPUT -p tcp --dport 22 -m recent --rcheck --seconds 5 --name heaven -j ACCEPT
+$IPT -A INPUT -p tcp --syn -j doo</pre>
+<ul>
+<li><a href="http://www.cipherdyne.org/fwknop/" target="_blank">fwknop</a> is an implementation that combines port knocking and passive OS fingerprinting.</li>
+<li><a href="http://www.debian-administration.org/articles/268" target="_blank">Multiple-port knocking</a> Netfilter/IPtables only implementation.</li>
+</ul>
+<h2>#19: Use Log Analyzer</h2>
+<p>Read your logs using logwatch or <a href="http://logcheck.org/" target="_blank">logcheck</a>. These tools make your log reading life easier. It will go through your logs for a given period of time and make a report in the areas that you wish with the detail that you wish. Make sure LogLevel is set to INFO or DEBUG in sshd_config:</p>
+<pre>LogLevel INFO</pre>
+<p>
+.<br />
+<br />
+Installation<br />
+Debian Linux type the following command::</p>
+<div>
+<div></div>
+<pre>apt-get install logwatch</pre>
+</div>
+<p>
+Fedora Linux type the following command::</p>
+<div>
+<div></div>
+<pre>yum install logwatch</pre>
+</div>
+<p>
+RedHat Enterprise Linux type the following command::</p>
+<div>
+<div></div>
+<pre>up2date logwatch</pre>
+</div>
+<p></p>
+<pre>To customize logwatch go to /usr/share/doc/logwatch-*/ directory and read the file HOWTO-Customize-LogWatch
+
+Or Open logwatch.conf file:</pre>
+<div>
+<div></div>
+<pre>vi /etc/logwatch/conf/logwatch.conf</pre>
+</div>
+<pre>OR</pre>
+<div>
+<div></div>
+<pre>vi /usr/share/logwatch/default.conf/logwatch.conf</pre>
+</div>
+<p>Read man page of logwatch for more information.</p>
+<h2>#20: Patch OpenSSH and Operating Systems</h2>
+<p>It is recommended that you use tools such as yum, apt-get, freebsd-update and others to keep systems up to date with the latest security patches.</p>
+<h2>Other Options</h2>
+<p>To hide openssh version, you need to update source code and compile openssh again. Make sure following options are enabled in sshd_config:</p>
+<pre>#  Turn on privilege separation
+UsePrivilegeSeparation yes
+# Prevent the use of insecure home directory and key file permissions
+StrictModes yes
+# Turn on  reverse name checking
+VerifyReverseMapping yes
+# Do you need port forwarding?
+AllowTcpForwarding no
+X11Forwarding no
+#  Specifies whether password authentication is allowed.  The default is yes.
+PasswordAuthentication no</pre>
+<p>Verify your sshd_config file before restarting / reloading changes:<br />
+<code># /usr/sbin/sshd -t</code></p>
+<p>Tighter SSH security with <a href="http://www.linuxjournal.com/article/8957" target="_blank">two-factor</a> or <a href="https://calomel.org/openssh.html" target="_blank">three-factor (or more)</a> authentication.</p>
+<h4>References:</h4>
+<ol>
+<li>The <a href="http://www.openssh.com/">official OpenSSH</a> project.</li>
+<li>Forum thread: <a href="http://nixcraft.com/networking-firewalls-security/726-failed-ssh-login-attempts-how-avoid-brute-ssh-attacks.html">Failed SSH login attempts</a> and how to avoid brute ssh attacks</li>
+<li>man pages sshd_config, ssh_config, tcpd, yum, and apt-get.</li>
+</ol>
+<p>If you have a technique or handy software not mentioned here, please share in the comments below to help your fellow readers keep their openssh based server secure.</p>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/top-20-openssh-server-best-security-practices/">Top 20 OpenSSH Server Best Security Practices</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/top-20-openssh-server-best-security-practices/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

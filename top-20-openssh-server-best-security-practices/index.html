@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-US"
+	prefix="og: https://ogp.me/ns#" > <![endif]--><!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en-US"
+	prefix="og: https://ogp.me/ns#" > <![endif]--><!--[if IE 8]>    <html class="no-js lt-ie9" lang="en-US"
+	prefix="og: https://ogp.me/ns#" > <![endif]--><!--[if gt IE 8]><!--><html class="no-js" lang="en-US" prefix="og: https://ogp.me/ns#"> <!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="pingback" href="/xmlrpc.php">
+
+<meta name="viewport" content="width=device-width">
+
+<title>Top 20 OpenSSH Server Best Security Practices | vaheeD khoshnouD</title>
+<meta name="description" content="Default Config Files and SSH Port /etc/ssh/sshd_config – OpenSSH server configuration file. /etc/ssh/ssh_config – OpenSSH client configuration file. ~/.ssh/ – Users ssh configuration directory. ~/.ssh/authorized_keys or ~/.ssh/authorized_keys – Lists the public keys (RSA or DSA) that can be used to log into the user’s account /etc/nologin – If this file exists, sshd refuses to let anyone except root log in. /etc/hosts.allow and /etc/hosts.deny : Access... Continue Reading">
+<link rel="canonical" href="/top-20-openssh-server-best-security-practices/">
+<meta property="og:site_name" content="vaheeD khoshnouD | linux, mikrotik, macosx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Top 20 OpenSSH Server Best Security Practices | vaheeD khoshnouD">
+<meta property="og:description" content="Default Config Files and SSH Port /etc/ssh/sshd_config – OpenSSH server configuration file. /etc/ssh/ssh_config – OpenSSH client configuration file. ~/.ssh/ – Users ssh configuration directory. ~/.ssh/authorized_keys or ~/.ssh/authorized_keys – Lists the public keys (RSA or DSA) that can be used to log into the user’s account /etc/nologin – If this file exists, sshd refuses to let anyone except root log in. /etc/hosts.allow and /etc/hosts.deny : Access... Continue Reading">
+<meta property="og:url" content="http://vaheed.net/top-20-openssh-server-best-security-practices/">
+<meta property="article:published_time" content="2013-01-09T08:23:44Z">
+<meta property="article:modified_time" content="2013-01-09T08:35:56Z">
+<meta property="twitter:card" content="summary">
+<meta property="twitter:domain" content="vaheed.net">
+<meta property="twitter:title" content="Top 20 OpenSSH Server Best Security Practices | vaheeD khoshnouD">
+<meta property="twitter:description" content="Default Config Files and SSH Port /etc/ssh/sshd_config – OpenSSH server configuration file. /etc/ssh/ssh_config – OpenSSH client configuration file. ~/.ssh/ – Users ssh configuration directory. ~/.ssh/authorized_keys or ~/.ssh/authorized_keys – Lists the public keys (RSA or DSA) that can be used to log into the user’s account /etc/nologin – If this file exists, sshd refuses to let anyone except root log in. /etc/hosts.allow and /etc/hosts.deny : Access... Continue Reading">
+<script type="application/ld+json" class="aioseo-schema">
+			{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebSite","@id":"http:\/\/vaheed.net\/#website","url":"http:\/\/vaheed.net\/","name":"vaheeD khoshnouD","description":"linux, mikrotik, macosx","publisher":{"@id":"http:\/\/vaheed.net\/#organization"}},{"@type":"Organization","@id":"http:\/\/vaheed.net\/#organization","name":"vaheeD khoshnouD","url":"http:\/\/vaheed.net\/"},{"@type":"BreadcrumbList","@id":"http:\/\/vaheed.net\/top-20-openssh-server-best-security-practices\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"http:\/\/vaheed.net\/#listItem","position":"1","item":{"@id":"http:\/\/vaheed.net\/#item","name":"Home","description":"vaheeD khoshnouD | linux, mikrotik, macosx","url":"http:\/\/vaheed.net\/"},"nextItem":"http:\/\/vaheed.net\/top-20-openssh-server-best-security-practices\/#listItem"},{"@type":"ListItem","@id":"http:\/\/vaheed.net\/top-20-openssh-server-best-security-practices\/#listItem","position":"2","item":{"@id":"http:\/\/vaheed.net\/top-20-openssh-server-best-security-practices\/#item","name":"Top 20 OpenSSH Server Best Security Practices","description":"Default Config Files and SSH Port \/etc\/ssh\/sshd_config – OpenSSH server configuration file. \/etc\/ssh\/ssh_config – OpenSSH client configuration file. ~\/.ssh\/ – Users ssh configuration directory. ~\/.ssh\/authorized_keys or ~\/.ssh\/authorized_keys – Lists the public keys (RSA or DSA) that can be used to log into the user’s account \/etc\/nologin – If this file exists, sshd refuses to let anyone except root log in. \/etc\/hosts.allow and \/etc\/hosts.deny : Access... Continue Reading","url":"http:\/\/vaheed.net\/top-20-openssh-server-best-security-practices\/"},"previousItem":"http:\/\/vaheed.net\/#listItem"}]},{"@type":"Person","@id":"http:\/\/vaheed.net\/author\/vaheed\/#author","url":"http:\/\/vaheed.net\/author\/vaheed\/","name":"vaheeD khoshnouD","image":{"@type":"ImageObject","@id":"http:\/\/vaheed.net\/top-20-openssh-server-best-security-practices\/#authorImage","url":"http:\/\/1.gravatar.com\/avatar\/4ef8c65e8d3633adf28103cadb4591c2?s=96&d=mm&r=g","width":"96","height":"96","caption":"vaheeD khoshnouD"}},{"@type":"WebPage","@id":"http:\/\/vaheed.net\/top-20-openssh-server-best-security-practices\/#webpage","url":"http:\/\/vaheed.net\/top-20-openssh-server-best-security-practices\/","name":"Top 20 OpenSSH Server Best Security Practices | vaheeD khoshnouD","description":"Default Config Files and SSH Port \/etc\/ssh\/sshd_config – OpenSSH server configuration file. \/etc\/ssh\/ssh_config – OpenSSH client configuration file. ~\/.ssh\/ – Users ssh configuration directory. ~\/.ssh\/authorized_keys or ~\/.ssh\/authorized_keys – Lists the public keys (RSA or DSA) that can be used to log into the user’s account \/etc\/nologin – If this file exists, sshd refuses to let anyone except root log in. \/etc\/hosts.allow and \/etc\/hosts.deny : Access... Continue Reading","inLanguage":"en-US","isPartOf":{"@id":"http:\/\/vaheed.net\/#website"},"breadcrumb":{"@id":"http:\/\/vaheed.net\/top-20-openssh-server-best-security-practices\/#breadcrumblist"},"author":"http:\/\/vaheed.net\/top-20-openssh-server-best-security-practices\/#author","creator":"http:\/\/vaheed.net\/top-20-openssh-server-best-security-practices\/#author","datePublished":"2013-01-09T08:23:44+03:30","dateModified":"2013-01-09T08:35:56+03:30"},{"@type":"Article","@id":"http:\/\/vaheed.net\/top-20-openssh-server-best-security-practices\/#article","name":"Top 20 OpenSSH Server Best Security Practices | vaheeD khoshnouD","description":"Default Config Files and SSH Port \/etc\/ssh\/sshd_config – OpenSSH server configuration file. \/etc\/ssh\/ssh_config – OpenSSH client configuration file. ~\/.ssh\/ – Users ssh configuration directory. ~\/.ssh\/authorized_keys or ~\/.ssh\/authorized_keys – Lists the public keys (RSA or DSA) that can be used to log into the user’s account \/etc\/nologin – If this file exists, sshd refuses to let anyone except root log in. \/etc\/hosts.allow and \/etc\/hosts.deny : Access... Continue Reading","headline":"Top 20 OpenSSH Server Best Security Practices","author":{"@id":"http:\/\/vaheed.net\/author\/vaheed\/#author"},"publisher":{"@id":"http:\/\/vaheed.net\/#organization"},"datePublished":"2013-01-09T08:23:44+03:30","dateModified":"2013-01-09T08:35:56+03:30","articleSection":"Linux, Macosx, Security","mainEntityOfPage":{"@id":"http:\/\/vaheed.net\/top-20-openssh-server-best-security-practices\/#webpage"},"isPartOf":{"@id":"http:\/\/vaheed.net\/top-20-openssh-server-best-security-practices\/#webpage"}}]}
+		</script>
+<script type="431689b6c4d025b4fefc25d6-text/javascript">
+			window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+			ga('create', "UA-3072201-3", 'auto');
+			ga('send', 'pageview');
+		</script>
+<script async src="https://www.google-analytics.com/analytics.js" type="431689b6c4d025b4fefc25d6-text/javascript"></script>
+
+<link rel="dns-prefetch" href="//vjs.zencdn.net">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//s.w.org">
+<link rel="alternate" type="application/rss+xml" title="vaheeD khoshnouD &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="vaheeD khoshnouD &raquo; Comments Feed" href="/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="vaheeD khoshnouD &raquo; Top 20 OpenSSH Server Best Security Practices Comments Feed" href="/top-20-openssh-server-best-security-practices/feed/">
+<link rel="publisher" href="https://plus.google.com/103839803047317952696">
+<script type="431689b6c4d025b4fefc25d6-text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/vaheed.net\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.7.2"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="videojs-css" href="//vjs.zencdn.net/5.9.2/video-js.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="videojs-style-css" href="/wp-content/plugins/videojs-hls-player/videojs-hls-player.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="videojs-airplay-css" href="/wp-content/plugins/videojs-hls-player/videojs-airplay/videojs.airplay.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="wp-search-suggest-css" href="/wp-content/plugins/wp-search-suggest/css/wpss-search-suggest.css?ver=5" type="text/css" media="all">
+<link rel="stylesheet" id="foundation-css" href="/wp-content/themes/drewsymo-Foundation-3b62be5/stylesheets/foundation.min.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="app-css" href="/wp-content/themes/drewsymo-Foundation-3b62be5/style.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C300&#038;ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="post-ratings-raty-css" href="/wp-content/plugins/post-ratings/assets/jquery.raty.css?ver=3.0" type="text/css" media="all">
+<link rel="stylesheet" id="wp-author-bio-css" href="/wp-content/plugins/wp-about-author/wp-about-author.css?ver=5.7.2" type="text/css" media="all">
+<script type="431689b6c4d025b4fefc25d6-text/javascript" src="/wp-includes/js/jquery/jquery.min.js?ver=3.5.1" id="jquery-core-js"></script>
+<script type="431689b6c4d025b4fefc25d6-text/javascript" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+<script type="431689b6c4d025b4fefc25d6-text/javascript" src="//vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js?ver=1.0.2" id="videojs-ie8-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/445">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 5.7.2">
+<link rel="shortlink" href="/?p=445">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Ftop-20-openssh-server-best-security-practices%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Ftop-20-openssh-server-best-security-practices%2F&#038;format=xml">
+
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body class="post-template-default single single-post postid-445 single-format-standard">
+<header class="row">
+<hgroup class="site-title twelve columns">
+<h1><a href="/" title="vaheeD khoshnouD" rel="home">vaheeD khoshnouD</a></h1>
+<h3 class="subheader">linux, mikrotik, macosx</h3>
+</hgroup>
+<div class="twelve columns"><ul class="nav-bar"><li class="page_item page-item-7"><a href="/about-me/">About Me</a></li></ul></div>
+</header>
+
+<script type="431689b6c4d025b4fefc25d6-text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//ns1.faratar.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//ns1.faratar.org/piwik/piwik.php?idsite=1" style="border:0;" alt=""></p></noscript>
+
+
+<div class="row">
+
+<div class="nine columns" role="content">
+<article>
+<header>
+<hgroup>
+<h2><a href="/top-20-openssh-server-best-security-practices/" title="Permalink to Top 20 OpenSSH Server Best Security Practices" rel="bookmark">Top 20 OpenSSH Server Best Security Practices</a></h2>
+<h6>Written by <a href="https://plus.google.com/103839803047317952696" title="Visit vaheeD&#8217;s website" rel="author external">vaheeD</a> on January 9, 2013</h6>
+</hgroup>
+</header>
+<div class="post-ratings" data-post="445">
+<div class="rating" data-post="445" data-rating="5" data-readonly="0"></div>
+<div class="rating-meta">
+<strong>5.00</strong> avg. rating (<strong>96</strong>% score) - <strong class="votes">2</strong> votes	</div>
+</div>
+<p><span id="more-445"></span></p>
+<h2>Default Config Files and SSH Port</h2>
+<ul>
+<li>
+<strong>/etc/ssh/sshd_config </strong>&#8211; OpenSSH server configuration file.</li>
+<li>
+<strong>/etc/ssh/ssh_config</strong> &#8211; OpenSSH client configuration file.</li>
+<li>
+<strong>~/.ssh/</strong> &#8211; Users ssh configuration directory.</li>
+<li>
+<strong>~/.ssh/authorized_keys</strong> or <strong>~/.ssh/authorized_keys</strong> &#8211; Lists the public keys (RSA or DSA) that can be used to log into the user’s account</li>
+<li>
+<strong>/etc/nologin</strong> &#8211; If this file exists, sshd refuses to let anyone except root log in.</li>
+<li>
+<strong>/etc/hosts.allow</strong> and <strong>/etc/hosts.deny</strong> : Access controls lists that should be enforced by tcp-wrappers are defined here.</li>
+<li>
+<strong>SSH default port </strong>: TCP 22</li>
+</ul>
+<p>&nbsp;</p>
+<h2>#1: Disable OpenSSH Server</h2>
+<p>Workstations and laptop can work without OpenSSH server. If you need not to provide the remote login and file transfer capabilities of SSH, disable and remove the SSHD server. CentOS / RHEL / Fedora Linux user can disable and remove openssh-server with yum command:<br>
+<code># chkconfig sshd off<br>
+# yum erase openssh-server</code><br>
+Debian / Ubuntu Linux user can disable and remove the same with apt-get command:<br>
+<code># apt-get remove openssh-server</code><br>
+You may need to update your iptables script to remove ssh exception rule. Under CentOS / RHEL / Fedora edit the files /etc/sysconfig/iptables and /etc/sysconfig/ip6tables. Once done <a href="/redhat-centos-fedora-linux-open-port/">restart iptables</a> service:<br>
+<code># service iptables restart<br>
+# service ip6tables restart</code></p>
+<h2>#2: Only Use SSH Protocol 2</h2>
+<p>SSH protocol version 1 (SSH-1) has man-in-the-middle attacks problems and security vulnerabilities. SSH-1 is obsolete and should be avoided at all cost. Open sshd_config file and make sure the following line exists:</p>
+<pre>Protocol 2</pre>
+<h2>#3: Limit Users&#8217; SSH Access</h2>
+<p>By default all systems user can login via SSH using their password or public key. Sometime you create UNIX / Linux user account for ftp or email purpose. However, those user can login to system using ssh. They will have full access to system tools including compilers and scripting languages such as Perl, Python which can open network ports and do many other fancy things. One of my client has really outdated php script and an attacker was able to create a new account on the system via a php script. However, attacker failed to get into box via ssh because it wasn&#8217;t in AllowUsers.</p>
+<p>Only allow root, vivek and jerry user to use the system via SSH, add the following to sshd_config:</p>
+<pre>AllowUsers root vivek jerry</pre>
+<p>Alternatively, you can allow all users to login via SSH but deny only a few users, with the following line:</p>
+<pre>DenyUsers saroj anjali foo</pre>
+<p>You can also configure Linux PAM allows or deny login via the sshd server. You can allow list of group name to access or deny access to the ssh.</p>
+<h2>#4: Configure Idle Log Out Timeout Interval</h2>
+<p>User can login to server via ssh and you can set an idel timeout interval to avoid unattended ssh session. Open sshd_config and make sure following values are configured:</p>
+<pre>ClientAliveInterval 300
+ClientAliveCountMax 0</pre>
+<p>You are setting an idle timeout interval in seconds (300 secs = 5 minutes). After this interval has passed, the idle user will be automatically kicked out (read as logged out).</p>
+<h2>#5: Disable .rhosts Files</h2>
+<p>Don&#8217;t read the user&#8217;s ~/.rhosts and ~/.shosts files. Update sshd_config with the following settings:</p>
+<pre>IgnoreRhosts yes</pre>
+<p>SSH can emulate the behavior of the obsolete rsh command, just disable insecure access via RSH.</p>
+<h2>#6: Disable Host-Based Authentication</h2>
+<p>To disable host-based authentication, update sshd_config with the following option:</p>
+<pre>HostbasedAuthentication no</pre>
+<h2>#7: Disable root Login via SSH</h2>
+<p>There is no need to login as root via ssh over a network. Normal users can use su or sudo (recommended) to gain root level access. This also make sure you get full auditing information about who ran privileged commands on the system via sudo. To disable root login via SSH, update sshd_config with the following line:</p>
+<pre>PermitRootLogin no</pre>
+<p>However, bob made <a href="http://archives.neohapsis.com/archives/openbsd/2005-03/2878.html" target="_blank">excellent</a> point:</p>
+<blockquote><p>Saying &#8220;don&#8217;t login as root&#8221; is h******t. It stems from the days when people sniffed the first packets of sessions so logging in as yourself and su-ing decreased the chance an attacker would see the root pw, and decreast the chance you got spoofed as to your telnet host target, You&#8217;d get your password spoofed but not root&#8217;s pw. Gimme a break. this is 2005 &#8211; We have ssh, used properly it&#8217;s secure. used improperly none of this 1989 will make a damn bit of difference. -Bob</p></blockquote>
+<h2>#8: Enable a Warning Banner</h2>
+<p>Set a warning banner by updating sshd_config with the following line:</p>
+<pre>Banner /etc/issue</pre>
+<p>Sample /etc/issue file:</p>
+<pre>----------------------------------------------------------------------------------------------
+You are accessing a XYZ Government (XYZG) Information System (IS) that is provided for authorized use only.
+By using this IS (which includes any device attached to this IS), you consent to the following conditions:
++ The XYZG routinely intercepts and monitors communications on this IS for purposes including, but not limited to,
+penetration testing, COMSEC monitoring, network operations and defense, personnel misconduct (PM),
+law enforcement (LE), and counterintelligence (CI) investigations.
++ At any time, the XYZG may inspect and seize data stored on this IS.
++ Communications using, or data stored on, this IS are not private, are subject to routine monitoring,
+interception, and search, and may be disclosed or used for any XYZG authorized purpose.
++ This IS includes security measures (e.g., authentication and access controls) to protect XYZG interests--not
+for your personal benefit or privacy.
++ Notwithstanding the above, using this IS does not constitute consent to PM, LE or CI investigative searching
+or monitoring of the content of privileged communications, or work product, related to personal representation
+or services by attorneys, psychotherapists, or clergy, and their assistants. Such communications and work
+product are private and confidential. See User Agreement for details.
+----------------------------------------------------------------------------------------------</pre>
+<p>Above is standard sample, consult your legal team for exact user agreement and legal notice details.</p>
+<h2>#8: Firewall SSH Port # 22</h2>
+<p>You need to firewall ssh port # 22 by updating iptables or pf firewall configurations. Usually, OpenSSH server must only accept connections from your LAN or other remote WAN sites only.</p>
+<h3>Netfilter (Iptables) Configuration</h3>
+<p>Update /etc/sysconfig/iptables (Redhat and friends specific file) to accept connection only from 192.168.1.0/24 and 202.54.1.5/29, enter:</p>
+<pre>-A RH-Firewall-1-INPUT -s 192.168.1.0/24 -m state --state NEW -p tcp --dport 22 -j ACCEPT
+-A RH-Firewall-1-INPUT -s 202.54.1.5/29 -m state --state NEW -p tcp --dport 22 -j ACCEPT</pre>
+<p>If you&#8217;ve dual stacked sshd with IPv6, edit /etc/sysconfig/ip6tables (Redhat and friends specific file), enter:</p>
+<pre> -A RH-Firewall-1-INPUT -s ipv6network::/ipv6mask -m tcp -p tcp --dport 22 -j ACCEPT</pre>
+<p>Replace ipv6network::/ipv6mask with actual IPv6 ranges.</p>
+<h3>*BSD PF Firewall Configuration</h3>
+<p>If you are using PF firewall update /etc/pf.conf as follows:</p>
+<pre>pass in on $ext_if inet proto tcp from {192.168.1.0/24, 202.54.1.5/29} to $ssh_server_ip port ssh flags S/SA synproxy state</pre>
+<h2>Sample /etc/pf.conf</h2>
+<ol>
+<li>
+<div>#### First declare a couple of variables ####</div>
+</li>
+<li>
+<div>### Outgoing tcp / udp port ####</div>
+</li>
+<li>
+<div>### 43 &#8211; whois, 22 &#8211; ssh ###</div>
+</li>
+<li>
+<div>tcp_services = &#8220;{ ssh, smtp, domain, www, https, 22, ntp, 43,ftp, ftp-data}&#8221;</div>
+</li>
+<li>
+<div>udp_services = &#8220;{ domain, ntp }&#8221;</div>
+</li>
+<li>
+<div>### allow ping / pong ####</div>
+</li>
+<li>
+<div>icmp_types = &#8220;{ echoreq, unreach }&#8221;</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div>#### define tables. add all subnets and ips to block</div>
+</li>
+<li>
+<div>table &lt;blockedip&gt; persist file &#8220;/etc/pf.block.ip.conf&#8221;</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div>martians = &#8220;{ 127.0.0.0/8, 192.168.0.0/16, 172.16.0.0/12, 10.0.0.0/8, 169.254.0.0/16, 192.0.2.0/24, 0.0.0.0/8, 240.0.0.0/4 }&#8221;</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div>### admin server ranges ###</div>
+</li>
+<li>
+<div>adminrange = &#8220;112.220.11.0/23&#8221;</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># connected to internet</div>
+</li>
+<li>
+<div>ext_if = &#8220;em1&#8221;</div>
+</li>
+<li>
+<div># connected to vpn / lan</div>
+</li>
+<li>
+<div>int_if = &#8220;em0&#8221;</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div>##### ftp proxy</div>
+</li>
+<li>
+<div>#proxy=&#8221;127.0.0.1&#8243;</div>
+</li>
+<li>
+<div>#proxyport=&#8221;8021&#8243;</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div>#### Normalization</div>
+</li>
+<li>
+<div>#scrub provides a measure of protection against certain kinds of attacks based on incorrect handling of packet fragments</div>
+</li>
+<li>
+<div>scrub in all</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div>#### NAT and RDR start</div>
+</li>
+<li>
+<div>#nat-anchor &#8220;ftp-proxy/*&#8221;</div>
+</li>
+<li>
+<div>#rdr-anchor &#8220;ftp-proxy/*&#8221;</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># redirect ftp traffic</div>
+</li>
+<li>
+<div>#rdr pass proto tcp from any to any port ftp -&gt; $proxy port $proxyport</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># Drop incoming everything</div>
+</li>
+<li>
+<div>block in all</div>
+</li>
+<li>
+<div>block return</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># keep stats of outgoing connections</div>
+</li>
+<li>
+<div>pass out keep state</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># We need to have an anchor for ftp-proxy</div>
+</li>
+<li>
+<div>#anchor &#8220;ftp-proxy/*&#8221;</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># unlimited traffic for loopback and lan / vpn</div>
+</li>
+<li>
+<div>set skip on {lo0, $int_if}</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># activate spoofing protection for all interfaces</div>
+</li>
+<li>
+<div>block in quick from urpf-failed</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div>#antispoof is a common special case of filtering and blocking. This mechanism protects against activity from spoofed or forged IP addresses</div>
+</li>
+<li>
+<div>antispoof log for $ext_if</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div>#Block RFC 1918 addresses</div>
+</li>
+<li>
+<div>block drop in log (all) quick on $ext_if from $martians to any</div>
+</li>
+<li>
+<div>block drop out log (all) quick on $ext_if from any to $martians</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># Block all ips</div>
+</li>
+<li>
+<div># pfctl -t blockedip -T show</div>
+</li>
+<li>
+<div>block drop in log (all) quick on $ext_if from &lt;blockedip&gt; to any</div>
+</li>
+<li>
+<div>block drop out log (all) quick on $ext_if from any to &lt;blockedip&gt;</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># allow outgoing</div>
+</li>
+<li>
+<div>pass out on $ext_if proto tcp to any port $tcp_services</div>
+</li>
+<li>
+<div>pass out on $ext_if proto udp to any port $udp_services</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># Allow trace route</div>
+</li>
+<li>
+<div>pass out on $ext_if inet proto udp from any to any port 33433 &gt;&lt; 33626 keep state</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># Allow admin to get into box</div>
+</li>
+<li>
+<div>pass in on $int_if from $adminrange to any</div>
+</li>
+<li>
+<div></div>
+</li>
+<li>
+<div># Allow incoming ssh, http, bind traffic</div>
+</li>
+<li>
+<div># pass in on $ext_if proto tcp from any to any port 25</div>
+</li>
+<li>
+<div>pass in on $ext_if proto tcp from any to any port ssh flags S/SA synproxy state</div>
+</li>
+<li>
+<div>pass in on $ext_if proto udp from any to any port domain</div>
+</li>
+<li>
+<div>pass in on $ext_if proto tcp from any to any port domain flags S/SA synproxy state</div>
+</li>
+<li>
+<div>pass in on $ext_if proto tcp from any to any port http flags S/SA synproxy modulate state</div>
+</li>
+<li>
+<div>pass inet proto icmp all icmp-type $icmp_types keep state</div>
+</li>
+<li>
+<div>## add your rule below ##</div>
+</li>
+</ol>
+<h2>#9: Change SSH Port and Limit IP Binding</h2>
+<p>By default SSH listen to all available interfaces and IP address on the system. Limit ssh port binding and change ssh port (by default brute forcing scripts only try to connects to port # 22). To bind to 192.168.1.5 and 202.54.1.5 IPs and to port 300, add or correct the following line:</p>
+<pre>Port 300
+ListenAddress 192.168.1.5
+ListenAddress 202.54.1.5</pre>
+<p>A better approach to use proactive approaches scripts such as fail2ban or denyhosts (see below).</p>
+<h2>#10: Use Strong SSH Passwords and Passphrase</h2>
+<p>It cannot be stressed enough how important it is to use strong user passwords and passphrase for your keys. Brute force attack works because you use dictionary based passwords. You can force users to avoid passwords against a dictionary attack and use john the ripper tool to find out existing weak passwords. Here is a sample random password generator (put in your ~/.bashrc):</p>
+<pre>genpasswd() {
+	local l=$1
+       	[ "$l" == "" ] &amp;&amp; l=20
+      	tr -dc A-Za-z0-9_ &lt; /dev/urandom | head -c ${l} | xargs
+}</pre>
+<p>Run it:<br>
+<code>genpasswd 16</code><br>
+Output:</p>
+<pre>uw8CnDVMwC6vOKgW</pre>
+<h2>#11: Use Public Key Based Authentication</h2>
+<p>Use public/private key pair with password protection for the private key. See how to use RSA and DSA key based authentication. Never ever use passphrase free key (passphrase key less) login.</p>
+<p>Create the cryptographic Key on FreeBSD / Linux / UNIX workstation, enter:<br>
+<code>ssh-keygen -t rsa</code><br>
+Assign the pass phrase (press [enter] key twice if you don&#8217;t want a passphrase). It will create 2 files in ~/.ssh directory as follows:</p>
+<ul>
+<li>~/.ssh/id_rsa : identification (private) key</li>
+<li>~/.ssh/id_rsa.pub : public key</li>
+</ul>
+<p>Use scp to copy the id_rsa.pub (public key) to <em>rh9linux.nixcraft.org</em> server as authorized_keys2 file, this is know as Installing the public key to server.<br>
+<code>scp .ssh/id_rsa.pub <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ea9c839c8f81aa9882d38683849f92c484839289988b8c9ec485988d">[email&#160;protected]</a>:.ssh/authorized_keys2</code><br>
+From FreeBSD workstation login to server:<br>
+<code>ssh rh9linux.nixcraft.org</code><br>
+Changing the pass-phrase on workstation (if needed):<br>
+<code>ssh-keygen -p</code><br>
+Use of ssh-agent to avoid continues pass-phrase typing<br>
+At freebsd workstation type:<br>
+<code>ssh-agent $BASH<br>
+ssh-add</code><br>
+Type your pass-phrase</p>
+<p>Now ssh server will not use prompt for the password. Above two commands can be added to your ~/.bash_profile file so that as soon as you login into workstation you can set the agent.</p>
+<h2>Deleting the keys hold by ssh-agent</h2>
+<p>To list keys, enter:<br>
+<code>ssh-add -l</code><br>
+To delete all keys, enter:<br>
+<code>ssh-add -D</code><br>
+To delete specific key, enter:<br>
+<code>ssh-add -d key</code></p>
+<h2>#12: Use Keychain Based Authentication</h2>
+<p>keychain is a special bash script designed to make key-based authentication incredibly convenient and flexible. It offers various security benefits over passphrase-free keys. See how to setup and use keychain software.</p>
+<h2>Install keychain on CentOS / RHEL / Fedora Linux</h2>
+<p>You need RPMForge repo enabled to install keychain package.<br>
+<code># yum install keychain</code></p>
+<h2>Install keychain on Debian / Ubuntu Linux</h2>
+<p><code># apt-get update &amp;&amp; apt-get install keychain</code></p>
+<h2>Install keychain on FreeBSD</h2>
+<p><code># portsnap fetch update<br>
+# cd /usr/ports/security/keychain<br>
+# make install clean</code></p>
+<h3>How Do I Setup SSH Keys With passphrase?</h3>
+<p>Simply type the following commands:<br>
+<code>$ ssh-keygen -t rsa</code><br>
+OR<br>
+<code>$ ssh-keygen -t dsa</code><br>
+Assign the pass phrase when prompted. See the following step-by-step guide for detailed information:</p>
+<p>&nbsp;</p>
+<h2>#13: Chroot SSHD (Lock Down Users To Their Home Directories)</h2>
+<p>By default users are allowed to browse the server directories such as /etc/, /bin and so on. You can protect ssh, using os based chroot or use special tools such as rssh. With the release of OpenSSH 4.8p1 or 4.9p1, you no longer have to rely on third-party hacks such as rssh or complicated chroot(1) setups to lock users to their home directories. See <a href="https://www.debian-administration.org/articles/590" target="_blank">this blog post</a> about new ChrootDirectory directive to lock down users to their home directories.</p>
+<h2>Install rssh</h2>
+<h3>CentOS / Fedora / RHEL Linux rssh installation</h3>
+<p>Visit Dag&#8217;s repo to grab <a href="http://dag.wieers.com/rpm/packages/rssh/">rssh package</a><br>
+<code># cd /tmp<br>
+# wget http://dag.wieers.com/rpm/packages/rssh/rssh-2.3.2-1.2.el5.rf.i386.rpm<br>
+# rpm -ivh rssh-2.3.2-1.2.el5.rf.i386.rpm</code></p>
+<h3>Debian / Ubuntu Linux rssh installation</h3>
+<p>Use apt-get command:<br>
+<code>$ sudo apt-get install rssh</code></p>
+<h3>FreeBSD installation</h3>
+<p><code># cd /usr/ports/shells/rssh<br>
+# make install clean</code></p>
+<p>&nbsp;</p>
+<h2>#14: Use TCP Wrappers</h2>
+<p>TCP Wrapper is a host-based Networking ACL system, used to filter network access to Internet. OpenSSH does supports TCP wrappers. Just update your /etc/hosts.allow file as follows to allow SSH only from 192.168.1.2 172.16.23.12 :</p>
+<pre>sshd : 192.168.1.2 172.16.23.12</pre>
+<p>&nbsp;</p>
+<h2>#15: Disable Empty Passwords</h2>
+<p>You need to explicitly disallow remote login from accounts with empty passwords, update sshd_config with the following line:</p>
+<pre>PermitEmptyPasswords no</pre>
+<h2>#16: Thwart SSH Crackers (Brute Force Attack)</h2>
+<p>Brute force is a method of defeating a cryptographic scheme by trying a large number of possibilities using a single or distributed computer network. To prevents brute force attacks against SSH, use the following softwares:</p>
+<ul>
+<li>DenyHosts is a Python based security tool for SSH servers. It is intended to prevent brute force attacks on SSH servers by monitoring invalid login attempts in the authentication log and blocking the originating IP addresses.</li>
+<li>Explains how to setup DenyHosts under RHEL / Fedora and CentOS Linux.</li>
+<li>
+<a href="https://www.fail2ban.org/" target="_blank">Fail2ban</a> is a similar program that prevents brute force attacks against SSH.</li>
+<li>
+<a href="http://sshguard.sourceforge.net/" target="_blank">security/sshguard-pf</a> protect hosts from brute force attacks against ssh and other services using pf.</li>
+<li>
+<a href="http://sshguard.sourceforge.net/" target="_blank">security/sshguard-ipfw</a> protect hosts from brute force attacks against ssh and other services using ipfw.</li>
+<li>
+<a href="http://sshguard.sourceforge.net/" target="_blank">security/sshguard-ipfilter</a> protect hosts from brute force attacks against ssh and other services using ipfilter.</li>
+<li>
+<a href="http://www.bsdconsulting.no/tools/" target="_blank">security/sshblock</a> block abusive SSH login attempts.</li>
+<li>
+<a href="http://anp.ath.cx/sshit/" target="_blank">security/sshit</a> checks for SSH/FTP bruteforce and blocks given IPs.</li>
+<li>
+<a href="http://www.aczoom.com/cms/blockhosts/" target="_blank">BlockHosts</a> Automatic blocking of abusive IP hosts.</li>
+<li>
+<a href="http://blinkeye.ch/dokuwiki/doku.php/projects/blacklist" target="_blank">Blacklist</a> Get rid of those bruteforce attempts.</li>
+<li>
+<a href="https://www.rfxn.com/projects/brute-force-detection/" target="_blank">Brute Force Detection</a> A modular shell script for parsing application logs and checking for authentication failures. It does this using a rules system where application specific options are stored including regular expressions for each unique auth format.</li>
+<li>
+<a href="https://savannah.nongnu.org/projects/ipqbdb/" target="_blank">IPQ BDB filter</a> May be considered as a fail2ban lite.</li>
+</ul>
+<h2>#17: Rate-limit Incoming Port # 22 Connections</h2>
+<p>Both netfilter and pf provides rate-limit option to perform simple throttling on incoming connections on port # 22.</p>
+<h3>Iptables Example</h3>
+<p>The following example will drop incoming connections which make more than 5 connection attempts upon port 22 within 60 seconds:</p>
+<pre>#!/bin/bash
+inet_if=eth1
+ssh_port=22
+$IPT -I INPUT -p tcp --dport ${ssh_port} -i ${inet_if} -m state --state NEW -m recent  --set
+$IPT -I INPUT -p tcp --dport ${ssh_port} -i ${inet_if} -m state --state NEW -m recent  --update --seconds 60 --hitcount 5 -j DROP</pre>
+<p>Call above script from your iptables scripts. Another config option:</p>
+<pre>$IPT -A INPUT  -i ${inet_if} -p tcp --dport ${ssh_port} -m state --state NEW -m limit --limit 3/min --limit-burst 3 -j ACCEPT
+$IPT -A INPUT  -i ${inet_if} -p tcp --dport ${ssh_port} -m state --state ESTABLISHED -j ACCEPT
+$IPT -A OUTPUT -o ${inet_if} -p tcp --sport ${ssh_port} -m state --state ESTABLISHED -j ACCEPT
+# another one line example
+# $IPT -A INPUT -i ${inet_if} -m state --state NEW,ESTABLISHED,RELATED -p tcp --dport 22 -m limit --limit 5/minute --limit-burst 5-j ACCEPT</pre>
+<p>See iptables man page for more details.</p>
+<h3>*BSD PF Example</h3>
+<p>The following will limits the maximum number of connections per source to 20 and rate limit the number of connections to 15 in a 5 second span. If anyone breaks our rules add them to our abusive_ips table and block them for making any further connections. Finally, flush keyword kills all states created by the matching rule which originate from the host which exceeds these limits.</p>
+<pre>sshd_server_ip="202.54.1.5"
+table &lt;abusive_ips&gt; persist
+block in quick from &lt;abusive_ips&gt;
+pass in on $ext_if proto tcp to $sshd_server_ip port ssh flags S/SA keep state (max-src-conn 20, max-src-conn-rate 15/5, overload &lt;abusive_ips&gt; flush)</pre>
+<h2>#18: Use Port Knocking</h2>
+<p><a href="https://en.wikipedia.org/wiki/Port_knocking" target="_blank">Port knocking</a> is a method of externally opening ports on a firewall by generating a connection attempt on a set of prespecified closed ports. Once a correct sequence of connection attempts is received, the firewall rules are dynamically modified to allow the host which sent the connection attempts to connect over specific port(s). A sample port Knocking example for ssh using iptables:</p>
+<pre>$IPT -N stage1
+$IPT -A stage1 -m recent --remove --name knock
+$IPT -A stage1 -p tcp --dport 3456 -m recent --set --name knock2
+
+$IPT -N stage2
+$IPT -A stage2 -m recent --remove --name knock2
+$IPT -A stage2 -p tcp --dport 2345 -m recent --set --name heaven
+
+$IPT -N door
+$IPT -A door -m recent --rcheck --seconds 5 --name knock2 -j stage2
+$IPT -A door -m recent --rcheck --seconds 5 --name knock -j stage1
+$IPT -A door -p tcp --dport 1234 -m recent --set --name knock
+
+$IPT -A INPUT -m --state ESTABLISHED,RELATED -j ACCEPT
+$IPT -A INPUT -p tcp --dport 22 -m recent --rcheck --seconds 5 --name heaven -j ACCEPT
+$IPT -A INPUT -p tcp --syn -j doo</pre>
+<ul>
+<li>
+<a href="http://www.cipherdyne.org/fwknop/" target="_blank">fwknop</a> is an implementation that combines port knocking and passive OS fingerprinting.</li>
+<li>
+<a href="https://www.debian-administration.org/articles/268" target="_blank">Multiple-port knocking</a> Netfilter/IPtables only implementation.</li>
+</ul>
+<h2>#19: Use Log Analyzer</h2>
+<p>Read your logs using logwatch or <a href="http://logcheck.org/" target="_blank">logcheck</a>. These tools make your log reading life easier. It will go through your logs for a given period of time and make a report in the areas that you wish with the detail that you wish. Make sure LogLevel is set to INFO or DEBUG in sshd_config:</p>
+<pre>LogLevel INFO</pre>
+<p>
+.<br>
+<br>
+Installation<br>
+Debian Linux type the following command::</p>
+<div>
+<div></div>
+<pre>apt-get install logwatch</pre>
+</div>
+<p>
+Fedora Linux type the following command::</p>
+<div>
+<div></div>
+<pre>yum install logwatch</pre>
+</div>
+<p>
+RedHat Enterprise Linux type the following command::</p>
+<div>
+<div></div>
+<pre>up2date logwatch</pre>
+</div>
+<p></p>
+<pre>To customize logwatch go to /usr/share/doc/logwatch-*/ directory and read the file HOWTO-Customize-LogWatch
+
+Or Open logwatch.conf file:</pre>
+<div>
+<div></div>
+<pre>vi /etc/logwatch/conf/logwatch.conf</pre>
+</div>
+<pre>OR</pre>
+<div>
+<div></div>
+<pre>vi /usr/share/logwatch/default.conf/logwatch.conf</pre>
+</div>
+<p>Read man page of logwatch for more information.</p>
+<h2>#20: Patch OpenSSH and Operating Systems</h2>
+<p>It is recommended that you use tools such as yum, apt-get, freebsd-update and others to keep systems up to date with the latest security patches.</p>
+<h2>Other Options</h2>
+<p>To hide openssh version, you need to update source code and compile openssh again. Make sure following options are enabled in sshd_config:</p>
+<pre>#  Turn on privilege separation
+UsePrivilegeSeparation yes
+# Prevent the use of insecure home directory and key file permissions
+StrictModes yes
+# Turn on  reverse name checking
+VerifyReverseMapping yes
+# Do you need port forwarding?
+AllowTcpForwarding no
+X11Forwarding no
+#  Specifies whether password authentication is allowed.  The default is yes.
+PasswordAuthentication no</pre>
+<p>Verify your sshd_config file before restarting / reloading changes:<br>
+<code># /usr/sbin/sshd -t</code></p>
+<p>Tighter SSH security with <a href="https://www.linuxjournal.com/article/8957" target="_blank">two-factor</a> or <a href="https://calomel.org/openssh.html" target="_blank">three-factor (or more)</a> authentication.</p>
+<h4>References:</h4>
+<ol>
+<li>The <a href="https://www.openssh.com/">official OpenSSH</a> project.</li>
+<li>Forum thread: <a href="http://nixcraft.com/networking-firewalls-security/726-failed-ssh-login-attempts-how-avoid-brute-ssh-attacks.html">Failed SSH login attempts</a> and how to avoid brute ssh attacks</li>
+<li>man pages sshd_config, ssh_config, tcpd, yum, and apt-get.</li>
+</ol>
+<p>If you have a technique or handy software not mentioned here, please share in the comments below to help your fellow readers keep their openssh based server secure.</p>
+<div class="post-ratings" data-post="445">
+<div class="rating" data-post="445" data-rating="5" data-readonly="0"></div>
+<div class="rating-meta">
+<strong>5.00</strong> avg. rating (<strong>96</strong>% score) - <strong class="votes">2</strong> votes	</div>
+</div>
+<footer>
+<p></p>
+<p>Posted Under: <a href="/category/linux/" rel="category tag">Linux</a>, <a href="/category/macosx/" rel="category tag">Macosx</a>, <a href="/category/security/" rel="category tag">Security</a></p>
+<section class="row">
+<div class="twelve columns">
+<div class="panel author-box">
+<a class="th"><img alt="" src="https://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=55&#038;d=mm&#038;r=g" srcset="http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=110&#038;d=mm&#038;r=g 2x" class="author_gravatar left  avatar-55 photo" height="55" width="55" loading="lazy"></a>
+<h5>About <a href="https://plus.google.com/103839803047317952696" title="Visit vaheeD&#8217;s website" rel="author external">vaheeD</a>
+</h5>
+<p>
+</p>
+</div>
+</div>
+</section>
+
+
+<div id="respond" class="comment-respond">
+<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/top-20-openssh-server-best-security-practices/#respond" style="display:none;">Cancel reply</a></small>
+</h3>
+<form action="/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p>
+<p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p>
+<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200"></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="445" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>
+<div style="text-align:center; font-style:italic; font-size:12px;">Protected by <a href="http://boliquan.com/wp-anti-spam/" target="_blank">WP Anti Spam</a>
+</div>
+</form> </div>
+</footer>
+</article>
+<hr>
+</div>
+
+
+<aside class="three columns">
+<div>
+<form method="get" id="searchform" action="/">
+<div class="row">
+<div class="twelve columns">
+<div class="row collapse">
+<div class="eight mobile-three columns">
+<input type="text" name="s" id="s" placeholder="Search">
+</div>
+<div class="four mobile-one columns">
+<input type="submit" class="postfix button expand" name="submit" id="searchsubmit" value="Search">
+</div>
+</div>
+</div>
+</div>
+</form>
+</div>
+<div>
+<h5>Categories</h5>
+<ul>
+<li class="cat-item cat-item-17">
+<a href="/category/cisco/">Cisco</a>
+</li>
+<li class="cat-item cat-item-6">
+<a href="/category/linux/">Linux</a>
+</li>
+<li class="cat-item cat-item-8">
+<a href="/category/macosx/">Macosx</a>
+</li>
+<li class="cat-item cat-item-7">
+<a href="/category/mikrotik/">MikroTik</a>
+</li>
+<li class="cat-item cat-item-10">
+<a href="/category/network/">Network</a>
+</li>
+<li class="cat-item cat-item-20">
+<a href="/category/openstack/">openstack</a>
+</li>
+<li class="cat-item cat-item-11">
+<a href="/category/security/">Security</a>
+</li>
+<li class="cat-item cat-item-1">
+<a href="/category/uncategorized/">Uncategorized</a>
+</li>
+</ul>
+</div>
+</aside>
+
+</div>
+
+
+<footer class="row">
+<div class="twelve columns">
+<ul class="link-list">
+</ul>
+</div>
+</footer>
+
+<div id="foot">
+<strong>vaheeD.NET</strong> | linux, mikrotik, macosx | 2012, 2013</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="431689b6c4d025b4fefc25d6-text/javascript" src="//vjs.zencdn.net/5.9.2/video.js?ver=1.0.2" id="videojs-js"></script>
+<script type="431689b6c4d025b4fefc25d6-text/javascript" src="/wp-content/plugins/videojs-hls-player/videojs-contrib-hls/videojs-contrib-hls.min.js?ver=1.0.2" id="videojs-hls-js"></script>
+<script type="431689b6c4d025b4fefc25d6-text/javascript" src="/wp-content/plugins/videojs-hls-player/videojs-airplay/videojs.airplay.js?ver=1.0.2" id="videojs-airplay-js"></script>
+<script type="431689b6c4d025b4fefc25d6-text/javascript" src="/wp-content/plugins/videojs-hls-player/videojs-hls-player.js?ver=1.0.2" id="videojs-custom-js"></script>
+<script type="431689b6c4d025b4fefc25d6-text/javascript" src="/wp-includes/js/jquery/suggest.min.js?ver=1.1-20110113" id="suggest-js"></script>
+<script type="431689b6c4d025b4fefc25d6-text/javascript" id="wp-search-suggest-js-extra">
+/* <![CDATA[ */
+var wpss_options = {"url":"http:\/\/vaheed.net\/wp-admin\/admin-ajax.php","nonce":"ffc31e8139","ajaxurl":"http:\/\/vaheed.net\/wp-admin\/admin-ajax.php?action=wp-search-suggest&_wpnonce=9c0d5b0c5c"};
+/* ]]> */
+</script>
+<script type="431689b6c4d025b4fefc25d6-text/javascript" src="/wp-content/plugins/wp-search-suggest/js/wpss-search-suggest.js?ver=5" id="wp-search-suggest-js"></script>
+<script type="431689b6c4d025b4fefc25d6-text/javascript" src="/wp-content/themes/drewsymo-Foundation-3b62be5/javascripts/foundation.min.js?ver=1.0" id="foundation-js"></script>
+<script type="431689b6c4d025b4fefc25d6-text/javascript" src="/wp-content/themes/drewsymo-Foundation-3b62be5/javascripts/app.js?ver=1.0" id="app-js"></script>
+<script type="431689b6c4d025b4fefc25d6-text/javascript" id="post-ratings-js-extra">
+/* <![CDATA[ */
+var post_ratings = {"ajaxURL":"http:\/\/vaheed.net\/wp-admin\/admin-ajax.php","nonce":"a8b298b24a","path":"http:\/\/vaheed.net\/wp-content\/plugins\/post-ratings\/assets\/images\/","number":"5"};
+/* ]]> */
+</script>
+<script type="431689b6c4d025b4fefc25d6-text/javascript" src="/wp-content/plugins/post-ratings/js/post-ratings.js?ver=3.0" id="post-ratings-js"></script>
+<script type="431689b6c4d025b4fefc25d6-text/javascript" src="/wp-content/plugins/post-ratings/assets/jquery.raty.js?ver=3.0" id="post-ratings-raty-js"></script>
+<script type="431689b6c4d025b4fefc25d6-text/javascript" src="/wp-includes/js/wp-embed.min.js?ver=5.7.2" id="wp-embed-js"></script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="431689b6c4d025b4fefc25d6-|49" defer></script>
+</body>
+</html>

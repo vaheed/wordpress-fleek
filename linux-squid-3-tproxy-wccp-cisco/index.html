@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-US"
+	prefix="og: https://ogp.me/ns#" > <![endif]--><!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en-US"
+	prefix="og: https://ogp.me/ns#" > <![endif]--><!--[if IE 8]>    <html class="no-js lt-ie9" lang="en-US"
+	prefix="og: https://ogp.me/ns#" > <![endif]--><!--[if gt IE 8]><!--><html class="no-js" lang="en-US" prefix="og: https://ogp.me/ns#"> <!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="pingback" href="/xmlrpc.php">
+
+<meta name="viewport" content="width=device-width">
+
+<title>Linux - Squid 3 - Tproxy - WCCP - Cisco | vaheeD khoshnouD</title>
+<meta name="description" content="Linux - Squid 3 - Tproxy - WCCP - Cisco">
+<link rel="canonical" href="/linux-squid-3-tproxy-wccp-cisco/">
+<meta property="og:site_name" content="vaheeD khoshnouD | linux, mikrotik, macosx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux - Squid 3 - Tproxy - WCCP - Cisco | vaheeD khoshnouD">
+<meta property="og:description" content="Linux - Squid 3 - Tproxy - WCCP - Cisco">
+<meta property="og:url" content="http://vaheed.net/linux-squid-3-tproxy-wccp-cisco/">
+<meta property="article:published_time" content="2012-12-24T19:55:13Z">
+<meta property="article:modified_time" content="2015-10-12T16:20:40Z">
+<meta property="twitter:card" content="summary">
+<meta property="twitter:domain" content="vaheed.net">
+<meta property="twitter:title" content="Linux - Squid 3 - Tproxy - WCCP - Cisco | vaheeD khoshnouD">
+<meta property="twitter:description" content="Linux - Squid 3 - Tproxy - WCCP - Cisco">
+<script type="application/ld+json" class="aioseo-schema">
+			{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebSite","@id":"http:\/\/vaheed.net\/#website","url":"http:\/\/vaheed.net\/","name":"vaheeD khoshnouD","description":"linux, mikrotik, macosx","publisher":{"@id":"http:\/\/vaheed.net\/#organization"}},{"@type":"Organization","@id":"http:\/\/vaheed.net\/#organization","name":"vaheeD khoshnouD","url":"http:\/\/vaheed.net\/"},{"@type":"BreadcrumbList","@id":"http:\/\/vaheed.net\/linux-squid-3-tproxy-wccp-cisco\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"http:\/\/vaheed.net\/#listItem","position":"1","item":{"@id":"http:\/\/vaheed.net\/#item","name":"Home","description":"vaheeD khoshnouD | linux, mikrotik, macosx","url":"http:\/\/vaheed.net\/"},"nextItem":"http:\/\/vaheed.net\/linux-squid-3-tproxy-wccp-cisco\/#listItem"},{"@type":"ListItem","@id":"http:\/\/vaheed.net\/linux-squid-3-tproxy-wccp-cisco\/#listItem","position":"2","item":{"@id":"http:\/\/vaheed.net\/linux-squid-3-tproxy-wccp-cisco\/#item","name":"Linux - Squid 3 - Tproxy - WCCP - Cisco","description":"Linux - Squid 3 - Tproxy - WCCP - Cisco","url":"http:\/\/vaheed.net\/linux-squid-3-tproxy-wccp-cisco\/"},"previousItem":"http:\/\/vaheed.net\/#listItem"}]},{"@type":"Person","@id":"http:\/\/vaheed.net\/author\/vaheed\/#author","url":"http:\/\/vaheed.net\/author\/vaheed\/","name":"vaheeD khoshnouD","image":{"@type":"ImageObject","@id":"http:\/\/vaheed.net\/linux-squid-3-tproxy-wccp-cisco\/#authorImage","url":"http:\/\/1.gravatar.com\/avatar\/4ef8c65e8d3633adf28103cadb4591c2?s=96&d=mm&r=g","width":"96","height":"96","caption":"vaheeD khoshnouD"}},{"@type":"WebPage","@id":"http:\/\/vaheed.net\/linux-squid-3-tproxy-wccp-cisco\/#webpage","url":"http:\/\/vaheed.net\/linux-squid-3-tproxy-wccp-cisco\/","name":"Linux - Squid 3 - Tproxy - WCCP - Cisco | vaheeD khoshnouD","description":"Linux - Squid 3 - Tproxy - WCCP - Cisco","inLanguage":"en-US","isPartOf":{"@id":"http:\/\/vaheed.net\/#website"},"breadcrumb":{"@id":"http:\/\/vaheed.net\/linux-squid-3-tproxy-wccp-cisco\/#breadcrumblist"},"author":"http:\/\/vaheed.net\/linux-squid-3-tproxy-wccp-cisco\/#author","creator":"http:\/\/vaheed.net\/linux-squid-3-tproxy-wccp-cisco\/#author","datePublished":"2012-12-24T19:55:13+03:30","dateModified":"2015-10-12T16:20:40+03:30"},{"@type":"Article","@id":"http:\/\/vaheed.net\/linux-squid-3-tproxy-wccp-cisco\/#article","name":"Linux - Squid 3 - Tproxy - WCCP - Cisco | vaheeD khoshnouD","description":"Linux - Squid 3 - Tproxy - WCCP - Cisco","headline":"Linux - Squid 3 - Tproxy - WCCP - Cisco","author":{"@id":"http:\/\/vaheed.net\/author\/vaheed\/#author"},"publisher":{"@id":"http:\/\/vaheed.net\/#organization"},"datePublished":"2012-12-24T19:55:13+03:30","dateModified":"2015-10-12T16:20:40+03:30","articleSection":"Cisco, Linux","mainEntityOfPage":{"@id":"http:\/\/vaheed.net\/linux-squid-3-tproxy-wccp-cisco\/#webpage"},"isPartOf":{"@id":"http:\/\/vaheed.net\/linux-squid-3-tproxy-wccp-cisco\/#webpage"}}]}
+		</script>
+<script type="0f726f3217ba3cfa39ebfd9f-text/javascript">
+			window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+			ga('create', "UA-3072201-3", 'auto');
+			ga('send', 'pageview');
+		</script>
+<script async src="https://www.google-analytics.com/analytics.js" type="0f726f3217ba3cfa39ebfd9f-text/javascript"></script>
+
+<link rel="dns-prefetch" href="//vjs.zencdn.net">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//s.w.org">
+<link rel="alternate" type="application/rss+xml" title="vaheeD khoshnouD &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="vaheeD khoshnouD &raquo; Comments Feed" href="/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="vaheeD khoshnouD &raquo; Linux &#8211; Squid 3 &#8211; Tproxy &#8211; WCCP &#8211; Cisco Comments Feed" href="/linux-squid-3-tproxy-wccp-cisco/feed/">
+<link rel="publisher" href="https://plus.google.com/103839803047317952696">
+<script type="0f726f3217ba3cfa39ebfd9f-text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/vaheed.net\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.7.2"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="videojs-css" href="//vjs.zencdn.net/5.9.2/video-js.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="videojs-style-css" href="/wp-content/plugins/videojs-hls-player/videojs-hls-player.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="videojs-airplay-css" href="/wp-content/plugins/videojs-hls-player/videojs-airplay/videojs.airplay.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="wp-search-suggest-css" href="/wp-content/plugins/wp-search-suggest/css/wpss-search-suggest.css?ver=5" type="text/css" media="all">
+<link rel="stylesheet" id="foundation-css" href="/wp-content/themes/drewsymo-Foundation-3b62be5/stylesheets/foundation.min.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="app-css" href="/wp-content/themes/drewsymo-Foundation-3b62be5/style.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C300&#038;ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="post-ratings-raty-css" href="/wp-content/plugins/post-ratings/assets/jquery.raty.css?ver=3.0" type="text/css" media="all">
+<link rel="stylesheet" id="wp-author-bio-css" href="/wp-content/plugins/wp-about-author/wp-about-author.css?ver=5.7.2" type="text/css" media="all">
+<script type="0f726f3217ba3cfa39ebfd9f-text/javascript" src="/wp-includes/js/jquery/jquery.min.js?ver=3.5.1" id="jquery-core-js"></script>
+<script type="0f726f3217ba3cfa39ebfd9f-text/javascript" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+<script type="0f726f3217ba3cfa39ebfd9f-text/javascript" src="//vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js?ver=1.0.2" id="videojs-ie8-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/44">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 5.7.2">
+<link rel="shortlink" href="/?p=44">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Flinux-squid-3-tproxy-wccp-cisco%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Flinux-squid-3-tproxy-wccp-cisco%2F&#038;format=xml">
+
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body class="post-template-default single single-post postid-44 single-format-standard">
+<header class="row">
+<hgroup class="site-title twelve columns">
+<h1><a href="/" title="vaheeD khoshnouD" rel="home">vaheeD khoshnouD</a></h1>
+<h3 class="subheader">linux, mikrotik, macosx</h3>
+</hgroup>
+<div class="twelve columns"><ul class="nav-bar"><li class="page_item page-item-7"><a href="/about-me/">About Me</a></li></ul></div>
+</header>
+
+<script type="0f726f3217ba3cfa39ebfd9f-text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//ns1.faratar.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//ns1.faratar.org/piwik/piwik.php?idsite=1" style="border:0;" alt=""></p></noscript>
+
+
+<div class="row">
+
+<div class="nine columns" role="content">
+<article>
+<header>
+<hgroup>
+<h2><a href="/linux-squid-3-tproxy-wccp-cisco/" title="Permalink to Linux &#8211; Squid 3 &#8211; Tproxy &#8211; WCCP &#8211; Cisco" rel="bookmark">Linux &#8211; Squid 3 &#8211; Tproxy &#8211; WCCP &#8211; Cisco</a></h2>
+<h6>Written by <a href="https://plus.google.com/103839803047317952696" title="Visit vaheeD&#8217;s website" rel="author external">vaheeD</a> on December 24, 2012</h6>
+</hgroup>
+</header>
+<div class="post-ratings" data-post="44">
+<div class="rating" data-post="44" data-rating="4" data-readonly="0"></div>
+<div class="rating-meta">
+<strong>4.00</strong> avg. rating (<strong>84</strong>% score) - <strong class="votes">1</strong> vote	</div>
+</div>
+<p><span id="more-44"></span></p>
+<hr>
+<h3>Squid-3.1</h3>
+<pre>cd /usr/src
+wget -c http://www.squid-cache.org/Versions/v3/3.1/squid-3.1.15.tar.gz
+tar xf squid-3.1.15.tar.gz
+cd squid-3.1.15 
+ulimit -HSn 16384
+ulimit -HSd unlimited
+./configure \
+  --prefix=/usr/local/squid \
+  --enable-forward-log \
+  --enable-follow-x-forwarded-for \
+  --enable-snmp \
+  --enable-linux-netfilter \
+  --enable-http-violations \
+  --enable-delay-pools \
+  --enable-storeio=diskd,aufs,ufs \
+  --with-large-files \
+  --enable-large-cache-files \
+  --with-filedescriptors=16384 \
+  --enable-async-io=128 \
+  --enable-removal-policies=lru,heap \
+  --enable-useragent-log \
+  --enable-referer-log \
+  --enable-err-languages=English \
+  --enable-default-err-language=English \
+  --enable-zph-qos \
+   --enable-icap-client \
+&amp;&amp; make &amp;&amp; make install
+cp /usr/local/squid/etc/squid.conf{,.bak}
+</pre>
+<hr>
+<h3>/usr/local/squid/etc/squid.conf</h3>
+<pre># Minimum ACL configuration
+acl manager proto cache_object
+acl localhost src 127.0.0.1/32 ::1
+acl to_localhost dst 127.0.0.0/8 0.0.0.0/32 ::1
+acl SSL_ports port  443
+acl Safe_ports port 80          # http
+acl Safe_ports port 21          # ftp
+acl Safe_ports port 443         # https
+acl Safe_ports port 70          # gopher
+acl Safe_ports port 210         # wais
+acl Safe_ports port 1025-65535  # unregistered ports
+acl Safe_ports port 280         # http-mgmt
+acl Safe_ports port 488         # gss-http
+acl Safe_ports port 591         # filemaker
+acl Safe_ports port 777         # multiling http
+acl CONNECT method CONNECT
+
+# Only allow cachemgr access from localhost
+http_access allow manager localhost
+http_access deny manager
+
+# Deny requests to certain unsafe ports
+http_access deny !Safe_ports
+
+# Deny CONNECT to other than secure SSL ports
+http_access deny CONNECT !SSL_ports
+
+# Protect innocent web applications running on the
+# proxy server who think the only one who can access
+# services on "localhost" is a local user
+http_access deny to_localhost
+
+# Clients access rules
+acl localnet src 192.168.123.240/28 192.168.84.0/28
+http_access allow localnet
+http_access allow localhost
+
+# Finally deny all other access to this proxy
+http_access deny all
+
+# Deny all ICP requests to this proxy
+icp_access deny all
+
+# Deny all HTCP requests to this proxy
+htcp_access deny all
+
+# Squid normall listener
+#http_port 3128
+http_port 3128 tcpkeepalive=60,10,6
+
+# TPROXY spoof listener
+#http_port 3129 tproxy
+http_port 3129 tproxy tcpkeepalive=60,10,6 disable-pmtu-discovery=transparent
+
+# Override /etc/resolv.conf
+#dns_nameservers 8.8.8.8
+
+# Protect dynamic content
+hierarchy_stoplist cgi-bin ? dll aspx
+
+# Cache memory should be at most half of RAM size in MB
+cache_mem 11264 MB
+
+# These objects should be kept in memory
+maximum_object_size_in_memory 40 KB
+
+# Which objects are replaced when memory space is needed
+cache_replacement_policy heap LFUDA
+memory_replacement_policy heap LFUDA
+
+# Disk swap directories
+cache_dir aufs /cache/1 122880 512 2048
+cache_dir aufs /cache/2 122880 512 2048
+cache_dir aufs /cache/3 122880 512 2048
+cache_dir aufs /cache/4 122880 512 2048
+
+# These objects should be kept on hard disk
+maximum_object_size 65536 KB
+
+# Water marks for cache object replacement
+cache_swap_high 95
+cache_swap_low 93
+
+# Logfile format
+logformat squid %ts.%03tu %6tr %&gt;a %Ss/%03&gt;Hs %&lt;st %rm %ru %un %Sh/%&lt;A %mt
+
+# Access log address
+access_log /usr/local/squid/var/logs/access.log squid
+
+# Number of old logfiles
+logfile_rotate 0
+
+# Watchdog configs
+#acl watchdog src 192.168.0.17
+#log_access deny watchdog
+
+# Leave coredumps in the first cache dir
+coredump_dir /cache/1
+
+# Continues downloading abort
+quick_abort_min 16 KB
+quick_abort_max 16 KB
+quick_abort_pct 98
+
+# Time-to-Live for failed requests
+negative_ttl 3 minutes
+
+# How log shuold cache positive DNS responses
+positive_dns_ttl 1 hours
+
+# Maximum size for HTTP headers
+request_header_max_size 100 KB
+
+# Shutdown pending time
+shutdown_lifetime 15 seconds
+
+# Administrator
+cache_mgr <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e58e8d8a968d8b9081a58288848c89cb868a88">[email&#160;protected]</a>
+
+# Hostname
+visible_hostname CacheServer
+
+# Don't show version in error pages
+httpd_suppress_version_string on
+
+# Costume error pages
+#error_directory /usr/local/squid/share/errors/mine/
+
+# SNMP settings for MRTG access
+acl mrtg src 127.0.0.1 # 192.168.0.17
+acl snmppublic snmp_community public
+snmp_access allow snmppublic mrtg
+snmp_access deny all
+snmp_port 3401
+
+# Inter Cache Communication Protocol
+icp_port 0
+
+# Hyper Text Caching Protocol discovery
+htcp_port 0
+
+# Water marks for the IP cache
+ipcache_size 40960
+ipcache_high 95
+ipcache_low 90
+
+# Parallel requests from a pipeline.
+pipeline_prefetch on
+
+# Close immediately half-closed connections
+half_closed_clients off
+
+# Transparent Headers
+forwarded_for transparent
+via off
+
+# Mark HIT packets
+qos_flows local-hit=0x30
+
+# Purge: squidclient -m PURGE http://www.google.com
+acl purge method PURGE
+http_access allow purge localhost
+http_access deny purge
+
+# Web Services workaround
+ignore_expect_100 on
+
+# Maximum connection limit of single client IP
+#client_ip_max_connections -1
+
+# eCAP Gzip (UNSTABLE)
+#ecap_enable on
+#ecap_service gzip_service respmod_precache 0 ecap://www.vigos.com/ecap_gzip
+#loadable_modules /usr/local/lib/ecap_adapter_gzip.so
+#acl GZIP_HTTP_STATUS http_status 200
+#adaptation_access gzip_service allow GZIP_HTTP_STATUS
+
+wccp2_router 172.16.106.233 
+wccp2_forwarding_method gre
+wccp2_return_method gre
+wccp2_service dynamic 80
+wccp2_service_info 80 protocol=tcp flags=src_ip_hash priority=240 ports=80
+wccp2_service dynamic 90
+wccp2_service_info 90 protocol=tcp flags=dst_ip_hash,ports_source priority=240 ports=80
+
+# Refresh patterns (refresh-ims)
+# Image files
+refresh_pattern -i \.png$                10080   90%     43200
+refresh_pattern -i \.gif$                10080   90%     43200
+refresh_pattern -i \.jpg$                10080   90%     43200
+refresh_pattern -i \.jpeg$               10080   90%     43200
+refresh_pattern -i \.bmp$                10080   90%     43200
+refresh_pattern -i \.tif$                10080   90%     43200
+refresh_pattern -i \.tiff$               10080   90%     43200
+
+# Compressed files
+refresh_pattern -i \.zip$                10080   90%     43200
+refresh_pattern -i \.rar$                10080   90%     43200
+refresh_pattern -i \.tar$                10080   90%     43200
+refresh_pattern -i \.gz$                 10080   90%     43200
+refresh_pattern -i \.tgz$                10080   90%     43200
+refresh_pattern -i \.z$                  10080   90%     43200
+refresh_pattern -i \.arj$                10080   90%     43200
+refresh_pattern -i \.lha$                10080   90%     43200
+refresh_pattern -i \.lzh$                10080   90%     43200
+
+# Binary files
+refresh_pattern -i \.exe$                10080   90%     43200
+refresh_pattern -i \.msi$                10080   90%     43200
+
+# Multimedia files
+refresh_pattern -i \.mp3$                10080   90%     43200
+refresh_pattern -i \.wav$                10080   90%     43200
+refresh_pattern -i \.mid$                10080   90%     43200
+refresh_pattern -i \.midi$               10080   90%     43200
+refresh_pattern -i \.ram$                10080   90%     43200
+refresh_pattern -i \.ra$                 10080   90%     43200
+refresh_pattern -i \.mov$                10080   90%     43200
+refresh_pattern -i \.avi$                10080   90%     43200
+refresh_pattern -i \.wmv$                10080   90%     43200
+refresh_pattern -i \.mpg$                10080   90%     43200
+refresh_pattern -i \.mpeg$               10080   90%     43200
+refresh_pattern -i \.swf$                10080   90%     43200
+
+# Document files
+refresh_pattern -i \.pdf$                10080   90%     43200
+refresh_pattern -i \.ps$                 10080   90%     43200
+refresh_pattern -i \.doc$                10080   90%     43200
+refresh_pattern -i \.ppt$                10080   90%     43200
+refresh_pattern -i \.pps$                10080   90%     43200
+
+# Default patterns
+refresh_pattern ^ftp:                    1440    20%     10080
+refresh_pattern ^gopher:                 1440    0%      1440
+refresh_pattern -i (/cgi-bin/|\?)        0       0%      0
+refresh_pattern .                        0       20%     4320
+</pre>
+<hr>
+<h3>/etc/rc.d/rc.squid</h3>
+<pre>#!/bin/bash
+#
+# /etc/rc.d/rc.squid
+#
+PIDFILE="/usr/local/squid/var/run/squid.pid"
+TIMEOUT=60
+
+start()
+{
+  echo -n 'Starting TPROXY Squid . . . '
+
+  PROCESS=$(ps -A | egrep ' squid$')
+  if [ "$PROCESS" == "" ]; then
+    if [ -f ${PIDFILE} ] ; then
+      rm ${PIDFILE}
+    fi
+  fi
+  ulimit -HSn 16384
+  ulimit -HSd unlimited
+  /usr/local/squid/sbin/squid
+
+  echo "Ok"
+}
+
+stop()
+{
+  echo 'Stoping TPROXY Squid'
+
+  /usr/local/squid/sbin/squid -k shutdown
+  TIME=0
+  while [ "$TIME" != "$TIMEOUT" ] ; do
+    TIME=$(( $TIME + 1 ))
+    echo -n $TIME
+    if [ "$(pgrep '^squid$')" == "" ]; then
+      if [ -f ${PIDFILE} ] ; then
+        rm ${PIDFILE}
+      fi
+      break
+    else
+      echo -n "."
+    fi
+    sleep 1
+  done
+  killall squid &amp;&gt; /dev/null
+  killall squid &amp;&gt; /dev/null
+  killall squid &amp;&gt; /dev/null
+  echo ".Ok"
+}
+
+case "$1" in
+  'start')
+    start
+    ;;
+
+  'stop')
+    stop
+    ;;
+
+  'restart')
+    stop
+    start
+    ;;
+
+  'rotate')
+    echo -n 'Rotating TPROXY Squid log files . . . '
+    /usr/local/squid/sbin/squid -k rotate
+    echo "Ok"
+    ;;
+
+  *)
+    echo "usage $0 start|stop|restart|rotate"
+    ;;
+
+esac
+</pre>
+<hr>
+<h3>/root/scripts/vlan.sh</h3>
+<pre>#!/bin/bash
+PATH="/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin"
+
+# vlan config
+ifconfig eth0 0.0.0.0 up
+vconfig add eth0 976
+ifconfig eth0.976 172.16.106.234 netmask 255.255.255.248
+route add default gw 172.16.106.233
+</pre>
+<hr>
+<h3>/root/scripts/gre-tunnel.sh</h3>
+<pre>#!/bin/bash
+PATH="/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin"
+
+# Load NAT and GRE  Modules
+#for MOD in $(/usr/bin/find /lib/modules/$(uname -r)/kernel/net -name "*nat*"); do
+#  /usr/bin/echo Loading $(/usr/bin/basename $MOD .ko)
+#  /sbin/modprobe $(/usr/bin/basename $MOD .ko)
+#done
+#for MOD in $(/usr/bin/find /lib/modules/$(uname -r)/kernel/net -name "*_gre.ko"); do
+#  /usr/bin/echo Loading $(/usr/bin/basename $MOD .ko)
+#  /sbin/modprobe $(/usr/bin/basename $MOD .ko)
+#done
+
+# Make GRE Tunnel between cache and router
+ROUTER=172.16.106.233
+CACHE=172.16.106.234
+modprobe ip_gre
+ip link set eth0.976 mtu 1476
+ip tunnel add wccp0 mode gre remote $ROUTER local $CACHE dev eth0.976
+ip addr add $CACHE dev wccp0
+ip link set wccp0 up
+</pre>
+<hr>
+<h3>/etc/rc.d/rc.local</h3>
+<pre>#!/bin/sh
+#
+# /etc/rc.d/rc.local:  Local system initialization script.
+#
+# Put any local startup commands in here.  Also, if you have
+# anything that needs to be run at shutdown time you can
+# make an /etc/rc.d/rc.local_shutdown script and put those
+# commands in there.
+
+/root/scripts/vlan.sh
+/root/scripts/gre-tunnel.sh
+
+# use less swap memory
+echo 50 &gt; /proc/sys/vm/swappiness
+
+# tcp keep alive tuning
+echo 60 &gt;  /proc/sys/net/ipv4/tcp_keepalive_time
+echo 10 &gt; /proc/sys/net/ipv4/tcp_keepalive_intvl
+echo 6 &gt;  /proc/sys/net/ipv4/tcp_keepalive_probes
+echo 65000 &gt; /proc/sys/net/ipv4/tcp_max_syn_backlog
+echo 1024 65000 &gt; /proc/sys/net/ipv4/ip_local_port_range
+echo 1 &gt; /proc/sys/net/ipv4/tcp_window_scaling
+echo 1 &gt; /proc/sys/net/ipv4/tcp_timestamps
+echo 33554432 &gt; /proc/sys/net/core/rmem_max
+echo 33554432 &gt; /proc/sys/net/core/wmem_max
+echo 4096 87380 33554432 &gt; /proc/sys/net/ipv4/tcp_rmem
+echo 4096 87380 33554432 &gt; /proc/sys/net/ipv4/tcp_wmem
+echo 1 &gt; /proc/sys/net/ipv4/tcp_no_metrics_save
+echo 3000 &gt; /proc/sys/net/core/netdev_max_backlog
+echo 30 &gt; /proc/sys/net/ipv4/tcp_fin_timeout
+echo 1800 &gt; /proc/sys/net/ipv4/tcp_keepalive_time
+echo 0 &gt; /proc/sys/net/ipv4/tcp_timestamps
+echo 256960 &gt; /proc/sys/net/core/rmem_default
+echo 256960 &gt; /proc/sys/net/core/wmem_default
+echo 524288 &gt; /proc/sys/net/ipv4/netfilter/ip_conntrack_max
+echo 1 &gt; /proc/sys/net/ipv4/tcp_tw_recycle
+
+# Start TPROXY Squid Cache Server:
+if [ -x /etc/rc.d/rc.squid ]; then
+  /etc/rc.d/rc.squid start
+fi
+
+# TPROXY Divert
+iptables -t mangle -N DIVERT
+iptables -t mangle -A DIVERT -j MARK --set-mark 1
+iptables -t mangle -A DIVERT -j ACCEPT
+iptables -t mangle -A PREROUTING -p tcp -m socket -j DIVERT
+iptables -t mangle -A PREROUTING -p tcp --dport 80 -j TPROXY --tproxy-mark 0x1/0x1 --on-port 3129
+
+# TPROXY Route
+ip rule add fwmark 1 lookup 100
+ip route add local 0.0.0.0/0 dev lo table 100
+</pre>
+<hr>
+<h3>/etc/rc.d/rc.local_shutdown</h3>
+<pre>#!/bin/bash
+# Stop TPROXY Squid Cache server:
+if [ -x /etc/rc.d/rc.squid ]; then
+  /etc/rc.d/rc.squid stop
+fi
+</pre>
+<hr>
+<h3>/etc/logrotate.d/squid</h3>
+<pre>/usr/local/squid/var/logs/access.log {
+  daily
+  rotate 186
+  start 1
+  copytruncate
+  compress
+  compresscmd /usr/bin/bzip2
+  compressext .bz2
+  compressoptions -sq9
+  dateext
+  notifempty
+  missingok
+}
+
+/usr/local/squid/var/logs/cache.log /usr/local/squid/var/logs/store.log {
+  daily
+  rotate 31
+  start 1
+  copytruncate
+  compress
+  compresscmd /usr/bin/bzip2
+  compressext .bz2
+  compressoptions -sq9
+  dateext
+  notifempty
+  missingok
+  sharedscripts
+  postrotate
+    /usr/local/squid/sbin/squid -k rotate
+  endscript
+}
+</pre>
+<hr>
+<h3>Partitions &amp; memory</h3>
+<pre># cat /etc/fstab
+
+/dev/cciss/c0d0p1 swap            swap        defaults         0   0
+/dev/cciss/c0d0p2 /               reiserfs    defaults         1   1
+/dev/cdrom       /mnt/cdrom       auto        noauto,owner,ro  0   0
+/dev/fd0         /mnt/floppy      auto        noauto,owner     0   0
+devpts           /dev/pts         devpts      gid=5,mode=620   0   0
+proc             /proc            proc        defaults         0   0
+tmpfs            /dev/shm         tmpfs       defaults         0   0
+
+/dev/cciss/c0d0p5 /cache/1        reiserfs    noatime,notail   1   2
+/dev/cciss/c0d0p6 /cache/2        reiserfs    noatime,notail   1   2
+/dev/cciss/c0d0p7 /cache/3        reiserfs    noatime,notail   1   2
+/dev/cciss/c0d0p8 /cache/4        reiserfs    noatime,notail   1   2
+
+# df -h
+
+Filesystem        Type        Size  Used Avail Use% Mounted on
+/dev/root         reiserfs    21G   4.9G   16G  25% /
+tmpfs             tmpfs       32G      0   32G   0% /dev/shm
+/dev/cciss/c0d0p5 reiserfs    182G  200M  182G   1% /cache/1
+/dev/cciss/c0d0p6 reiserfs    182G  200M  182G   1% /cache/2
+/dev/cciss/c0d0p7 reiserfs    182G  200M  182G   1% /cache/3
+/dev/cciss/c0d0p8 reiserfs    191G  200M  190G   1% /cache/4
+
+# free -m
+
+             total       used       free     shared    buffers     cached
+Mem:         64448        345      64102          0         20        122
+-/+ buffers/cache:        201      64246
+Swap:        65538          0      65538
+</pre>
+<hr>
+<h3>First time lunch</h3>
+<pre>mkdir /usr/local/squid/var/cache
+mkdir -p /cache/{1,2,3,4}
+chown -R nobody:nobody /cache
+chown -R nobody:nobody /usr/local/squid/var/logs
+chmod +x /etc/rc.d/rc.local_shutdown
+chmod  +x /root/scripts/vlan.sh
+chmod  +x /root/scripts/gre-tunnel.sh
+chmod +x /etc/rc.d/rc.squid
+/usr/local/squid/sbin/squid -z
+/etc/rc.d/rc.squid start
+</pre>
+<hr>
+<h3>Cico Router 3845</h3>
+<pre># telnet 172.16.106.233
+Trying 172.16.106.233...
+Connected to 172.16.106.233.
+Escape character is '^]'.
+
+User Access Verification
+
+Password: 
+router3845&gt;enable 
+Password: 
+router3845#show version 
+Cisco IOS Software, 3800 Software (C3845-SPSERVICESK9-M), Version 15.0(1)M4, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2010 by Cisco Systems, Inc.
+Compiled Thu 28-Oct-10 21:00 by prod_rel_team
+
+ROM: System Bootstrap, Version 12.4(13r)T15, RELEASE SOFTWARE (fc1)
+
+router3845 uptime is 19 hours, 17 minutes
+System returned to ROM by power-on
+System image file is "flash:c3845-spservicesk9-mz.150-1.M4.bin"
+Last reload type: Normal Reload
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="adc8d5ddc2dfd9edcec4decec283cec2c083">[email&#160;protected]</a>
+
+Cisco 3845 (revision 1.0) with 487423K/36864K bytes of memory.
+Processor board ID FHK1504F0MJ
+2 Gigabit Ethernet interfaces
+DRAM configuration is 64 bits wide with parity enabled.
+447K bytes of NVRAM.
+126976K bytes of ATA System CompactFlash (Read/Write)
+
+License Info:
+
+License UDI:
+
+-------------------------------------------------
+Device#   PID                   SN
+-------------------------------------------------
+*0        CISCO3845-MB          FOC14512NFP     
+
+Configuration register is 0x2142 (will be 0x2102 at next reload)
+
+router3845#dir flash:
+Directory of flash:/
+
+    1  -rw-    56307576  Jan 21 2011 09:39:36 +00:00  c3845-spservicesk9-mz.150-1.M4.bin
+    2  -rw-        2903  Jan 21 2011 09:49:14 +00:00  cpconfig-38xx.cfg
+    3  -rw-     2938880  Jan 21 2011 09:49:26 +00:00  cpexpress.tar
+    4  -rw-        1038  Jan 21 2011 09:49:32 +00:00  home.shtml
+    5  -rw-      122880  Jan 21 2011 09:49:40 +00:00  home.tar
+    6  -rw-      793739  Jan 21 2011 09:49:48 +00:00  256MB.sdf
+    7  -rw-     1697952  Jan 21 2011 09:50:02 +00:00  securedesktop-ios-3.1.1.45-k9.pkg
+    8  -rw-      415956  Jan 21 2011 09:50:14 +00:00  sslclient-win-1.1.4.176.pkg
+
+129748992 bytes total (67457024 bytes free)
+router3845#sh run
+Building configuration...
+
+Current configuration : 1975 bytes
+!
+! Last configuration change at 23:08:10 UTC Wed Sep 21 2011
+!
+version 15.0
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname router3845
+!
+boot-start-marker
+boot-end-marker
+!
+enable secret **********
+enable password ********** 
+!
+no aaa new-model
+!
+dot11 syslog
+ip source-route
+!
+!
+ip cef
+!
+!
+no ip domain lookup
+ip wccp web-cache
+ip wccp 80 redirect-list 100
+ip wccp 90 redirect-list 100
+no ipv6 cef
+multilink bundle-name authenticated
+!
+!
+!
+!
+voice-card 0
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CISCO3845-MB sn FOC14512NFP
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0
+ description to ne80(801)
+ no ip address
+ duplex full
+ speed auto
+ media-type sfp
+ no negotiation auto
+ no mop enabled
+!
+interface GigabitEthernet0/0.998
+ description to cisco
+ encapsulation dot1Q 998
+ ip address 172.16.106.226 255.255.255.252
+!
+interface GigabitEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/1.975
+ description Clients-Network
+ encapsulation dot1Q 975
+ ip address 10.92.107.6 255.255.255.252
+ ip wccp 80 redirect in
+ ip wccp 90 redirect out
+!
+interface GigabitEthernet0/1.976
+ description Squid-Tproxy-WCCP
+ encapsulation dot1Q 976
+ ip address 172.16.106.233 255.255.255.248
+ ip wccp redirect exclude in
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+ip route 0.0.0.0 0.0.0.0 172.16.106.225
+ip route 192.168.123.240 255.255.255.240 10.92.107.5
+ip route 192.168.84.0 255.255.255.240 10.92.107.5
+!
+access-list 100 permit ip 192.168.123.240 0.0.0.15 any
+access-list 100 permit ip any 192.168.123.240 0.0.0.15
+access-list 100 permit ip 192.168.84.0 0.0.0.15 any
+access-list 100 permit ip any 192.168.84.0 0.0.0.15
+access-list 100 deny   ip any any
+dialer-list 1 protocol ip permit
+!
+snmp-server community ******** RO
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+line con 0
+line aux 0
+line vty 0 4
+ password **********
+ login
+!
+scheduler allocate 20000 1000
+end
+
+router3845#exit
+Connection closed by foreign host.
+</pre>
+<hr>
+<h3>Transparency Test Script</h3>
+<p><a href="http://devel.squid-cache.org/cgi-bin/test">http://devel.squid-cache.org/cgi-bin/test</a></p>
+<hr>
+<h3>Bookmarks</h3>
+<p><a href="http://onlamp.com/pub/a/onlamp/2005/11/17/tcp_tuning.html?page=2">http://onlamp.com/pub/a/onlamp/2005/11/17/tcp_tuning.html?page=2</a><br>
+<a href="http://fasterdata.es.net/TCP-tuning//linux.html">http://fasterdata.es.net/TCP-tuning//linux.html</a><br>
+<a href="http://fasterdata.es.net/TCP-tuning//TCP-tuning.html">http://fasterdata.es.net/TCP-tuning//TCP-tuning.html</a><br>
+<a href="http://pmoghadam.com/">http://pmoghadam.com</a></p>
+<div class="post-ratings" data-post="44">
+<div class="rating" data-post="44" data-rating="4" data-readonly="0"></div>
+<div class="rating-meta">
+<strong>4.00</strong> avg. rating (<strong>84</strong>% score) - <strong class="votes">1</strong> vote	</div>
+</div>
+<footer>
+<p></p>
+<p>Posted Under: <a href="/category/cisco/" rel="category tag">Cisco</a>, <a href="/category/linux/" rel="category tag">Linux</a></p>
+<section class="row">
+<div class="twelve columns">
+<div class="panel author-box">
+<a class="th"><img alt="" src="https://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=55&#038;d=mm&#038;r=g" srcset="http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=110&#038;d=mm&#038;r=g 2x" class="author_gravatar left  avatar-55 photo" height="55" width="55" loading="lazy"></a>
+<h5>About <a href="https://plus.google.com/103839803047317952696" title="Visit vaheeD&#8217;s website" rel="author external">vaheeD</a>
+</h5>
+<p>
+</p>
+</div>
+</div>
+</section>
+
+
+<div id="respond" class="comment-respond">
+<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/linux-squid-3-tproxy-wccp-cisco/#respond" style="display:none;">Cancel reply</a></small>
+</h3>
+<form action="/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p>
+<p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p>
+<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200"></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="44" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>
+<div style="text-align:center; font-style:italic; font-size:12px;">Protected by <a href="http://boliquan.com/wp-anti-spam/" target="_blank">WP Anti Spam</a>
+</div>
+</form> </div>
+</footer>
+</article>
+<hr>
+</div>
+
+
+<aside class="three columns">
+<div>
+<form method="get" id="searchform" action="/">
+<div class="row">
+<div class="twelve columns">
+<div class="row collapse">
+<div class="eight mobile-three columns">
+<input type="text" name="s" id="s" placeholder="Search">
+</div>
+<div class="four mobile-one columns">
+<input type="submit" class="postfix button expand" name="submit" id="searchsubmit" value="Search">
+</div>
+</div>
+</div>
+</div>
+</form>
+</div>
+<div>
+<h5>Categories</h5>
+<ul>
+<li class="cat-item cat-item-17">
+<a href="/category/cisco/">Cisco</a>
+</li>
+<li class="cat-item cat-item-6">
+<a href="/category/linux/">Linux</a>
+</li>
+<li class="cat-item cat-item-8">
+<a href="/category/macosx/">Macosx</a>
+</li>
+<li class="cat-item cat-item-7">
+<a href="/category/mikrotik/">MikroTik</a>
+</li>
+<li class="cat-item cat-item-10">
+<a href="/category/network/">Network</a>
+</li>
+<li class="cat-item cat-item-20">
+<a href="/category/openstack/">openstack</a>
+</li>
+<li class="cat-item cat-item-11">
+<a href="/category/security/">Security</a>
+</li>
+<li class="cat-item cat-item-1">
+<a href="/category/uncategorized/">Uncategorized</a>
+</li>
+</ul>
+</div>
+</aside>
+
+</div>
+
+
+<footer class="row">
+<div class="twelve columns">
+<ul class="link-list">
+</ul>
+</div>
+</footer>
+
+<div id="foot">
+<strong>vaheeD.NET</strong> | linux, mikrotik, macosx | 2012, 2013</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="0f726f3217ba3cfa39ebfd9f-text/javascript" src="//vjs.zencdn.net/5.9.2/video.js?ver=1.0.2" id="videojs-js"></script>
+<script type="0f726f3217ba3cfa39ebfd9f-text/javascript" src="/wp-content/plugins/videojs-hls-player/videojs-contrib-hls/videojs-contrib-hls.min.js?ver=1.0.2" id="videojs-hls-js"></script>
+<script type="0f726f3217ba3cfa39ebfd9f-text/javascript" src="/wp-content/plugins/videojs-hls-player/videojs-airplay/videojs.airplay.js?ver=1.0.2" id="videojs-airplay-js"></script>
+<script type="0f726f3217ba3cfa39ebfd9f-text/javascript" src="/wp-content/plugins/videojs-hls-player/videojs-hls-player.js?ver=1.0.2" id="videojs-custom-js"></script>
+<script type="0f726f3217ba3cfa39ebfd9f-text/javascript" src="/wp-includes/js/jquery/suggest.min.js?ver=1.1-20110113" id="suggest-js"></script>
+<script type="0f726f3217ba3cfa39ebfd9f-text/javascript" id="wp-search-suggest-js-extra">
+/* <![CDATA[ */
+var wpss_options = {"url":"http:\/\/vaheed.net\/wp-admin\/admin-ajax.php","nonce":"ffc31e8139","ajaxurl":"http:\/\/vaheed.net\/wp-admin\/admin-ajax.php?action=wp-search-suggest&_wpnonce=9c0d5b0c5c"};
+/* ]]> */
+</script>
+<script type="0f726f3217ba3cfa39ebfd9f-text/javascript" src="/wp-content/plugins/wp-search-suggest/js/wpss-search-suggest.js?ver=5" id="wp-search-suggest-js"></script>
+<script type="0f726f3217ba3cfa39ebfd9f-text/javascript" src="/wp-content/themes/drewsymo-Foundation-3b62be5/javascripts/foundation.min.js?ver=1.0" id="foundation-js"></script>
+<script type="0f726f3217ba3cfa39ebfd9f-text/javascript" src="/wp-content/themes/drewsymo-Foundation-3b62be5/javascripts/app.js?ver=1.0" id="app-js"></script>
+<script type="0f726f3217ba3cfa39ebfd9f-text/javascript" id="post-ratings-js-extra">
+/* <![CDATA[ */
+var post_ratings = {"ajaxURL":"http:\/\/vaheed.net\/wp-admin\/admin-ajax.php","nonce":"a8b298b24a","path":"http:\/\/vaheed.net\/wp-content\/plugins\/post-ratings\/assets\/images\/","number":"5"};
+/* ]]> */
+</script>
+<script type="0f726f3217ba3cfa39ebfd9f-text/javascript" src="/wp-content/plugins/post-ratings/js/post-ratings.js?ver=3.0" id="post-ratings-js"></script>
+<script type="0f726f3217ba3cfa39ebfd9f-text/javascript" src="/wp-content/plugins/post-ratings/assets/jquery.raty.js?ver=3.0" id="post-ratings-raty-js"></script>
+<script type="0f726f3217ba3cfa39ebfd9f-text/javascript" src="/wp-includes/js/wp-embed.min.js?ver=5.7.2" id="wp-embed-js"></script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="0f726f3217ba3cfa39ebfd9f-|49" defer></script>
+</body>
+</html>

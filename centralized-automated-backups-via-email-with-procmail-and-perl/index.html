@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-US"
+	prefix="og: https://ogp.me/ns#" > <![endif]--><!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en-US"
+	prefix="og: https://ogp.me/ns#" > <![endif]--><!--[if IE 8]>    <html class="no-js lt-ie9" lang="en-US"
+	prefix="og: https://ogp.me/ns#" > <![endif]--><!--[if gt IE 8]><!--><html class="no-js" lang="en-US" prefix="og: https://ogp.me/ns#"> <!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="pingback" href="/xmlrpc.php">
+
+<meta name="viewport" content="width=device-width">
+
+<title>Centralized Automated Backups via Email with Procmail and Perl | vaheeD khoshnouD</title>
+<meta name="description" content="Introduction Designed to take automated email backups and save only the attached backup file to a directory path. Files are further sorted into a base directory plus a directory matched or created by the “From” address of the MT system script. For instance, you could set the “From” address of all RB600 devices backup scripts... Continue Reading">
+<link rel="canonical" href="/centralized-automated-backups-via-email-with-procmail-and-perl/">
+<meta property="og:site_name" content="vaheeD khoshnouD | linux, mikrotik, macosx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Centralized Automated Backups via Email with Procmail and Perl | vaheeD khoshnouD">
+<meta property="og:description" content="Introduction Designed to take automated email backups and save only the attached backup file to a directory path. Files are further sorted into a base directory plus a directory matched or created by the “From” address of the MT system script. For instance, you could set the “From” address of all RB600 devices backup scripts... Continue Reading">
+<meta property="og:url" content="http://vaheed.net/centralized-automated-backups-via-email-with-procmail-and-perl/">
+<meta property="article:published_time" content="2013-01-04T15:00:29Z">
+<meta property="article:modified_time" content="2013-01-04T15:00:29Z">
+<meta property="twitter:card" content="summary">
+<meta property="twitter:domain" content="vaheed.net">
+<meta property="twitter:title" content="Centralized Automated Backups via Email with Procmail and Perl | vaheeD khoshnouD">
+<meta property="twitter:description" content="Introduction Designed to take automated email backups and save only the attached backup file to a directory path. Files are further sorted into a base directory plus a directory matched or created by the “From” address of the MT system script. For instance, you could set the “From” address of all RB600 devices backup scripts... Continue Reading">
+<script type="application/ld+json" class="aioseo-schema">
+			{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebSite","@id":"http:\/\/vaheed.net\/#website","url":"http:\/\/vaheed.net\/","name":"vaheeD khoshnouD","description":"linux, mikrotik, macosx","publisher":{"@id":"http:\/\/vaheed.net\/#organization"}},{"@type":"Organization","@id":"http:\/\/vaheed.net\/#organization","name":"vaheeD khoshnouD","url":"http:\/\/vaheed.net\/"},{"@type":"BreadcrumbList","@id":"http:\/\/vaheed.net\/centralized-automated-backups-via-email-with-procmail-and-perl\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"http:\/\/vaheed.net\/#listItem","position":"1","item":{"@id":"http:\/\/vaheed.net\/#item","name":"Home","description":"vaheeD khoshnouD | linux, mikrotik, macosx","url":"http:\/\/vaheed.net\/"},"nextItem":"http:\/\/vaheed.net\/centralized-automated-backups-via-email-with-procmail-and-perl\/#listItem"},{"@type":"ListItem","@id":"http:\/\/vaheed.net\/centralized-automated-backups-via-email-with-procmail-and-perl\/#listItem","position":"2","item":{"@id":"http:\/\/vaheed.net\/centralized-automated-backups-via-email-with-procmail-and-perl\/#item","name":"Centralized Automated Backups via Email with Procmail and Perl","description":"Introduction Designed to take automated email backups and save only the attached backup file to a directory path. Files are further sorted into a base directory plus a directory matched or created by the “From” address of the MT system script. For instance, you could set the “From” address of all RB600 devices backup scripts... Continue Reading","url":"http:\/\/vaheed.net\/centralized-automated-backups-via-email-with-procmail-and-perl\/"},"previousItem":"http:\/\/vaheed.net\/#listItem"}]},{"@type":"Person","@id":"http:\/\/vaheed.net\/author\/vaheed\/#author","url":"http:\/\/vaheed.net\/author\/vaheed\/","name":"vaheeD khoshnouD","image":{"@type":"ImageObject","@id":"http:\/\/vaheed.net\/centralized-automated-backups-via-email-with-procmail-and-perl\/#authorImage","url":"http:\/\/1.gravatar.com\/avatar\/4ef8c65e8d3633adf28103cadb4591c2?s=96&d=mm&r=g","width":"96","height":"96","caption":"vaheeD khoshnouD"}},{"@type":"WebPage","@id":"http:\/\/vaheed.net\/centralized-automated-backups-via-email-with-procmail-and-perl\/#webpage","url":"http:\/\/vaheed.net\/centralized-automated-backups-via-email-with-procmail-and-perl\/","name":"Centralized Automated Backups via Email with Procmail and Perl | vaheeD khoshnouD","description":"Introduction Designed to take automated email backups and save only the attached backup file to a directory path. Files are further sorted into a base directory plus a directory matched or created by the “From” address of the MT system script. For instance, you could set the “From” address of all RB600 devices backup scripts... Continue Reading","inLanguage":"en-US","isPartOf":{"@id":"http:\/\/vaheed.net\/#website"},"breadcrumb":{"@id":"http:\/\/vaheed.net\/centralized-automated-backups-via-email-with-procmail-and-perl\/#breadcrumblist"},"author":"http:\/\/vaheed.net\/centralized-automated-backups-via-email-with-procmail-and-perl\/#author","creator":"http:\/\/vaheed.net\/centralized-automated-backups-via-email-with-procmail-and-perl\/#author","datePublished":"2013-01-04T15:00:29+03:30","dateModified":"2013-01-04T15:00:29+03:30"},{"@type":"Article","@id":"http:\/\/vaheed.net\/centralized-automated-backups-via-email-with-procmail-and-perl\/#article","name":"Centralized Automated Backups via Email with Procmail and Perl | vaheeD khoshnouD","description":"Introduction Designed to take automated email backups and save only the attached backup file to a directory path. Files are further sorted into a base directory plus a directory matched or created by the “From” address of the MT system script. For instance, you could set the “From” address of all RB600 devices backup scripts... Continue Reading","headline":"Centralized Automated Backups via Email with Procmail and Perl","author":{"@id":"http:\/\/vaheed.net\/author\/vaheed\/#author"},"publisher":{"@id":"http:\/\/vaheed.net\/#organization"},"datePublished":"2013-01-04T15:00:29+03:30","dateModified":"2013-01-04T15:00:29+03:30","articleSection":"Linux, MikroTik","mainEntityOfPage":{"@id":"http:\/\/vaheed.net\/centralized-automated-backups-via-email-with-procmail-and-perl\/#webpage"},"isPartOf":{"@id":"http:\/\/vaheed.net\/centralized-automated-backups-via-email-with-procmail-and-perl\/#webpage"}}]}
+		</script>
+<script type="b01b570bacd73f3633ded56d-text/javascript">
+			window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+			ga('create', "UA-3072201-3", 'auto');
+			ga('send', 'pageview');
+		</script>
+<script async src="https://www.google-analytics.com/analytics.js" type="b01b570bacd73f3633ded56d-text/javascript"></script>
+
+<link rel="dns-prefetch" href="//vjs.zencdn.net">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//s.w.org">
+<link rel="alternate" type="application/rss+xml" title="vaheeD khoshnouD &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="vaheeD khoshnouD &raquo; Comments Feed" href="/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="vaheeD khoshnouD &raquo; Centralized Automated Backups via Email with Procmail and Perl Comments Feed" href="/centralized-automated-backups-via-email-with-procmail-and-perl/feed/">
+<link rel="publisher" href="https://plus.google.com/103839803047317952696">
+<script type="b01b570bacd73f3633ded56d-text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/vaheed.net\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.7.2"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="videojs-css" href="//vjs.zencdn.net/5.9.2/video-js.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="videojs-style-css" href="/wp-content/plugins/videojs-hls-player/videojs-hls-player.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="videojs-airplay-css" href="/wp-content/plugins/videojs-hls-player/videojs-airplay/videojs.airplay.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="wp-search-suggest-css" href="/wp-content/plugins/wp-search-suggest/css/wpss-search-suggest.css?ver=5" type="text/css" media="all">
+<link rel="stylesheet" id="foundation-css" href="/wp-content/themes/drewsymo-Foundation-3b62be5/stylesheets/foundation.min.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="app-css" href="/wp-content/themes/drewsymo-Foundation-3b62be5/style.css?ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C300&#038;ver=5.7.2" type="text/css" media="all">
+<link rel="stylesheet" id="post-ratings-raty-css" href="/wp-content/plugins/post-ratings/assets/jquery.raty.css?ver=3.0" type="text/css" media="all">
+<link rel="stylesheet" id="wp-author-bio-css" href="/wp-content/plugins/wp-about-author/wp-about-author.css?ver=5.7.2" type="text/css" media="all">
+<script type="b01b570bacd73f3633ded56d-text/javascript" src="/wp-includes/js/jquery/jquery.min.js?ver=3.5.1" id="jquery-core-js"></script>
+<script type="b01b570bacd73f3633ded56d-text/javascript" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+<script type="b01b570bacd73f3633ded56d-text/javascript" src="//vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js?ver=1.0.2" id="videojs-ie8-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/346">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 5.7.2">
+<link rel="shortlink" href="/?p=346">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fcentralized-automated-backups-via-email-with-procmail-and-perl%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fcentralized-automated-backups-via-email-with-procmail-and-perl%2F&#038;format=xml">
+
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body class="post-template-default single single-post postid-346 single-format-standard">
+<header class="row">
+<hgroup class="site-title twelve columns">
+<h1><a href="/" title="vaheeD khoshnouD" rel="home">vaheeD khoshnouD</a></h1>
+<h3 class="subheader">linux, mikrotik, macosx</h3>
+</hgroup>
+<div class="twelve columns"><ul class="nav-bar"><li class="page_item page-item-7"><a href="/about-me/">About Me</a></li></ul></div>
+</header>
+
+<script type="b01b570bacd73f3633ded56d-text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//ns1.faratar.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//ns1.faratar.org/piwik/piwik.php?idsite=1" style="border:0;" alt=""></p></noscript>
+
+
+<div class="row">
+
+<div class="nine columns" role="content">
+<article>
+<header>
+<hgroup>
+<h2><a href="/centralized-automated-backups-via-email-with-procmail-and-perl/" title="Permalink to Centralized Automated Backups via Email with Procmail and Perl" rel="bookmark">Centralized Automated Backups via Email with Procmail and Perl</a></h2>
+<h6>Written by <a href="https://plus.google.com/103839803047317952696" title="Visit vaheeD&#8217;s website" rel="author external">vaheeD</a> on January 4, 2013</h6>
+</hgroup>
+</header>
+<div class="post-ratings" data-post="346">
+<div class="rating" data-post="346" data-rating="4" data-readonly="0"></div>
+<div class="rating-meta">
+<strong>4.00</strong> avg. rating (<strong>84</strong>% score) - <strong class="votes">1</strong> vote	</div>
+</div>
+<p><span id="more-346"></span></p>
+<h1>Introduction</h1>
+<p>Designed to take automated email backups and save only the attached backup file to a directory path. Files are further sorted into a base directory plus a directory matched or created by the &#8220;From&#8221; address of the MT system script. For instance, you could set the &#8220;From&#8221; address of all RB600 devices backup scripts to &#8220;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="70223246404030091f0502141f1d11191e5e131f1d">[email&#160;protected]</a>&#8221; and send them to your backup email address and all RB600 device backup files will be saved into the $basedir/RB600 directory by their system name. Tested and working with RouterOS 2.9.51 and 3.23. Working on CentOS 4.7 and CentOS 5.3 with MIME tools package and dependencies from rpmforge.</p>
+<h1>Assumptions</h1>
+<p>You are familiar with RouterOS scripts and basic linux administration. Have adequate permissions to install perl modules, create directories, and execute scripts on the host. Since I use CentOS for most of my mail servers, I will base this installation guide on a CentOS server. As long as the base dependencies of the scripts are met, the configuration should be pretty much the same on your preferred linux distribution.</p>
+<h1>Requirements</h1>
+<p><b>Mikrotik RouterOS</b></p>
+<p><b>linux/*nix host</b> with:</p>
+<pre> procmail
+ formail
+ expand
+ sed
+ awk
+ perl
+   MIME-tools
+ sendmail
+ cron
+ find</pre>
+<p>&nbsp;</p>
+<h1>Setting up the Mikrotik Backup Script</h1>
+<p>Nothing new here. Removes old backup file before creating a new backup file by system name then emails it to your backup address. The email &#8220;to&#8221; address should be the user or alias the .procmailrc file is setup for(see below). The subject should contain a match for the procmail script as well&#8230;.in this case &#8220;Backup&#8221;. The &#8220;From&#8221; address should be whatever directory you want to save the backup file in. In this case, the backup file would be save as $basedir/RB600/&lt;systemName&gt;.backup You can have any number of &#8220;from&#8221; names and if the directory is not found, it will be created.</p>
+<pre>:log info "Starting Backup Script..."
+:global backupfile ([/system identity get name] . ".backup")
+:if ([/file find name=$backupfile] != "") do={/file rem $backupfile}
+:delay 2s
+/system backup save name=$backupfile
+:log info "Waiting 5s for backup to complete..."
+:delay 5s
+:log info "Backup being emailed..."
+/tool e-mail send to="<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="157774767e606566556c7a6067717a78747c7b3b767a78">[email&#160;protected]</a>" subject=([/system identity get name] . " Backup") <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bddbcfd2d080efff8b8d8dfdc4d2c8cfd9d2d0dcd4d393ded2d0">[email&#160;protected]</a> file=$backupfile server=xxx.xxx.xx.x
+:log info "Finished Backup Script!"</pre>
+<h1>Setting up the Server Scripts</h1>
+<p>procmail, formail, expand, sed, awk, sendmail, and perl are common on most current linux distributions. If they&#8217;re not part of your distribution, you&#8217;ll need to install them and their dependencies with whatever package management your distribution provides. In addition to these common programs, perl MIME-Tools is required. For CentOS, setup the rpmforge repository(I use Dag Wieers repo) and once the rpmforge repository is enabled,</p>
+<pre>yum -y install perl-MIME-tools</pre>
+<p>Create a base location for your backups to be saved to. <b>NOTE:</b> path must be writable by the user that receives the backup mail. In my case I have a NFS share exported to /backups on this mail server. You can make a directory where ever you like and adjust the script paths accordingly. Just make sure that the user setup with the procmail recipe has write permission on the directory you define.</p>
+<pre>mkdir /backups/mt</pre>
+<h2>$HOME/.procmailrc</h2>
+<p>This recipe checks for a matching &#8220;To&#8221; address and the word &#8220;Backup&#8221; in the subject, both of which should match your MT backup script. If a match is made, the &#8220;From&#8221; address has the domain stripped and the value is passed to the parse script as the device.</p>
+<p>This should be saved in the recipient&#8217;s $HOME directory as .procmailrc If you&#8217;re sending to a user alias, it should be in the final user&#8217;s home directory. The &#8220;To&#8221; should match the &#8220;To&#8221; address in your MT backup scripts. Be sure to make the parsebackup.pl script executable and check the path to the parsebackup.pl script. Change the path here as well if you saved parsebackup.pl in a location other than /usr/local/bin/.</p>
+<pre>SHELL=/bin/sh                   #Use the Bourne shell (check your path!)
+#VERBOSE=yes
+LOGFILE=${HOME}/procmail.log
+LOG="--- Logging for ${LOGNAME} - "
+
+#Get the sender's address (formail reply addy)
+FROM_=`formail -rt -xTo: | expand | sed -e 's/^[ ]*//g' -e 's/[ ]*$//g'`
+
+#split sender address and take part prior to "@" as our device type
+FDEV_=`echo "${FROM_}" | awk <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="86abc0c6">[email&#160;protected]</a> '{ print $1 }'`
+
+# check for recipient and subject match then pipe message to parse script
+:0H
+* ^TO.*<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c4a6a5a7afb1b4b784bdabb1b6a0aba9a5adaaeaa7aba9">[email&#160;protected]</a>
+* ^Subject:.*Backup
+|/usr/local/bin/parsebackup.pl --device ${FDEV_}</pre>
+<p>&nbsp;</p>
+<h2>parsebackup.pl</h2>
+<p>This script takes input from procmail and searches for any defined MIME type attachment(s). If found, the attachment is saved to the location defined in $basedir. $basedir could also be a NFS share from a central storage device if desired.</p>
+<p>Save to location such as /usr/local/bin and make it executable. Be sure to read and change the applicable settings in the script. Notably the $to address and the $basedir path. The $to address should be a completely different user than what you setup the procmail recipe for, otherwise you may start a mail loop. If the $to address is set to an empty string <i>, then no email notification will be sent. Make sure the user which you setup the procmail recipe for has write permissions to the $basedir path!</i></p>
+<pre>#!/usr/bin/perl
+# parsebackup.pl --- Rob Asher
+# Searches for defined mime attachment type(s) in email piped in via procmail.
+# Saves mikrotik backup attachment to directory(could be NFS share)
+
+use MIME::Parser;
+use Getopt::Long;
+use File::Path;
+use strict;
+use warnings;
+
+my $device;
+my $result;
+
+## get arguments passed from procmail script for device path to save file under
+$result = GetOptions('device=s' =&gt; \$device);
+
+###-----------------------------------------------------------
+## address to send notices to (MUST be different than original recipient otherwise
+##  you may get into a vicious mail loop).  Set to '' if no notifications are desired.
+
+my $to = '<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c0b9afb580b9afb5b2a4afada1a9aeeea3afad">[email&#160;protected]</a>';
+
+## directory to store all parsed MIME types under and location of sendmail
+## base directory must initially be created and writable by user! (could be NFS share)
+
+my $basedir = "/backups/mt";
+my $sendmail = "/usr/sbin/sendmail -t";
+
+## define attachment types to keep -- notice all lowercase
+## add as many types as you like.
+
+my %type_ok = (
+  'application/octet-stream' =&gt; 1
+);
+
+###-----------------------------------------------------------
+
+##############################################################
+## make from base and check the output directory
+$basedir =~ s/\/$//;
+my $outputdir = $basedir . "/" . $device;
+if (! -e $outputdir || ! -d $outputdir ) {
+       mkpath($outputdir) or die "Unable to create $outputdir: $!\n";
+} else {
+       stat($outputdir);
+       if (! -w _) {
+               die "$outputdir is not writable by this user";
+       }
+}
+
+## parser object
+my $parser = new MIME::Parser;
+$parser-&gt;output_dir($outputdir);
+
+## get parts from mail piped in
+my $entity = $parser-&gt;read(\*STDIN);
+my $num_parts = $entity-&gt;parts;
+
+## get some message info to send on for notification
+my $from = $entity-&gt;head()-&gt;get('From');
+my $subj = $entity-&gt;head()-&gt;get('Subject');
+
+## check parts for defined type(s)
+foreach my $i (0 .. $num_parts-1) {
+    my $part = $entity-&gt;parts($i);
+    my $type = lc $part-&gt;mime_type;
+    my $bh = $part-&gt;bodyhandle;
+    if (! exists $type_ok{$type}) {
+       my $status = system("rm '$bh-&gt;{MB_Path}'");
+       die $! unless $status == 0;
+    }
+}
+
+## send notification that we processed a message and to where.
+if ($to) {
+   chomp($from);
+   chomp($subj);
+   open(SENDMAIL, "|$sendmail") or die "Cannot open $sendmail: $!";
+   print SENDMAIL "From: $from\n";
+   print SENDMAIL "To: $to\n";
+   print SENDMAIL "Subject: $subj Received\n";
+   print SENDMAIL "\n$subj file received and processed to $outputdir.\n";
+   close(SENDMAIL);
+}</pre>
+<p>&nbsp;</p>
+<h2>Cleanup</h2>
+<p>If you want to automate the time backups are saved, you can create a &#8220;cleanup&#8221; script of this and execute it via cron on a daily basis. It will look through the directory for files modified more than 15 days ago and remove them.</p>
+<p>Be sure your path is correct! Adjust the mtime to whatever value suits.</p>
+<pre>find /backups/mt -mtime +15 -type f -exec rm -f {} \;</pre>
+<p>&nbsp;</p>
+<h1>Final Thoughts</h1>
+<p>Hopefully, this isn&#8217;t an overly complex explanation of a fairly simple solution. Basically, there are three scripts involved. The backup script on the MT device sends an email to your backup recipient. The .procmailrc file for the backup recipient looks at the &#8220;To&#8221; and &#8220;Subject&#8221; for a match and if so, splits the &#8220;From&#8221; address and uses it as an argument to the parsebackup.pl script for the device type. The parsebackup.pl script takes the email piped in from the procmailrc recipe and then saves the attached backup file to the base location defined in the script plus the device type name passed through from the MT backup script.</p>
+<div class="post-ratings" data-post="346">
+<div class="rating" data-post="346" data-rating="4" data-readonly="0"></div>
+<div class="rating-meta">
+<strong>4.00</strong> avg. rating (<strong>84</strong>% score) - <strong class="votes">1</strong> vote	</div>
+</div>
+<footer>
+<p></p>
+<p>Posted Under: <a href="/category/linux/" rel="category tag">Linux</a>, <a href="/category/mikrotik/" rel="category tag">MikroTik</a></p>
+<section class="row">
+<div class="twelve columns">
+<div class="panel author-box">
+<a class="th"><img alt="" src="https://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=55&#038;d=mm&#038;r=g" srcset="http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=110&#038;d=mm&#038;r=g 2x" class="author_gravatar left  avatar-55 photo" height="55" width="55" loading="lazy"></a>
+<h5>About <a href="https://plus.google.com/103839803047317952696" title="Visit vaheeD&#8217;s website" rel="author external">vaheeD</a>
+</h5>
+<p>
+</p>
+</div>
+</div>
+</section>
+
+
+<div id="respond" class="comment-respond">
+<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/centralized-automated-backups-via-email-with-procmail-and-perl/#respond" style="display:none;">Cancel reply</a></small>
+</h3>
+<form action="/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p>
+<p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p>
+<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200"></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="346" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>
+<div style="text-align:center; font-style:italic; font-size:12px;">Protected by <a href="http://boliquan.com/wp-anti-spam/" target="_blank">WP Anti Spam</a>
+</div>
+</form> </div>
+</footer>
+</article>
+<hr>
+</div>
+
+
+<aside class="three columns">
+<div>
+<form method="get" id="searchform" action="/">
+<div class="row">
+<div class="twelve columns">
+<div class="row collapse">
+<div class="eight mobile-three columns">
+<input type="text" name="s" id="s" placeholder="Search">
+</div>
+<div class="four mobile-one columns">
+<input type="submit" class="postfix button expand" name="submit" id="searchsubmit" value="Search">
+</div>
+</div>
+</div>
+</div>
+</form>
+</div>
+<div>
+<h5>Categories</h5>
+<ul>
+<li class="cat-item cat-item-17">
+<a href="/category/cisco/">Cisco</a>
+</li>
+<li class="cat-item cat-item-6">
+<a href="/category/linux/">Linux</a>
+</li>
+<li class="cat-item cat-item-8">
+<a href="/category/macosx/">Macosx</a>
+</li>
+<li class="cat-item cat-item-7">
+<a href="/category/mikrotik/">MikroTik</a>
+</li>
+<li class="cat-item cat-item-10">
+<a href="/category/network/">Network</a>
+</li>
+<li class="cat-item cat-item-20">
+<a href="/category/openstack/">openstack</a>
+</li>
+<li class="cat-item cat-item-11">
+<a href="/category/security/">Security</a>
+</li>
+<li class="cat-item cat-item-1">
+<a href="/category/uncategorized/">Uncategorized</a>
+</li>
+</ul>
+</div>
+</aside>
+
+</div>
+
+
+<footer class="row">
+<div class="twelve columns">
+<ul class="link-list">
+</ul>
+</div>
+</footer>
+
+<div id="foot">
+<strong>vaheeD.NET</strong> | linux, mikrotik, macosx | 2012, 2013</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="b01b570bacd73f3633ded56d-text/javascript" src="//vjs.zencdn.net/5.9.2/video.js?ver=1.0.2" id="videojs-js"></script>
+<script type="b01b570bacd73f3633ded56d-text/javascript" src="/wp-content/plugins/videojs-hls-player/videojs-contrib-hls/videojs-contrib-hls.min.js?ver=1.0.2" id="videojs-hls-js"></script>
+<script type="b01b570bacd73f3633ded56d-text/javascript" src="/wp-content/plugins/videojs-hls-player/videojs-airplay/videojs.airplay.js?ver=1.0.2" id="videojs-airplay-js"></script>
+<script type="b01b570bacd73f3633ded56d-text/javascript" src="/wp-content/plugins/videojs-hls-player/videojs-hls-player.js?ver=1.0.2" id="videojs-custom-js"></script>
+<script type="b01b570bacd73f3633ded56d-text/javascript" src="/wp-includes/js/jquery/suggest.min.js?ver=1.1-20110113" id="suggest-js"></script>
+<script type="b01b570bacd73f3633ded56d-text/javascript" id="wp-search-suggest-js-extra">
+/* <![CDATA[ */
+var wpss_options = {"url":"http:\/\/vaheed.net\/wp-admin\/admin-ajax.php","nonce":"ffc31e8139","ajaxurl":"http:\/\/vaheed.net\/wp-admin\/admin-ajax.php?action=wp-search-suggest&_wpnonce=9c0d5b0c5c"};
+/* ]]> */
+</script>
+<script type="b01b570bacd73f3633ded56d-text/javascript" src="/wp-content/plugins/wp-search-suggest/js/wpss-search-suggest.js?ver=5" id="wp-search-suggest-js"></script>
+<script type="b01b570bacd73f3633ded56d-text/javascript" src="/wp-content/themes/drewsymo-Foundation-3b62be5/javascripts/foundation.min.js?ver=1.0" id="foundation-js"></script>
+<script type="b01b570bacd73f3633ded56d-text/javascript" src="/wp-content/themes/drewsymo-Foundation-3b62be5/javascripts/app.js?ver=1.0" id="app-js"></script>
+<script type="b01b570bacd73f3633ded56d-text/javascript" id="post-ratings-js-extra">
+/* <![CDATA[ */
+var post_ratings = {"ajaxURL":"http:\/\/vaheed.net\/wp-admin\/admin-ajax.php","nonce":"a8b298b24a","path":"http:\/\/vaheed.net\/wp-content\/plugins\/post-ratings\/assets\/images\/","number":"5"};
+/* ]]> */
+</script>
+<script type="b01b570bacd73f3633ded56d-text/javascript" src="/wp-content/plugins/post-ratings/js/post-ratings.js?ver=3.0" id="post-ratings-js"></script>
+<script type="b01b570bacd73f3633ded56d-text/javascript" src="/wp-content/plugins/post-ratings/assets/jquery.raty.js?ver=3.0" id="post-ratings-raty-js"></script>
+<script type="b01b570bacd73f3633ded56d-text/javascript" src="/wp-includes/js/wp-embed.min.js?ver=5.7.2" id="wp-embed-js"></script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="b01b570bacd73f3633ded56d-|49" defer></script>
+</body>
+</html>

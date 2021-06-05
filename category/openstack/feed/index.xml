@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>openstack | vaheeD khoshnouD</title>
+	<atom:link href="/category/openstack/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>linux, mikrotik, macosx</description>
+	<lastBuildDate>Wed, 10 Jan 2018 17:38:39 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.7.2</generator>
+	<item>
+		<title>Step by step Ubuntu LXD</title>
+		<link>/step-by-step-ubuntu-lxd/</link>
+					<comments>/step-by-step-ubuntu-lxd/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Wed, 06 Jan 2016 10:11:44 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[openstack]]></category>
+		<category><![CDATA[Security]]></category>
+		<guid isPermaLink="false">/?p=734</guid>
+
+					<description><![CDATA[<p>sudo add-apt-repository ppa:ubuntu-lxc/lxd-stable sudo apt-get update sudo apt-get install lxd ======================== lxd-images import ubuntu --alias ubuntu =======================Your first container================ lxc image list lxc launch ubuntu first lxc list lxc info first lxc config show first =======================Limiting resources================= free -m lxc exec first -- free -m lxc config set first limits.memory 64MB lxc exec first --... </p>
+<p><a class="small button secondary" href="/step-by-step-ubuntu-lxd/">Continue Reading</a></p>
+The post <a href="/step-by-step-ubuntu-lxd/">Step by step Ubuntu LXD</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-734"></span></p>
+<p><code><br />
+sudo add-apt-repository ppa:ubuntu-lxc/lxd-stable<br />
+sudo apt-get update<br />
+sudo apt-get install lxd<br />
+========================</p>
+<p>lxd-images import ubuntu --alias ubuntu</p>
+<p>=======================Your first container================<br />
+lxc image list<br />
+lxc launch ubuntu first<br />
+lxc list<br />
+lxc info first<br />
+lxc config show first<br />
+=======================Limiting resources=================<br />
+free -m<br />
+lxc exec first -- free -m<br />
+lxc config set first limits.memory 64MB<br />
+lxc exec first -- free -m<br />
+=======================Snapshots==========================<br />
+lxc exec first -- apt-get update<br />
+lxc exec first -- apt-get dist-upgrade -y<br />
+lxc exec first -- apt-get autoremove --purge -y</p>
+<p>lxc snapshot first clean</p>
+<p>lxc exec first -- rm -Rf /etc /usr</p>
+<p>lxc exec first -- bash</p>
+<p>lxc restore first clean</p>
+<p>lxc exec first -- bash<br />
+========================Creating images===================<br />
+lxc publish first/clean --alias clean-ubuntu<br />
+lxc delete first<br />
+lxc launch clean-ubuntu second<br />
+=======================Accessing files from the container=<br />
+lxc file pull second/etc/hosts .<br />
+echo "1.2.3.4 my-example" >> hosts<br />
+lxc file push hosts second/etc/hosts<br />
+lxc file pull second/var/log/syslog - | less<br />
+lxc delete second<br />
+=======================Use a remote image server=========<br />
+lxc remote add images images.linuxcontainers.org<br />
+lxc image list images: | less<br />
+lxc launch images:centos/7/amd64 third<br />
+lxc exec third -- cat /etc/redhat-release<br />
+lxc delete third<br />
+lxc remote list<br />
+=======================Interact with remote LXD servers=<br />
+lxc list tryit:<br />
+lxc image list tryit:<br />
+lxc launch clean-ubuntu tryit:fourth<br />
+lxc exec tryit:fourth bash<br />
+lxc copy tryit:fourth tryit:fifth<br />
+lxc move tryit:fifth sixth<br />
+lxc start sixth<br />
+lxc exec sixth -- bash<br />
+lxc delete sixth<br />
+lxc delete tryit:fourth<br />
+lxc image delete clean-ubuntu<br />
+======================</p>
+<p>iptables -t nat -A PREROUTING -p tcp --dport 9000 -j DNAT --to 10.0.3.204:9000<br />
+</code></p>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/step-by-step-ubuntu-lxd/">Step by step Ubuntu LXD</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/step-by-step-ubuntu-lxd/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Step by Step install Openstack all in one Virtual machines</title>
+		<link>/step_by_step_install_openstack_all_in_one_virtual_machines/</link>
+					<comments>/step_by_step_install_openstack_all_in_one_virtual_machines/#respond</comments>
+		
+		<dc:creator><![CDATA[vaheeD]]></dc:creator>
+		<pubDate>Wed, 30 Dec 2015 08:16:37 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[openstack]]></category>
+		<guid isPermaLink="false">/?p=731</guid>
+
+					<description><![CDATA[<p>Requirements: OS Type : Ubuntu 14.04 CPU : 2 Core RAM : 8G Disk: 60G First Step we need add user for configure and running devstack sudo bash useradd -m stack echo "stack ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers su stack sudo aptitude update sudo aptitude upgrade -y reboot now install dependency package sudo aptitude install... </p>
+<p><a class="small button secondary" href="/step_by_step_install_openstack_all_in_one_virtual_machines/">Continue Reading</a></p>
+The post <a href="/step_by_step_install_openstack_all_in_one_virtual_machines/">Step by Step install Openstack all in one Virtual machines</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></description>
+										<content:encoded><![CDATA[<p><span id="more-731"></span></p>
+<p></p>
+<p>Requirements:<br />
+OS Type : Ubuntu 14.04<br />
+CPU : 2 Core<br />
+RAM : 8G<br />
+Disk: 60G<br />
+<br />
+First Step we need add user for configure and running devstack<br />
+<code><br />
+sudo bash<br />
+useradd -m stack<br />
+echo "stack ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers<br />
+su stack<br />
+sudo aptitude update<br />
+sudo aptitude upgrade -y<br />
+reboot<br />
+</code><br />
+<br />
+now install dependency package<br />
+<code><br />
+sudo aptitude install build-essential htop atop vim-nox nload git -y<br />
+sudo bash<br />
+su stack<br />
+cd<br />
+git clone https://github.com/openstack-dev/devstack.git<br />
+cd devstack<br />
+</code><br />
+<br />
+now we need local configuration<br />
+<code><br />
+vi /home/stack/devstack/local.conf<br />
+</code><br />
+<br />
+and paste configuration<br />
+<code><br />
+[[local|localrc]]<br />
+#=================<br />
+#khoshnud@gmail.com<br />
+#=================<br />
+#Password list configuration<br />
+ADMIN_PASSWORD=nova<br />
+MYSQL_PASSWORD=nova<br />
+RABBIT_PASSWORD=nova<br />
+SERVICE_PASSWORD=$ADMIN_PASSWORD<br />
+SERVICE_TOKEN=nova<br />
+#=================<br />
+#seet UUID as keystone token which is much shorter and easier to work with.<br />
+KEYSTONE_TOKEN_FORMAT=UUID<br />
+#=================<br />
+#Swift-Object_Storage<br />
+ENABLED_SERVICES+=,s-proxy,s-object,s-container,s-account<br />
+SWIFT_HASH=66a3d6b56c1f479c8b4e70ab5c2000f5<br />
+SWIFT_REPLICAS=1<br />
+SWIFT_DATA_DIR=$DEST/data<br />
+#=================<br />
+#Ceilometer-Metering_Service<br />
+ENABLED_SERVICES+=,ceilometer-acompute,ceilometer-acentral,ceilometer-collector,ceilometer-api<br />
+ENABLED_SERVICES+=,ceilometer-alarm-notify,ceilometer-alarm-eval<br />
+#=================<br />
+#Heat-Orchestration_Service<br />
+ENABLED_SERVICES+=,heat,h-api,h-api-cfn,h-api-cw,h-eng<br />
+#=================<br />
+#Apache_fronted_for_WSGI<br />
+APACHE_ENABLED_SERVICES+=keystone,swift<br />
+#=================<br />
+#Murano<br />
+enable_plugin murano git://git.openstack.org/openstack/murano<br />
+enable_service murano-cfapi<br />
+#MURANO_APPS=io.murano.apps.apache.Tomcat,io.murano.apps.Guacamole<br />
+#MURANO_APPS=io.murano.apps.apache.Tomcat,io.murano.apps.Guacamole,io.murano.apps.HDPSandbox,io.murano.apps.RabbitMQ,io.murano.apps.TestCluster,io.murano.apps.WordPress,io.murano.apps.ZabbixAgent,io.murano.apps.ZabbixServer,io.murano.apps.linux.Git,io.murano.apps.linux.Telnet,io.murano.databases.MySql,io.murano.apps.apache.ApacheHttpServer,io.murano.apps.apache.TomcatCluster,io.murano.apps.apache.TomcatServletContainer,io.murano.apps.apache.TomcatSingle,io.murano.apps.java.HelloWorld,io.murano.apps.java.HelloWorldCluster,io.murano.apps.mongodb.MongoReplicationSet,io.murano.apps.openstack.Murano,io.murano.apps.openstack.MuranoDashboard,io.murano.apps.paas.CloudFoundry.DEAng,io.murano.apps.paas.CloudFoundry,io.murano.apps.paas.CloudFoundryUI,io.murano.apps.test.SimpleVMcluster,io.murano.databases.PostgreSql,io.murano.databases.SqlDatabase,io.murano.windows.ActiveDirectory,io.murano.windows.FailoverCluster,io.murano.windows.SqlServer,io.murano.windows.SqlServerCluster,io.murano.apps.docker.DockerStandaloneHost,io.murano.apps.SugarCRM<br />
+#=================<br />
+#Enable_Logging<br />
+LOGFILE=/opt/stack/logs/stack.sh.log<br />
+VERBOSE=True<br />
+LOG_COLOR=True<br />
+SCREEN_LOGDIR=/opt/stack/logs<br />
+#=================<br />
+#Network_Configuration<br />
+FLOATING_RANGE=192.168.25.0/27<br />
+FLAT_INTERFACE=eth0<br />
+LOGFILE=/home/stack/stack.sh.log<br />
+Q_FLOATING_ALLOCATION_POOL=start=192.168.25.10,end=192.168.25.20<br />
+PUBLIC_NETWORK_GATEWAY=192.168.25.1<br />
+#=================<br />
+#install_devstack_single_node<br />
+disable_service n-net<br />
+enable_service q-svc<br />
+enable_service q-agt<br />
+enable_service q-dhcp<br />
+enable_service q-l3<br />
+enable_service q-meta<br />
+enable_service neutron<br />
+enable_service tempest<br />
+#=================<br />
+#install_devstack_multi_node<br />
+#disable_service n-net<br />
+#enable_service q-svc<br />
+#enable_service q-agt<br />
+#enable_service q-dhcp<br />
+#enable_service q-l3<br />
+#enable_service q-meta<br />
+#enable_service neutron<br />
+#================<br />
+#Runnig_this_section_for_all_node_connected_to_controler<br />
+#ENABLED_SERVICES=n-cpu,rabbit,neutron,q-agt<br />
+#SERVICE_HOST=[IP of controller node]<br />
+#MYSQL_HOST=$SERVICE_HOST<br />
+#RABBIT_HOST=$SERVICE_HOST<br />
+#Q_HOST=$SERVICE_HOST<br />
+</code><br />
+now go to devstack directory and run ./stack.sh<br />
+<br />
+virtual machine in openstack need internet and other network activity<br />
+<code><br />
+sudo bash<br />
+echo 1 > /proc/sys/net/ipv4/ip_forward<br />
+echo 1 > /proc/sys/net/ipv4/conf/eth0/proxy_arp<br />
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE<br />
+</code><br />
+<br />
+Attention: never poweroff or reboot openstack server, just pause and play (Snapshot ):D</p>
+<p>have a good day dude!</p>
+<div class="wp-about-author-containter-top" style="background-color:#FFEAA8;"><div class="wp-about-author-pic"><img alt='' src='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/4ef8c65e8d3633adf28103cadb4591c2?s=200&#038;d=mm&#038;r=g 2x' class='author_gravatar left  avatar-100 photo' height='100' width='100' loading='lazy'/></div><div class="wp-about-author-text" style="margin-left:140px"><h3><a href='/author/vaheed/' title='vaheeD'>vaheeD</a></h3><p></p><p><a href='/author/vaheed/' title='More posts by vaheeD'>More Posts</a>  - <a href='https://plus.google.com/103839803047317952696' title='vaheeD'>Website</a> </p><p class="wpa-nomargin">Follow Me:<br /><a class='wpa-social-icons' href='http://www.facebook.com/vaheet'><img src='/wp-content/plugins/wp-about-author/images/facebook.png' alt='Facebook'/></a><a class='wpa-social-icons' href='https://plus.google.com/103839803047317952696'><img src='/wp-content/plugins/wp-about-author/images/googleplus.png' alt='Google Plus'/></a></p></div></div>The post <a href="/step_by_step_install_openstack_all_in_one_virtual_machines/">Step by Step install Openstack all in one Virtual machines</a> first appeared on <a href="/">vaheeD khoshnouD</a>.]]></content:encoded>
+					
+					<wfw:commentRss>/step_by_step_install_openstack_all_in_one_virtual_machines/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>
